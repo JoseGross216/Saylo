@@ -8,6 +8,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Saylo.Modules.Translation.Contracts\Saylo.Modules.Translation.Contracts.csproj" />
+    <ProjectReference Include="..\Saylo.Modules.ModelManagement\Saylo.Modules.ModelManagement.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Whisper.net" Version="1.9.1" />
+    <PackageReference Include="Whisper.net.Runtime" Version="1.9.1" />
   </ItemGroup>
 
 </Project>
