@@ -1,12 +1,14 @@
-﻿<Solution>
+<Solution>
   <Folder Name="/src/">
+    <Project Path="src/Saylo.Desktop/Saylo.Desktop.csproj" />
     <Project Path="src/Saylo.Api/Saylo.Api.csproj" />
   </Folder>
   <Folder Name="/src/modules/">
     <Project Path="src/modules/Saylo.Modules.Conversations/Saylo.Modules.Conversations.csproj" />
     <Project Path="src/modules/Saylo.Modules.Identity/Saylo.Modules.Identity.csproj" />
-    <Project Path="src/modules/Saylo.Modules.Translation/Saylo.Modules.Translation.csproj" />
+    <Project Path="src/modules/Saylo.Modules.ModelManagement/Saylo.Modules.ModelManagement.csproj" />
     <Project Path="src/modules/Saylo.Modules.Translation.Contracts/Saylo.Modules.Translation.Contracts.csproj" />
+    <Project Path="src/modules/Saylo.Modules.Translation/Saylo.Modules.Translation.csproj" />
   </Folder>
   <Folder Name="/tests/">
     <Project Path="tests/Saylo.Architecture.Tests/Saylo.Architecture.Tests.csproj" />

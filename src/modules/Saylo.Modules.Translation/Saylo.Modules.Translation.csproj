@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Saylo.Modules.Translation.Contracts\Saylo.Modules.Translation.Contracts.csproj" />
+  </ItemGroup>
+
 </Project>
