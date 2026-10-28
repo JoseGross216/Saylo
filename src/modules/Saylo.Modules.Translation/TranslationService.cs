@@ -140,6 +140,11 @@ public sealed class TranslationService : ITranslationService
         {
             throw;
         }
+        catch (TranslationEngineException exception)
+        {
+            token.ThrowIfCancellationRequested();
+            return new(null, exception.Code);
+        }
         catch (Exception)
         {
             token.ThrowIfCancellationRequested();
