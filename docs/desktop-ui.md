@@ -1,4 +1,8 @@
-# Interfaz de SAYLO — Paquetes 1, 2, 3 y 4
+# Interfaz de SAYLO — Paquetes 1 a 6
+
+Uso por empleados: [manual](manual-empleados.md) y
+[verificación durante una atención](verificacion-operativa.md).
+Validación y aceptación: [pruebas de escritorio y usabilidad](pruebas-escritorio-usabilidad.md).
 
 La aplicación usa Avalonia 12, CommunityToolkit.Mvvm, bindings compilados y .NET 8,
 como el resto de la solución. La UI depende de Conversations y los contratos públicos de Translation,
@@ -139,5 +143,5 @@ Las pruebas de escritorio usan adaptadores y motores de prueba, sin acceso a mic
 red o modelos reales. Verifican selección, revisión, cancelación durante arranque y STT,
 límite temporal, errores, cierre y entrega progresiva. La revisión visual se realiza en
 Windows; macOS y Linux necesitan validación con adaptadores nativos antes de declarar
-compatibilidad de captura. La prueba de cancelación de Whisper que fallaba en la suite
-general del paquete 1 pertenece al módulo de Translation, que este paquete no modifica.
+compatibilidad de captura. La suite ampliada y el seguimiento del fallo intermitente
+de cancelación de Whisper se registran en el informe de pruebas del paquete 6.
