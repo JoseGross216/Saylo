@@ -1,0 +1,50 @@
+{
+  "completedAtUtc": "2026-10-29T06:14:25.7409487Z",
+  "configuration": "Release",
+  "nativeAudioRequested": true,
+  "translationIncluded": true,
+  "buildSkipped": false,
+  "successful": false,
+  "suites": [
+    {
+      "suite": "Saylo.Desktop.Tests",
+      "exitCode": 0,
+      "passed": 90,
+      "failed": 0,
+      "skipped": 0,
+      "total": 90,
+      "successful": true,
+      "resultFile": "Saylo.Desktop.Tests.trx"
+    },
+    {
+      "suite": "Saylo.Modules.Conversations.Tests",
+      "exitCode": 0,
+      "passed": 8,
+      "failed": 0,
+      "skipped": 0,
+      "total": 8,
+      "successful": true,
+      "resultFile": "Saylo.Modules.Conversations.Tests.trx"
+    },
+    {
+      "suite": "Saylo.Architecture.Tests",
+      "exitCode": 0,
+      "passed": 8,
+      "failed": 0,
+      "skipped": 0,
+      "total": 8,
+      "successful": true,
+      "resultFile": "Saylo.Architecture.Tests.trx"
+    },
+    {
+      "suite": "Saylo.Modules.Translation.Tests",
+      "exitCode": 1,
+      "passed": 117,
+      "failed": 1,
+      "skipped": 5,
+      "total": 123,
+      "successful": false,
+      "resultFile": "Saylo.Modules.Translation.Tests.trx"
+    }
+  ]
+}
