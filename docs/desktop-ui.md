@@ -143,5 +143,5 @@ Las pruebas de escritorio usan adaptadores y motores de prueba, sin acceso a mic
 red o modelos reales. Verifican selección, revisión, cancelación durante arranque y STT,
 límite temporal, errores, cierre y entrega progresiva. La revisión visual se realiza en
 Windows; macOS y Linux necesitan validación con adaptadores nativos antes de declarar
-compatibilidad de captura. La suite ampliada y el seguimiento del fallo intermitente
-de cancelación de Whisper se registran en el informe de pruebas del paquete 6.
+compatibilidad de captura. La suite ampliada y la corrección de cancelación de
+Whisper se registran en el informe de pruebas del paquete 6.
