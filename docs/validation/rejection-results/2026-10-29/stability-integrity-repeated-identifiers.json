@@ -1,0 +1,6 @@
+{
+  "Input": "Email support@example.com, then email support@example.com.",
+  "Output": "Email support@example.com, luego email support@example.com.",
+  "Status": "accepted_by_rules",
+  "SameWorkerAfterNextRequest": true
+}

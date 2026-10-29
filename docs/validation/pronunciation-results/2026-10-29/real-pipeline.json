@@ -1,0 +1,62 @@
+{
+  "Results": [
+    {
+      "InputKind": "text",
+      "Updates": [
+        {
+          "Stage": "TextTranslationCompleted",
+          "Code": null,
+          "ElapsedMs": 2244.6996,
+          "Text": "Good morning. What can I do for you today?"
+        },
+        {
+          "Stage": "TranslationStageFailed",
+          "Code": "ModelUnavailable",
+          "ElapsedMs": 2245.1049,
+          "Text": null
+        },
+        {
+          "Stage": "PronunciationCompleted",
+          "Code": null,
+          "ElapsedMs": 2470.12,
+          "Text": "\u02C8\u0261\u028Ad \u02C8m\u0254\u0279n\u026A\u014B. \u02C8w\u028Ct \u02C8k\u00E6n \u02C8a\u026A \u02C8du \u02C8f\u0254\u0279 \u02C8ju t\u0259\u02C8de\u026A?"
+        }
+      ],
+      "TextBeforePronunciation": true
+    },
+    {
+      "InputKind": "voice",
+      "Updates": [
+        {
+          "Stage": "TranscriptionCompleted",
+          "Code": null,
+          "ElapsedMs": 1931.947,
+          "Text": "Good morning. I need help with my order. Thank you."
+        },
+        {
+          "Stage": "TextTranslationCompleted",
+          "Code": null,
+          "ElapsedMs": 2024.2374,
+          "Text": "Buenos d\u00EDas. Necesito ayuda con mi orden. Gracias."
+        },
+        {
+          "Stage": "TranslationStageFailed",
+          "Code": "ModelUnavailable",
+          "ElapsedMs": 2024.4021,
+          "Text": null
+        },
+        {
+          "Stage": "PronunciationCompleted",
+          "Code": null,
+          "ElapsedMs": 2024.6751,
+          "Text": "\u02C8bwenos \u02C8dias. nese\u02C8sito a\u02C8\u029Duda kon mi \u02C8o\u027Eden. \u02C8\u0261\u027Easjas."
+        }
+      ],
+      "TextBeforePronunciation": true
+    }
+  ],
+  "TtsImplemented": false,
+  "ArgosWorkerExited": true,
+  "HumanLinguisticAcceptance": "pending",
+  "Note": "TTS fixture reports ModelUnavailable; no synthesis implementation or audio generated."
+}

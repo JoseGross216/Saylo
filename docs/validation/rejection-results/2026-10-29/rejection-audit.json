@@ -1,0 +1,426 @@
+{
+  "schemaVersion": 1,
+  "cases": [
+    {
+      "id": "es-04",
+      "source": "es",
+      "target": "en",
+      "original": "Necesito confirmar la dirección de entrega.",
+      "rawHistoricalTarea31Output": "I need to confirm his delivery address.",
+      "currentNativeDiagnostics": [
+        {
+          "Id": "es-04",
+          "Kind": "native-primary",
+          "Candidates": [
+            "I need to confirm his delivery address."
+          ]
+        },
+        {
+          "Id": "es-04",
+          "Kind": "native-ranked-candidates",
+          "Candidates": [
+            "I need to confirm his delivery address.",
+            "I need to confirm the delivery address.",
+            "I have to confirm the delivery address.",
+            "I have to confirm his delivery address."
+          ]
+        }
+      ],
+      "blockingRuleTarea32": "Referent",
+      "decision": "correct_rejection",
+      "isDemonstratedFalsePositive": false,
+      "cause": "El articulo la no autoriza agregar un propietario masculino.",
+      "safeSolutionOrPendingAction": "Seleccionar la alternativa nativa con the delivery address.",
+      "riskOfAllowingOriginalOutput": "Inventar el propietario de una direccion.",
+      "newOutputs": {
+        "previous-profile-v1": "I need to confirm the delivery address.",
+        "customer-service-v2": "I need to confirm the delivery address."
+      },
+      "note": "Native alternatives pass every current validator independently; human bilingual acceptance remains pending."
+    },
+    {
+      "id": "es-10",
+      "source": "es",
+      "target": "en",
+      "original": "Nunca le pediremos su contraseña por teléfono.",
+      "rawHistoricalTarea31Output": "We'll never ask for his password by phone.",
+      "currentNativeDiagnostics": [
+        {
+          "Id": "es-10",
+          "Kind": "native-primary",
+          "Candidates": [
+            "We'll never ask for his password by phone."
+          ]
+        },
+        {
+          "Id": "es-10",
+          "Kind": "native-ranked-candidates",
+          "Candidates": [
+            "We'll never ask for his password by phone.",
+            "We'll never get his password by phone.",
+            "We'll never get his password on his phone.",
+            "We'll never get his password on the phone."
+          ]
+        }
+      ],
+      "blockingRuleTarea32": "Referent",
+      "decision": "correct_rejection",
+      "isDemonstratedFalsePositive": false,
+      "cause": "Su no demuestra que la contrasena pertenezca a un varon.",
+      "safeSolutionOrPendingAction": "Mantener el bloqueo; todas las cuatro alternativas introducen his.",
+      "riskOfAllowingOriginalOutput": "Asignar la contrasena a una tercera persona.",
+      "newOutputs": {
+        "previous-profile-v1": null,
+        "customer-service-v2": null
+      },
+      "note": "Native alternatives pass every current validator independently; human bilingual acceptance remains pending."
+    },
+    {
+      "id": "es-12",
+      "source": "es",
+      "target": "en",
+      "original": "Su cita es el 03/04/2026; confirme si se refiere al 3 de abril.",
+      "rawHistoricalTarea31Output": "Your date is 03 / 04 / 2026 and confirm if you mean 3 April.",
+      "currentNativeDiagnostics": [],
+      "blockingRuleTarea32": "NumericAmbiguity",
+      "decision": "correct_conservative_rejection",
+      "isDemonstratedFalsePositive": false,
+      "cause": "03/04/2026 tiene dos interpretaciones; la pregunta sobre abril no confirma una configuracion regional.",
+      "safeSolutionOrPendingAction": "Solicitar fecha explicita o metadatos regionales validados en una tarea futura.",
+      "riskOfAllowingOriginalOutput": "Cambiar el dia de la cita.",
+      "newOutputs": {
+        "previous-profile-v1": null,
+        "customer-service-v2": null
+      },
+      "note": "No worker inference in the production path for ambiguous dates; rawHistoricalTarea31Output is older diagnostic evidence, not an accepted date interpretation."
+    },
+    {
+      "id": "es-17",
+      "source": "es",
+      "target": "en",
+      "original": "La ingeniera María López revisará su caso.",
+      "rawHistoricalTarea31Output": "The engineer María López will review his case.",
+      "currentNativeDiagnostics": [
+        {
+          "Id": "es-17",
+          "Kind": "native-primary",
+          "Candidates": [
+            "The engineer María López will review his case."
+          ]
+        },
+        {
+          "Id": "es-17",
+          "Kind": "native-ranked-candidates",
+          "Candidates": [
+            "The engineer María López will review his case.",
+            "The engineer María López will check his case.",
+            "The engineer María López will have her case reviewed.",
+            "The engineer María López will conduct a review of his case."
+          ]
+        }
+      ],
+      "blockingRuleTarea32": "Referent",
+      "decision": "correct_rejection",
+      "isDemonstratedFalsePositive": false,
+      "cause": "Su caso no demuestra el sexo ni el propietario; las alternativas usan his o her.",
+      "safeSolutionOrPendingAction": "Mantener el bloqueo hasta disponer de contexto explicito o alternativa neutral.",
+      "riskOfAllowingOriginalOutput": "Cambiar el propietario del caso; Maria no prueba a quien pertenece.",
+      "newOutputs": {
+        "previous-profile-v1": null,
+        "customer-service-v2": null
+      },
+      "note": "Native alternatives pass every current validator independently; human bilingual acceptance remains pending."
+    },
+    {
+      "id": "es-28",
+      "source": "es",
+      "target": "en",
+      "original": "Si el paquete no llega antes del viernes, vuelva a contactarnos.",
+      "rawHistoricalTarea31Output": "If the package doesn't come by Friday, contact us again.",
+      "currentNativeDiagnostics": [
+        {
+          "Id": "es-28",
+          "Kind": "native-primary",
+          "Candidates": [
+            "If the package doesn't come by Friday, contact us again."
+          ]
+        },
+        {
+          "Id": "es-28",
+          "Kind": "native-ranked-candidates",
+          "Candidates": [
+            "If the package doesn't come by Friday, contact us again.",
+            "If the package doesn't come by Friday, get back to us.",
+            "If the package doesn't get here before Friday, get back to us.",
+            "If the package doesn't get here by Friday, get back to us."
+          ]
+        }
+      ],
+      "blockingRuleTarea32": "TemporalRelation",
+      "decision": "correct_rejection",
+      "isDemonstratedFalsePositive": false,
+      "cause": "By Friday puede incluir el viernes; antes del viernes exige un limite anterior.",
+      "safeSolutionOrPendingAction": "Seleccionar la alternativa nativa before Friday; conservar la negacion y la condicion.",
+      "riskOfAllowingOriginalOutput": "Alterar el plazo y la condicion de seguimiento.",
+      "newOutputs": {
+        "previous-profile-v1": "If the package doesn't get here before Friday, get back to us.",
+        "customer-service-v2": "If the package doesn't get here before Friday, get back to us."
+      },
+      "note": "Native alternatives pass every current validator independently; human bilingual acceptance remains pending."
+    },
+    {
+      "id": "es-34",
+      "source": "es",
+      "target": "en",
+      "original": "La señora Ana Pérez puede recoger el paquete con su identificación.",
+      "rawHistoricalTarea31Output": "Mrs. Ana Pérez can pick up the package with her ID.",
+      "currentNativeDiagnostics": [
+        {
+          "Id": "es-34",
+          "Kind": "native-primary",
+          "Candidates": [
+            "Mrs. Ana Pérez can pick up the package with her ID."
+          ]
+        },
+        {
+          "Id": "es-34",
+          "Kind": "native-ranked-candidates",
+          "Candidates": [
+            "Mrs. Ana Pérez can pick up the package with her ID.",
+            "Mrs. Ana Pérez can pick up the package with her identification.",
+            "Mrs. Ana Pérez can pick up the package with her I.D. 'S.",
+            "Mrs. Ana Pérez can pick up the package with her name and name."
+          ]
+        }
+      ],
+      "blockingRuleTarea32": "Referent",
+      "decision": "potential_false_positive",
+      "isDemonstratedFalsePositive": false,
+      "cause": "Her ID puede ser una resolucion gramatical razonable de Ana Perez; el validador no demuestra el enlace de su.",
+      "safeSolutionOrPendingAction": "Conservar el bloqueo; requerir contexto/anotacion de correferencia aprobada antes de flexibilizar.",
+      "riskOfAllowingOriginalOutput": "Permitir una posesion inferida incorrectamente. Se pierde disponibilidad aunque la frase puede ser correcta.",
+      "newOutputs": {
+        "previous-profile-v1": null,
+        "customer-service-v2": null
+      },
+      "note": "Native alternatives pass every current validator independently; human bilingual acceptance remains pending."
+    },
+    {
+      "id": "es-38",
+      "source": "es",
+      "target": "en",
+      "original": "Vamos a escalar la incidencia al equipo técnico.",
+      "rawHistoricalTarea31Output": "Let's scale up the incidence to the technical team.",
+      "currentNativeDiagnostics": [
+        {
+          "Id": "es-38",
+          "Kind": "native-primary",
+          "Candidates": [
+            "Let's scale up the incidence to the technical team."
+          ]
+        },
+        {
+          "Id": "es-38",
+          "Kind": "native-ranked-candidates",
+          "Candidates": [
+            "Let's scale up the incidence to the technical team.",
+            "We'll scale up the incidence to the technical team.",
+            "We're going to scale up the incidence to the technical team.",
+            "We're gonna scale up the incidence to the technical team."
+          ]
+        }
+      ],
+      "blockingRuleTarea32": "Glossary",
+      "decision": "correct_rejection",
+      "isDemonstratedFalsePositive": false,
+      "cause": "Scale up the incidence no equivale a escalar una incidencia a otro equipo.",
+      "safeSolutionOrPendingAction": "Mantener el bloqueo: las cuatro alternativas conservan el calco; hacen falta mejor contexto/modelo aprobado.",
+      "riskOfAllowingOriginalOutput": "Comunicar otra accion y alterar la responsabilidad del equipo tecnico.",
+      "newOutputs": {
+        "previous-profile-v1": null,
+        "customer-service-v2": null
+      },
+      "note": "Native alternatives pass every current validator independently; human bilingual acceptance remains pending."
+    },
+    {
+      "id": "es-40",
+      "source": "es",
+      "target": "en",
+      "original": "El cliente dijo: «No autoricé ese cargo de 80 USD».",
+      "rawHistoricalTarea31Output": "The client said, \"I did not authorize that $80 charge.\"",
+      "currentNativeDiagnostics": [
+        {
+          "Id": "es-40",
+          "Kind": "native-primary",
+          "Candidates": [
+            "The client said, \"I did not authorize that $80 charge.\""
+          ]
+        },
+        {
+          "Id": "es-40",
+          "Kind": "native-ranked-candidates",
+          "Candidates": [
+            "The client said, \"I did not authorize that $80 charge.\"",
+            "The client said, \"I did not authorize that US $80 charge.\"",
+            "The client said, \"I did not authorize that 80-USD charge.\"",
+            "The client said, \"I didn't authorize that 80-USD charge.\""
+          ]
+        }
+      ],
+      "blockingRuleTarea32": "NumericEquivalence",
+      "decision": "correct_rejection_with_missing_equivalence",
+      "isDemonstratedFalsePositive": false,
+      "cause": "El simbolo $ sin pais no prueba USD; la alternativa US $80 si lo expresa.",
+      "safeSolutionOrPendingAction": "Reconocer exclusivamente US$ y US $ como USD y seleccionar el candidato completo que pasa las demas reglas.",
+      "riskOfAllowingOriginalOutput": "Aceptar una moneda indeterminada o un importe distinto; ambos siguen bloqueados.",
+      "newOutputs": {
+        "previous-profile-v1": "The client said, \"I did not authorize that US $80 charge.\"",
+        "customer-service-v2": "The client said, \"I did not authorize that US $80 charge.\""
+      },
+      "note": "Native alternatives pass every current validator independently; human bilingual acceptance remains pending."
+    },
+    {
+      "id": "en-02",
+      "source": "en",
+      "target": "es",
+      "original": "Good afternoon, thank you for contacting customer support.",
+      "rawHistoricalTarea31Output": "Buenas tardes, gracias por contactar con el cliente.",
+      "currentNativeDiagnostics": [
+        {
+          "Id": "en-02",
+          "Kind": "native-primary",
+          "Candidates": [
+            "Buenas tardes, gracias por contactar con el cliente."
+          ]
+        },
+        {
+          "Id": "en-02",
+          "Kind": "native-ranked-candidates",
+          "Candidates": [
+            "Buenas tardes, gracias por contactar con el cliente.",
+            "Buenas tardes, gracias por contactar al cliente.",
+            "Buenas tardes, gracias por ponerse en contacto con el cliente.",
+            "Buenas tardes, gracias por contactar con el cliente de atención."
+          ]
+        }
+      ],
+      "blockingRuleTarea32": "Glossary",
+      "decision": "correct_rejection",
+      "isDemonstratedFalsePositive": false,
+      "cause": "Contactar con el cliente omite atencion al cliente y cambia el destinatario.",
+      "safeSolutionOrPendingAction": "Mantener el bloqueo; las cuatro alternativas pierden support.",
+      "riskOfAllowingOriginalOutput": "Cambiar quien recibe la comunicacion.",
+      "newOutputs": {
+        "previous-profile-v1": null,
+        "customer-service-v2": null
+      },
+      "note": "Native alternatives pass every current validator independently; human bilingual acceptance remains pending."
+    },
+    {
+      "id": "en-04",
+      "source": "en",
+      "target": "es",
+      "original": "I need to verify your delivery address.",
+      "rawHistoricalTarea31Output": "Necesito verificar tu dirección de entrega.",
+      "currentNativeDiagnostics": [
+        {
+          "Id": "en-04",
+          "Kind": "native-primary",
+          "Candidates": [
+            "Necesito verificar tu dirección de entrega."
+          ]
+        },
+        {
+          "Id": "en-04",
+          "Kind": "native-ranked-candidates",
+          "Candidates": [
+            "Necesito verificar tu dirección de entrega.",
+            "Necesito verificar su dirección de entrega.",
+            "Necesito verificar tu dirección de envío.",
+            "Tengo que verificar tu dirección de entrega."
+          ]
+        }
+      ],
+      "blockingRuleTarea32": "FormalRegister",
+      "decision": "correct_policy_rejection",
+      "isDemonstratedFalsePositive": false,
+      "cause": "Tu conserva el sentido basico pero incumple la politica explicita de usted.",
+      "safeSolutionOrPendingAction": "Seleccionar la alternativa nativa Necesito verificar su direccion de entrega.",
+      "riskOfAllowingOriginalOutput": "Aceptar tuteo bajo un perfil formal; no es corrupcion numerica.",
+      "newOutputs": {
+        "previous-profile-v1": "Necesito verificar su dirección de entrega.",
+        "customer-service-v2": "Necesito verificar su dirección de entrega."
+      },
+      "note": "Native alternatives pass every current validator independently; human bilingual acceptance remains pending."
+    },
+    {
+      "id": "en-12",
+      "source": "en",
+      "target": "es",
+      "original": "Your appointment is on 04/03/2026; please confirm whether this means April 3.",
+      "rawHistoricalTarea31Output": "Su cita es el 04/03/2026; por favor confirme si esto significa el 3 de abril.",
+      "currentNativeDiagnostics": [],
+      "blockingRuleTarea32": "NumericAmbiguity",
+      "decision": "correct_conservative_rejection",
+      "isDemonstratedFalsePositive": false,
+      "cause": "04/03/2026 es ambiguo sin convencion de fecha confirmada; la pregunta no fija esa convencion.",
+      "safeSolutionOrPendingAction": "Mantener el bloqueo preflight y pedir fecha no ambigua en una tarea futura.",
+      "riskOfAllowingOriginalOutput": "Cambiar abril por marzo o viceversa.",
+      "newOutputs": {
+        "previous-profile-v1": null,
+        "customer-service-v2": null
+      },
+      "note": "No worker inference in the production path for ambiguous dates; rawHistoricalTarea31Output is older diagnostic evidence, not an accepted date interpretation."
+    },
+    {
+      "id": "en-37",
+      "source": "en",
+      "target": "es",
+      "original": "The warranty covers parts but excludes water damage.",
+      "rawHistoricalTarea31Output": "La garantía cubre partes pero excluye el daño al agua.",
+      "currentNativeDiagnostics": [
+        {
+          "Id": "en-37",
+          "Kind": "native-primary",
+          "Candidates": [
+            "La garantía cubre partes pero excluye el daño al agua."
+          ]
+        },
+        {
+          "Id": "en-37",
+          "Kind": "native-ranked-candidates",
+          "Candidates": [
+            "La garantía cubre partes pero excluye el daño al agua.",
+            "La garantía cubre las partes pero excluye el daño al agua.",
+            "La garantía cubre piezas pero excluye el daño al agua.",
+            "La garantía cubre partes, pero excluye el daño al agua."
+          ]
+        }
+      ],
+      "blockingRuleTarea32": "Glossary",
+      "decision": "correct_rejection",
+      "isDemonstratedFalsePositive": false,
+      "cause": "Dano al agua sugiere dano sufrido por el agua; no dano causado por agua.",
+      "safeSolutionOrPendingAction": "Mantener el bloqueo; no hay candidato nativo con danos por agua.",
+      "riskOfAllowingOriginalOutput": "Interpretar incorrectamente una exclusion de garantia.",
+      "newOutputs": {
+        "previous-profile-v1": null,
+        "customer-service-v2": null
+      },
+      "note": "Native alternatives pass every current validator independently; human bilingual acceptance remains pending."
+    }
+  ],
+  "classificationCounts": {
+    "Referent": 4,
+    "NumericAmbiguity": 2,
+    "Glossary": 3,
+    "TemporalRelation": 1,
+    "NumericEquivalence": 1,
+    "FormalRegister": 1
+  },
+  "demonstratedFalsePositives": 0,
+  "potentialFalsePositives": [
+    "es-34"
+  ],
+  "humanBilingualAcceptance": "pending"
+}

@@ -1,0 +1,1452 @@
+{
+  "SchemaVersion": 1,
+  "Policy": "default-integrity",
+  "Results": [
+    {
+      "Kind": "repeated",
+      "Source": "es",
+      "Attempt": 1,
+      "Input": "Su solicitud sigue en revision. No cancele el pedido 12345. Le informaremos por correo cuando termine. Su solicitud sigue en revision. No cancele el pedido 12345. Le informaremos por correo cuando termine. Su solicitud sigue en revision. No cancele el pedido 12345. Le informaremos por correo cuando termine. Su solicitud sigue en revision. No cancele el pedido 12345. Le informaremos por correo cuando termine. Su solicitud sigue en revision. No cancele el pedido 12345. Le informaremos por correo cuando termine. Su solicitud sigue en revision. No cancele el pedido 12345. Le informaremos por correo cuando termine. Su solicitud sigue en revision. No cancele el pedido 12345. Le informaremos por correo cuando termine. Su solicitud sigue en revision. No cancele el pedido 12345. Le informaremos por correo cuando termine. Su solicitud sigue en revision. No cancele el pedido 12345. Le informaremos por correo cuando termine. ",
+      "Output": "Your application\u0027s still under review. Do not cancel order 12345. We\u0027ll report them by mail after I\u0027m through. Your application\u0027s still under review. Do not cancel order 12345. We\u0027ll report them by mail after I\u0027m through. Your application\u0027s still under review. Do not cancel order 12345. We\u0027ll report them by mail after I\u0027m through. Your application\u0027s still under review. Do not cancel order 12345. We\u0027ll report them by mail after I\u0027m through. Your application\u0027s still under review. Do not cancel order 12345. We\u0027ll report them by mail after I\u0027m through. Your application\u0027s still under review. Do not cancel order 12345. We\u0027ll report them by mail after I\u0027m through. Your application\u0027s still under review. Do not cancel order 12345. We\u0027ll report them by mail after I\u0027m through. Your application\u0027s still under review. Do not cancel order 12345. We\u0027ll report them by mail after I\u0027m through. Your application\u0027s still under review. Do not cancel order 12345. We\u0027ll report them by mail after I\u0027m through. ",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 451.2662,
+      "Metrics": [
+        {
+          "Name": "saylo.argos.integrity_preparation",
+          "Value": 7.3974
+        },
+        {
+          "Name": "saylo.argos.segment_count",
+          "Value": 27
+        },
+        {
+          "Name": "saylo.argos.integrity_validation",
+          "Value": 4.1975
+        },
+        {
+          "Name": "saylo.argos.candidate_retries",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.integrity_validation",
+          "Value": 3.5591
+        },
+        {
+          "Name": "saylo.argos.candidate_recoveries",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.integrity_validation",
+          "Value": 11.739
+        },
+        {
+          "Name": "saylo.argos.integrity_validation",
+          "Value": 3.4041
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.worker_memory",
+          "Value": 271605760
+        },
+        {
+          "Name": "saylo.argos.translation",
+          "Value": 440.2175
+        }
+      ]
+    },
+    {
+      "Kind": "repeated",
+      "Source": "es",
+      "Attempt": 2,
+      "Input": "Su solicitud sigue en revision. No cancele el pedido 12345. Le informaremos por correo cuando termine. Su solicitud sigue en revision. No cancele el pedido 12345. Le informaremos por correo cuando termine. Su solicitud sigue en revision. No cancele el pedido 12345. Le informaremos por correo cuando termine. Su solicitud sigue en revision. No cancele el pedido 12345. Le informaremos por correo cuando termine. Su solicitud sigue en revision. No cancele el pedido 12345. Le informaremos por correo cuando termine. Su solicitud sigue en revision. No cancele el pedido 12345. Le informaremos por correo cuando termine. Su solicitud sigue en revision. No cancele el pedido 12345. Le informaremos por correo cuando termine. Su solicitud sigue en revision. No cancele el pedido 12345. Le informaremos por correo cuando termine. Su solicitud sigue en revision. No cancele el pedido 12345. Le informaremos por correo cuando termine. ",
+      "Output": "Your application\u0027s still under review. Do not cancel order 12345. We\u0027ll report them by mail after I\u0027m through. Your application\u0027s still under review. Do not cancel order 12345. We\u0027ll report them by mail after I\u0027m through. Your application\u0027s still under review. Do not cancel order 12345. We\u0027ll report them by mail after I\u0027m through. Your application\u0027s still under review. Do not cancel order 12345. We\u0027ll report them by mail after I\u0027m through. Your application\u0027s still under review. Do not cancel order 12345. We\u0027ll report them by mail after I\u0027m through. Your application\u0027s still under review. Do not cancel order 12345. We\u0027ll report them by mail after I\u0027m through. Your application\u0027s still under review. Do not cancel order 12345. We\u0027ll report them by mail after I\u0027m through. Your application\u0027s still under review. Do not cancel order 12345. We\u0027ll report them by mail after I\u0027m through. Your application\u0027s still under review. Do not cancel order 12345. We\u0027ll report them by mail after I\u0027m through. ",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 403.0452,
+      "Metrics": [
+        {
+          "Name": "saylo.argos.integrity_preparation",
+          "Value": 4.1542
+        },
+        {
+          "Name": "saylo.argos.segment_count",
+          "Value": 27
+        },
+        {
+          "Name": "saylo.argos.integrity_validation",
+          "Value": 2.9445
+        },
+        {
+          "Name": "saylo.argos.candidate_retries",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.integrity_validation",
+          "Value": 3.6407
+        },
+        {
+          "Name": "saylo.argos.candidate_recoveries",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.integrity_validation",
+          "Value": 3.2017
+        },
+        {
+          "Name": "saylo.argos.integrity_validation",
+          "Value": 3.7179
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.worker_memory",
+          "Value": 271605760
+        },
+        {
+          "Name": "saylo.argos.translation",
+          "Value": 398.5215
+        }
+      ]
+    },
+    {
+      "Kind": "repeated",
+      "Source": "es",
+      "Attempt": 3,
+      "Input": "Su solicitud sigue en revision. No cancele el pedido 12345. Le informaremos por correo cuando termine. Su solicitud sigue en revision. No cancele el pedido 12345. Le informaremos por correo cuando termine. Su solicitud sigue en revision. No cancele el pedido 12345. Le informaremos por correo cuando termine. Su solicitud sigue en revision. No cancele el pedido 12345. Le informaremos por correo cuando termine. Su solicitud sigue en revision. No cancele el pedido 12345. Le informaremos por correo cuando termine. Su solicitud sigue en revision. No cancele el pedido 12345. Le informaremos por correo cuando termine. Su solicitud sigue en revision. No cancele el pedido 12345. Le informaremos por correo cuando termine. Su solicitud sigue en revision. No cancele el pedido 12345. Le informaremos por correo cuando termine. Su solicitud sigue en revision. No cancele el pedido 12345. Le informaremos por correo cuando termine. ",
+      "Output": "Your application\u0027s still under review. Do not cancel order 12345. We\u0027ll report them by mail after I\u0027m through. Your application\u0027s still under review. Do not cancel order 12345. We\u0027ll report them by mail after I\u0027m through. Your application\u0027s still under review. Do not cancel order 12345. We\u0027ll report them by mail after I\u0027m through. Your application\u0027s still under review. Do not cancel order 12345. We\u0027ll report them by mail after I\u0027m through. Your application\u0027s still under review. Do not cancel order 12345. We\u0027ll report them by mail after I\u0027m through. Your application\u0027s still under review. Do not cancel order 12345. We\u0027ll report them by mail after I\u0027m through. Your application\u0027s still under review. Do not cancel order 12345. We\u0027ll report them by mail after I\u0027m through. Your application\u0027s still under review. Do not cancel order 12345. We\u0027ll report them by mail after I\u0027m through. Your application\u0027s still under review. Do not cancel order 12345. We\u0027ll report them by mail after I\u0027m through. ",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 395.6202,
+      "Metrics": [
+        {
+          "Name": "saylo.argos.integrity_preparation",
+          "Value": 4.4041
+        },
+        {
+          "Name": "saylo.argos.segment_count",
+          "Value": 27
+        },
+        {
+          "Name": "saylo.argos.integrity_validation",
+          "Value": 2.4481
+        },
+        {
+          "Name": "saylo.argos.candidate_retries",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.integrity_validation",
+          "Value": 1.8847
+        },
+        {
+          "Name": "saylo.argos.candidate_recoveries",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.integrity_validation",
+          "Value": 2.8937
+        },
+        {
+          "Name": "saylo.argos.integrity_validation",
+          "Value": 2.0011
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.worker_memory",
+          "Value": 271622144
+        },
+        {
+          "Name": "saylo.argos.translation",
+          "Value": 390.8491
+        }
+      ]
+    },
+    {
+      "Kind": "repeated",
+      "Source": "es",
+      "Attempt": 4,
+      "Input": "Su solicitud sigue en revision. No cancele el pedido 12345. Le informaremos por correo cuando termine. Su solicitud sigue en revision. No cancele el pedido 12345. Le informaremos por correo cuando termine. Su solicitud sigue en revision. No cancele el pedido 12345. Le informaremos por correo cuando termine. Su solicitud sigue en revision. No cancele el pedido 12345. Le informaremos por correo cuando termine. Su solicitud sigue en revision. No cancele el pedido 12345. Le informaremos por correo cuando termine. Su solicitud sigue en revision. No cancele el pedido 12345. Le informaremos por correo cuando termine. Su solicitud sigue en revision. No cancele el pedido 12345. Le informaremos por correo cuando termine. Su solicitud sigue en revision. No cancele el pedido 12345. Le informaremos por correo cuando termine. Su solicitud sigue en revision. No cancele el pedido 12345. Le informaremos por correo cuando termine. ",
+      "Output": "Your application\u0027s still under review. Do not cancel order 12345. We\u0027ll report them by mail after I\u0027m through. Your application\u0027s still under review. Do not cancel order 12345. We\u0027ll report them by mail after I\u0027m through. Your application\u0027s still under review. Do not cancel order 12345. We\u0027ll report them by mail after I\u0027m through. Your application\u0027s still under review. Do not cancel order 12345. We\u0027ll report them by mail after I\u0027m through. Your application\u0027s still under review. Do not cancel order 12345. We\u0027ll report them by mail after I\u0027m through. Your application\u0027s still under review. Do not cancel order 12345. We\u0027ll report them by mail after I\u0027m through. Your application\u0027s still under review. Do not cancel order 12345. We\u0027ll report them by mail after I\u0027m through. Your application\u0027s still under review. Do not cancel order 12345. We\u0027ll report them by mail after I\u0027m through. Your application\u0027s still under review. Do not cancel order 12345. We\u0027ll report them by mail after I\u0027m through. ",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 384.882,
+      "Metrics": [
+        {
+          "Name": "saylo.argos.integrity_preparation",
+          "Value": 7.2333
+        },
+        {
+          "Name": "saylo.argos.segment_count",
+          "Value": 27
+        },
+        {
+          "Name": "saylo.argos.integrity_validation",
+          "Value": 2.0019
+        },
+        {
+          "Name": "saylo.argos.candidate_retries",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.integrity_validation",
+          "Value": 1.9919
+        },
+        {
+          "Name": "saylo.argos.candidate_recoveries",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.integrity_validation",
+          "Value": 1.9772
+        },
+        {
+          "Name": "saylo.argos.integrity_validation",
+          "Value": 2.4752
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.worker_memory",
+          "Value": 271626240
+        },
+        {
+          "Name": "saylo.argos.translation",
+          "Value": 377.2994
+        }
+      ]
+    },
+    {
+      "Kind": "repeated",
+      "Source": "es",
+      "Attempt": 5,
+      "Input": "Su solicitud sigue en revision. No cancele el pedido 12345. Le informaremos por correo cuando termine. Su solicitud sigue en revision. No cancele el pedido 12345. Le informaremos por correo cuando termine. Su solicitud sigue en revision. No cancele el pedido 12345. Le informaremos por correo cuando termine. Su solicitud sigue en revision. No cancele el pedido 12345. Le informaremos por correo cuando termine. Su solicitud sigue en revision. No cancele el pedido 12345. Le informaremos por correo cuando termine. Su solicitud sigue en revision. No cancele el pedido 12345. Le informaremos por correo cuando termine. Su solicitud sigue en revision. No cancele el pedido 12345. Le informaremos por correo cuando termine. Su solicitud sigue en revision. No cancele el pedido 12345. Le informaremos por correo cuando termine. Su solicitud sigue en revision. No cancele el pedido 12345. Le informaremos por correo cuando termine. ",
+      "Output": "Your application\u0027s still under review. Do not cancel order 12345. We\u0027ll report them by mail after I\u0027m through. Your application\u0027s still under review. Do not cancel order 12345. We\u0027ll report them by mail after I\u0027m through. Your application\u0027s still under review. Do not cancel order 12345. We\u0027ll report them by mail after I\u0027m through. Your application\u0027s still under review. Do not cancel order 12345. We\u0027ll report them by mail after I\u0027m through. Your application\u0027s still under review. Do not cancel order 12345. We\u0027ll report them by mail after I\u0027m through. Your application\u0027s still under review. Do not cancel order 12345. We\u0027ll report them by mail after I\u0027m through. Your application\u0027s still under review. Do not cancel order 12345. We\u0027ll report them by mail after I\u0027m through. Your application\u0027s still under review. Do not cancel order 12345. We\u0027ll report them by mail after I\u0027m through. Your application\u0027s still under review. Do not cancel order 12345. We\u0027ll report them by mail after I\u0027m through. ",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 370.1614,
+      "Metrics": [
+        {
+          "Name": "saylo.argos.integrity_preparation",
+          "Value": 1.9968
+        },
+        {
+          "Name": "saylo.argos.segment_count",
+          "Value": 27
+        },
+        {
+          "Name": "saylo.argos.integrity_validation",
+          "Value": 1.5755
+        },
+        {
+          "Name": "saylo.argos.candidate_retries",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.integrity_validation",
+          "Value": 1.0607
+        },
+        {
+          "Name": "saylo.argos.candidate_recoveries",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.integrity_validation",
+          "Value": 1.4212
+        },
+        {
+          "Name": "saylo.argos.integrity_validation",
+          "Value": 1.0422
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.worker_memory",
+          "Value": 271626240
+        },
+        {
+          "Name": "saylo.argos.translation",
+          "Value": 367.7904
+        }
+      ]
+    },
+    {
+      "Kind": "repeated",
+      "Source": "en",
+      "Attempt": 1,
+      "Input": "Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. ",
+      "Output": "Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. ",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 209.8769,
+      "Metrics": [
+        {
+          "Name": "saylo.argos.integrity_preparation",
+          "Value": 2.0129
+        },
+        {
+          "Name": "saylo.argos.segment_count",
+          "Value": 27
+        },
+        {
+          "Name": "saylo.argos.integrity_validation",
+          "Value": 11.2508
+        },
+        {
+          "Name": "saylo.argos.integrity_validation",
+          "Value": 0.9722
+        },
+        {
+          "Name": "saylo.argos.integrity_validation",
+          "Value": 0.9441
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.worker_memory",
+          "Value": 273842176
+        },
+        {
+          "Name": "saylo.argos.translation",
+          "Value": 207.6031
+        }
+      ]
+    },
+    {
+      "Kind": "repeated",
+      "Source": "en",
+      "Attempt": 2,
+      "Input": "Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. ",
+      "Output": "Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. ",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 203.1146,
+      "Metrics": [
+        {
+          "Name": "saylo.argos.integrity_preparation",
+          "Value": 2.7061
+        },
+        {
+          "Name": "saylo.argos.segment_count",
+          "Value": 27
+        },
+        {
+          "Name": "saylo.argos.integrity_validation",
+          "Value": 1.1523
+        },
+        {
+          "Name": "saylo.argos.integrity_validation",
+          "Value": 1.2762
+        },
+        {
+          "Name": "saylo.argos.integrity_validation",
+          "Value": 0.932
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.worker_memory",
+          "Value": 273285120
+        },
+        {
+          "Name": "saylo.argos.translation",
+          "Value": 200.1866
+        }
+      ]
+    },
+    {
+      "Kind": "repeated",
+      "Source": "en",
+      "Attempt": 3,
+      "Input": "Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. ",
+      "Output": "Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. ",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 192.7401,
+      "Metrics": [
+        {
+          "Name": "saylo.argos.integrity_preparation",
+          "Value": 1.5955
+        },
+        {
+          "Name": "saylo.argos.segment_count",
+          "Value": 27
+        },
+        {
+          "Name": "saylo.argos.integrity_validation",
+          "Value": 0.9095
+        },
+        {
+          "Name": "saylo.argos.integrity_validation",
+          "Value": 1.0198
+        },
+        {
+          "Name": "saylo.argos.integrity_validation",
+          "Value": 1.6721
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.worker_memory",
+          "Value": 273285120
+        },
+        {
+          "Name": "saylo.argos.translation",
+          "Value": 190.974
+        }
+      ]
+    },
+    {
+      "Kind": "repeated",
+      "Source": "en",
+      "Attempt": 4,
+      "Input": "Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. ",
+      "Output": "Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. ",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 200.4977,
+      "Metrics": [
+        {
+          "Name": "saylo.argos.integrity_preparation",
+          "Value": 1.5121
+        },
+        {
+          "Name": "saylo.argos.segment_count",
+          "Value": 27
+        },
+        {
+          "Name": "saylo.argos.integrity_validation",
+          "Value": 4.5279
+        },
+        {
+          "Name": "saylo.argos.integrity_validation",
+          "Value": 1.2085
+        },
+        {
+          "Name": "saylo.argos.integrity_validation",
+          "Value": 1.1374
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.worker_memory",
+          "Value": 273129472
+        },
+        {
+          "Name": "saylo.argos.translation",
+          "Value": 198.7265
+        }
+      ]
+    },
+    {
+      "Kind": "repeated",
+      "Source": "en",
+      "Attempt": 5,
+      "Input": "Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. ",
+      "Output": "Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. ",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 200.8358,
+      "Metrics": [
+        {
+          "Name": "saylo.argos.integrity_preparation",
+          "Value": 2.1355
+        },
+        {
+          "Name": "saylo.argos.segment_count",
+          "Value": 27
+        },
+        {
+          "Name": "saylo.argos.integrity_validation",
+          "Value": 1.3672
+        },
+        {
+          "Name": "saylo.argos.integrity_validation",
+          "Value": 1.1373
+        },
+        {
+          "Name": "saylo.argos.integrity_validation",
+          "Value": 0.9506
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.reused_segments",
+          "Value": 1
+        },
+        {
+          "Name": "saylo.argos.worker_memory",
+          "Value": 273129472
+        },
+        {
+          "Name": "saylo.argos.translation",
+          "Value": 198.4112
+        }
+      ]
+    },
+    {
+      "Kind": "distinct-references",
+      "Input": "Your order AB-123 is ready. It will not be canceled. Please keep this reference.",
+      "Output": "Su pedido AB-123 est\u00E1 listo. No se cancelar\u00E1. Por favor, mantenga esta referencia.",
+      "Status": "accepted_by_rules",
+      "TotalMs": 157.039,
+      "HumanBilingualReview": "pending"
+    },
+    {
+      "Kind": "distinct-references",
+      "Input": "Do not cancel order AB-123. The amount is 49.95 USD. Please confirm 3 units of model X200.",
+      "Output": "No cancele el pedido AB-123. La suma es de 49,95 USD. Por favor confirme 3 unidades del modelo X200.",
+      "Status": "accepted_by_rules",
+      "TotalMs": 230.8189,
+      "HumanBilingualReview": "pending"
+    },
+    {
+      "Kind": "distinct-references",
+      "Input": "Please send the documents to support@example.com. Do not share code 004812.",
+      "Output": "Por favor env\u00EDen los documentos a support@example.com. No comparta el c\u00F3digo 004812.",
+      "Status": "accepted_by_rules",
+      "TotalMs": 143.837,
+      "HumanBilingualReview": "pending"
+    }
+  ],
+  "Note": "Only exact prepared source is reused within this request. No persistent or cross-request cache.",
+  "WorkerExited": true
+}

@@ -1,0 +1,413 @@
+{
+  "schemaVersion": 1,
+  "units": "milliseconds except worker_memory in bytes and counters in occurrences",
+  "previousTarea32": {
+    "firstTranslationMs": 2464.4152,
+    "warmAccepted": {
+      "es->en": {
+        "Count": 31,
+        "MinMs": 55.8627,
+        "MedianMs": 83.6284,
+        "P95Ms": 139.9536,
+        "MaxMs": 140.318
+      },
+      "en->es": {
+        "Count": 36,
+        "MinMs": 38.3344,
+        "MedianMs": 54.602050000000006,
+        "P95Ms": 81.1016,
+        "MaxMs": 97.1426
+      }
+    },
+    "metrics": {
+      "saylo.argos.integrity_preparation": {
+        "count": 80,
+        "min": 0.1219,
+        "median": 0.31479999999999997,
+        "p95": 0.4297,
+        "max": 1.226,
+        "sum": 26.7415
+      },
+      "saylo.argos.integrity_validation": {
+        "count": 80,
+        "min": 0.4843,
+        "median": 0.5971,
+        "p95": 1.5304,
+        "max": 2.2955,
+        "sum": 56.1464
+      },
+      "saylo.argos.segment_count": {
+        "count": 78,
+        "min": 1,
+        "median": 1.0,
+        "p95": 1,
+        "max": 2,
+        "sum": 80
+      },
+      "saylo.argos.startup": {
+        "count": 1,
+        "min": 2361.9986,
+        "median": 2361.9986,
+        "p95": 2361.9986,
+        "max": 2361.9986,
+        "sum": 2361.9986
+      },
+      "saylo.argos.translation": {
+        "count": 78,
+        "min": 33.9291,
+        "median": 68.57034999999999,
+        "p95": 109.64,
+        "max": 139.7684,
+        "sum": 5507.2457
+      },
+      "saylo.argos.worker_memory": {
+        "count": 68,
+        "min": 270381056,
+        "median": 270997504.0,
+        "p95": 273563648,
+        "max": 273760256,
+        "sum": 18449301504
+      }
+    }
+  },
+  "current": {
+    "previous-profile-v1": {
+      "firstTranslationMs": 3732.0306,
+      "warmAccepted": {
+        "es->en": {
+          "Count": 34,
+          "MinMs": 69.194,
+          "MedianMs": 114.73715,
+          "P95Ms": 257.4557,
+          "MaxMs": 584.8434
+        },
+        "en->es": {
+          "Count": 37,
+          "MinMs": 51.6101,
+          "MedianMs": 90.2674,
+          "P95Ms": 128.8292,
+          "MaxMs": 149.6446
+        }
+      },
+      "warmAll": {
+        "es->en": {
+          "Count": 39,
+          "MinMs": 0.3101,
+          "MedianMs": 119.3829,
+          "P95Ms": 257.4557,
+          "MaxMs": 584.8434
+        },
+        "en->es": {
+          "Count": 40,
+          "MinMs": 0.4422,
+          "MedianMs": 91.82624999999999,
+          "P95Ms": 149.6446,
+          "MaxMs": 229.8923
+        }
+      },
+      "metrics": {
+        "saylo.argos.candidate_recoveries": {
+          "count": 4,
+          "min": 1,
+          "median": 1.0,
+          "p95": 1,
+          "max": 1,
+          "sum": 4
+        },
+        "saylo.argos.candidate_retries": {
+          "count": 10,
+          "min": 1,
+          "median": 1.0,
+          "p95": 1,
+          "max": 1,
+          "sum": 10
+        },
+        "saylo.argos.integrity_preparation": {
+          "count": 80,
+          "min": 0.2307,
+          "median": 0.4107,
+          "p95": 0.9973,
+          "max": 4.1924,
+          "sum": 41.8584
+        },
+        "saylo.argos.integrity_validation": {
+          "count": 103,
+          "min": 0.5082,
+          "median": 0.8845,
+          "p95": 2.1722,
+          "max": 2.7066,
+          "sum": 104.0494
+        },
+        "saylo.argos.segment_count": {
+          "count": 78,
+          "min": 1,
+          "median": 1.0,
+          "p95": 1,
+          "max": 2,
+          "sum": 80
+        },
+        "saylo.argos.startup": {
+          "count": 1,
+          "min": 3472.5552,
+          "median": 3472.5552,
+          "p95": 3472.5552,
+          "max": 3472.5552,
+          "sum": 3472.5552
+        },
+        "saylo.argos.translation": {
+          "count": 78,
+          "min": 51.0752,
+          "median": 106.7643,
+          "p95": 244.6121,
+          "max": 584.0688,
+          "sum": 9571.9299
+        },
+        "saylo.argos.worker_memory": {
+          "count": 72,
+          "min": 270483456,
+          "median": 271200256.0,
+          "p95": 273883136,
+          "max": 274624512,
+          "sum": 19560779776
+        }
+      }
+    },
+    "customer-service-v2": {
+      "firstTranslationMs": 3540.6807,
+      "warmAccepted": {
+        "es->en": {
+          "Count": 33,
+          "MinMs": 75.2503,
+          "MedianMs": 113.0443,
+          "P95Ms": 268.7309,
+          "MaxMs": 299.1353
+        },
+        "en->es": {
+          "Count": 37,
+          "MinMs": 48.5564,
+          "MedianMs": 78.934,
+          "P95Ms": 120.5075,
+          "MaxMs": 141.4719
+        }
+      },
+      "warmAll": {
+        "es->en": {
+          "Count": 39,
+          "MinMs": 0.2508,
+          "MedianMs": 114.9816,
+          "P95Ms": 268.7309,
+          "MaxMs": 299.1353
+        },
+        "en->es": {
+          "Count": 40,
+          "MinMs": 0.2543,
+          "MedianMs": 79.5563,
+          "P95Ms": 135.9395,
+          "MaxMs": 155.1341
+        }
+      },
+      "metrics": {
+        "saylo.argos.candidate_recoveries": {
+          "count": 4,
+          "min": 1,
+          "median": 1.0,
+          "p95": 1,
+          "max": 1,
+          "sum": 4
+        },
+        "saylo.argos.candidate_retries": {
+          "count": 11,
+          "min": 1,
+          "median": 1,
+          "p95": 1,
+          "max": 1,
+          "sum": 11
+        },
+        "saylo.argos.integrity_preparation": {
+          "count": 80,
+          "min": 0.1755,
+          "median": 0.369,
+          "p95": 0.5891,
+          "max": 1.6494,
+          "sum": 33.1377
+        },
+        "saylo.argos.integrity_validation": {
+          "count": 106,
+          "min": 0.0198,
+          "median": 0.872,
+          "p95": 1.8433,
+          "max": 4.5155,
+          "sum": 106.8716
+        },
+        "saylo.argos.segment_count": {
+          "count": 78,
+          "min": 1,
+          "median": 1.0,
+          "p95": 1,
+          "max": 2,
+          "sum": 80
+        },
+        "saylo.argos.startup": {
+          "count": 1,
+          "min": 3350.6673,
+          "median": 3350.6673,
+          "p95": 3350.6673,
+          "max": 3350.6673,
+          "sum": 3350.6673
+        },
+        "saylo.argos.translation": {
+          "count": 78,
+          "min": 48.0713,
+          "median": 100.37710000000001,
+          "p95": 239.3854,
+          "max": 298.46,
+          "sum": 8744.3047
+        },
+        "saylo.argos.worker_memory": {
+          "count": 71,
+          "min": 269979648,
+          "median": 270942208,
+          "p95": 274427904,
+          "max": 274477056,
+          "sum": 19288145920
+        }
+      }
+    }
+  },
+  "longRepeatedBySource": {
+    "es": {
+      "outcomes": {
+        "accepted_by_rules": 0,
+        "controlled_integrity_rejection": 5
+      },
+      "allAttemptMs": {
+        "count": 5,
+        "min": 327.8081,
+        "median": 502.7058,
+        "p95": 598.0061,
+        "max": 598.0061,
+        "sum": 2345.445
+      },
+      "metrics": {
+        "saylo.argos.candidate_recoveries": {
+          "count": 5,
+          "min": 1,
+          "median": 1,
+          "p95": 1,
+          "max": 1,
+          "sum": 5
+        },
+        "saylo.argos.candidate_retries": {
+          "count": 10,
+          "min": 1,
+          "median": 1.0,
+          "p95": 1,
+          "max": 1,
+          "sum": 10
+        },
+        "saylo.argos.integrity_preparation": {
+          "count": 5,
+          "min": 1.4824,
+          "median": 2.2289,
+          "p95": 3.8589,
+          "max": 3.8589,
+          "sum": 12.2042
+        },
+        "saylo.argos.integrity_validation": {
+          "count": 33,
+          "min": 0.0135,
+          "median": 0.8225,
+          "p95": 1.4036,
+          "max": 2.8861,
+          "sum": 25.1607
+        },
+        "saylo.argos.segment_count": {
+          "count": 5,
+          "min": 27,
+          "median": 27,
+          "p95": 27,
+          "max": 27,
+          "sum": 135
+        },
+        "saylo.argos.translation": {
+          "count": 5,
+          "min": 325.5697,
+          "median": 498.6286,
+          "p95": 595.5859,
+          "max": 595.5859,
+          "sum": 2332.0522
+        }
+      }
+    },
+    "en": {
+      "outcomes": {
+        "accepted_by_rules": 5,
+        "controlled_integrity_rejection": 0
+      },
+      "allAttemptMs": {
+        "count": 5,
+        "min": 183.4945,
+        "median": 191.148,
+        "p95": 218.8922,
+        "max": 218.8922,
+        "sum": 972.2334
+      },
+      "metrics": {
+        "saylo.argos.integrity_preparation": {
+          "count": 5,
+          "min": 1.4378,
+          "median": 1.6564,
+          "p95": 2.7959,
+          "max": 2.7959,
+          "sum": 9.757200000000001
+        },
+        "saylo.argos.integrity_validation": {
+          "count": 15,
+          "min": 0.6041,
+          "median": 0.7555,
+          "p95": 1.0296,
+          "max": 1.0296,
+          "sum": 11.922
+        },
+        "saylo.argos.reused_segments": {
+          "count": 120,
+          "min": 1,
+          "median": 1.0,
+          "p95": 1,
+          "max": 1,
+          "sum": 120
+        },
+        "saylo.argos.segment_count": {
+          "count": 5,
+          "min": 27,
+          "median": 27,
+          "p95": 27,
+          "max": 27,
+          "sum": 135
+        },
+        "saylo.argos.translation": {
+          "count": 5,
+          "min": 181.6834,
+          "median": 188.5691,
+          "p95": 217.2494,
+          "max": 217.2494,
+          "sum": 961.2379
+        },
+        "saylo.argos.worker_memory": {
+          "count": 5,
+          "min": 273924096,
+          "median": 273924096,
+          "p95": 273924096,
+          "max": 273924096,
+          "sum": 1369620480
+        }
+      }
+    }
+  },
+  "limitations": [
+    "Same machine, different runs and accepted subsets; no controlled SLA or attribution of startup regressions.",
+    "Working set samples only after delivered outputs; not continuous peak or host memory.",
+    "Validation samples include rejected alternatives, not just delivered segments.",
+    "A faster rejection is not a faster complete translation. Long Spanish messages remain unavailable."
+  ]
+}

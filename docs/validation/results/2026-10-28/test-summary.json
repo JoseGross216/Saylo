@@ -1,0 +1,111 @@
+{
+  "SchemaVersion": 1,
+  "DotnetFinal": {
+    "Total": 136.0,
+    "Passed": 136.0,
+    "Failed": 0.0,
+    "NotExecuted": 0.0,
+    "Reports": [
+      {
+        "ReportSha256": "fdcb938323c40301cd54b4978eecc706d2b7829320289490368f62cdf4ff7283",
+        "Total": 8,
+        "Passed": 8,
+        "Failed": 0,
+        "NotExecuted": 0,
+        "PreviouslySkippedIntegrations": [],
+        "NewValidationTests": []
+      },
+      {
+        "ReportSha256": "fb56082e2198cfb28a9f7078642858796c4f5d532e148699090d6e48dfffbbb8",
+        "Total": 1,
+        "Passed": 1,
+        "Failed": 0,
+        "NotExecuted": 0,
+        "PreviouslySkippedIntegrations": [],
+        "NewValidationTests": []
+      },
+      {
+        "ReportSha256": "d39956554a1e818a422d8ea95c47befd1ae888bec312c449acef19a80c3bf3a1",
+        "Total": 1,
+        "Passed": 1,
+        "Failed": 0,
+        "NotExecuted": 0,
+        "PreviouslySkippedIntegrations": [],
+        "NewValidationTests": []
+      },
+      {
+        "ReportSha256": "03c7ee46f2a1ebb67c8ad01276ad311c63c54bb1ca81eed0e64eae540c523090",
+        "Total": 126,
+        "Passed": 126,
+        "Failed": 0,
+        "NotExecuted": 0,
+        "PreviouslySkippedIntegrations": [
+          {
+            "Name": "Saylo.Modules.Translation.Tests.ArgosIntegrationTests.CanceledRealWorkIsReapedAndTheNextRequestStartsAFreshWorker",
+            "Outcome": "Passed"
+          },
+          {
+            "Name": "Saylo.Modules.Translation.Tests.ArgosIntegrationTests.TranslatesCustomerServiceFixturesInBothDirectionsAndReusesOneWorker",
+            "Outcome": "Passed"
+          },
+          {
+            "Name": "Saylo.Modules.Translation.Tests.WhisperIntegrationTests.TranscribesSpanishLocally",
+            "Outcome": "Passed"
+          },
+          {
+            "Name": "Saylo.Modules.Translation.Tests.WhisperIntegrationTests.TranscribesEnglishLocally",
+            "Outcome": "Passed"
+          },
+          {
+            "Name": "Saylo.Modules.Translation.Tests.WhisperIntegrationTests.NativeCancellationAllowsSubsequentReuse",
+            "Outcome": "Passed"
+          }
+        ],
+        "NewValidationTests": [
+          {
+            "Name": "Saylo.Modules.Translation.Tests.TranslationValidationTests.EvaluatesPublicCorpusAndMeasuresRealLatency",
+            "Outcome": "Passed"
+          },
+          {
+            "Name": "Saylo.Modules.Translation.Tests.TranslationValidationTests.CrashedRealWorkerIsReportedAndNextRequestRecovers",
+            "Outcome": "Passed"
+          },
+          {
+            "Name": "Saylo.Modules.Translation.Tests.TranslationValidationTests.ConcurrentRealRequestsKeepTheirOwnResults",
+            "Outcome": "Passed"
+          },
+          {
+            "Name": "Saylo.Modules.Translation.Tests.TranslationValidationTests.RealTranslationTimeoutReapsTheWorker",
+            "Outcome": "Passed"
+          },
+          {
+            "Name": "Saylo.Modules.Translation.Tests.TranslationValidationTests.DisposalDuringRealInferenceReapsTheWorker",
+            "Outcome": "Passed"
+          },
+          {
+            "Name": "Saylo.Modules.Translation.Tests.TranslationValidationTests.CancelingQueuedRealWorkDoesNotInterruptTheActiveRequest",
+            "Outcome": "Passed"
+          }
+        ]
+      }
+    ]
+  },
+  "Python": {
+    "Command": "python -B -m unittest discover -s tests/Saylo.Modules.Translation.Tests/Python -p test_*.py -v",
+    "Passed": 7,
+    "Failed": 0,
+    "Skipped": 0
+  },
+  "InitialExpandedRun": {
+    "Passed": 130,
+    "Failed": 6,
+    "Skipped": 0,
+    "Reason": "Metric callbacks in existing integration test wrote to an inactive xUnit output scope."
+  },
+  "IsolatedValidationRun": {
+    "Passed": 6,
+    "Failed": 0
+  },
+  "OperatingSystemNetworkDisabledTest": "pending_not_executed",
+  "HumanBilingualAcceptance": "pending_not_executed"
+}

@@ -1,0 +1,740 @@
+{
+  "schemaVersion": 1,
+  "reviewDate": "2026-10-28",
+  "method": "Assistant provisional review; no human bilingual acceptance. Automated blocks are not linguistic corrections.",
+  "corpusResultsSha256": "2b3363bffb8e51a9e06aefe3e2c34f14cd86fec6618a5d7c961b8aab47815bb8",
+  "acceptance": "not_approved_for_automatic_enterprise_use",
+  "knownMajorStatus": "8 blocked and unavailable; not linguistically resolved",
+  "historicalAnnotationCorrection": {
+    "id": "es-04",
+    "note": "The actual input contains 'la direccion de entrega', not 'su direccion'. The prior output adds 'his'. Historical evidence was preserved."
+  },
+  "results": [
+    {
+      "id": "es-01",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "none_observed",
+      "assessment": "changed_or_formatting_review",
+      "provisionalSeverity": "none_observed",
+      "observation": "La reformulacion conserva saludo y oferta de ayuda en esta revision provisional.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "es-02",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "minor",
+      "assessment": "unchanged_previous_issue",
+      "provisionalSeverity": "minor",
+      "observation": "Previous provisional findings persist because output is unchanged.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "es-03",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "none_observed",
+      "assessment": "unchanged_no_previous_issue",
+      "provisionalSeverity": "none_observed",
+      "observation": "No new issue observed in this provisional review.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "es-04",
+      "status": "controlled_integrity_rejection",
+      "previousMaximumSeverity": "major",
+      "assessment": "unavailable_not_corrected",
+      "provisionalSeverity": null,
+      "observation": "No completed translation. The constraint blocks delivery; this is not a corrected result.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "es-05",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "none_observed",
+      "assessment": "unchanged_no_previous_issue",
+      "provisionalSeverity": "none_observed",
+      "observation": "No new issue observed in this provisional review.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "es-06",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "minor",
+      "assessment": "unchanged_previous_issue",
+      "provisionalSeverity": "minor",
+      "observation": "Previous provisional findings persist because output is unchanged.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "es-07",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "none_observed",
+      "assessment": "unchanged_no_previous_issue",
+      "provisionalSeverity": "none_observed",
+      "observation": "No new issue observed in this provisional review.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "es-08",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "none_observed",
+      "assessment": "unchanged_no_previous_issue",
+      "provisionalSeverity": "none_observed",
+      "observation": "No new issue observed in this provisional review.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "es-09",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "moderate",
+      "assessment": "unchanged_previous_issue",
+      "provisionalSeverity": "moderate",
+      "observation": "Previous provisional findings persist because output is unchanged.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "es-10",
+      "status": "controlled_integrity_rejection",
+      "previousMaximumSeverity": "major",
+      "assessment": "unavailable_not_corrected",
+      "provisionalSeverity": null,
+      "observation": "No completed translation. The constraint blocks delivery; this is not a corrected result.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "es-11",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "none_observed",
+      "assessment": "unchanged_no_previous_issue",
+      "provisionalSeverity": "none_observed",
+      "observation": "No new issue observed in this provisional review.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "es-12",
+      "status": "controlled_integrity_rejection",
+      "previousMaximumSeverity": "moderate",
+      "assessment": "unavailable_not_corrected",
+      "provisionalSeverity": null,
+      "observation": "No completed translation. The constraint blocks delivery; this is not a corrected result.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "es-13",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "minor",
+      "assessment": "changed_or_formatting_review",
+      "provisionalSeverity": "minor",
+      "observation": "El aviso literal 09:00/17:30 se debe a formato 9: 00/17: 30; los valores horarios se verificaron como equivalentes. Persiste el calco 'We attend'.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "es-14",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "none_observed",
+      "assessment": "unchanged_no_previous_issue",
+      "provisionalSeverity": "none_observed",
+      "observation": "No new issue observed in this provisional review.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "es-15",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "minor",
+      "assessment": "unchanged_previous_issue",
+      "provisionalSeverity": "minor",
+      "observation": "Previous provisional findings persist because output is unchanged.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "es-16",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "none_observed",
+      "assessment": "unchanged_no_previous_issue",
+      "provisionalSeverity": "none_observed",
+      "observation": "No new issue observed in this provisional review.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "es-17",
+      "status": "controlled_integrity_rejection",
+      "previousMaximumSeverity": "major",
+      "assessment": "unavailable_not_corrected",
+      "provisionalSeverity": null,
+      "observation": "No completed translation. The constraint blocks delivery; this is not a corrected result.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "es-18",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "critical",
+      "assessment": "changed_or_formatting_review",
+      "provisionalSeverity": "moderate",
+      "observation": "Correo exacto corregido; 'send them' omite la mencion explicita de documentos. No es una correccion semantica completa.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "es-19",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "minor",
+      "assessment": "unchanged_previous_issue",
+      "provisionalSeverity": "minor",
+      "observation": "Previous provisional findings persist because output is unchanged.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "es-20",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "minor",
+      "assessment": "changed_or_formatting_review",
+      "provisionalSeverity": "minor",
+      "observation": "VPN exacto; 'The connection VPN' empeora el orden nominal. Persiste 'authentication of two factors'.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "es-21",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "moderate",
+      "assessment": "unchanged_previous_issue",
+      "provisionalSeverity": "moderate",
+      "observation": "Previous provisional findings persist because output is unchanged.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "es-22",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "moderate",
+      "assessment": "unchanged_previous_issue",
+      "provisionalSeverity": "moderate",
+      "observation": "Previous provisional findings persist because output is unchanged.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "es-23",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "minor",
+      "assessment": "unchanged_previous_issue",
+      "provisionalSeverity": "minor",
+      "observation": "Previous provisional findings persist because output is unchanged.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "es-24",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "none_observed",
+      "assessment": "unchanged_no_previous_issue",
+      "provisionalSeverity": "none_observed",
+      "observation": "No new issue observed in this provisional review.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "es-25",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "none_observed",
+      "assessment": "unchanged_no_previous_issue",
+      "provisionalSeverity": "none_observed",
+      "observation": "No new issue observed in this provisional review.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "es-26",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "minor",
+      "assessment": "unchanged_previous_issue",
+      "provisionalSeverity": "minor",
+      "observation": "Previous provisional findings persist because output is unchanged.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "es-27",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "none_observed",
+      "assessment": "unchanged_no_previous_issue",
+      "provisionalSeverity": "none_observed",
+      "observation": "No new issue observed in this provisional review.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "es-28",
+      "status": "controlled_integrity_rejection",
+      "previousMaximumSeverity": "major",
+      "assessment": "unavailable_not_corrected",
+      "provisionalSeverity": null,
+      "observation": "No completed translation. The constraint blocks delivery; this is not a corrected result.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "es-29",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "minor",
+      "assessment": "changed_or_formatting_review",
+      "provisionalSeverity": "none_observed",
+      "observation": "Conserva cantidades/modelos; 'units of model' mejora el calco 'units from model' en esta muestra.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "es-30",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "moderate",
+      "assessment": "unchanged_previous_issue",
+      "provisionalSeverity": "moderate",
+      "observation": "Previous provisional findings persist because output is unchanged.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "es-31",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "moderate",
+      "assessment": "unchanged_previous_issue",
+      "provisionalSeverity": "moderate",
+      "observation": "Previous provisional findings persist because output is unchanged.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "es-32",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "none_observed",
+      "assessment": "unchanged_no_previous_issue",
+      "provisionalSeverity": "none_observed",
+      "observation": "No new issue observed in this provisional review.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "es-33",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "critical",
+      "assessment": "changed_or_formatting_review",
+      "provisionalSeverity": "moderate",
+      "observation": "Seguimiento exacto corregido. Persiste 'monitoring number', terminologia no recomendada.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "es-34",
+      "status": "controlled_integrity_rejection",
+      "previousMaximumSeverity": "none_observed",
+      "assessment": "unavailable_not_corrected",
+      "provisionalSeverity": null,
+      "observation": "No completed translation. The constraint blocks delivery; this is not a corrected result.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "es-35",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "none_observed",
+      "assessment": "unchanged_no_previous_issue",
+      "provisionalSeverity": "none_observed",
+      "observation": "No new issue observed in this provisional review.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "es-36",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "none_observed",
+      "assessment": "unchanged_no_previous_issue",
+      "provisionalSeverity": "none_observed",
+      "observation": "No new issue observed in this provisional review.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "es-37",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "minor",
+      "assessment": "unchanged_previous_issue",
+      "provisionalSeverity": "minor",
+      "observation": "Previous provisional findings persist because output is unchanged.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "es-38",
+      "status": "controlled_integrity_rejection",
+      "previousMaximumSeverity": "major",
+      "assessment": "unavailable_not_corrected",
+      "provisionalSeverity": null,
+      "observation": "No completed translation. The constraint blocks delivery; this is not a corrected result.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "es-39",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "none_observed",
+      "assessment": "unchanged_no_previous_issue",
+      "provisionalSeverity": "none_observed",
+      "observation": "No new issue observed in this provisional review.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "es-40",
+      "status": "controlled_integrity_rejection",
+      "previousMaximumSeverity": "major",
+      "assessment": "unavailable_not_corrected",
+      "provisionalSeverity": null,
+      "observation": "No completed translation. The constraint blocks delivery; this is not a corrected result.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "en-01",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "none_observed",
+      "assessment": "unchanged_no_previous_issue",
+      "provisionalSeverity": "none_observed",
+      "observation": "No new issue observed in this provisional review.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "en-02",
+      "status": "controlled_integrity_rejection",
+      "previousMaximumSeverity": "major",
+      "assessment": "unavailable_not_corrected",
+      "provisionalSeverity": null,
+      "observation": "No completed translation. The constraint blocks delivery; this is not a corrected result.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "en-03",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "minor",
+      "assessment": "unchanged_previous_issue",
+      "provisionalSeverity": "minor",
+      "observation": "Previous provisional findings persist because output is unchanged.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "en-04",
+      "status": "controlled_integrity_rejection",
+      "previousMaximumSeverity": "moderate",
+      "assessment": "unavailable_not_corrected",
+      "provisionalSeverity": null,
+      "observation": "No completed translation. The constraint blocks delivery; this is not a corrected result.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "en-05",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "none_observed",
+      "assessment": "unchanged_no_previous_issue",
+      "provisionalSeverity": "none_observed",
+      "observation": "No new issue observed in this provisional review.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "en-06",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "moderate",
+      "assessment": "unchanged_previous_issue",
+      "provisionalSeverity": "moderate",
+      "observation": "Previous provisional findings persist because output is unchanged.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "en-07",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "none_observed",
+      "assessment": "unchanged_no_previous_issue",
+      "provisionalSeverity": "none_observed",
+      "observation": "No new issue observed in this provisional review.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "en-08",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "none_observed",
+      "assessment": "unchanged_no_previous_issue",
+      "provisionalSeverity": "none_observed",
+      "observation": "No new issue observed in this provisional review.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "en-09",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "none_observed",
+      "assessment": "unchanged_no_previous_issue",
+      "provisionalSeverity": "none_observed",
+      "observation": "No new issue observed in this provisional review.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "en-10",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "none_observed",
+      "assessment": "unchanged_no_previous_issue",
+      "provisionalSeverity": "none_observed",
+      "observation": "No new issue observed in this provisional review.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "en-11",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "none_observed",
+      "assessment": "unchanged_no_previous_issue",
+      "provisionalSeverity": "none_observed",
+      "observation": "No new issue observed in this provisional review.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "en-12",
+      "status": "controlled_integrity_rejection",
+      "previousMaximumSeverity": "none_observed",
+      "assessment": "unavailable_not_corrected",
+      "provisionalSeverity": null,
+      "observation": "No completed translation. The constraint blocks delivery; this is not a corrected result.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "en-13",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "none_observed",
+      "assessment": "unchanged_no_previous_issue",
+      "provisionalSeverity": "none_observed",
+      "observation": "No new issue observed in this provisional review.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "en-14",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "none_observed",
+      "assessment": "unchanged_no_previous_issue",
+      "provisionalSeverity": "none_observed",
+      "observation": "No new issue observed in this provisional review.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "en-15",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "none_observed",
+      "assessment": "unchanged_no_previous_issue",
+      "provisionalSeverity": "none_observed",
+      "observation": "No new issue observed in this provisional review.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "en-16",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "none_observed",
+      "assessment": "changed_or_formatting_review",
+      "provisionalSeverity": "none_observed",
+      "observation": "Orden y pedido son alternativas validas aqui; glosario corporativo pendiente.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "en-17",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "minor",
+      "assessment": "unchanged_previous_issue",
+      "provisionalSeverity": "minor",
+      "observation": "Previous provisional findings persist because output is unchanged.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "en-18",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "none_observed",
+      "assessment": "unchanged_no_previous_issue",
+      "provisionalSeverity": "none_observed",
+      "observation": "No new issue observed in this provisional review.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "en-19",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "none_observed",
+      "assessment": "unchanged_no_previous_issue",
+      "provisionalSeverity": "none_observed",
+      "observation": "No new issue observed in this provisional review.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "en-20",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "none_observed",
+      "assessment": "unchanged_no_previous_issue",
+      "provisionalSeverity": "none_observed",
+      "observation": "No new issue observed in this provisional review.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "en-21",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "none_observed",
+      "assessment": "unchanged_no_previous_issue",
+      "provisionalSeverity": "none_observed",
+      "observation": "No new issue observed in this provisional review.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "en-22",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "none_observed",
+      "assessment": "unchanged_no_previous_issue",
+      "provisionalSeverity": "none_observed",
+      "observation": "No new issue observed in this provisional review.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "en-23",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "moderate",
+      "assessment": "unchanged_previous_issue",
+      "provisionalSeverity": "moderate",
+      "observation": "Previous provisional findings persist because output is unchanged.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "en-24",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "minor",
+      "assessment": "unchanged_previous_issue",
+      "provisionalSeverity": "minor",
+      "observation": "Previous provisional findings persist because output is unchanged.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "en-25",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "none_observed",
+      "assessment": "unchanged_no_previous_issue",
+      "provisionalSeverity": "none_observed",
+      "observation": "No new issue observed in this provisional review.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "en-26",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "none_observed",
+      "assessment": "unchanged_no_previous_issue",
+      "provisionalSeverity": "none_observed",
+      "observation": "No new issue observed in this provisional review.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "en-27",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "none_observed",
+      "assessment": "unchanged_no_previous_issue",
+      "provisionalSeverity": "none_observed",
+      "observation": "No new issue observed in this provisional review.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "en-28",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "none_observed",
+      "assessment": "unchanged_no_previous_issue",
+      "provisionalSeverity": "none_observed",
+      "observation": "No new issue observed in this provisional review.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "en-29",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "none_observed",
+      "assessment": "unchanged_no_previous_issue",
+      "provisionalSeverity": "none_observed",
+      "observation": "No new issue observed in this provisional review.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "en-30",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "none_observed",
+      "assessment": "unchanged_no_previous_issue",
+      "provisionalSeverity": "none_observed",
+      "observation": "No new issue observed in this provisional review.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "en-31",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "none_observed",
+      "assessment": "unchanged_no_previous_issue",
+      "provisionalSeverity": "none_observed",
+      "observation": "No new issue observed in this provisional review.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "en-32",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "none_observed",
+      "assessment": "unchanged_no_previous_issue",
+      "provisionalSeverity": "none_observed",
+      "observation": "No new issue observed in this provisional review.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "en-33",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "none_observed",
+      "assessment": "unchanged_no_previous_issue",
+      "provisionalSeverity": "none_observed",
+      "observation": "No new issue observed in this provisional review.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "en-34",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "none_observed",
+      "assessment": "unchanged_no_previous_issue",
+      "provisionalSeverity": "none_observed",
+      "observation": "No new issue observed in this provisional review.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "en-35",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "none_observed",
+      "assessment": "unchanged_no_previous_issue",
+      "provisionalSeverity": "none_observed",
+      "observation": "No new issue observed in this provisional review.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "en-36",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "none_observed",
+      "assessment": "unchanged_no_previous_issue",
+      "provisionalSeverity": "none_observed",
+      "observation": "No new issue observed in this provisional review.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "en-37",
+      "status": "controlled_integrity_rejection",
+      "previousMaximumSeverity": "major",
+      "assessment": "unavailable_not_corrected",
+      "provisionalSeverity": null,
+      "observation": "No completed translation. The constraint blocks delivery; this is not a corrected result.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "en-38",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "none_observed",
+      "assessment": "unchanged_no_previous_issue",
+      "provisionalSeverity": "none_observed",
+      "observation": "No new issue observed in this provisional review.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "en-39",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "minor",
+      "assessment": "unchanged_previous_issue",
+      "provisionalSeverity": "minor",
+      "observation": "Previous provisional findings persist because output is unchanged.",
+      "humanBilingualReview": "pending"
+    },
+    {
+      "id": "en-40",
+      "status": "accepted_by_rules",
+      "previousMaximumSeverity": "moderate",
+      "assessment": "unchanged_previous_issue",
+      "provisionalSeverity": "moderate",
+      "observation": "Previous provisional findings persist because output is unchanged.",
+      "humanBilingualReview": "pending"
+    }
+  ],
+  "longMessageNotes": [
+    "Spanish repeated probe was blocked on referent validation; no complete translation delivered.",
+    "English repeated probe retained all nine references in the delivered result, but used 'Te enviaremos': default policy does not enforce formality.",
+    "The cross-sentence reference probe was rejected in the final run; discourse fidelity is not certified.",
+    "Performance long probe: 2 of 3 delivered, 1 rejected; variability from opaque references remains."
+  ]
+}

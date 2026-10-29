@@ -1,0 +1,8 @@
+{
+  "CanceledLocalLoad": true,
+  "CancellationToCompletionMs": 4.8296,
+  "RecoveryMs": 226.4498,
+  "PreCanceledMs": 0.2668,
+  "PartialResultEmitted": false,
+  "Note": "Real pinned dictionary loader, signaled immediately before reading its file; no artificial sleep or phoneme backend."
+}

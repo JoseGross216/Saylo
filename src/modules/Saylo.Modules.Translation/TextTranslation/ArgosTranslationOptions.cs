@@ -9,11 +9,13 @@ public sealed record ArgosTranslationOptions
     public TimeSpan StartupTimeout { get; }
     public TimeSpan TranslationTimeout { get; }
     public int Threads { get; }
+    public TranslationIntegrityOptions Integrity { get; }
     public const int MaximumTextLength = 1000;
 
     public ArgosTranslationOptions(string pythonExecutablePath, string modelDirectory,
         string? workerScriptPath = null, string? runtimeDataDirectory = null,
-        TimeSpan? startupTimeout = null, TimeSpan? translationTimeout = null, int threads = 4)
+        TimeSpan? startupTimeout = null, TimeSpan? translationTimeout = null, int threads = 4,
+        TranslationIntegrityOptions? integrity = null)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(pythonExecutablePath);
         ArgumentException.ThrowIfNullOrWhiteSpace(modelDirectory);
@@ -31,5 +33,6 @@ public sealed record ArgosTranslationOptions
             || TranslationTimeout <= TimeSpan.Zero || TranslationTimeout.TotalMilliseconds > int.MaxValue)
             throw new ArgumentOutOfRangeException(nameof(startupTimeout), "Timeouts must be positive and bounded.");
         Threads = threads;
+        Integrity = integrity ?? new TranslationIntegrityOptions();
     }
 }

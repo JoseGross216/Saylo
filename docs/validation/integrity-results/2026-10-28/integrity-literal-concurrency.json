@@ -1,0 +1,25 @@
+{
+  "Results": [
+    {
+      "Index": 0,
+      "Status": "accepted_by_rules",
+      "Output": "Por favor, email support@example.com."
+    },
+    {
+      "Index": 1,
+      "Status": "accepted_by_rules",
+      "Output": "The monitoring number is ZX987654321ES."
+    },
+    {
+      "Index": 2,
+      "Status": "accepted_by_rules",
+      "Output": "Your order AB-009871 will come."
+    },
+    {
+      "Index": 3,
+      "Status": "accepted_by_rules",
+      "Output": "Por favor visita https://example.com/help."
+    }
+  ],
+  "ReusedAfterRejection": true
+}

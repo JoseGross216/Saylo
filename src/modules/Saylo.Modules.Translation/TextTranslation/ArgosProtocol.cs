@@ -5,6 +5,25 @@ namespace Saylo.Modules.Translation.TextTranslation;
 
 internal static class ArgosProtocol
 {
+    internal static IReadOnlyList<string> ParseCandidates(string? line, string expectedId)
+    {
+        var primary = ParseResponse(line, expectedId);
+        using var document = JsonDocument.Parse(line!);
+        if (!document.RootElement.TryGetProperty("candidates", out var candidates) || candidates.ValueKind != JsonValueKind.Array ||
+            candidates.GetArrayLength() is < 1 or > 4)
+            throw new InvalidDataException("Invalid bounded candidate response.");
+        var values = new List<string>();
+        foreach (var value in candidates.EnumerateArray())
+        {
+            if (value.ValueKind != JsonValueKind.String || string.IsNullOrWhiteSpace(value.GetString()) || value.GetString()!.Length > 4096)
+                throw new InvalidDataException("Invalid candidate text.");
+            values.Add(value.GetString()!);
+        }
+        if (values[0] != primary)
+            throw new InvalidDataException("Candidate ordering does not match its primary response.");
+        return values.Distinct(StringComparer.Ordinal).ToArray();
+    }
+
     internal static string ParseResponse(string? line, string expectedId, bool ready = false)
     {
         if (line is null || line.Length > 65536)

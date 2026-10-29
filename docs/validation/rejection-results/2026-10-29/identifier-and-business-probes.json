@@ -1,0 +1,55 @@
+{
+  "Profile": "customer-service-v2",
+  "Results": [
+    {
+      "Input": "Please send the documents to support@example.com and copy support@example.com.",
+      "Source": "en",
+      "Output": "Por favor env\u00EDe los documentos al support@example.com y copie support@example.com.",
+      "Constraint": null,
+      "Status": "accepted_by_rules",
+      "TotalMs": 3773.5272
+    },
+    {
+      "Input": "Open https://example.com/orders/AB-123?ref=004812 and https://example.com/help.",
+      "Source": "en",
+      "Output": "Abierto https://example.com/orders/AB-123?ref=004812 y https://example.com/help.",
+      "Constraint": null,
+      "Status": "accepted_by_rules",
+      "TotalMs": 93.5983
+    },
+    {
+      "Input": "Your tracking number is ZX987654321ES and your order code is AB-009871.",
+      "Source": "en",
+      "Output": "Su n\u00FAmero de seguimiento es ZX987654321ES y su c\u00F3digo de pedido es AB-009871.",
+      "Constraint": null,
+      "Status": "accepted_by_rules",
+      "TotalMs": 159.4353
+    },
+    {
+      "Input": "Please call \u002B1 (212) 555-0199 and keep reference XY-004812.",
+      "Source": "en",
+      "Output": "Por favor llame al \u002B1 (212) 555-0199 y mantenga la referencia XY-004812.",
+      "Constraint": null,
+      "Status": "accepted_by_rules",
+      "TotalMs": 143.7099
+    },
+    {
+      "Input": "Your request is still under review. Do not cancel order 12345. We will email you when it is complete.",
+      "Source": "en",
+      "Output": "Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Le enviaremos un correo electr\u00F3nico cuando est\u00E9 completo.",
+      "Constraint": null,
+      "Status": "accepted_by_rules",
+      "TotalMs": 273.549
+    },
+    {
+      "Input": "Le informaremos por correo cuando termine.",
+      "Source": "es",
+      "Output": null,
+      "Constraint": "Referent",
+      "Status": "controlled_integrity_rejection",
+      "TotalMs": 297.3294
+    }
+  ],
+  "HumanBilingualAcceptance": "pending",
+  "WorkerExited": true
+}

@@ -1,0 +1,17 @@
+{
+  "ValidationDate": "2026-10-28",
+  "Timezone": "America/Caracas",
+  "Processor": "11th Gen Intel(R) Core(TM) i5-11400H @ 2.70GHz",
+  "PhysicalCores": 6,
+  "LogicalProcessors": 12,
+  "PhysicalMemoryBytes": 16952647680,
+  "OperatingSystem": "Microsoft Windows 11 Pro",
+  "OperatingSystemVersion": "10.0.26200",
+  "OSArchitecture": "64-bit",
+  "GitBranch": "users/stanley-translation",
+  "GitHead": "24fd1354c9aee3c58450ad4283cc23f74b003b82",
+  "PythonProfile": "tools/argos/requirements-windows-x64.lock",
+  "ComputeType": "int8",
+  "Device": "cpu",
+  "Threads": 4
+}

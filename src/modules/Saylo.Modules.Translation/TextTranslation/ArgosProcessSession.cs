@@ -11,11 +11,18 @@ internal interface IArgosSession : IAsyncDisposable
     Task<string> TranslateAsync(string id, string text, string source, string target, CancellationToken token);
 }
 
-internal sealed class ArgosProcessSession : IArgosSession
+internal interface IArgosCandidateSession : IArgosSession
+{
+    bool SupportsRankedCandidates { get; }
+    Task<IReadOnlyList<string>> TranslateCandidatesAsync(string id, string text, string source, string target, CancellationToken token);
+}
+
+internal sealed class ArgosProcessSession : IArgosCandidateSession
 {
     private readonly Process _process;
     private readonly Task _stderrDrain;
     private int _workerProcessId;
+    public bool SupportsRankedCandidates { get; private set; }
 
     private ArgosProcessSession(Process process)
     {
@@ -62,6 +69,9 @@ internal sealed class ArgosProcessSession : IArgosSession
             ArgosProtocol.ParseResponse(ready, "ready", ready: true);
             using var document = JsonDocument.Parse(ready!);
             session._workerProcessId = document.RootElement.GetProperty("pid").GetInt32();
+            session.SupportsRankedCandidates = document.RootElement.TryGetProperty("capabilities", out var capabilities) &&
+                capabilities.ValueKind == JsonValueKind.Array && capabilities.EnumerateArray().Any(value =>
+                    value.ValueKind == JsonValueKind.String && value.GetString() == "ranked_candidates_v1");
             if (session._workerProcessId <= 0)
                 throw new InvalidDataException("Invalid worker process ID.");
             return session;
@@ -75,6 +85,16 @@ internal sealed class ArgosProcessSession : IArgosSession
         await _process.StandardInput.WriteLineAsync(request.AsMemory(), token).ConfigureAwait(false);
         await _process.StandardInput.FlushAsync(token).ConfigureAwait(false);
         return ArgosProtocol.ParseResponse(await _process.StandardOutput.ReadLineAsync(token).ConfigureAwait(false), id);
+    }
+
+    public async Task<IReadOnlyList<string>> TranslateCandidatesAsync(string id, string text, string source, string target, CancellationToken token)
+    {
+        if (!SupportsRankedCandidates)
+            throw new InvalidOperationException("The worker does not support ranked candidates.");
+        var request = JsonSerializer.Serialize(new { protocol = 1, id, text, source, target, candidates = 4 });
+        await _process.StandardInput.WriteLineAsync(request.AsMemory(), token).ConfigureAwait(false);
+        await _process.StandardInput.FlushAsync(token).ConfigureAwait(false);
+        return ArgosProtocol.ParseCandidates(await _process.StandardOutput.ReadLineAsync(token).ConfigureAwait(false), id);
     }
 
     public async ValueTask DisposeAsync()

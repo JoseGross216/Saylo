@@ -1,0 +1,2846 @@
+{
+  "SchemaVersion": 1,
+  "Profile": "previous-profile-v1",
+  "Policy": {
+    "MaximumSegmentLength": 240,
+    "RequireFormalSpanish": true,
+    "ProtectedTerms": [],
+    "Glossary": [
+      {
+        "SourceLanguage": "en",
+        "SourceTerm": "customer support",
+        "AllowedTargets": [
+          "atenci\u00F3n al cliente",
+          "soporte al cliente",
+          "servicio al cliente"
+        ]
+      },
+      {
+        "SourceLanguage": "en",
+        "SourceTerm": "water damage",
+        "AllowedTargets": [
+          "da\u00F1os por agua",
+          "da\u00F1o por agua",
+          "da\u00F1os causados por agua",
+          "da\u00F1o causado por agua"
+        ]
+      },
+      {
+        "SourceLanguage": "es",
+        "SourceTerm": "escalar",
+        "AllowedTargets": [
+          "escalate",
+          "escalating",
+          "escalated"
+        ]
+      }
+    ]
+  },
+  "DatasetSha256": "9a7117eb1ac9ca9b3e472e860fd967c35f5c50fa4c8a04910d370f623f35e35e",
+  "PreviousComparisonSha256": "3ba9362dfbb0feb4a86f153982300d6e0bc8c68b6b8b659281c2c0f0f28fa6d7",
+  "Accepted": 72,
+  "Rejected": 8,
+  "Recovered": [
+    "es-04",
+    "es-28",
+    "es-40",
+    "en-04"
+  ],
+  "NewlyRejected": [],
+  "FirstTranslationMs": 3732.0306,
+  "Results": [
+    {
+      "Id": "es-01",
+      "Source": "es",
+      "Target": "en",
+      "Input": "Buenos d\u00EDas. \u00BFEn qu\u00E9 puedo ayudarle hoy?",
+      "PreviousOutput": "Good morning. What can I do for you today?",
+      "Output": "Good morning. What can I do for you today?",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 3732.0306
+    },
+    {
+      "Id": "es-02",
+      "Source": "es",
+      "Target": "en",
+      "Input": "Buenas tardes, gracias por comunicarse con soporte.",
+      "PreviousOutput": "Good afternoon, thank you for contacting with support.",
+      "Output": "Good afternoon, thank you for contacting with support.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 133.7753
+    },
+    {
+      "Id": "es-03",
+      "Source": "es",
+      "Target": "en",
+      "Input": "\u00BFPodr\u00EDa indicarme su n\u00FAmero de pedido, por favor?",
+      "PreviousOutput": "Can I have your order number, please?",
+      "Output": "Can I have your order number, please?",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 96.4491
+    },
+    {
+      "Id": "es-04",
+      "Source": "es",
+      "Target": "en",
+      "Input": "Necesito confirmar la direcci\u00F3n de entrega.",
+      "PreviousOutput": null,
+      "Output": "I need to confirm the delivery address.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 146.6753
+    },
+    {
+      "Id": "es-05",
+      "Source": "es",
+      "Target": "en",
+      "Input": "Su solicitud ha sido procesada correctamente.",
+      "PreviousOutput": "Your request has been properly processed.",
+      "Output": "Your request has been properly processed.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 69.194
+    },
+    {
+      "Id": "es-06",
+      "Source": "es",
+      "Target": "en",
+      "Input": "\u00BFDesea recibir la factura por correo electr\u00F3nico?",
+      "PreviousOutput": "Do you wish to receive an invoice by email?",
+      "Output": "Do you wish to receive an invoice by email?",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 112.8467
+    },
+    {
+      "Id": "es-07",
+      "Source": "es",
+      "Target": "en",
+      "Input": "S\u00ED, el producto est\u00E1 disponible en este momento.",
+      "PreviousOutput": "Yes, the product\u0027s available at this time.",
+      "Output": "Yes, the product\u0027s available at this time.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 101.0157
+    },
+    {
+      "Id": "es-08",
+      "Source": "es",
+      "Target": "en",
+      "Input": "No cancele el pedido 12345.",
+      "PreviousOutput": "Do not cancel order 12345.",
+      "Output": "Do not cancel order 12345.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 105.3615
+    },
+    {
+      "Id": "es-09",
+      "Source": "es",
+      "Target": "en",
+      "Input": "No hemos recibido su pago todav\u00EDa.",
+      "PreviousOutput": "We haven\u0027t been paid yet.",
+      "Output": "We haven\u0027t been paid yet.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 95.5765
+    },
+    {
+      "Id": "es-10",
+      "Source": "es",
+      "Target": "en",
+      "Input": "Nunca le pediremos su contrase\u00F1a por tel\u00E9fono.",
+      "PreviousOutput": null,
+      "Output": null,
+      "Status": "controlled_integrity_rejection",
+      "Constraint": "Referent",
+      "TotalMs": 167.2651
+    },
+    {
+      "Id": "es-11",
+      "Source": "es",
+      "Target": "en",
+      "Input": "La entrega est\u00E1 programada para el 15 de noviembre de 2026.",
+      "PreviousOutput": "The delivery\u0027s scheduled for November 15th 2026.",
+      "Output": "The delivery\u0027s scheduled for November 15th 2026.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 94.6978
+    },
+    {
+      "Id": "es-12",
+      "Source": "es",
+      "Target": "en",
+      "Input": "Su cita es el 03/04/2026; confirme si se refiere al 3 de abril.",
+      "PreviousOutput": null,
+      "Output": null,
+      "Status": "controlled_integrity_rejection",
+      "Constraint": "NumericAmbiguity",
+      "TotalMs": 0.3101
+    },
+    {
+      "Id": "es-13",
+      "Source": "es",
+      "Target": "en",
+      "Input": "Atendemos de 09:00 a 17:30, de lunes a viernes.",
+      "PreviousOutput": "We attend from 9: 00 to 17: 30, Monday to Friday.",
+      "Output": "We attend from 9: 00 to 17: 30, Monday to Friday.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 135.8197
+    },
+    {
+      "Id": "es-14",
+      "Source": "es",
+      "Target": "en",
+      "Input": "El precio total es de 49.95 USD, impuestos incluidos.",
+      "PreviousOutput": "The total price is USD 49.95, including taxes.",
+      "Output": "The total price is USD 49.95, including taxes.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 116.6276
+    },
+    {
+      "Id": "es-15",
+      "Source": "es",
+      "Target": "en",
+      "Input": "El reembolso ser\u00E1 de 25 EUR y no de 250 EUR.",
+      "PreviousOutput": "Reimbursement shall be EUR 25 and not EUR 250.",
+      "Output": "Reimbursement shall be EUR 25 and not EUR 250.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 121.3938
+    },
+    {
+      "Id": "es-16",
+      "Source": "es",
+      "Target": "en",
+      "Input": "Su pedido AB-009871 llegar\u00E1 ma\u00F1ana.",
+      "PreviousOutput": "Your order AB-009871 will come tomorrow.",
+      "Output": "Your order AB-009871 will come tomorrow.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 107.7594
+    },
+    {
+      "Id": "es-17",
+      "Source": "es",
+      "Target": "en",
+      "Input": "La ingeniera Mar\u00EDa L\u00F3pez revisar\u00E1 su caso.",
+      "PreviousOutput": null,
+      "Output": null,
+      "Status": "controlled_integrity_rejection",
+      "Constraint": "Referent",
+      "TotalMs": 209.4316
+    },
+    {
+      "Id": "es-18",
+      "Source": "es",
+      "Target": "en",
+      "Input": "Por favor, env\u00EDe los documentos a soporte@example.com.",
+      "PreviousOutput": "Please send them to soporte@example.com.",
+      "Output": "Please send them to soporte@example.com.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 125.6124
+    },
+    {
+      "Id": "es-19",
+      "Source": "es",
+      "Target": "en",
+      "Input": "Reinicie el servidor SQL despu\u00E9s de guardar la configuraci\u00F3n.",
+      "PreviousOutput": "Reboot SQL server after saving settings.",
+      "Output": "Reboot server SQL after saving configuration.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 121.0407
+    },
+    {
+      "Id": "es-20",
+      "Source": "es",
+      "Target": "en",
+      "Input": "La conexi\u00F3n VPN requiere autenticaci\u00F3n de dos factores.",
+      "PreviousOutput": "The connection VPN requires authentication of two factors.",
+      "Output": "The VPN connection requires authentication of two factors.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 102.195
+    },
+    {
+      "Id": "es-21",
+      "Source": "es",
+      "Target": "en",
+      "Input": "Le agradecer\u00EDamos que adjuntara una copia de la factura.",
+      "PreviousOutput": "We should be grateful if you would have a copy of the invoice attached.",
+      "Output": "We should be grateful if you would have a copy of the invoice attached.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 130.1739
+    },
+    {
+      "Id": "es-22",
+      "Source": "es",
+      "Target": "en",
+      "Input": "\u00BFSer\u00EDa tan amable de esperar un momento mientras verifico la informaci\u00F3n?",
+      "PreviousOutput": "Would you be so kind as to have a moment while I check information?",
+      "Output": "Would you be so kind as to have a moment while I check information?",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 147.5203
+    },
+    {
+      "Id": "es-23",
+      "Source": "es",
+      "Target": "en",
+      "Input": "El cargo aparece duplicado en mi cuenta.",
+      "PreviousOutput": "The charge appears double in my account.",
+      "Output": "The charge appears double in my account.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 119.3829
+    },
+    {
+      "Id": "es-24",
+      "Source": "es",
+      "Target": "en",
+      "Input": "Voy al banco para revisar el pago.",
+      "PreviousOutput": "I\u0027m going to the bank to check the payment.",
+      "Output": "I\u0027m going to the bank to check the payment.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 98.4314
+    },
+    {
+      "Id": "es-25",
+      "Source": "es",
+      "Target": "en",
+      "Input": "Me se bloque\u00F3 la cuenta y no puedo entrar.",
+      "PreviousOutput": "My account\u0027s been blocked and I can\u0027t get in.",
+      "Output": "My account\u0027s been blocked and I can\u0027t get in.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 111.3416
+    },
+    {
+      "Id": "es-26",
+      "Source": "es",
+      "Target": "en",
+      "Input": "Ayer llam\u00E9 y me dijeron de que el env\u00EDo ya sali\u00F3.",
+      "PreviousOutput": "Yesterday I called and they told me that the dispatch\u0027s out.",
+      "Output": "Yesterday I called and they told me that the dispatch\u0027s out.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 154.0266
+    },
+    {
+      "Id": "es-27",
+      "Source": "es",
+      "Target": "en",
+      "Input": "No quiero un reemplazo; quiero un reembolso.",
+      "PreviousOutput": "I don\u0027t want a replacement. I want a refund.",
+      "Output": "I don\u0027t want a replacement. I want a refund.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 127.8175
+    },
+    {
+      "Id": "es-28",
+      "Source": "es",
+      "Target": "en",
+      "Input": "Si el paquete no llega antes del viernes, vuelva a contactarnos.",
+      "PreviousOutput": null,
+      "Output": "If the package doesn\u0027t get here before Friday, get back to us.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 257.4557
+    },
+    {
+      "Id": "es-29",
+      "Source": "es",
+      "Target": "en",
+      "Input": "Confirme 3 unidades del modelo X200 y 2 del modelo X300.",
+      "PreviousOutput": "Confirm 3 units of model X200 and 2 of model X300.",
+      "Output": "Confirm 3 units of model X200 and 2 of model X300.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 207.0317
+    },
+    {
+      "Id": "es-30",
+      "Source": "es",
+      "Target": "en",
+      "Input": "El descuento es del 15 %, pero no se aplica al env\u00EDo.",
+      "PreviousOutput": "The discount is 15% but does not apply to sending.",
+      "Output": "The discount is 15% but does not apply to sending.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 143.4511
+    },
+    {
+      "Id": "es-31",
+      "Source": "es",
+      "Target": "en",
+      "Input": "El pago fue rechazado, no aprobado.",
+      "PreviousOutput": "The payment was rejected, but did not approve.",
+      "Output": "The payment was rejected, but did not approve.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 91.5819
+    },
+    {
+      "Id": "es-32",
+      "Source": "es",
+      "Target": "en",
+      "Input": "Su saldo pendiente es de 0 USD.",
+      "PreviousOutput": "The outstanding balance is USD 0.",
+      "Output": "The outstanding balance is USD 0.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 80.1561
+    },
+    {
+      "Id": "es-33",
+      "Source": "es",
+      "Target": "en",
+      "Input": "El n\u00FAmero de seguimiento es ZX987654321ES.",
+      "PreviousOutput": "The monitoring number is ZX987654321ES.",
+      "Output": "The monitoring number is ZX987654321ES.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 104.2007
+    },
+    {
+      "Id": "es-34",
+      "Source": "es",
+      "Target": "en",
+      "Input": "La se\u00F1ora Ana P\u00E9rez puede recoger el paquete con su identificaci\u00F3n.",
+      "PreviousOutput": null,
+      "Output": null,
+      "Status": "controlled_integrity_rejection",
+      "Constraint": "Referent",
+      "TotalMs": 245.1085
+    },
+    {
+      "Id": "es-35",
+      "Source": "es",
+      "Target": "en",
+      "Input": "No comparta el c\u00F3digo 004812 con nadie.",
+      "PreviousOutput": "Do not share code 004812 with anyone.",
+      "Output": "Do not share code 004812 with anyone.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 112.1764
+    },
+    {
+      "Id": "es-36",
+      "Source": "es",
+      "Target": "en",
+      "Input": "\u00BFPuede confirmar que recibi\u00F3 ambos archivos adjuntos?",
+      "PreviousOutput": "Can you confirm that you received both attachments?",
+      "Output": "Can you confirm that you received both attachments?",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 107.0717
+    },
+    {
+      "Id": "es-37",
+      "Source": "es",
+      "Target": "en",
+      "Input": "La garant\u00EDa cubre piezas, pero excluye da\u00F1os por agua.",
+      "PreviousOutput": "The guarantee cover parts but excludes water damage.",
+      "Output": "The guarantee cover parts but excludes water damage.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 100.1963
+    },
+    {
+      "Id": "es-38",
+      "Source": "es",
+      "Target": "en",
+      "Input": "Vamos a escalar la incidencia al equipo t\u00E9cnico.",
+      "PreviousOutput": null,
+      "Output": null,
+      "Status": "controlled_integrity_rejection",
+      "Constraint": "Glossary",
+      "TotalMs": 242.4794
+    },
+    {
+      "Id": "es-39",
+      "Source": "es",
+      "Target": "en",
+      "Input": "Gracias por su paciencia; le informaremos cuando termine la revisi\u00F3n.",
+      "PreviousOutput": "Thank you for your patience. We\u0027ll report back to you after the review.",
+      "Output": "Thank you for your patience. We\u0027ll report back to you after the review.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 229.7703
+    },
+    {
+      "Id": "es-40",
+      "Source": "es",
+      "Target": "en",
+      "Input": "El cliente dijo: \u00ABNo autoric\u00E9 ese cargo de 80 USD\u00BB.",
+      "PreviousOutput": null,
+      "Output": "The client said, \u0022I did not authorize that US $80 charge.\u0022",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 584.8434
+    },
+    {
+      "Id": "en-01",
+      "Source": "en",
+      "Target": "es",
+      "Input": "Good morning. How may I help you today?",
+      "PreviousOutput": "Buenos d\u00EDas. \u00BFC\u00F3mo puedo ayudarle hoy?",
+      "Output": "Buenos d\u00EDas. \u00BFC\u00F3mo puedo ayudarle hoy?",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 114.4356
+    },
+    {
+      "Id": "en-02",
+      "Source": "en",
+      "Target": "es",
+      "Input": "Good afternoon, thank you for contacting customer support.",
+      "PreviousOutput": null,
+      "Output": null,
+      "Status": "controlled_integrity_rejection",
+      "Constraint": "Glossary",
+      "TotalMs": 229.8923
+    },
+    {
+      "Id": "en-03",
+      "Source": "en",
+      "Target": "es",
+      "Input": "Could you please confirm your order number?",
+      "PreviousOutput": "\u00BFPodr\u00EDa confirmar su n\u00FAmero de pedido?",
+      "Output": "\u00BFPodr\u00EDa confirmar su n\u00FAmero de pedido?",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 68.6345
+    },
+    {
+      "Id": "en-04",
+      "Source": "en",
+      "Target": "es",
+      "Input": "I need to verify your delivery address.",
+      "PreviousOutput": null,
+      "Output": "Necesito verificar su direcci\u00F3n de entrega.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 119.2065
+    },
+    {
+      "Id": "en-05",
+      "Source": "en",
+      "Target": "es",
+      "Input": "Your request has been processed successfully.",
+      "PreviousOutput": "Su solicitud ha sido procesada con \u00E9xito.",
+      "Output": "Su solicitud ha sido procesada con \u00E9xito.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 55.1033
+    },
+    {
+      "Id": "en-06",
+      "Source": "en",
+      "Target": "es",
+      "Input": "Would you like us to email you the invoice?",
+      "PreviousOutput": "\u00BFLe gustar\u00EDa que le enviara la factura?",
+      "Output": "\u00BFLe gustar\u00EDa que le enviara la factura?",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 88.3394
+    },
+    {
+      "Id": "en-07",
+      "Source": "en",
+      "Target": "es",
+      "Input": "Yes, the item is currently in stock.",
+      "PreviousOutput": "S\u00ED, el art\u00EDculo est\u00E1 actualmente en stock.",
+      "Output": "S\u00ED, el art\u00EDculo est\u00E1 actualmente en stock.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 78.6331
+    },
+    {
+      "Id": "en-08",
+      "Source": "en",
+      "Target": "es",
+      "Input": "Do not cancel order 12345.",
+      "PreviousOutput": "No cancele el pedido 12345.",
+      "Output": "No cancele el pedido 12345.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 82.2553
+    },
+    {
+      "Id": "en-09",
+      "Source": "en",
+      "Target": "es",
+      "Input": "We have not received your payment yet.",
+      "PreviousOutput": "A\u00FAn no hemos recibido su pago.",
+      "Output": "A\u00FAn no hemos recibido su pago.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 62.7051
+    },
+    {
+      "Id": "en-10",
+      "Source": "en",
+      "Target": "es",
+      "Input": "We will never ask for your password over the phone.",
+      "PreviousOutput": "Nunca pediremos su contrase\u00F1a por tel\u00E9fono.",
+      "Output": "Nunca pediremos su contrase\u00F1a por tel\u00E9fono.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 59.816
+    },
+    {
+      "Id": "en-11",
+      "Source": "en",
+      "Target": "es",
+      "Input": "Delivery is scheduled for November 15, 2026.",
+      "PreviousOutput": "La entrega est\u00E1 prevista para el 15 de noviembre de 2026.",
+      "Output": "La entrega est\u00E1 prevista para el 15 de noviembre de 2026.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 81.5678
+    },
+    {
+      "Id": "en-12",
+      "Source": "en",
+      "Target": "es",
+      "Input": "Your appointment is on 04/03/2026; please confirm whether this means April 3.",
+      "PreviousOutput": null,
+      "Output": null,
+      "Status": "controlled_integrity_rejection",
+      "Constraint": "NumericAmbiguity",
+      "TotalMs": 0.4422
+    },
+    {
+      "Id": "en-13",
+      "Source": "en",
+      "Target": "es",
+      "Input": "We are open from 09:00 to 17:30, Monday through Friday.",
+      "PreviousOutput": "Estamos abiertos de 09:00 a 17:30, de lunes a viernes.",
+      "Output": "Estamos abiertos de 09:00 a 17:30, de lunes a viernes.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 85.7642
+    },
+    {
+      "Id": "en-14",
+      "Source": "en",
+      "Target": "es",
+      "Input": "The total price is 49.95 USD, including tax.",
+      "PreviousOutput": "El precio total es de 49,95 USD, incluyendo impuestos.",
+      "Output": "El precio total es de 49,95 USD, incluyendo impuestos.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 96.8832
+    },
+    {
+      "Id": "en-15",
+      "Source": "en",
+      "Target": "es",
+      "Input": "The refund will be 25 EUR, not 250 EUR.",
+      "PreviousOutput": "El reembolso ser\u00E1 de 25 EUR, no 250 EUR.",
+      "Output": "El reembolso ser\u00E1 de 25 EUR, no 250 EUR.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 101.6148
+    },
+    {
+      "Id": "en-16",
+      "Source": "en",
+      "Target": "es",
+      "Input": "Your order AB-009871 will arrive tomorrow.",
+      "PreviousOutput": "Su orden AB-009871 llegar\u00E1 ma\u00F1ana.",
+      "Output": "Su orden AB-009871 llegar\u00E1 ma\u00F1ana.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 78.5959
+    },
+    {
+      "Id": "en-17",
+      "Source": "en",
+      "Target": "es",
+      "Input": "Engineer Mar\u00EDa L\u00F3pez will review your case.",
+      "PreviousOutput": "El ingeniero Mar\u00EDa L\u00F3pez revisar\u00E1 su caso.",
+      "Output": "El ingeniero Mar\u00EDa L\u00F3pez revisar\u00E1 su caso.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 51.6101
+    },
+    {
+      "Id": "en-18",
+      "Source": "en",
+      "Target": "es",
+      "Input": "Please send the documents to support@example.com.",
+      "PreviousOutput": "Por favor env\u00EDe los documentos a support@example.com.",
+      "Output": "Por favor env\u00EDen los documentos a support@example.com.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 74.4278
+    },
+    {
+      "Id": "en-19",
+      "Source": "en",
+      "Target": "es",
+      "Input": "Restart the SQL server after saving the configuration.",
+      "PreviousOutput": "Reinicie el servidor SQL despu\u00E9s de guardar la configuraci\u00F3n.",
+      "Output": "Reinicie el servidor SQL despu\u00E9s de guardar la configuraci\u00F3n.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 93.3851
+    },
+    {
+      "Id": "en-20",
+      "Source": "en",
+      "Target": "es",
+      "Input": "The VPN connection requires two-factor authentication.",
+      "PreviousOutput": "La conexi\u00F3n VPN requiere autenticaci\u00F3n de dos factores.",
+      "Output": "La conexi\u00F3n VPN requiere autenticaci\u00F3n de dos factores.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 113.6315
+    },
+    {
+      "Id": "en-21",
+      "Source": "en",
+      "Target": "es",
+      "Input": "We would appreciate it if you attached a copy of the invoice.",
+      "PreviousOutput": "Le agradecer\u00EDamos que adjuntara una copia de la factura.",
+      "Output": "Le agradecer\u00EDamos que adjuntara una copia de la factura.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 128.8292
+    },
+    {
+      "Id": "en-22",
+      "Source": "en",
+      "Target": "es",
+      "Input": "Would you kindly hold while I check that information?",
+      "PreviousOutput": "\u00BFPodr\u00EDa esperar mientras compruebo esa informaci\u00F3n?",
+      "Output": "\u00BFPodr\u00EDa esperar mientras compruebo esa informaci\u00F3n?",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 118.6843
+    },
+    {
+      "Id": "en-23",
+      "Source": "en",
+      "Target": "es",
+      "Input": "There is a duplicate charge on my account.",
+      "PreviousOutput": "Hay una carga duplicada en mi cuenta.",
+      "Output": "Hay una carga duplicada en mi cuenta.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 97.811
+    },
+    {
+      "Id": "en-24",
+      "Source": "en",
+      "Target": "es",
+      "Input": "Please check the balance before you charge the card.",
+      "PreviousOutput": "Por favor, compruebe el saldo antes de cargar la tarjeta.",
+      "Output": "Por favor, compruebe el saldo antes de cargar la tarjeta.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 118.6935
+    },
+    {
+      "Id": "en-25",
+      "Source": "en",
+      "Target": "es",
+      "Input": "My account don\u0027t work and I can\u0027t log in.",
+      "PreviousOutput": "Mi cuenta no funciona y no puedo entrar.",
+      "Output": "Mi cuenta no funciona y no puedo entrar.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 114.7877
+    },
+    {
+      "Id": "en-26",
+      "Source": "en",
+      "Target": "es",
+      "Input": "I have went to the store, but they couldn\u0027t help me.",
+      "PreviousOutput": "He ido a la tienda, pero no pudieron ayudarme.",
+      "Output": "He ido a la tienda, pero no pudieron ayudarme.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 127.0174
+    },
+    {
+      "Id": "en-27",
+      "Source": "en",
+      "Target": "es",
+      "Input": "I do not want a replacement; I want a refund.",
+      "PreviousOutput": "No quiero un reemplazo; quiero un reembolso.",
+      "Output": "No quiero un reemplazo; quiero un reembolso.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 75.5388
+    },
+    {
+      "Id": "en-28",
+      "Source": "en",
+      "Target": "es",
+      "Input": "If the package does not arrive before Friday, please contact us again.",
+      "PreviousOutput": "Si el paquete no llega antes del viernes, p\u00F3ngase en contacto con nosotros de nuevo.",
+      "Output": "Si el paquete no llega antes del viernes, p\u00F3ngase en contacto con nosotros de nuevo.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 124.2596
+    },
+    {
+      "Id": "en-29",
+      "Source": "en",
+      "Target": "es",
+      "Input": "Confirm 3 units of model X200 and 2 units of model X300.",
+      "PreviousOutput": "Confirme 3 unidades del modelo X200 y 2 unidades del modelo X300.",
+      "Output": "Confirme 3 unidades del modelo X200 y 2 unidades del modelo X300.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 149.6446
+    },
+    {
+      "Id": "en-30",
+      "Source": "en",
+      "Target": "es",
+      "Input": "The discount is 15%, but it does not apply to shipping.",
+      "PreviousOutput": "El descuento es del 15%, pero no se aplica al env\u00EDo.",
+      "Output": "El descuento es del 15%, pero no se aplica al env\u00EDo.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 108.1648
+    },
+    {
+      "Id": "en-31",
+      "Source": "en",
+      "Target": "es",
+      "Input": "The payment was declined, not approved.",
+      "PreviousOutput": "El pago fue rechazado, no aprobado.",
+      "Output": "El pago fue rechazado, no aprobado.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 90.2674
+    },
+    {
+      "Id": "en-32",
+      "Source": "en",
+      "Target": "es",
+      "Input": "Your outstanding balance is 0 USD.",
+      "PreviousOutput": "Su saldo pendiente es de 0 USD.",
+      "Output": "Su saldo pendiente es de 0 USD.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 53.7177
+    },
+    {
+      "Id": "en-33",
+      "Source": "en",
+      "Target": "es",
+      "Input": "The tracking number is ZX987654321EN.",
+      "PreviousOutput": "El n\u00FAmero de seguimiento es ZX987654321EN.",
+      "Output": "El n\u00FAmero de seguimiento es ZX987654321EN.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 86.7162
+    },
+    {
+      "Id": "en-34",
+      "Source": "en",
+      "Target": "es",
+      "Input": "Ms Ana P\u00E9rez may collect the package with her identification.",
+      "PreviousOutput": "La Sra. Ana P\u00E9rez puede recoger el paquete con su identificaci\u00F3n.",
+      "Output": "La Sra. Ana P\u00E9rez puede recoger el paquete con su identificaci\u00F3n.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 99.6521
+    },
+    {
+      "Id": "en-35",
+      "Source": "en",
+      "Target": "es",
+      "Input": "Do not share code 004812 with anyone.",
+      "PreviousOutput": "No comparta el c\u00F3digo 004812 con nadie.",
+      "Output": "No comparta el c\u00F3digo 004812 con nadie.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 87.7545
+    },
+    {
+      "Id": "en-36",
+      "Source": "en",
+      "Target": "es",
+      "Input": "Can you confirm that you received both attachments?",
+      "PreviousOutput": "\u00BFPuede confirmar que recibi\u00F3 ambos archivos adjuntos?",
+      "Output": "\u00BFPuede confirmar que recibi\u00F3 ambos archivos adjuntos?",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 67.3789
+    },
+    {
+      "Id": "en-37",
+      "Source": "en",
+      "Target": "es",
+      "Input": "The warranty covers parts but excludes water damage.",
+      "PreviousOutput": null,
+      "Output": null,
+      "Status": "controlled_integrity_rejection",
+      "Constraint": "Glossary",
+      "TotalMs": 160.6738
+    },
+    {
+      "Id": "en-38",
+      "Source": "en",
+      "Target": "es",
+      "Input": "We will escalate the incident to our technical team.",
+      "PreviousOutput": "Vamos a escalar el incidente a nuestro equipo t\u00E9cnico.",
+      "Output": "Vamos a escalar el incidente a nuestro equipo t\u00E9cnico.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 70.7056
+    },
+    {
+      "Id": "en-39",
+      "Source": "en",
+      "Target": "es",
+      "Input": "Thank you for your patience; we will update you when the review is complete.",
+      "PreviousOutput": "Gracias por su paciencia; le actualizaremos cuando la revisi\u00F3n est\u00E9 completa.",
+      "Output": "Gracias por su paciencia; le actualizaremos cuando la revisi\u00F3n est\u00E9 completa.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 102.552
+    },
+    {
+      "Id": "en-40",
+      "Source": "en",
+      "Target": "es",
+      "Input": "The customer said, \u0027I did not authorize that 80 USD charge.\u0027",
+      "PreviousOutput": "El cliente dijo: \u0022No autoric\u00E9 esa carga de 80 USD\u0022.",
+      "Output": "El cliente dijo: \u0022No autoric\u00E9 esa carga de 80 USD\u0022.",
+      "Status": "accepted_by_rules",
+      "Constraint": null,
+      "TotalMs": 98.8285
+    }
+  ],
+  "Metrics": [
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.6517
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 2
+    },
+    {
+      "Name": "saylo.argos.startup",
+      "Value": 3472.5552
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 1.1758
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.7942
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 270483456
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 256.6302
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.3604
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 2.7066
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 270983168
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 133.1985
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.3267
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.9593
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 270819328
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 95.527
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.3349
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.7698
+    },
+    {
+      "Name": "saylo.argos.candidate_retries",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.9069
+    },
+    {
+      "Name": "saylo.argos.candidate_recoveries",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 270577664
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 146.1606
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.3251
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.9482
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 270516224
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 68.6661
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.3464
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.6938
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 271020032
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 112.2633
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.5413
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.6867
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 270852096
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 100.2227
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.3615
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.8065
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 270868480
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 104.3888
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.3141
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.7976
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 270663680
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 95.0531
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.3375
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.7566
+    },
+    {
+      "Name": "saylo.argos.candidate_retries",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 1.1293
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.5587
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.5082
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 166.6668
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.6127
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 2.4518
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 270848000
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 93.7879
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.2307
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.3804
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 1.2458
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 271519744
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 135.2205
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.4793
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.7885
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 271142912
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 115.9478
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.4772
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 1.6026
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 271220736
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 120.7041
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.4858
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.6645
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 270901248
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 106.9407
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.3085
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.8479
+    },
+    {
+      "Name": "saylo.argos.candidate_retries",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 1.0714
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.8286
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.8804
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 208.9071
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.5336
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.6877
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 271069184
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 124.8198
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.3526
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.769
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 271368192
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 120.4624
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.3158
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.7128
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 271278080
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 101.6701
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.3119
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.9109
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 271384576
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 129.6215
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 4.1924
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.778
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 271499264
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 143.066
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.382
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.8447
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 271073280
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 118.4846
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.337
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.8002
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 270901248
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 97.8627
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.4098
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.6523
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 271216640
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 110.7703
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.3542
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 1.2934
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 271310848
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 153.5161
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.3854
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 1.0515
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 271187968
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 127.2639
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.4427
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.9155
+    },
+    {
+      "Name": "saylo.argos.candidate_retries",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.8544
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.6787
+    },
+    {
+      "Name": "saylo.argos.candidate_recoveries",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 271425536
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 256.8219
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.4696
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 1.3543
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 271732736
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 206.3295
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.4787
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 1.1482
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 271396864
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 142.8046
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.4929
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.9863
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 270868480
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 90.773
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 2.2132
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.9278
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 270745600
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 77.7615
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.3763
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.9004
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 270938112
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 103.6165
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.3379
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.8591
+    },
+    {
+      "Name": "saylo.argos.candidate_retries",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.7127
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.5713
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.5155
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 244.6121
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.3222
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.7606
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 271212544
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 111.6363
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.2995
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.6692
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 271147008
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 106.5879
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.3843
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 1.1466
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 270938112
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 99.6336
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.3372
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 1.0237
+    },
+    {
+      "Name": "saylo.argos.candidate_retries",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.8726
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.78
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.673
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 241.9253
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.5227
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 2.1722
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 271761408
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 229.0001
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.5415
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 1.417
+    },
+    {
+      "Name": "saylo.argos.candidate_retries",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 1.1131
+    },
+    {
+      "Name": "saylo.argos.candidate_recoveries",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 271581184
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 584.0688
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.5436
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 2
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 1.146
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 1.1529
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 273444864
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 113.6908
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.5333
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 1.0417
+    },
+    {
+      "Name": "saylo.argos.candidate_retries",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 1.6135
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.9501
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.8845
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 229.1336
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.5149
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 1.0705
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 273379328
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 67.9362
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.3049
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 1.4852
+    },
+    {
+      "Name": "saylo.argos.candidate_retries",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.9211
+    },
+    {
+      "Name": "saylo.argos.candidate_recoveries",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 273436672
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 118.7455
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.3331
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.675
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 273620992
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 54.5757
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.3346
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 2.4013
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 270733312
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 87.6899
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.539
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.6817
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 273510400
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 77.4977
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.3566
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.8865
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 270733312
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 81.6967
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.3026
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.7338
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 273428480
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 62.1503
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.4769
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.6912
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 273649664
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 59.1487
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.4672
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 1.1319
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 270852096
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 80.7383
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.3282
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.6052
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.8255
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 271073280
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 84.958
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.3872
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.8398
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 271056896
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 96.2691
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.5932
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 1.0331
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 270860288
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 100.8337
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.4116
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 1.3242
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 273498112
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 77.9536
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.3677
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.6314
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 273510400
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 51.0752
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.3689
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.8377
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 270860288
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 73.7443
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 1.3085
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.6832
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 271306752
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 91.8495
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.3255
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.8708
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 271306752
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 113.0578
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.4754
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.9842
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 271065088
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 128.1169
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.4522
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 1.0165
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 270864384
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 118.0307
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.4197
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.9218
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 273514496
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 97.161
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.506
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.9037
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 271073280
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 118.0028
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.5391
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 1.0199
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 270761984
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 113.9781
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 1.2747
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 1.779
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 270880768
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 125.5337
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.3474
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 1.3494
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 273797120
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 74.8913
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.5653
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 1.4038
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 271544320
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 123.4231
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.6907
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.8481
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 271986688
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 148.6704
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.481
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 2.4948
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 271122432
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 107.4753
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.3922
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.8337
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 273883136
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 89.5786
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.4082
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.7014
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 273977344
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 52.9626
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.5285
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 1.0431
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 274493440
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 85.9095
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.4316
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 1.0119
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 271106048
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 98.8882
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.4876
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.9114
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 270917632
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 87.0354
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.3242
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.8209
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 273772544
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 66.8511
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.4605
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.8176
+    },
+    {
+      "Name": "saylo.argos.candidate_retries",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.7635
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.5879
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.646
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 159.9998
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.6514
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 0.7427
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 274624512
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 69.8567
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.3551
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 2.4067
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 271323136
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 101.785
+    },
+    {
+      "Name": "saylo.argos.integrity_preparation",
+      "Value": 0.9973
+    },
+    {
+      "Name": "saylo.argos.segment_count",
+      "Value": 1
+    },
+    {
+      "Name": "saylo.argos.integrity_validation",
+      "Value": 1.3964
+    },
+    {
+      "Name": "saylo.argos.worker_memory",
+      "Value": 271355904
+    },
+    {
+      "Name": "saylo.argos.translation",
+      "Value": 97.6414
+    }
+  ],
+  "WarmAll": {
+    "es-\u003Een": {
+      "Count": 39,
+      "MinMs": 0.3101,
+      "MedianMs": 119.3829,
+      "P95Ms": 257.4557,
+      "MaxMs": 584.8434
+    },
+    "en-\u003Ees": {
+      "Count": 40,
+      "MinMs": 0.4422,
+      "MedianMs": 91.82624999999999,
+      "P95Ms": 149.6446,
+      "MaxMs": 229.8923
+    }
+  },
+  "WarmAccepted": {
+    "es-\u003Een": {
+      "Count": 34,
+      "MinMs": 69.194,
+      "MedianMs": 114.73715,
+      "P95Ms": 257.4557,
+      "MaxMs": 584.8434
+    },
+    "en-\u003Ees": {
+      "Count": 37,
+      "MinMs": 51.6101,
+      "MedianMs": 90.2674,
+      "P95Ms": 128.8292,
+      "MaxMs": 149.6446
+    }
+  },
+  "RejectionDiagnostics": [
+    {
+      "Id": "es-04",
+      "Kind": "native-primary",
+      "Candidates": [
+        "I need to confirm his delivery address."
+      ]
+    },
+    {
+      "Id": "es-04",
+      "Kind": "native-ranked-candidates",
+      "Candidates": [
+        "I need to confirm his delivery address.",
+        "I need to confirm the delivery address.",
+        "I have to confirm the delivery address.",
+        "I have to confirm his delivery address."
+      ]
+    },
+    {
+      "Id": "es-10",
+      "Kind": "native-primary",
+      "Candidates": [
+        "We\u0027ll never ask for his password by phone."
+      ]
+    },
+    {
+      "Id": "es-10",
+      "Kind": "native-ranked-candidates",
+      "Candidates": [
+        "We\u0027ll never ask for his password by phone.",
+        "We\u0027ll never get his password by phone.",
+        "We\u0027ll never get his password on his phone.",
+        "We\u0027ll never get his password on the phone."
+      ]
+    },
+    {
+      "Id": "es-17",
+      "Kind": "native-primary",
+      "Candidates": [
+        "The engineer Mar\u00EDa L\u00F3pez will review his case."
+      ]
+    },
+    {
+      "Id": "es-17",
+      "Kind": "native-ranked-candidates",
+      "Candidates": [
+        "The engineer Mar\u00EDa L\u00F3pez will review his case.",
+        "The engineer Mar\u00EDa L\u00F3pez will check his case.",
+        "The engineer Mar\u00EDa L\u00F3pez will have her case reviewed.",
+        "The engineer Mar\u00EDa L\u00F3pez will conduct a review of his case."
+      ]
+    },
+    {
+      "Id": "es-28",
+      "Kind": "native-primary",
+      "Candidates": [
+        "If the package doesn\u0027t come by Friday, contact us again."
+      ]
+    },
+    {
+      "Id": "es-28",
+      "Kind": "native-ranked-candidates",
+      "Candidates": [
+        "If the package doesn\u0027t come by Friday, contact us again.",
+        "If the package doesn\u0027t come by Friday, get back to us.",
+        "If the package doesn\u0027t get here before Friday, get back to us.",
+        "If the package doesn\u0027t get here by Friday, get back to us."
+      ]
+    },
+    {
+      "Id": "es-34",
+      "Kind": "native-primary",
+      "Candidates": [
+        "Mrs. Ana P\u00E9rez can pick up the package with her ID."
+      ]
+    },
+    {
+      "Id": "es-34",
+      "Kind": "native-ranked-candidates",
+      "Candidates": [
+        "Mrs. Ana P\u00E9rez can pick up the package with her ID.",
+        "Mrs. Ana P\u00E9rez can pick up the package with her identification.",
+        "Mrs. Ana P\u00E9rez can pick up the package with her I.D. \u0027S.",
+        "Mrs. Ana P\u00E9rez can pick up the package with her name and name."
+      ]
+    },
+    {
+      "Id": "es-38",
+      "Kind": "native-primary",
+      "Candidates": [
+        "Let\u0027s scale up the incidence to the technical team."
+      ]
+    },
+    {
+      "Id": "es-38",
+      "Kind": "native-ranked-candidates",
+      "Candidates": [
+        "Let\u0027s scale up the incidence to the technical team.",
+        "We\u0027ll scale up the incidence to the technical team.",
+        "We\u0027re going to scale up the incidence to the technical team.",
+        "We\u0027re gonna scale up the incidence to the technical team."
+      ]
+    },
+    {
+      "Id": "es-40",
+      "Kind": "native-primary",
+      "Candidates": [
+        "The client said, \u0022I did not authorize that $80 charge.\u0022"
+      ]
+    },
+    {
+      "Id": "es-40",
+      "Kind": "native-ranked-candidates",
+      "Candidates": [
+        "The client said, \u0022I did not authorize that $80 charge.\u0022",
+        "The client said, \u0022I did not authorize that US $80 charge.\u0022",
+        "The client said, \u0022I did not authorize that 80-USD charge.\u0022",
+        "The client said, \u0022I didn\u0027t authorize that 80-USD charge.\u0022"
+      ]
+    },
+    {
+      "Id": "en-02",
+      "Kind": "native-primary",
+      "Candidates": [
+        "Buenas tardes, gracias por contactar con el cliente."
+      ]
+    },
+    {
+      "Id": "en-02",
+      "Kind": "native-ranked-candidates",
+      "Candidates": [
+        "Buenas tardes, gracias por contactar con el cliente.",
+        "Buenas tardes, gracias por contactar al cliente.",
+        "Buenas tardes, gracias por ponerse en contacto con el cliente.",
+        "Buenas tardes, gracias por contactar con el cliente de atenci\u00F3n."
+      ]
+    },
+    {
+      "Id": "en-04",
+      "Kind": "native-primary",
+      "Candidates": [
+        "Necesito verificar tu direcci\u00F3n de entrega."
+      ]
+    },
+    {
+      "Id": "en-04",
+      "Kind": "native-ranked-candidates",
+      "Candidates": [
+        "Necesito verificar tu direcci\u00F3n de entrega.",
+        "Necesito verificar su direcci\u00F3n de entrega.",
+        "Necesito verificar tu direcci\u00F3n de env\u00EDo.",
+        "Tengo que verificar tu direcci\u00F3n de entrega."
+      ]
+    },
+    {
+      "Id": "en-37",
+      "Kind": "native-primary",
+      "Candidates": [
+        "La garant\u00EDa cubre partes pero excluye el da\u00F1o al agua."
+      ]
+    },
+    {
+      "Id": "en-37",
+      "Kind": "native-ranked-candidates",
+      "Candidates": [
+        "La garant\u00EDa cubre partes pero excluye el da\u00F1o al agua.",
+        "La garant\u00EDa cubre las partes pero excluye el da\u00F1o al agua.",
+        "La garant\u00EDa cubre piezas pero excluye el da\u00F1o al agua.",
+        "La garant\u00EDa cubre partes, pero excluye el da\u00F1o al agua."
+      ]
+    }
+  ],
+  "Note": "Diagnostics contain only authorized old rejected fixtures whose source was not masked. No production logging hook.",
+  "HumanBilingualAcceptance": "pending",
+  "WorkerExited": true
+}

@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <None Update="TextTranslation\argos_worker.py" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <EmbeddedResource Include="Pronunciation\spanish-vocabulary.txt" />
   </ItemGroup>
 
 </Project>

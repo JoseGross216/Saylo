@@ -1,0 +1,205 @@
+{
+  "schemaVersion": 1,
+  "dotnet": {
+    "total": 209,
+    "passed": 209,
+    "failed": 0,
+    "notExecuted": 0
+  },
+  "reports": [
+    {
+      "sha256": "86265137b38f8dfc872ff099246f81fd3a9ffa751a89010f1a71e58922f1a2dc",
+      "total": 1,
+      "passed": 1,
+      "failed": 0,
+      "notExecuted": 0,
+      "integrationResults": []
+    },
+    {
+      "sha256": "051d979b33b0294161a7e5e6aaf1fbb2d896a6d48f5824ff88716cbc0197b675",
+      "total": 1,
+      "passed": 1,
+      "failed": 0,
+      "notExecuted": 0,
+      "integrationResults": []
+    },
+    {
+      "sha256": "b56269f2200938acf9fff8ea8206cf12b8cde99cd79c16140b97a2dd79a71818",
+      "total": 8,
+      "passed": 8,
+      "failed": 0,
+      "notExecuted": 0,
+      "integrationResults": []
+    },
+    {
+      "sha256": "6f741a60db2f48760cdd36ac3404f3b7b351b3f46139dcc741b0f8e25533aa23",
+      "total": 199,
+      "passed": 199,
+      "failed": 0,
+      "notExecuted": 0,
+      "integrationResults": [
+        {
+          "name": "Saylo.Modules.Translation.Tests.ArgosIntegrationTests.CanceledRealWorkIsReapedAndTheNextRequestStartsAFreshWorker",
+          "outcome": "Passed"
+        },
+        {
+          "name": "Saylo.Modules.Translation.Tests.TranslationValidationTests.ConcurrentRealRequestsKeepTheirOwnResults",
+          "outcome": "Passed"
+        },
+        {
+          "name": "Saylo.Modules.Translation.Tests.TranslationValidationTests.EvaluatesPublicCorpusAndMeasuresRealLatency",
+          "outcome": "Passed"
+        },
+        {
+          "name": "Saylo.Modules.Translation.Tests.TranslationIntegrityIntegrationTests.RealLiteralProtectionSurvivesConcurrencyAndRecoversFromControlledRejection",
+          "outcome": "Passed"
+        },
+        {
+          "name": "Saylo.Modules.Translation.Tests.TranslationValidationTests.DisposalDuringRealInferenceReapsTheWorker",
+          "outcome": "Passed"
+        },
+        {
+          "name": "Saylo.Modules.Translation.Tests.TranslationIntegrityIntegrationTests.RepeatedRealIdentifiersKeepAllOccurrencesOrReturnAnIntegrityFailure",
+          "outcome": "Passed"
+        },
+        {
+          "name": "Saylo.Modules.Translation.Tests.TranslationValidationTests.RealTranslationTimeoutReapsTheWorker",
+          "outcome": "Passed"
+        },
+        {
+          "name": "Saylo.Modules.Translation.Tests.WhisperIntegrationTests.NativeCancellationAllowsSubsequentReuse",
+          "outcome": "Passed"
+        },
+        {
+          "name": "Saylo.Modules.Translation.Tests.ArgosIntegrationTests.TranslatesCustomerServiceFixturesInBothDirectionsAndReusesOneWorker",
+          "outcome": "Passed"
+        },
+        {
+          "name": "Saylo.Modules.Translation.Tests.TranslationValidationTests.CancelingQueuedRealWorkDoesNotInterruptTheActiveRequest",
+          "outcome": "Passed"
+        },
+        {
+          "name": "Saylo.Modules.Translation.Tests.TranslationValidationTests.CrashedRealWorkerIsReportedAndNextRequestRecovers",
+          "outcome": "Passed"
+        },
+        {
+          "name": "Saylo.Modules.Translation.Tests.TranslationIntegrityIntegrationTests.MeasuresProtectionAndSegmentationAgainstTheSameRawWorker",
+          "outcome": "Passed"
+        },
+        {
+          "name": "Saylo.Modules.Translation.Tests.WhisperIntegrationTests.TranscribesEnglishLocally",
+          "outcome": "Passed"
+        },
+        {
+          "name": "Saylo.Modules.Translation.Tests.TranslationIntegrityIntegrationTests.ReplaysHistoricalCorpusAndRecordsAcceptedAndControlledOutcomes",
+          "outcome": "Passed"
+        },
+        {
+          "name": "Saylo.Modules.Translation.Tests.TranslationIntegrityIntegrationTests.LongRepetitiveMessagesPreserveEveryInstructionOrFailClosed",
+          "outcome": "Passed"
+        },
+        {
+          "name": "Saylo.Modules.Translation.Tests.WhisperIntegrationTests.TranscribesSpanishLocally",
+          "outcome": "Passed"
+        }
+      ]
+    }
+  ],
+  "python": {
+    "passed": 12,
+    "failed": 0,
+    "skipped": 0
+  },
+  "newDotnetTests": 73,
+  "newPythonTests": 5,
+  "restore": "passed",
+  "build": {
+    "errors": 0,
+    "warnings": 0
+  },
+  "pipCheck": "passed",
+  "humanBilingualAcceptance": "pending",
+  "osDisconnectedTest": "pending_not_executed",
+  "scenarioDurations": [
+    {
+      "name": "Saylo.Modules.Translation.Tests.ArgosIntegrationTests.CanceledRealWorkIsReapedAndTheNextRequestStartsAFreshWorker",
+      "outcome": "Passed",
+      "duration": "00:00:04.4989404"
+    },
+    {
+      "name": "Saylo.Modules.Translation.Tests.TranslationValidationTests.ConcurrentRealRequestsKeepTheirOwnResults",
+      "outcome": "Passed",
+      "duration": "00:00:03.0505454"
+    },
+    {
+      "name": "Saylo.Modules.Translation.Tests.TranslationValidationTests.EvaluatesPublicCorpusAndMeasuresRealLatency",
+      "outcome": "Passed",
+      "duration": "00:00:13.3383587"
+    },
+    {
+      "name": "Saylo.Modules.Translation.Tests.TranslationIntegrityIntegrationTests.RealLiteralProtectionSurvivesConcurrencyAndRecoversFromControlledRejection",
+      "outcome": "Passed",
+      "duration": "00:00:02.5997689"
+    },
+    {
+      "name": "Saylo.Modules.Translation.Tests.TranslationValidationTests.DisposalDuringRealInferenceReapsTheWorker",
+      "outcome": "Passed",
+      "duration": "00:00:02.2371241"
+    },
+    {
+      "name": "Saylo.Modules.Translation.Tests.TranslationIntegrityIntegrationTests.RepeatedRealIdentifiersKeepAllOccurrencesOrReturnAnIntegrityFailure",
+      "outcome": "Passed",
+      "duration": "00:00:02.5013755"
+    },
+    {
+      "name": "Saylo.Modules.Translation.Tests.TranslationValidationTests.RealTranslationTimeoutReapsTheWorker",
+      "outcome": "Passed",
+      "duration": "00:00:02.1401702"
+    },
+    {
+      "name": "Saylo.Modules.Translation.Tests.WhisperIntegrationTests.NativeCancellationAllowsSubsequentReuse",
+      "outcome": "Passed",
+      "duration": "00:00:06.0075763"
+    },
+    {
+      "name": "Saylo.Modules.Translation.Tests.ArgosIntegrationTests.TranslatesCustomerServiceFixturesInBothDirectionsAndReusesOneWorker",
+      "outcome": "Passed",
+      "duration": "00:00:03.0849871"
+    },
+    {
+      "name": "Saylo.Modules.Translation.Tests.TranslationValidationTests.CancelingQueuedRealWorkDoesNotInterruptTheActiveRequest",
+      "outcome": "Passed",
+      "duration": "00:00:04.2807722"
+    },
+    {
+      "name": "Saylo.Modules.Translation.Tests.TranslationValidationTests.CrashedRealWorkerIsReportedAndNextRequestRecovers",
+      "outcome": "Passed",
+      "duration": "00:00:04.5557785"
+    },
+    {
+      "name": "Saylo.Modules.Translation.Tests.TranslationIntegrityIntegrationTests.MeasuresProtectionAndSegmentationAgainstTheSameRawWorker",
+      "outcome": "Passed",
+      "duration": "00:00:12.7274201"
+    },
+    {
+      "name": "Saylo.Modules.Translation.Tests.WhisperIntegrationTests.TranscribesEnglishLocally",
+      "outcome": "Passed",
+      "duration": "00:00:04.0884976"
+    },
+    {
+      "name": "Saylo.Modules.Translation.Tests.TranslationIntegrityIntegrationTests.ReplaysHistoricalCorpusAndRecordsAcceptedAndControlledOutcomes",
+      "outcome": "Passed",
+      "duration": "00:00:07.9762112"
+    },
+    {
+      "name": "Saylo.Modules.Translation.Tests.TranslationIntegrityIntegrationTests.LongRepetitiveMessagesPreserveEveryInstructionOrFailClosed",
+      "outcome": "Passed",
+      "duration": "00:00:03.3343636"
+    },
+    {
+      "name": "Saylo.Modules.Translation.Tests.WhisperIntegrationTests.TranscribesSpanishLocally",
+      "outcome": "Passed",
+      "duration": "00:00:04.4261303"
+    }
+  ]
+}

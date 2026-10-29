@@ -1,0 +1,1166 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "saylo-customer-service-80-v1",
+  "privacy": "Synthetic public fixtures; names and example.com addresses are fictional test data.",
+  "referencePolicy": "References express intended meaning. They are never substituted for engine output or used as exact-match quality scores.",
+  "humanReviewRequired": [
+    "meaning",
+    "grammar",
+    "naturalness",
+    "professional_courtesy",
+    "terminology",
+    "negation_scope",
+    "date_interpretation"
+  ],
+  "cases": [
+    {
+      "id": "es-01",
+      "source": "es",
+      "target": "en",
+      "text": "Buenos días. ¿En qué puedo ayudarle hoy?",
+      "reference": "Good morning. How may I help you today?",
+      "tags": [
+        "greeting",
+        "formal"
+      ],
+      "exactLiterals": [],
+      "negationMarkers": []
+    },
+    {
+      "id": "es-02",
+      "source": "es",
+      "target": "en",
+      "text": "Buenas tardes, gracias por comunicarse con soporte.",
+      "reference": "Good afternoon, thank you for contacting support.",
+      "tags": [
+        "greeting",
+        "courtesy"
+      ],
+      "exactLiterals": [],
+      "negationMarkers": []
+    },
+    {
+      "id": "es-03",
+      "source": "es",
+      "target": "en",
+      "text": "¿Podría indicarme su número de pedido, por favor?",
+      "reference": "Could you give me your order number, please?",
+      "tags": [
+        "information",
+        "formal"
+      ],
+      "exactLiterals": [],
+      "negationMarkers": []
+    },
+    {
+      "id": "es-04",
+      "source": "es",
+      "target": "en",
+      "text": "Necesito confirmar la dirección de entrega.",
+      "reference": "I need to confirm the delivery address.",
+      "tags": [
+        "information"
+      ],
+      "exactLiterals": [],
+      "negationMarkers": []
+    },
+    {
+      "id": "es-05",
+      "source": "es",
+      "target": "en",
+      "text": "Su solicitud ha sido procesada correctamente.",
+      "reference": "Your request has been processed successfully.",
+      "tags": [
+        "confirmation"
+      ],
+      "exactLiterals": [],
+      "negationMarkers": []
+    },
+    {
+      "id": "es-06",
+      "source": "es",
+      "target": "en",
+      "text": "¿Desea recibir la factura por correo electrónico?",
+      "reference": "Would you like to receive the invoice by email?",
+      "tags": [
+        "question",
+        "formal"
+      ],
+      "exactLiterals": [],
+      "negationMarkers": []
+    },
+    {
+      "id": "es-07",
+      "source": "es",
+      "target": "en",
+      "text": "Sí, el producto está disponible en este momento.",
+      "reference": "Yes, the product is available right now.",
+      "tags": [
+        "answer"
+      ],
+      "exactLiterals": [],
+      "negationMarkers": []
+    },
+    {
+      "id": "es-08",
+      "source": "es",
+      "target": "en",
+      "text": "No cancele el pedido 12345.",
+      "reference": "Do not cancel order 12345.",
+      "tags": [
+        "negation",
+        "order"
+      ],
+      "exactLiterals": [
+        "12345"
+      ],
+      "negationMarkers": [
+        "do not",
+        "don't"
+      ]
+    },
+    {
+      "id": "es-09",
+      "source": "es",
+      "target": "en",
+      "text": "No hemos recibido su pago todavía.",
+      "reference": "We have not received your payment yet.",
+      "tags": [
+        "negation"
+      ],
+      "exactLiterals": [],
+      "negationMarkers": [
+        "not",
+        "haven't"
+      ]
+    },
+    {
+      "id": "es-10",
+      "source": "es",
+      "target": "en",
+      "text": "Nunca le pediremos su contraseña por teléfono.",
+      "reference": "We will never ask for your password over the phone.",
+      "tags": [
+        "negation",
+        "security"
+      ],
+      "exactLiterals": [],
+      "negationMarkers": [
+        "never"
+      ]
+    },
+    {
+      "id": "es-11",
+      "source": "es",
+      "target": "en",
+      "text": "La entrega está programada para el 15 de noviembre de 2026.",
+      "reference": "Delivery is scheduled for November 15, 2026.",
+      "tags": [
+        "date"
+      ],
+      "exactLiterals": [],
+      "negationMarkers": []
+    },
+    {
+      "id": "es-12",
+      "source": "es",
+      "target": "en",
+      "text": "Su cita es el 03/04/2026; confirme si se refiere al 3 de abril.",
+      "reference": "Your appointment is on 03/04/2026; confirm whether this means April 3.",
+      "tags": [
+        "date",
+        "ambiguity"
+      ],
+      "exactLiterals": [
+        "03/04/2026"
+      ],
+      "negationMarkers": []
+    },
+    {
+      "id": "es-13",
+      "source": "es",
+      "target": "en",
+      "text": "Atendemos de 09:00 a 17:30, de lunes a viernes.",
+      "reference": "We are open from 09:00 to 17:30, Monday through Friday.",
+      "tags": [
+        "time"
+      ],
+      "exactLiterals": [
+        "09:00",
+        "17:30"
+      ],
+      "negationMarkers": []
+    },
+    {
+      "id": "es-14",
+      "source": "es",
+      "target": "en",
+      "text": "El precio total es de 49.95 USD, impuestos incluidos.",
+      "reference": "The total price is 49.95 USD, including tax.",
+      "tags": [
+        "price",
+        "currency"
+      ],
+      "exactLiterals": [
+        "USD"
+      ],
+      "negationMarkers": []
+    },
+    {
+      "id": "es-15",
+      "source": "es",
+      "target": "en",
+      "text": "El reembolso será de 25 EUR y no de 250 EUR.",
+      "reference": "The refund will be 25 EUR, not 250 EUR.",
+      "tags": [
+        "price",
+        "negation",
+        "currency"
+      ],
+      "exactLiterals": [
+        "EUR"
+      ],
+      "negationMarkers": [
+        "not"
+      ]
+    },
+    {
+      "id": "es-16",
+      "source": "es",
+      "target": "en",
+      "text": "Su pedido AB-009871 llegará mañana.",
+      "reference": "Your order AB-009871 will arrive tomorrow.",
+      "tags": [
+        "order"
+      ],
+      "exactLiterals": [
+        "AB-009871"
+      ],
+      "negationMarkers": []
+    },
+    {
+      "id": "es-17",
+      "source": "es",
+      "target": "en",
+      "text": "La ingeniera María López revisará su caso.",
+      "reference": "Engineer María López will review your case.",
+      "tags": [
+        "proper_name"
+      ],
+      "exactLiterals": [
+        "María",
+        "López"
+      ],
+      "negationMarkers": []
+    },
+    {
+      "id": "es-18",
+      "source": "es",
+      "target": "en",
+      "text": "Por favor, envíe los documentos a soporte@example.com.",
+      "reference": "Please send the documents to soporte@example.com.",
+      "tags": [
+        "email"
+      ],
+      "exactLiterals": [
+        "soporte@example.com"
+      ],
+      "negationMarkers": []
+    },
+    {
+      "id": "es-19",
+      "source": "es",
+      "target": "en",
+      "text": "Reinicie el servidor SQL después de guardar la configuración.",
+      "reference": "Restart the SQL server after saving the configuration.",
+      "tags": [
+        "technical"
+      ],
+      "exactLiterals": [
+        "SQL"
+      ],
+      "negationMarkers": []
+    },
+    {
+      "id": "es-20",
+      "source": "es",
+      "target": "en",
+      "text": "La conexión VPN requiere autenticación de dos factores.",
+      "reference": "The VPN connection requires two-factor authentication.",
+      "tags": [
+        "technical",
+        "security"
+      ],
+      "exactLiterals": [
+        "VPN"
+      ],
+      "negationMarkers": []
+    },
+    {
+      "id": "es-21",
+      "source": "es",
+      "target": "en",
+      "text": "Le agradeceríamos que adjuntara una copia de la factura.",
+      "reference": "We would appreciate it if you attached a copy of the invoice.",
+      "tags": [
+        "formal",
+        "courtesy"
+      ],
+      "exactLiterals": [],
+      "negationMarkers": []
+    },
+    {
+      "id": "es-22",
+      "source": "es",
+      "target": "en",
+      "text": "¿Sería tan amable de esperar un momento mientras verifico la información?",
+      "reference": "Would you kindly wait a moment while I check the information?",
+      "tags": [
+        "formal",
+        "courtesy"
+      ],
+      "exactLiterals": [],
+      "negationMarkers": []
+    },
+    {
+      "id": "es-23",
+      "source": "es",
+      "target": "en",
+      "text": "El cargo aparece duplicado en mi cuenta.",
+      "reference": "The charge appears twice on my account.",
+      "tags": [
+        "ambiguity",
+        "billing"
+      ],
+      "exactLiterals": [],
+      "negationMarkers": []
+    },
+    {
+      "id": "es-24",
+      "source": "es",
+      "target": "en",
+      "text": "Voy al banco para revisar el pago.",
+      "reference": "I am going to the bank to check the payment.",
+      "tags": [
+        "ambiguity"
+      ],
+      "exactLiterals": [],
+      "negationMarkers": []
+    },
+    {
+      "id": "es-25",
+      "source": "es",
+      "target": "en",
+      "text": "Me se bloqueó la cuenta y no puedo entrar.",
+      "reference": "My account got locked and I cannot sign in.",
+      "tags": [
+        "expression_error",
+        "negation"
+      ],
+      "exactLiterals": [],
+      "negationMarkers": [
+        "cannot",
+        "can't",
+        "unable",
+        "not"
+      ]
+    },
+    {
+      "id": "es-26",
+      "source": "es",
+      "target": "en",
+      "text": "Ayer llamé y me dijeron de que el envío ya salió.",
+      "reference": "I called yesterday and was told that the shipment had already left.",
+      "tags": [
+        "expression_error"
+      ],
+      "exactLiterals": [],
+      "negationMarkers": []
+    },
+    {
+      "id": "es-27",
+      "source": "es",
+      "target": "en",
+      "text": "No quiero un reemplazo; quiero un reembolso.",
+      "reference": "I do not want a replacement; I want a refund.",
+      "tags": [
+        "negation",
+        "terminology"
+      ],
+      "exactLiterals": [],
+      "negationMarkers": [
+        "not",
+        "don't"
+      ]
+    },
+    {
+      "id": "es-28",
+      "source": "es",
+      "target": "en",
+      "text": "Si el paquete no llega antes del viernes, vuelva a contactarnos.",
+      "reference": "If the package does not arrive before Friday, contact us again.",
+      "tags": [
+        "negation",
+        "condition"
+      ],
+      "exactLiterals": [],
+      "negationMarkers": [
+        "not",
+        "doesn't"
+      ]
+    },
+    {
+      "id": "es-29",
+      "source": "es",
+      "target": "en",
+      "text": "Confirme 3 unidades del modelo X200 y 2 del modelo X300.",
+      "reference": "Confirm 3 units of model X200 and 2 of model X300.",
+      "tags": [
+        "quantity",
+        "technical"
+      ],
+      "exactLiterals": [
+        "X200",
+        "X300"
+      ],
+      "negationMarkers": []
+    },
+    {
+      "id": "es-30",
+      "source": "es",
+      "target": "en",
+      "text": "El descuento es del 15 %, pero no se aplica al envío.",
+      "reference": "The discount is 15%, but it does not apply to shipping.",
+      "tags": [
+        "price",
+        "negation"
+      ],
+      "exactLiterals": [],
+      "negationMarkers": [
+        "not",
+        "doesn't"
+      ]
+    },
+    {
+      "id": "es-31",
+      "source": "es",
+      "target": "en",
+      "text": "El pago fue rechazado, no aprobado.",
+      "reference": "The payment was declined, not approved.",
+      "tags": [
+        "negation",
+        "confirmation"
+      ],
+      "exactLiterals": [],
+      "negationMarkers": [
+        "not"
+      ]
+    },
+    {
+      "id": "es-32",
+      "source": "es",
+      "target": "en",
+      "text": "Su saldo pendiente es de 0 USD.",
+      "reference": "Your outstanding balance is 0 USD.",
+      "tags": [
+        "price",
+        "currency"
+      ],
+      "exactLiterals": [
+        "USD"
+      ],
+      "negationMarkers": []
+    },
+    {
+      "id": "es-33",
+      "source": "es",
+      "target": "en",
+      "text": "El número de seguimiento es ZX987654321ES.",
+      "reference": "The tracking number is ZX987654321ES.",
+      "tags": [
+        "order"
+      ],
+      "exactLiterals": [
+        "ZX987654321ES"
+      ],
+      "negationMarkers": []
+    },
+    {
+      "id": "es-34",
+      "source": "es",
+      "target": "en",
+      "text": "La señora Ana Pérez puede recoger el paquete con su identificación.",
+      "reference": "Ms Ana Pérez may collect the package with her identification.",
+      "tags": [
+        "proper_name",
+        "formal"
+      ],
+      "exactLiterals": [
+        "Ana",
+        "Pérez"
+      ],
+      "negationMarkers": []
+    },
+    {
+      "id": "es-35",
+      "source": "es",
+      "target": "en",
+      "text": "No comparta el código 004812 con nadie.",
+      "reference": "Do not share code 004812 with anyone.",
+      "tags": [
+        "negation",
+        "security"
+      ],
+      "exactLiterals": [
+        "004812"
+      ],
+      "negationMarkers": [
+        "not",
+        "don't"
+      ]
+    },
+    {
+      "id": "es-36",
+      "source": "es",
+      "target": "en",
+      "text": "¿Puede confirmar que recibió ambos archivos adjuntos?",
+      "reference": "Can you confirm that you received both attachments?",
+      "tags": [
+        "question",
+        "confirmation"
+      ],
+      "exactLiterals": [],
+      "negationMarkers": []
+    },
+    {
+      "id": "es-37",
+      "source": "es",
+      "target": "en",
+      "text": "La garantía cubre piezas, pero excluye daños por agua.",
+      "reference": "The warranty covers parts but excludes water damage.",
+      "tags": [
+        "negation",
+        "technical"
+      ],
+      "exactLiterals": [],
+      "negationMarkers": []
+    },
+    {
+      "id": "es-38",
+      "source": "es",
+      "target": "en",
+      "text": "Vamos a escalar la incidencia al equipo técnico.",
+      "reference": "We will escalate the incident to the technical team.",
+      "tags": [
+        "terminology",
+        "formal"
+      ],
+      "exactLiterals": [],
+      "negationMarkers": []
+    },
+    {
+      "id": "es-39",
+      "source": "es",
+      "target": "en",
+      "text": "Gracias por su paciencia; le informaremos cuando termine la revisión.",
+      "reference": "Thank you for your patience; we will let you know when the review is complete.",
+      "tags": [
+        "courtesy",
+        "formal"
+      ],
+      "exactLiterals": [],
+      "negationMarkers": []
+    },
+    {
+      "id": "es-40",
+      "source": "es",
+      "target": "en",
+      "text": "El cliente dijo: «No autoricé ese cargo de 80 USD».",
+      "reference": "The customer said, 'I did not authorize that 80 USD charge.'",
+      "tags": [
+        "negation",
+        "quotation",
+        "currency"
+      ],
+      "exactLiterals": [
+        "USD"
+      ],
+      "negationMarkers": [
+        "not",
+        "didn't"
+      ]
+    },
+    {
+      "id": "en-01",
+      "source": "en",
+      "target": "es",
+      "text": "Good morning. How may I help you today?",
+      "reference": "Buenos días. ¿En qué puedo ayudarle hoy?",
+      "tags": [
+        "greeting",
+        "formal"
+      ],
+      "exactLiterals": [],
+      "negationMarkers": []
+    },
+    {
+      "id": "en-02",
+      "source": "en",
+      "target": "es",
+      "text": "Good afternoon, thank you for contacting customer support.",
+      "reference": "Buenas tardes, gracias por comunicarse con atención al cliente.",
+      "tags": [
+        "greeting",
+        "courtesy"
+      ],
+      "exactLiterals": [],
+      "negationMarkers": []
+    },
+    {
+      "id": "en-03",
+      "source": "en",
+      "target": "es",
+      "text": "Could you please confirm your order number?",
+      "reference": "¿Podría confirmar su número de pedido, por favor?",
+      "tags": [
+        "information",
+        "formal"
+      ],
+      "exactLiterals": [],
+      "negationMarkers": []
+    },
+    {
+      "id": "en-04",
+      "source": "en",
+      "target": "es",
+      "text": "I need to verify your delivery address.",
+      "reference": "Necesito verificar su dirección de entrega.",
+      "tags": [
+        "information"
+      ],
+      "exactLiterals": [],
+      "negationMarkers": []
+    },
+    {
+      "id": "en-05",
+      "source": "en",
+      "target": "es",
+      "text": "Your request has been processed successfully.",
+      "reference": "Su solicitud ha sido procesada correctamente.",
+      "tags": [
+        "confirmation"
+      ],
+      "exactLiterals": [],
+      "negationMarkers": []
+    },
+    {
+      "id": "en-06",
+      "source": "en",
+      "target": "es",
+      "text": "Would you like us to email you the invoice?",
+      "reference": "¿Desea que le enviemos la factura por correo electrónico?",
+      "tags": [
+        "question",
+        "formal"
+      ],
+      "exactLiterals": [],
+      "negationMarkers": []
+    },
+    {
+      "id": "en-07",
+      "source": "en",
+      "target": "es",
+      "text": "Yes, the item is currently in stock.",
+      "reference": "Sí, el artículo está disponible en este momento.",
+      "tags": [
+        "answer"
+      ],
+      "exactLiterals": [],
+      "negationMarkers": []
+    },
+    {
+      "id": "en-08",
+      "source": "en",
+      "target": "es",
+      "text": "Do not cancel order 12345.",
+      "reference": "No cancele el pedido 12345.",
+      "tags": [
+        "negation",
+        "order"
+      ],
+      "exactLiterals": [
+        "12345"
+      ],
+      "negationMarkers": [
+        "no"
+      ]
+    },
+    {
+      "id": "en-09",
+      "source": "en",
+      "target": "es",
+      "text": "We have not received your payment yet.",
+      "reference": "Todavía no hemos recibido su pago.",
+      "tags": [
+        "negation"
+      ],
+      "exactLiterals": [],
+      "negationMarkers": [
+        "no"
+      ]
+    },
+    {
+      "id": "en-10",
+      "source": "en",
+      "target": "es",
+      "text": "We will never ask for your password over the phone.",
+      "reference": "Nunca le pediremos su contraseña por teléfono.",
+      "tags": [
+        "negation",
+        "security"
+      ],
+      "exactLiterals": [],
+      "negationMarkers": [
+        "nunca",
+        "jamás"
+      ]
+    },
+    {
+      "id": "en-11",
+      "source": "en",
+      "target": "es",
+      "text": "Delivery is scheduled for November 15, 2026.",
+      "reference": "La entrega está programada para el 15 de noviembre de 2026.",
+      "tags": [
+        "date"
+      ],
+      "exactLiterals": [],
+      "negationMarkers": []
+    },
+    {
+      "id": "en-12",
+      "source": "en",
+      "target": "es",
+      "text": "Your appointment is on 04/03/2026; please confirm whether this means April 3.",
+      "reference": "Su cita es el 04/03/2026; confirme si se refiere al 3 de abril.",
+      "tags": [
+        "date",
+        "ambiguity"
+      ],
+      "exactLiterals": [
+        "04/03/2026"
+      ],
+      "negationMarkers": []
+    },
+    {
+      "id": "en-13",
+      "source": "en",
+      "target": "es",
+      "text": "We are open from 09:00 to 17:30, Monday through Friday.",
+      "reference": "Atendemos de 09:00 a 17:30, de lunes a viernes.",
+      "tags": [
+        "time"
+      ],
+      "exactLiterals": [
+        "09:00",
+        "17:30"
+      ],
+      "negationMarkers": []
+    },
+    {
+      "id": "en-14",
+      "source": "en",
+      "target": "es",
+      "text": "The total price is 49.95 USD, including tax.",
+      "reference": "El precio total es de 49.95 USD, impuestos incluidos.",
+      "tags": [
+        "price",
+        "currency"
+      ],
+      "exactLiterals": [
+        "USD"
+      ],
+      "negationMarkers": []
+    },
+    {
+      "id": "en-15",
+      "source": "en",
+      "target": "es",
+      "text": "The refund will be 25 EUR, not 250 EUR.",
+      "reference": "El reembolso será de 25 EUR, no de 250 EUR.",
+      "tags": [
+        "price",
+        "negation",
+        "currency"
+      ],
+      "exactLiterals": [
+        "EUR"
+      ],
+      "negationMarkers": [
+        "no"
+      ]
+    },
+    {
+      "id": "en-16",
+      "source": "en",
+      "target": "es",
+      "text": "Your order AB-009871 will arrive tomorrow.",
+      "reference": "Su pedido AB-009871 llegará mañana.",
+      "tags": [
+        "order"
+      ],
+      "exactLiterals": [
+        "AB-009871"
+      ],
+      "negationMarkers": []
+    },
+    {
+      "id": "en-17",
+      "source": "en",
+      "target": "es",
+      "text": "Engineer María López will review your case.",
+      "reference": "La ingeniera María López revisará su caso.",
+      "tags": [
+        "proper_name"
+      ],
+      "exactLiterals": [
+        "María",
+        "López"
+      ],
+      "negationMarkers": []
+    },
+    {
+      "id": "en-18",
+      "source": "en",
+      "target": "es",
+      "text": "Please send the documents to support@example.com.",
+      "reference": "Por favor, envíe los documentos a support@example.com.",
+      "tags": [
+        "email"
+      ],
+      "exactLiterals": [
+        "support@example.com"
+      ],
+      "negationMarkers": []
+    },
+    {
+      "id": "en-19",
+      "source": "en",
+      "target": "es",
+      "text": "Restart the SQL server after saving the configuration.",
+      "reference": "Reinicie el servidor SQL después de guardar la configuración.",
+      "tags": [
+        "technical"
+      ],
+      "exactLiterals": [
+        "SQL"
+      ],
+      "negationMarkers": []
+    },
+    {
+      "id": "en-20",
+      "source": "en",
+      "target": "es",
+      "text": "The VPN connection requires two-factor authentication.",
+      "reference": "La conexión VPN requiere autenticación de dos factores.",
+      "tags": [
+        "technical",
+        "security"
+      ],
+      "exactLiterals": [
+        "VPN"
+      ],
+      "negationMarkers": []
+    },
+    {
+      "id": "en-21",
+      "source": "en",
+      "target": "es",
+      "text": "We would appreciate it if you attached a copy of the invoice.",
+      "reference": "Le agradeceríamos que adjuntara una copia de la factura.",
+      "tags": [
+        "formal",
+        "courtesy"
+      ],
+      "exactLiterals": [],
+      "negationMarkers": []
+    },
+    {
+      "id": "en-22",
+      "source": "en",
+      "target": "es",
+      "text": "Would you kindly hold while I check that information?",
+      "reference": "¿Sería tan amable de esperar mientras verifico esa información?",
+      "tags": [
+        "formal",
+        "courtesy"
+      ],
+      "exactLiterals": [],
+      "negationMarkers": []
+    },
+    {
+      "id": "en-23",
+      "source": "en",
+      "target": "es",
+      "text": "There is a duplicate charge on my account.",
+      "reference": "Hay un cargo duplicado en mi cuenta.",
+      "tags": [
+        "ambiguity",
+        "billing"
+      ],
+      "exactLiterals": [],
+      "negationMarkers": []
+    },
+    {
+      "id": "en-24",
+      "source": "en",
+      "target": "es",
+      "text": "Please check the balance before you charge the card.",
+      "reference": "Revise el saldo antes de cobrar a la tarjeta.",
+      "tags": [
+        "ambiguity",
+        "billing"
+      ],
+      "exactLiterals": [],
+      "negationMarkers": []
+    },
+    {
+      "id": "en-25",
+      "source": "en",
+      "target": "es",
+      "text": "My account don't work and I can't log in.",
+      "reference": "Mi cuenta no funciona y no puedo iniciar sesión.",
+      "tags": [
+        "expression_error",
+        "negation"
+      ],
+      "exactLiterals": [],
+      "negationMarkers": [
+        "no"
+      ]
+    },
+    {
+      "id": "en-26",
+      "source": "en",
+      "target": "es",
+      "text": "I have went to the store, but they couldn't help me.",
+      "reference": "Fui a la tienda, pero no pudieron ayudarme.",
+      "tags": [
+        "expression_error",
+        "negation"
+      ],
+      "exactLiterals": [],
+      "negationMarkers": [
+        "no"
+      ]
+    },
+    {
+      "id": "en-27",
+      "source": "en",
+      "target": "es",
+      "text": "I do not want a replacement; I want a refund.",
+      "reference": "No quiero un reemplazo; quiero un reembolso.",
+      "tags": [
+        "negation",
+        "terminology"
+      ],
+      "exactLiterals": [],
+      "negationMarkers": [
+        "no"
+      ]
+    },
+    {
+      "id": "en-28",
+      "source": "en",
+      "target": "es",
+      "text": "If the package does not arrive before Friday, please contact us again.",
+      "reference": "Si el paquete no llega antes del viernes, vuelva a contactarnos.",
+      "tags": [
+        "negation",
+        "condition"
+      ],
+      "exactLiterals": [],
+      "negationMarkers": [
+        "no"
+      ]
+    },
+    {
+      "id": "en-29",
+      "source": "en",
+      "target": "es",
+      "text": "Confirm 3 units of model X200 and 2 units of model X300.",
+      "reference": "Confirme 3 unidades del modelo X200 y 2 unidades del modelo X300.",
+      "tags": [
+        "quantity",
+        "technical"
+      ],
+      "exactLiterals": [
+        "X200",
+        "X300"
+      ],
+      "negationMarkers": []
+    },
+    {
+      "id": "en-30",
+      "source": "en",
+      "target": "es",
+      "text": "The discount is 15%, but it does not apply to shipping.",
+      "reference": "El descuento es del 15 %, pero no se aplica al envío.",
+      "tags": [
+        "price",
+        "negation"
+      ],
+      "exactLiterals": [],
+      "negationMarkers": [
+        "no"
+      ]
+    },
+    {
+      "id": "en-31",
+      "source": "en",
+      "target": "es",
+      "text": "The payment was declined, not approved.",
+      "reference": "El pago fue rechazado, no aprobado.",
+      "tags": [
+        "negation",
+        "confirmation"
+      ],
+      "exactLiterals": [],
+      "negationMarkers": [
+        "no"
+      ]
+    },
+    {
+      "id": "en-32",
+      "source": "en",
+      "target": "es",
+      "text": "Your outstanding balance is 0 USD.",
+      "reference": "Su saldo pendiente es de 0 USD.",
+      "tags": [
+        "price",
+        "currency"
+      ],
+      "exactLiterals": [
+        "USD"
+      ],
+      "negationMarkers": []
+    },
+    {
+      "id": "en-33",
+      "source": "en",
+      "target": "es",
+      "text": "The tracking number is ZX987654321EN.",
+      "reference": "El número de seguimiento es ZX987654321EN.",
+      "tags": [
+        "order"
+      ],
+      "exactLiterals": [
+        "ZX987654321EN"
+      ],
+      "negationMarkers": []
+    },
+    {
+      "id": "en-34",
+      "source": "en",
+      "target": "es",
+      "text": "Ms Ana Pérez may collect the package with her identification.",
+      "reference": "La señora Ana Pérez puede recoger el paquete con su identificación.",
+      "tags": [
+        "proper_name",
+        "formal"
+      ],
+      "exactLiterals": [
+        "Ana",
+        "Pérez"
+      ],
+      "negationMarkers": []
+    },
+    {
+      "id": "en-35",
+      "source": "en",
+      "target": "es",
+      "text": "Do not share code 004812 with anyone.",
+      "reference": "No comparta el código 004812 con nadie.",
+      "tags": [
+        "negation",
+        "security"
+      ],
+      "exactLiterals": [
+        "004812"
+      ],
+      "negationMarkers": [
+        "no"
+      ]
+    },
+    {
+      "id": "en-36",
+      "source": "en",
+      "target": "es",
+      "text": "Can you confirm that you received both attachments?",
+      "reference": "¿Puede confirmar que recibió ambos archivos adjuntos?",
+      "tags": [
+        "question",
+        "confirmation"
+      ],
+      "exactLiterals": [],
+      "negationMarkers": []
+    },
+    {
+      "id": "en-37",
+      "source": "en",
+      "target": "es",
+      "text": "The warranty covers parts but excludes water damage.",
+      "reference": "La garantía cubre piezas, pero excluye daños por agua.",
+      "tags": [
+        "negation",
+        "technical"
+      ],
+      "exactLiterals": [],
+      "negationMarkers": []
+    },
+    {
+      "id": "en-38",
+      "source": "en",
+      "target": "es",
+      "text": "We will escalate the incident to our technical team.",
+      "reference": "Vamos a escalar la incidencia a nuestro equipo técnico.",
+      "tags": [
+        "terminology",
+        "formal"
+      ],
+      "exactLiterals": [],
+      "negationMarkers": []
+    },
+    {
+      "id": "en-39",
+      "source": "en",
+      "target": "es",
+      "text": "Thank you for your patience; we will update you when the review is complete.",
+      "reference": "Gracias por su paciencia; le informaremos cuando termine la revisión.",
+      "tags": [
+        "courtesy",
+        "formal"
+      ],
+      "exactLiterals": [],
+      "negationMarkers": []
+    },
+    {
+      "id": "en-40",
+      "source": "en",
+      "target": "es",
+      "text": "The customer said, 'I did not authorize that 80 USD charge.'",
+      "reference": "El cliente dijo: «No autoricé ese cargo de 80 USD».",
+      "tags": [
+        "negation",
+        "quotation",
+        "currency"
+      ],
+      "exactLiterals": [
+        "USD"
+      ],
+      "negationMarkers": [
+        "no"
+      ]
+    }
+  ]
+}

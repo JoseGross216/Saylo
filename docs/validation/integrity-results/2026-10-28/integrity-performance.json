@@ -1,0 +1,572 @@
+{
+  "SchemaVersion": 1,
+  "FirstProtectedTranslationMs": 2192.6896,
+  "RawWorkerStartupWithoutCatalogMs": 1828.5272,
+  "Policy": "default-integrity",
+  "Probes": [
+    {
+      "Kind": "plain-short",
+      "Attempt": 1,
+      "Input": "Thank you for contacting us.",
+      "RawOutput": "Gracias por contactarnos.",
+      "Output": "Gracias por contactarnos.",
+      "Status": "accepted_by_rules",
+      "RawMs": 27.9989,
+      "ProtectedMs": 33.4662,
+      "PreparationMs": 0.3212,
+      "ValidationMs": 0.4923,
+      "Segments": 1
+    },
+    {
+      "Kind": "plain-short",
+      "Attempt": 2,
+      "Input": "Thank you for contacting us.",
+      "RawOutput": "Gracias por contactarnos.",
+      "Output": "Gracias por contactarnos.",
+      "Status": "accepted_by_rules",
+      "RawMs": 27.5479,
+      "ProtectedMs": 34.4468,
+      "PreparationMs": 0.3031,
+      "ValidationMs": 0.5851,
+      "Segments": 1
+    },
+    {
+      "Kind": "plain-short",
+      "Attempt": 3,
+      "Input": "Thank you for contacting us.",
+      "RawOutput": "Gracias por contactarnos.",
+      "Output": "Gracias por contactarnos.",
+      "Status": "accepted_by_rules",
+      "RawMs": 26.5181,
+      "ProtectedMs": 33.8965,
+      "PreparationMs": 0.3207,
+      "ValidationMs": 0.4627,
+      "Segments": 1
+    },
+    {
+      "Kind": "plain-short",
+      "Attempt": 4,
+      "Input": "Thank you for contacting us.",
+      "RawOutput": "Gracias por contactarnos.",
+      "Output": "Gracias por contactarnos.",
+      "Status": "accepted_by_rules",
+      "RawMs": 27.6887,
+      "ProtectedMs": 33.07,
+      "PreparationMs": 0.2935,
+      "ValidationMs": 0.4741,
+      "Segments": 1
+    },
+    {
+      "Kind": "plain-short",
+      "Attempt": 5,
+      "Input": "Thank you for contacting us.",
+      "RawOutput": "Gracias por contactarnos.",
+      "Output": "Gracias por contactarnos.",
+      "Status": "accepted_by_rules",
+      "RawMs": 25.8008,
+      "ProtectedMs": 32.5214,
+      "PreparationMs": 0.3022,
+      "ValidationMs": 0.5914,
+      "Segments": 1
+    },
+    {
+      "Kind": "plain-short",
+      "Attempt": 6,
+      "Input": "Thank you for contacting us.",
+      "RawOutput": "Gracias por contactarnos.",
+      "Output": "Gracias por contactarnos.",
+      "Status": "accepted_by_rules",
+      "RawMs": 27.5949,
+      "ProtectedMs": 36.2718,
+      "PreparationMs": 0.3016,
+      "ValidationMs": 0.741,
+      "Segments": 1
+    },
+    {
+      "Kind": "plain-short",
+      "Attempt": 7,
+      "Input": "Thank you for contacting us.",
+      "RawOutput": "Gracias por contactarnos.",
+      "Output": "Gracias por contactarnos.",
+      "Status": "accepted_by_rules",
+      "RawMs": 31.3225,
+      "ProtectedMs": 33.0226,
+      "PreparationMs": 0.2885,
+      "ValidationMs": 0.4893,
+      "Segments": 1
+    },
+    {
+      "Kind": "email",
+      "Attempt": 1,
+      "Input": "Por favor, envie los documentos a soporte@example.com.",
+      "RawOutput": "Please send them to support @ example.com.",
+      "Output": "Please send them to soporte@example.com.",
+      "Status": "accepted_by_rules",
+      "RawMs": 83.1594,
+      "ProtectedMs": 89.6584,
+      "PreparationMs": 0.4422,
+      "ValidationMs": 0.7281,
+      "Segments": 1
+    },
+    {
+      "Kind": "email",
+      "Attempt": 2,
+      "Input": "Por favor, envie los documentos a soporte@example.com.",
+      "RawOutput": "Please send them to support @ example.com.",
+      "Output": "Please send them to soporte@example.com.",
+      "Status": "accepted_by_rules",
+      "RawMs": 76.459,
+      "ProtectedMs": 76.8633,
+      "PreparationMs": 1.7142,
+      "ValidationMs": 0.5465,
+      "Segments": 1
+    },
+    {
+      "Kind": "email",
+      "Attempt": 3,
+      "Input": "Por favor, envie los documentos a soporte@example.com.",
+      "RawOutput": "Please send them to support @ example.com.",
+      "Output": "Please send the documents to soporte@example.com.",
+      "Status": "accepted_by_rules",
+      "RawMs": 82.7653,
+      "ProtectedMs": 110.5856,
+      "PreparationMs": 0.5112,
+      "ValidationMs": 0.7263,
+      "Segments": 1
+    },
+    {
+      "Kind": "email",
+      "Attempt": 4,
+      "Input": "Por favor, envie los documentos a soporte@example.com.",
+      "RawOutput": "Please send them to support @ example.com.",
+      "Output": "Please send them to soporte@example.com.",
+      "Status": "accepted_by_rules",
+      "RawMs": 97.7275,
+      "ProtectedMs": 94.5543,
+      "PreparationMs": 0.4577,
+      "ValidationMs": 0.7092,
+      "Segments": 1
+    },
+    {
+      "Kind": "email",
+      "Attempt": 5,
+      "Input": "Por favor, envie los documentos a soporte@example.com.",
+      "RawOutput": "Please send them to support @ example.com.",
+      "Output": "Please send them to soporte@example.com.",
+      "Status": "accepted_by_rules",
+      "RawMs": 85.9122,
+      "ProtectedMs": 79.4119,
+      "PreparationMs": 0.3891,
+      "ValidationMs": 0.5894,
+      "Segments": 1
+    },
+    {
+      "Kind": "email",
+      "Attempt": 6,
+      "Input": "Por favor, envie los documentos a soporte@example.com.",
+      "RawOutput": "Please send them to support @ example.com.",
+      "Output": "Please send them to soporte@example.com.",
+      "Status": "accepted_by_rules",
+      "RawMs": 89.7915,
+      "ProtectedMs": 80.7798,
+      "PreparationMs": 0.4211,
+      "ValidationMs": 0.561,
+      "Segments": 1
+    },
+    {
+      "Kind": "email",
+      "Attempt": 7,
+      "Input": "Por favor, envie los documentos a soporte@example.com.",
+      "RawOutput": "Please send them to support @ example.com.",
+      "Output": "Please send the documents to soporte@example.com.",
+      "Status": "accepted_by_rules",
+      "RawMs": 78.2399,
+      "ProtectedMs": 84.3268,
+      "PreparationMs": 0.4351,
+      "ValidationMs": 0.6205,
+      "Segments": 1
+    },
+    {
+      "Kind": "tracking",
+      "Attempt": 1,
+      "Input": "El numero de seguimiento es ZX987654321ES.",
+      "RawOutput": "The monitoring number is ZX987654321ES.",
+      "Output": "The monitoring number is ZX987654321ES.",
+      "Status": "accepted_by_rules",
+      "RawMs": 89.2391,
+      "ProtectedMs": 85.272,
+      "PreparationMs": 0.3625,
+      "ValidationMs": 0.8193,
+      "Segments": 1
+    },
+    {
+      "Kind": "tracking",
+      "Attempt": 2,
+      "Input": "El numero de seguimiento es ZX987654321ES.",
+      "RawOutput": "The monitoring number is ZX987654321ES.",
+      "Output": "The monitoring number is ZX987654321ES.",
+      "Status": "accepted_by_rules",
+      "RawMs": 100.9998,
+      "ProtectedMs": 73.9455,
+      "PreparationMs": 0.3457,
+      "ValidationMs": 0.5471,
+      "Segments": 1
+    },
+    {
+      "Kind": "tracking",
+      "Attempt": 3,
+      "Input": "El numero de seguimiento es ZX987654321ES.",
+      "RawOutput": "The monitoring number is ZX987654321ES.",
+      "Output": "The monitoring number is ZX987654321ES.",
+      "Status": "accepted_by_rules",
+      "RawMs": 87.7273,
+      "ProtectedMs": 71.2524,
+      "PreparationMs": 0.4465,
+      "ValidationMs": 0.6546,
+      "Segments": 1
+    },
+    {
+      "Kind": "tracking",
+      "Attempt": 4,
+      "Input": "El numero de seguimiento es ZX987654321ES.",
+      "RawOutput": "The monitoring number is ZX987654321ES.",
+      "Output": "The monitoring number is ZX987654321ES.",
+      "Status": "accepted_by_rules",
+      "RawMs": 88.8632,
+      "ProtectedMs": 78.8894,
+      "PreparationMs": 0.4364,
+      "ValidationMs": 0.6647,
+      "Segments": 1
+    },
+    {
+      "Kind": "tracking",
+      "Attempt": 5,
+      "Input": "El numero de seguimiento es ZX987654321ES.",
+      "RawOutput": "The monitoring number is ZX987654321ES.",
+      "Output": "The monitoring number is ZX987654321ES.",
+      "Status": "accepted_by_rules",
+      "RawMs": 101.0726,
+      "ProtectedMs": 77.8498,
+      "PreparationMs": 0.5749,
+      "ValidationMs": 0.78,
+      "Segments": 1
+    },
+    {
+      "Kind": "tracking",
+      "Attempt": 6,
+      "Input": "El numero de seguimiento es ZX987654321ES.",
+      "RawOutput": "The monitoring number is ZX987654321ES.",
+      "Output": "The monitoring number is ZX987654321ES.",
+      "Status": "accepted_by_rules",
+      "RawMs": 86.6081,
+      "ProtectedMs": 76.9238,
+      "PreparationMs": 0.3263,
+      "ValidationMs": 1.0343,
+      "Segments": 1
+    },
+    {
+      "Kind": "tracking",
+      "Attempt": 7,
+      "Input": "El numero de seguimiento es ZX987654321ES.",
+      "RawOutput": "The monitoring number is ZX987654321ES.",
+      "Output": "The monitoring number is ZX987654321ES.",
+      "Status": "accepted_by_rules",
+      "RawMs": 93.4362,
+      "ProtectedMs": 74.0527,
+      "PreparationMs": 0.3255,
+      "ValidationMs": 0.6655,
+      "Segments": 1
+    },
+    {
+      "Kind": "two-sentences",
+      "Attempt": 1,
+      "Input": "Your order AB-123 is ready. Do not cancel it.",
+      "RawOutput": "Su pedido AB-123 est\u00E1 listo. No lo cancele.",
+      "Output": "Su pedido AB-123 est\u00E1 listo. No lo canceles.",
+      "Status": "accepted_by_rules",
+      "RawMs": 64.3888,
+      "ProtectedMs": 85.4608,
+      "PreparationMs": 0.6193,
+      "ValidationMs": 4.769,
+      "Segments": 2
+    },
+    {
+      "Kind": "two-sentences",
+      "Attempt": 2,
+      "Input": "Your order AB-123 is ready. Do not cancel it.",
+      "RawOutput": "Su pedido AB-123 est\u00E1 listo. No lo cancele.",
+      "Output": "Su pedido AB-123 est\u00E1 listo. No lo canceles.",
+      "Status": "accepted_by_rules",
+      "RawMs": 54.5655,
+      "ProtectedMs": 72.534,
+      "PreparationMs": 0.4572,
+      "ValidationMs": 1.0154,
+      "Segments": 2
+    },
+    {
+      "Kind": "two-sentences",
+      "Attempt": 3,
+      "Input": "Your order AB-123 is ready. Do not cancel it.",
+      "RawOutput": "Su pedido AB-123 est\u00E1 listo. No lo cancele.",
+      "Output": "Su pedido AB-123 est\u00E1 listo. No lo canceles.",
+      "Status": "accepted_by_rules",
+      "RawMs": 67.538,
+      "ProtectedMs": 72.0278,
+      "PreparationMs": 0.3639,
+      "ValidationMs": 1.0190000000000001,
+      "Segments": 2
+    },
+    {
+      "Kind": "two-sentences",
+      "Attempt": 4,
+      "Input": "Your order AB-123 is ready. Do not cancel it.",
+      "RawOutput": "Su pedido AB-123 est\u00E1 listo. No lo cancele.",
+      "Output": "Su pedido AB-123 est\u00E1 listo. No lo canceles.",
+      "Status": "accepted_by_rules",
+      "RawMs": 52.8427,
+      "ProtectedMs": 79.1078,
+      "PreparationMs": 0.4358,
+      "ValidationMs": 1.1179999999999999,
+      "Segments": 2
+    },
+    {
+      "Kind": "two-sentences",
+      "Attempt": 5,
+      "Input": "Your order AB-123 is ready. Do not cancel it.",
+      "RawOutput": "Su pedido AB-123 est\u00E1 listo. No lo cancele.",
+      "Output": "Su pedido AB-123 est\u00E1 listo. No lo canceles.",
+      "Status": "accepted_by_rules",
+      "RawMs": 52.0685,
+      "ProtectedMs": 73.7031,
+      "PreparationMs": 0.3547,
+      "ValidationMs": 1.0613000000000001,
+      "Segments": 2
+    },
+    {
+      "Kind": "two-sentences",
+      "Attempt": 6,
+      "Input": "Your order AB-123 is ready. Do not cancel it.",
+      "RawOutput": "Su pedido AB-123 est\u00E1 listo. No lo cancele.",
+      "Output": "Su orden AB-123 est\u00E1 listo. No lo canceles.",
+      "Status": "accepted_by_rules",
+      "RawMs": 50.4405,
+      "ProtectedMs": 75.706,
+      "PreparationMs": 0.3622,
+      "ValidationMs": 1.0975000000000001,
+      "Segments": 2
+    },
+    {
+      "Kind": "two-sentences",
+      "Attempt": 7,
+      "Input": "Your order AB-123 is ready. Do not cancel it.",
+      "RawOutput": "Su pedido AB-123 est\u00E1 listo. No lo cancele.",
+      "Output": "Su pedido AB-123 est\u00E1 listo. No lo canceles.",
+      "Status": "accepted_by_rules",
+      "RawMs": 57.3023,
+      "ProtectedMs": 75.1436,
+      "PreparationMs": 0.3703,
+      "ValidationMs": 1.03,
+      "Segments": 2
+    },
+    {
+      "Kind": "long-repeated",
+      "Attempt": 1,
+      "Input": "Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. ",
+      "RawOutput": "Su solicitud todav\u00EDa est\u00E1 en revisi\u00F3n. No cancelar el pedido 12345. Le enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud todav\u00EDa est\u00E1 en revisi\u00F3n. No cancelar el pedido 12345. Le enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud a\u00FAn est\u00E1 en revisi\u00F3n. No cancelaremos el pedido 12345. Su solicitud a\u00FAn est\u00E1 en revisi\u00F3n. Su solicitud no ser\u00E1 completada. Su solicitud est\u00E1 en revisi\u00F3n.",
+      "Output": "Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. ",
+      "Status": "accepted_by_rules",
+      "RawMs": 518.5311,
+      "ProtectedMs": 1067.6025,
+      "PreparationMs": 1.238,
+      "ValidationMs": 16.4863,
+      "Segments": 27
+    },
+    {
+      "Kind": "long-repeated",
+      "Attempt": 2,
+      "Input": "Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. ",
+      "RawOutput": "Su solicitud todav\u00EDa est\u00E1 en revisi\u00F3n. No cancelar el pedido 12345. Le enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud todav\u00EDa est\u00E1 en revisi\u00F3n. No cancelar el pedido 12345. Le enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud a\u00FAn est\u00E1 en revisi\u00F3n. No cancelaremos el pedido 12345. Su solicitud a\u00FAn est\u00E1 en revisi\u00F3n. Su solicitud no ser\u00E1 completada. Su solicitud est\u00E1 en revisi\u00F3n.",
+      "Output": null,
+      "Status": "controlled_integrity_rejection",
+      "RawMs": 513.4705,
+      "ProtectedMs": 886.2955,
+      "PreparationMs": 1.3986,
+      "ValidationMs": 12.791000000000002,
+      "Segments": 27
+    },
+    {
+      "Kind": "long-repeated",
+      "Attempt": 3,
+      "Input": "Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. ",
+      "RawOutput": "Su solicitud todav\u00EDa est\u00E1 en revisi\u00F3n. No cancelar el pedido 12345. Le enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud todav\u00EDa est\u00E1 en revisi\u00F3n. No cancelar el pedido 12345. Le enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud a\u00FAn est\u00E1 en revisi\u00F3n. No cancelaremos el pedido 12345. Su solicitud a\u00FAn est\u00E1 en revisi\u00F3n. Su solicitud no ser\u00E1 completada. Su solicitud est\u00E1 en revisi\u00F3n.",
+      "Output": "Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. ",
+      "Status": "accepted_by_rules",
+      "RawMs": 498.7204,
+      "ProtectedMs": 1170.0732,
+      "PreparationMs": 1.7616,
+      "ValidationMs": 18.0815,
+      "Segments": 27
+    }
+  ],
+  "ByKind": {
+    "plain-short": {
+      "Raw": {
+        "Count": 7,
+        "MinMs": 25.8008,
+        "MedianMs": 27.5949,
+        "P95Ms": 31.3225,
+        "MaxMs": 31.3225
+      },
+      "Protected": {
+        "Count": 7,
+        "MinMs": 32.5214,
+        "MedianMs": 33.4662,
+        "P95Ms": 36.2718,
+        "MaxMs": 36.2718
+      },
+      "Preparation": {
+        "Count": 7,
+        "MinMs": 0.2885,
+        "MedianMs": 0.3022,
+        "P95Ms": 0.3212,
+        "MaxMs": 0.3212
+      },
+      "Validation": {
+        "Count": 7,
+        "MinMs": 0.4627,
+        "MedianMs": 0.4923,
+        "P95Ms": 0.741,
+        "MaxMs": 0.741
+      },
+      "Accepted": 7
+    },
+    "email": {
+      "Raw": {
+        "Count": 7,
+        "MinMs": 76.459,
+        "MedianMs": 83.1594,
+        "P95Ms": 97.7275,
+        "MaxMs": 97.7275
+      },
+      "Protected": {
+        "Count": 7,
+        "MinMs": 76.8633,
+        "MedianMs": 84.3268,
+        "P95Ms": 110.5856,
+        "MaxMs": 110.5856
+      },
+      "Preparation": {
+        "Count": 7,
+        "MinMs": 0.3891,
+        "MedianMs": 0.4422,
+        "P95Ms": 1.7142,
+        "MaxMs": 1.7142
+      },
+      "Validation": {
+        "Count": 7,
+        "MinMs": 0.5465,
+        "MedianMs": 0.6205,
+        "P95Ms": 0.7281,
+        "MaxMs": 0.7281
+      },
+      "Accepted": 7
+    },
+    "tracking": {
+      "Raw": {
+        "Count": 7,
+        "MinMs": 86.6081,
+        "MedianMs": 89.2391,
+        "P95Ms": 101.0726,
+        "MaxMs": 101.0726
+      },
+      "Protected": {
+        "Count": 7,
+        "MinMs": 71.2524,
+        "MedianMs": 76.9238,
+        "P95Ms": 85.272,
+        "MaxMs": 85.272
+      },
+      "Preparation": {
+        "Count": 7,
+        "MinMs": 0.3255,
+        "MedianMs": 0.3625,
+        "P95Ms": 0.5749,
+        "MaxMs": 0.5749
+      },
+      "Validation": {
+        "Count": 7,
+        "MinMs": 0.5471,
+        "MedianMs": 0.6655,
+        "P95Ms": 1.0343,
+        "MaxMs": 1.0343
+      },
+      "Accepted": 7
+    },
+    "two-sentences": {
+      "Raw": {
+        "Count": 7,
+        "MinMs": 50.4405,
+        "MedianMs": 54.5655,
+        "P95Ms": 67.538,
+        "MaxMs": 67.538
+      },
+      "Protected": {
+        "Count": 7,
+        "MinMs": 72.0278,
+        "MedianMs": 75.1436,
+        "P95Ms": 85.4608,
+        "MaxMs": 85.4608
+      },
+      "Preparation": {
+        "Count": 7,
+        "MinMs": 0.3547,
+        "MedianMs": 0.3703,
+        "P95Ms": 0.6193,
+        "MaxMs": 0.6193
+      },
+      "Validation": {
+        "Count": 7,
+        "MinMs": 1.0154,
+        "MedianMs": 1.0613000000000001,
+        "P95Ms": 4.769,
+        "MaxMs": 4.769
+      },
+      "Accepted": 7
+    },
+    "long-repeated": {
+      "Raw": {
+        "Count": 3,
+        "MinMs": 498.7204,
+        "MedianMs": 513.4705,
+        "P95Ms": 518.5311,
+        "MaxMs": 518.5311
+      },
+      "Protected": {
+        "Count": 3,
+        "MinMs": 886.2955,
+        "MedianMs": 1067.6025,
+        "P95Ms": 1170.0732,
+        "MaxMs": 1170.0732
+      },
+      "Preparation": {
+        "Count": 3,
+        "MinMs": 1.238,
+        "MedianMs": 1.3986,
+        "P95Ms": 1.7616,
+        "MaxMs": 1.7616
+      },
+      "Validation": {
+        "Count": 3,
+        "MinMs": 12.791000000000002,
+        "MedianMs": 16.4863,
+        "P95Ms": 18.0815,
+        "MaxMs": 18.0815
+      },
+      "Accepted": 2
+    }
+  },
+  "ProtectedWorkingSetMinBytes": 270426112,
+  "ProtectedWorkingSetMaxBytes": 274096128,
+  "RawWorkingSetBytes": 273375232,
+  "Note": "Same models, CPU and worker code. Raw path is unsafe test baseline only; no production bypass. One PC, not SLA. Long n=3."
+}

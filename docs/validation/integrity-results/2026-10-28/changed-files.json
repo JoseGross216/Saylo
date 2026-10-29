@@ -1,0 +1,184 @@
+{
+  "schemaVersion": 1,
+  "baselineFileCount": 96,
+  "files": [
+    {
+      "path": "docs/translation-integrity-improvements.md",
+      "status": "created",
+      "sha256": "3a48d20455a792fb1c9088a5d6b05ca47719b0ddda8c4e8e4d6e9cd9627361d0",
+      "sizeBytes": 17567
+    },
+    {
+      "path": "docs/validation/integrity-results/2026-10-28/default-corpus.json",
+      "status": "created",
+      "sha256": "803771cf82bcf9c91f06777d084c67d5921d94e72b7a69e714c87fa3e9406935",
+      "sizeBytes": 115375
+    },
+    {
+      "path": "docs/validation/integrity-results/2026-10-28/integrity-comparison.json",
+      "status": "created",
+      "sha256": "3ba9362dfbb0feb4a86f153982300d6e0bc8c68b6b8b659281c2c0f0f28fa6d7",
+      "sizeBytes": 42097
+    },
+    {
+      "path": "docs/validation/integrity-results/2026-10-28/integrity-corpus.json",
+      "status": "created",
+      "sha256": "2b3363bffb8e51a9e06aefe3e2c34f14cd86fec6618a5d7c961b8aab47815bb8",
+      "sizeBytes": 67425
+    },
+    {
+      "path": "docs/validation/integrity-results/2026-10-28/integrity-literal-concurrency.json",
+      "status": "created",
+      "sha256": "6a7a6f47a6114af21d14acaa32cc1f14f5242391745dd38426d5faa857cfb672",
+      "sizeBytes": 574
+    },
+    {
+      "path": "docs/validation/integrity-results/2026-10-28/integrity-long-messages.json",
+      "status": "created",
+      "sha256": "0f1b7cf3c4c6679ead1f8e0ebe4a34957ab9f0fc9e21f8948f4917a8b78fafd9",
+      "sizeBytes": 3657
+    },
+    {
+      "path": "docs/validation/integrity-results/2026-10-28/integrity-performance.json",
+      "status": "created",
+      "sha256": "d28144a70e8696c6a8071f4c25206ef52356df8f621875324cfe3d8ec86207af",
+      "sizeBytes": 23844
+    },
+    {
+      "path": "docs/validation/integrity-results/2026-10-28/integrity-repeated-identifiers.json",
+      "status": "created",
+      "sha256": "a0e6889d1cc05e832ec93d8e850a91e4cca400c4586c2433f263d7fae687ad4f",
+      "sizeBytes": 226
+    },
+    {
+      "path": "docs/validation/integrity-results/2026-10-28/review-notes.json",
+      "status": "created",
+      "sha256": "98880b033e9beb7ead33c8e454937ee341396e01cb27b19b75ac391e4cad83e8",
+      "sizeBytes": 28430
+    },
+    {
+      "path": "docs/validation/integrity-results/2026-10-28/stability-concurrency.json",
+      "status": "created",
+      "sha256": "538f111c526af85f1ea9ce783497707853ffa1c0a32893a1674c6406c444693f",
+      "sizeBytes": 198
+    },
+    {
+      "path": "docs/validation/integrity-results/2026-10-28/stability-crash-recovery.json",
+      "status": "created",
+      "sha256": "c0cf77e54243aa346b74d4df9bf88e70c4a4636696d2d7345e72657720a33dfa",
+      "sizeBytes": 111
+    },
+    {
+      "path": "docs/validation/integrity-results/2026-10-28/stability-disposal.json",
+      "status": "created",
+      "sha256": "b923cc945f10f9b9392954cc03310141e88d0d874e8065df7d3fdbd5a5b179e0",
+      "sizeBytes": 110
+    },
+    {
+      "path": "docs/validation/integrity-results/2026-10-28/stability-queued-cancellation.json",
+      "status": "created",
+      "sha256": "bee9b1f380bb0121d05fad8ab2872774fb78d01816870102e6856ce0674f9095",
+      "sizeBytes": 136
+    },
+    {
+      "path": "docs/validation/integrity-results/2026-10-28/stability-timeout.json",
+      "status": "created",
+      "sha256": "f0ed63145688f8ea815d8ef9d5456fd509a5dc5d602b87ab91f1c08e8841e39e",
+      "sizeBytes": 132
+    },
+    {
+      "path": "docs/validation/integrity-results/2026-10-28/test-summary.json",
+      "status": "created",
+      "sha256": "a137313b87a84a5ac544fa4736b37e1a77b605fa29247fbf4358a3a055114f0c",
+      "sizeBytes": 7753
+    },
+    {
+      "path": "src/modules/Saylo.Modules.Translation/TextTranslation/NumericIntegrity.cs",
+      "status": "created",
+      "sha256": "1949ad13ffdb499345dc5f4003a0c6dc72acd172ff7e9eed28700791132c5efc",
+      "sizeBytes": 10933
+    },
+    {
+      "path": "src/modules/Saylo.Modules.Translation/TextTranslation/ProtectedText.cs",
+      "status": "created",
+      "sha256": "55439f2dcd7f0fc555ef224ef994fd0949882dc6103a677f1db56977bb748ef2",
+      "sizeBytes": 6937
+    },
+    {
+      "path": "src/modules/Saylo.Modules.Translation/TextTranslation/SafeTextSegmenter.cs",
+      "status": "created",
+      "sha256": "f2352ae10ce14febfaca2ef45350d89f2444ac6e11e2ec71c6df6c218bae22f4",
+      "sizeBytes": 3756
+    },
+    {
+      "path": "src/modules/Saylo.Modules.Translation/TextTranslation/TranslationIntegrityOptions.cs",
+      "status": "created",
+      "sha256": "be1ed3a7e8215c8e5324b7063eefe2feb4aa8e017ac8602a4ccbcfd6eefa88cb",
+      "sizeBytes": 2582
+    },
+    {
+      "path": "src/modules/Saylo.Modules.Translation/TextTranslation/TranslationIntegrityPlan.cs",
+      "status": "created",
+      "sha256": "6acdbdd482933cceccec218504c8f61fef9297392750d88b8ee67fef248ec9a8",
+      "sizeBytes": 6475
+    },
+    {
+      "path": "tests/Saylo.Modules.Translation.Tests/Python/test_integrity_comparison.py",
+      "status": "created",
+      "sha256": "b66f9cbe8556b0337914f7ed069ca47595f9dcbe5a42b47f3f808accb727734f",
+      "sizeBytes": 2921
+    },
+    {
+      "path": "tests/Saylo.Modules.Translation.Tests/TranslationIntegrityIntegrationTests.cs",
+      "status": "created",
+      "sha256": "038e3e77278602d8969bcc232ddb52f2bc070ea7524091a1b87dc6acc85dd307",
+      "sizeBytes": 20544
+    },
+    {
+      "path": "tests/Saylo.Modules.Translation.Tests/TranslationIntegrityTests.cs",
+      "status": "created",
+      "sha256": "9c58ae6f8e5738b1b2d19efe37f7967b1bd8a49a9da701cae71c6d8d4538a5c5",
+      "sizeBytes": 15696
+    },
+    {
+      "path": "tests/Saylo.Modules.Translation.Tests/TranslationValidationTests.cs",
+      "status": "modified",
+      "sha256": "576c3acbb1ff7f9340e037897b017033e7957c0efd04086201c9c23c9bbd7e77",
+      "sizeBytes": 20891
+    },
+    {
+      "path": "tools/Compare-TranslationIntegrity.py",
+      "status": "created",
+      "sha256": "c68fa977b68c751c43a2e942d69f117cdf30bb1d822f894569b00c412ce13602",
+      "sizeBytes": 5227
+    },
+    {
+      "path": "tools/Test-TranslationIntegrity.ps1",
+      "status": "created",
+      "sha256": "6cf2624a92a26158058d594fd2b288cb7e04eb3ad07ab8cc7f9eaccd8040417f",
+      "sizeBytes": 1443
+    },
+    {
+      "path": "src/modules/Saylo.Modules.Translation.Contracts/TranslationUpdate.cs",
+      "status": "modified",
+      "sha256": "dc9709a4196bd7d8d031aff501273f699a6b4e90138ee2cec05b1315cdc823bf",
+      "sizeBytes": 1419
+    },
+    {
+      "path": "src/modules/Saylo.Modules.Translation/TextTranslation/ArgosTextTranslationEngine.cs",
+      "status": "modified",
+      "sha256": "ce7526c751e2b4ed449ac05757cdb1f4f028b4f7548ae75c12480328f8d5583f",
+      "sizeBytes": 10651
+    },
+    {
+      "path": "src/modules/Saylo.Modules.Translation/TextTranslation/ArgosTranslationOptions.cs",
+      "status": "modified",
+      "sha256": "19db2b695a4483d32c3cdc0032e79a2fa5ad38c92437b23e3087f2da22b31b06",
+      "sizeBytes": 2331
+    }
+  ],
+  "preservedHistoricalDocumentation": true,
+  "noFilesDeleted": true,
+  "sourceScope": "Translation adapter, compatible error enum, validation tests and tooling",
+  "note": "This manifest does not hash itself. Existing Task 3.1 changes are not listed again unless intentionally adapted."
+}

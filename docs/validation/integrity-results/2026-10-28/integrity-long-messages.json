@@ -1,0 +1,22 @@
+[
+  {
+    "Source": "es",
+    "Input": "Su solicitud sigue en revision. No cancele el pedido 12345. Le informaremos por correo cuando termine. Su solicitud sigue en revision. No cancele el pedido 12345. Le informaremos por correo cuando termine. Su solicitud sigue en revision. No cancele el pedido 12345. Le informaremos por correo cuando termine. Su solicitud sigue en revision. No cancele el pedido 12345. Le informaremos por correo cuando termine. Su solicitud sigue en revision. No cancele el pedido 12345. Le informaremos por correo cuando termine. Su solicitud sigue en revision. No cancele el pedido 12345. Le informaremos por correo cuando termine. Su solicitud sigue en revision. No cancele el pedido 12345. Le informaremos por correo cuando termine. Su solicitud sigue en revision. No cancele el pedido 12345. Le informaremos por correo cuando termine. Su solicitud sigue en revision. No cancele el pedido 12345. Le informaremos por correo cuando termine. ",
+    "Output": null,
+    "Status": "controlled_integrity_rejection",
+    "Constraint": "Referent",
+    "TotalMs": 2137.0192
+  },
+  {
+    "Source": "en",
+    "Input": "Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. Your request is still under review. Do not cancel order 12345. We will email you when it is complete. ",
+    "Output": "Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. Su solicitud sigue siendo objeto de revisi\u00F3n. No cancele el pedido 12345. Te enviaremos un correo electr\u00F3nico cuando est\u00E9 completo. ",
+    "Status": "accepted_by_rules",
+    "TotalMs": 1098.0936
+  },
+  {
+    "Source": "en",
+    "Input": "Your order AB-123 is ready. It will not be canceled. Please keep this reference.",
+    "Status": "controlled_integrity_rejection"
+  }
+]

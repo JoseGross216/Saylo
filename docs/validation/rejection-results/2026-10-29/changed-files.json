@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 1,
+  "branch": "users/stanley-translation",
+  "head": "586187145e69e2d8c4d11574178ddae057f23374",
+  "existingStagedChange": "docs/local-text-translation.md",
+  "existingStagedDiffUnchanged": true,
+  "historicalEvidenceAndCorpusUnchanged": true,
+  "allOtherExistingFilesUnchanged": true,
+  "modifiedExistingFiles": [
+    {
+      "path": "src/modules/Saylo.Modules.Translation/TextTranslation/ArgosProcessSession.cs",
+      "beforeSha256": "1f080466f0ad1f2ada5f75384badcb81f67449d7c36f9a49b40e71142c1ef190",
+      "afterSha256": "bca4f9a510b7865531b0edc6108605b6bd48bc642584531213d9a3fda295a42b"
+    },
+    {
+      "path": "src/modules/Saylo.Modules.Translation/TextTranslation/ArgosProtocol.cs",
+      "beforeSha256": "582cc58e57eecd2e2e7671ef17d28839b5185c7e45e5b580cc5ec0a934b70d39",
+      "afterSha256": "ae99a324fcf19634ee3715aceee6f4fb981d5ae7734eb7e7edf4abd9dd477d91"
+    },
+    {
+      "path": "src/modules/Saylo.Modules.Translation/TextTranslation/ArgosTextTranslationEngine.cs",
+      "beforeSha256": "ce7526c751e2b4ed449ac05757cdb1f4f028b4f7548ae75c12480328f8d5583f",
+      "afterSha256": "1c2e15f9d4ec84b3029718bf1f8fe3f2a7a8a6c4d6a2380d125d2de5c6fd109e"
+    },
+    {
+      "path": "src/modules/Saylo.Modules.Translation/TextTranslation/NumericIntegrity.cs",
+      "beforeSha256": "1949ad13ffdb499345dc5f4003a0c6dc72acd172ff7e9eed28700791132c5efc",
+      "afterSha256": "197e12d3710091f41d7702a591f249cddb1da3fe3fa5c028a4c3b0f145f12a91"
+    },
+    {
+      "path": "src/modules/Saylo.Modules.Translation/TextTranslation/TranslationIntegrityPlan.cs",
+      "beforeSha256": "6acdbdd482933cceccec218504c8f61fef9297392750d88b8ee67fef248ec9a8",
+      "afterSha256": "79aee24e533504ccfaedc6f87e3f8396c185f6d4f91b017e921142766b1bed81"
+    },
+    {
+      "path": "src/modules/Saylo.Modules.Translation/TextTranslation/argos_worker.py",
+      "beforeSha256": "25fa17c11e95ca032d46a86ad87b0d25ffb6f2548b39f56a753a2cb3a4616a36",
+      "afterSha256": "834f938036cde35543ef5002c6ecf300d3f10dcd9c501c63d29c3efc910c2532"
+    }
+  ],
+  "newFiles": [
+    {
+      "path": "docs/translation-rejection-improvements.md",
+      "sha256": "66e81eb233f8eea0b26143c9c775e301e60ba1dc4e086b52521d94b8b4628c5a"
+    },
+    {
+      "path": "docs/validation/rejection-results/2026-10-28/README.md",
+      "sha256": "79fe8893439da95c92e7dea95e84c028eb2cf97c4ec39305c29e9f78e339a4a3"
+    },
+    {
+      "path": "docs/validation/rejection-results/2026-10-28/customer-service-v2-corpus.json",
+      "sha256": "692f968738c3d202a303722ad2e83979640548e8a8dd609222062d4ca917d0e1"
+    },
+    {
+      "path": "docs/validation/rejection-results/2026-10-28/long-messages.json",
+      "sha256": "db404408623f7236d1d2479f89bbcddcc390ee1e6b786321f17fe7511e1dd0c5"
+    },
+    {
+      "path": "docs/validation/rejection-results/2026-10-28/previous-profile-v1-corpus.json",
+      "sha256": "755c34db44c3616c8b1c9e3f3a1ed1ba722fe5992660dea690f46278b1960b92"
+    },
+    {
+      "path": "docs/validation/rejection-results/2026-10-29/customer-service-v2-comparison.json",
+      "sha256": "d9512ee5e8b6d7f9268a78cf1776adf47efb68f6c8e3e10963c0a04d7b51a096"
+    },
+    {
+      "path": "docs/validation/rejection-results/2026-10-29/customer-service-v2-corpus.json",
+      "sha256": "3d344980969ccfc66cc5fd4353a1cb224b783335b814f1c0f1be4ada13433fb8"
+    },
+    {
+      "path": "docs/validation/rejection-results/2026-10-29/identifier-and-business-probes.json",
+      "sha256": "43ee3b1f83c7cb1b524d5474cc2c5ff37cf31493242a61bfc2dee45480a761e5"
+    },
+    {
+      "path": "docs/validation/rejection-results/2026-10-29/long-messages.json",
+      "sha256": "0d69ce8e90dd8e3cef34368102bc07bfabe67aba9a47876fcdd5102e0a9e910e"
+    },
+    {
+      "path": "docs/validation/rejection-results/2026-10-29/performance-comparison.json",
+      "sha256": "200dfdcdcc6587f421b611f8ee41cce407c11e5911edef115ca4458b7c552c10"
+    },
+    {
+      "path": "docs/validation/rejection-results/2026-10-29/previous-profile-v1-comparison.json",
+      "sha256": "e422e448f6afe7325789977dbda49c8af161e467bcc0978b1faaf332cadbe705"
+    },
+    {
+      "path": "docs/validation/rejection-results/2026-10-29/previous-profile-v1-corpus.json",
+      "sha256": "dff88f5637479549fbce82c40c313c1d38c7b54295bb63ccca8198060ebace50"
+    },
+    {
+      "path": "docs/validation/rejection-results/2026-10-29/rejection-audit.json",
+      "sha256": "970c76953a72c521196b67844fc51586f5a224b40d7cae6c3273e57eed0876a0"
+    },
+    {
+      "path": "docs/validation/rejection-results/2026-10-29/review-notes.json",
+      "sha256": "6d75e6312ac9860b22206b3ed707546de993caa07d9f693c22d3e1a588021ce3"
+    },
+    {
+      "path": "docs/validation/rejection-results/2026-10-29/stability-integrity-literal-concurrency.json",
+      "sha256": "194b6212c30ae00d2dc054fd7e1f0dec8c52ee6272e71ffcfbb4d017fc688596"
+    },
+    {
+      "path": "docs/validation/rejection-results/2026-10-29/stability-integrity-repeated-identifiers.json",
+      "sha256": "a0e6889d1cc05e832ec93d8e850a91e4cca400c4586c2433f263d7fae687ad4f"
+    },
+    {
+      "path": "docs/validation/rejection-results/2026-10-29/stability-translation-concurrency.json",
+      "sha256": "448b072d4061777bede653075171da63e0054854e573e4e994a50eccfd03527b"
+    },
+    {
+      "path": "docs/validation/rejection-results/2026-10-29/stability-translation-crash-recovery.json",
+      "sha256": "ab7495f7b209acf793835a739e1770b189dbab56cc25f22b42bb942a6ec6c8ee"
+    },
+    {
+      "path": "docs/validation/rejection-results/2026-10-29/stability-translation-disposal.json",
+      "sha256": "30e6fb667fff1d5911d5475e555260505d5673759421ff54f3b8f823645a7c8d"
+    },
+    {
+      "path": "docs/validation/rejection-results/2026-10-29/stability-translation-queued-cancellation.json",
+      "sha256": "c0ead53d9fa62f292af8eaf5a76813640690b3939da737270b5ff0f05bf22d76"
+    },
+    {
+      "path": "docs/validation/rejection-results/2026-10-29/stability-translation-timeout.json",
+      "sha256": "f54bb5f9b0e08c6e7dcf02f4dbd0fbc2d924b95d51ee0501b011fce49eaac694"
+    },
+    {
+      "path": "docs/validation/rejection-results/2026-10-29/test-summary.json",
+      "sha256": "9afb2cb2c3b388327efb543c8a9cd84328a5cb78b918b3fc9b757ff5dfbb4249"
+    },
+    {
+      "path": "src/modules/Saylo.Modules.Translation/TextTranslation/CustomerServiceTranslationProfile.cs",
+      "sha256": "3a6c26c1fb9983bfdfa67b9015da15b32bc41c137d2bb73ee2a808d87c5c1aec"
+    },
+    {
+      "path": "tests/Saylo.Modules.Translation.Tests/Python/test_ranked_candidates.py",
+      "sha256": "6a1cd5b1c7a5a346d5c7114b84a14e8955e977e42885187fd3ba3c405d8c6fdf"
+    },
+    {
+      "path": "tests/Saylo.Modules.Translation.Tests/Python/test_rejection_comparison.py",
+      "sha256": "d9a40df6a50c96ea5e073e57b5368f219ff562c0faddd172cf147a4cda055a0f"
+    },
+    {
+      "path": "tests/Saylo.Modules.Translation.Tests/TranslationRejectionIntegrationTests.cs",
+      "sha256": "2e3b5ee61bcbabed3e1d0f9f692e99255fb4fb68bce35430b9b114bd0d9c989b"
+    },
+    {
+      "path": "tests/Saylo.Modules.Translation.Tests/TranslationRejectionTests.cs",
+      "sha256": "1420005a069d55f69fe601ea8033299e7ea7cc3a1f01de7d56527bfb38e2a131"
+    },
+    {
+      "path": "tools/Compare-TranslationRejections.py",
+      "sha256": "a2ce20c5b8bdf2d4a7a98c26beb8268778705e36d25ace2f1f31d03a56327d82"
+    },
+    {
+      "path": "tools/Test-TranslationRejections.ps1",
+      "sha256": "1506442294ca01a27c1e856b3752134be29639a6d1b0b495e2370b63be0c8775"
+    }
+  ],
+  "deletedFiles": [],
+  "untrackedTextWhitespaceCheck": "passed",
+  "gitDiffCheck": "passed",
+  "note": "Manifest excludes its own hash. Existing staged documentation change belongs to the pre-task baseline and was not altered. No commits or pushes."
+}

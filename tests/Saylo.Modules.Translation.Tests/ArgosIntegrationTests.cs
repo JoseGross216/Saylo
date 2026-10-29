@@ -29,12 +29,10 @@ public sealed class ArgosIntegrationTests(ITestOutputHelper output)
         listener.SetMeasurementEventCallback<double>((instrument, value, _, _) =>
         {
             metrics.Enqueue(new { instrument.Name, Value = value, instrument.Unit });
-            output.WriteLine($"{instrument.Name}={value:F3} {instrument.Unit}");
         });
         listener.SetMeasurementEventCallback<long>((instrument, value, _, _) =>
         {
             metrics.Enqueue(new { instrument.Name, Value = (double)value, instrument.Unit });
-            output.WriteLine($"{instrument.Name}={value} {instrument.Unit}");
         });
         listener.Start();
         var fixtures = new (string Source, string Text, string[] Markers)[]
@@ -77,6 +75,9 @@ public sealed class ArgosIntegrationTests(ITestOutputHelper output)
         finally { await engine.DisposeAsync(); }
         Assert.True(firstPid is not null);
         AssertExited(firstPid!.Value);
+        // Keep test output outside metric callbacks, which can outlive a test's output scope.
+        foreach (var metric in metrics)
+            output.WriteLine(JsonSerializer.Serialize(metric));
         var report = Environment.GetEnvironmentVariable("SAYLO_ARGOS_REPORT");
         if (!string.IsNullOrWhiteSpace(report))
             await File.WriteAllTextAsync(report, JsonSerializer.Serialize(new { Metrics = metrics, Results = results },
