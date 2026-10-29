@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Saylo.Desktop.Models;
 
@@ -9,6 +10,11 @@ public partial class LanguageSelectionViewModel : ViewModelBase
     private LanguageOption _sourceLanguage = LanguageOption.Spanish;
     private LanguageOption _targetLanguage = LanguageOption.English;
 
+    [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(SelectionHint))]
+    [NotifyCanExecuteChangedFor(nameof(SwapCommand))]
+    private bool _isEnabled = true;
+
     public IReadOnlyList<LanguageOption> AvailableLanguages => LanguageOption.Supported;
 
     public LanguageOption SourceLanguage
@@ -16,7 +22,7 @@ public partial class LanguageSelectionViewModel : ViewModelBase
         get => _sourceLanguage;
         set
         {
-            if (!IsSupported(value))
+            if (!IsEnabled || !IsSupported(value))
                 return;
 
             SetPair(value, value == _targetLanguage ? _sourceLanguage : _targetLanguage);
@@ -28,7 +34,7 @@ public partial class LanguageSelectionViewModel : ViewModelBase
         get => _targetLanguage;
         set
         {
-            if (!IsSupported(value))
+            if (!IsEnabled || !IsSupported(value))
                 return;
 
             SetPair(value == _sourceLanguage ? _targetLanguage : _sourceLanguage, value);
@@ -36,9 +42,16 @@ public partial class LanguageSelectionViewModel : ViewModelBase
     }
 
     public string DirectionLabel => $"{SourceLanguage.Name} → {TargetLanguage.Name}";
+    public string SelectionHint => IsEnabled
+        ? "Los idiomas se aplican a la transcripción y a la traducción del mensaje."
+        : "Los idiomas se conservan durante la operación activa.";
 
-    [RelayCommand]
-    private void Swap() => SetPair(_targetLanguage, _sourceLanguage);
+    [RelayCommand(CanExecute = nameof(IsEnabled))]
+    private void Swap()
+    {
+        if (IsEnabled)
+            SetPair(_targetLanguage, _sourceLanguage);
+    }
 
     private static bool IsSupported(LanguageOption? value) =>
         value == LanguageOption.Spanish || value == LanguageOption.English;

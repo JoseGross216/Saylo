@@ -1,0 +1,59 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:Saylo.Desktop.ViewModels"
+             xmlns:audio="using:Saylo.Desktop.Services.Audio"
+             x:Class="Saylo.Desktop.Views.AudioInputView"
+             x:DataType="vm:AudioInputViewModel">
+    <Border BorderBrush="{StaticResource SayloLine}" BorderThickness="0,1,0,0" Padding="0,16,0,0">
+        <StackPanel Spacing="12">
+            <Grid ColumnDefinitions="*,Auto">
+                <Label Content="Micrófono de entrada" Target="{Binding #MicrophoneSelector}" Padding="0"
+                       FontWeight="SemiBold" />
+                <TextBlock Grid.Column="1" Text="{Binding PlatformName}" Classes="muted" FontSize="11" />
+            </Grid>
+            <Grid ColumnDefinitions="*,Auto" ColumnSpacing="10">
+                <ComboBox x:Name="MicrophoneSelector" Classes="language"
+                          ItemsSource="{Binding Devices}" SelectedItem="{Binding SelectedDevice, Mode=TwoWay}"
+                          IsEnabled="{Binding CanChooseDevice}" AutomationProperties.Name="Micrófono de entrada">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate x:DataType="audio:AudioInputDevice">
+                            <TextBlock Text="{Binding Name}" TextTrimming="CharacterEllipsis" />
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+                <Button Grid.Column="1" Content="Actualizar" Classes="secondary"
+                        Command="{Binding RefreshDevicesCommand}" AutomationProperties.Name="Actualizar micrófonos" />
+            </Grid>
+            <Grid ColumnDefinitions="*,Auto" ColumnSpacing="12">
+                <WrapPanel>
+                    <Button Content="Grabar" Command="{Binding StartCommand}" Classes="primary" Margin="0,0,8,0"
+                            AutomationProperties.Name="Iniciar grabación del micrófono" />
+                    <Button Content="Detener" Command="{Binding StopCommand}" Classes="secondary" Margin="0,0,8,0"
+                            AutomationProperties.Name="Detener grabación y transcribir" />
+                    <Button Content="Descartar" Command="{Binding CancelCommand}" IsVisible="{Binding IsSessionActive}"
+                            Classes="secondary" AutomationProperties.Name="Cancelar y descartar grabación" />
+                </WrapPanel>
+                <TextBlock Grid.Column="1" Text="{Binding DurationLabel}" FontWeight="SemiBold"
+                           VerticalAlignment="Center" AutomationProperties.Name="Duración de la grabación" />
+            </Grid>
+            <ProgressBar Value="{Binding ElapsedSeconds}" Maximum="30" Height="4"
+                         IsVisible="{Binding IsRecording}" AutomationProperties.Name="Progreso del límite de 30 segundos" />
+            <ProgressBar IsIndeterminate="True" Height="4" IsVisible="{Binding IsBusy}"
+                         AutomationProperties.Name="Procesando audio" />
+            <TextBlock Text="{Binding StatusMessage}" TextWrapping="Wrap" Classes="muted" FontSize="12"
+                       AutomationProperties.LiveSetting="Polite" />
+            <StackPanel IsVisible="{Binding IsReviewing}" Spacing="10">
+                <Label Content="Revisa la transcripción" Target="{Binding #TranscriptInput}" Padding="0"
+                       FontWeight="SemiBold" />
+                <TextBox x:Name="TranscriptInput" Text="{Binding Transcript, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                         Classes="composer" AcceptsReturn="True" TextWrapping="Wrap" Height="88"
+                         ScrollViewer.VerticalScrollBarVisibility="Auto"
+                         AutomationProperties.Name="Transcripción editable" />
+                <Button Content="Añadir al mensaje" Command="{Binding AcceptTranscriptCommand}"
+                        Classes="primary" HorizontalAlignment="Right" />
+            </StackPanel>
+            <TextBlock Text="Solo se graba el micrófono que selecciones, durante un máximo de 30 segundos."
+                       Classes="muted" FontSize="11" TextWrapping="Wrap" />
+        </StackPanel>
+    </Border>
+</UserControl>

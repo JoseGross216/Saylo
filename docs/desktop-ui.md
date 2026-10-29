@@ -1,63 +1,120 @@
-# Base de interfaz de SAYLO — Paquete 1
+# Interfaz de SAYLO — Paquetes 1 y 2
 
-La ventana principal utiliza Avalonia 12, CommunityToolkit.Mvvm y bindings
-compilados. Se mantiene `net8.0`, como el resto de la solución. El arranque
-existente en `App.axaml.cs` compone `MainViewModel` y asigna su `DataContext`.
+La aplicación usa Avalonia 12, CommunityToolkit.Mvvm, bindings compilados y .NET 8,
+como el resto de la solución. La UI depende de los contratos públicos de Translation,
+sin arrancar Api, Identity ni servicios HTTP.
 
-## Organización
+## Componentes
 
-- `MainViewModel`: compone el espacio de trabajo y sus ViewModels hijos.
-- `LanguageSelectionView` / `LanguageSelectionViewModel`: selectores manuales
-  español e inglés, intercambio y dirección visible. Elegir el idioma del otro
-  selector intercambia la pareja. Nunca se notifica una pareja con idiomas iguales.
-- `TextInputView` / `TextInputViewModel`: editor multilínea, contador y borrado.
-  El borrador permanece en memoria y se conserva al cambiar los idiomas.
-- `LanguageOption`: etiquetas de UI para los tipos `Language` del contrato público.
-- `Styles/SayloTheme.axaml`: colores, tipografía, superficies, controles e iconos
-  vectoriales compartidos. Tema claro explícito para mantener el contraste.
+- `MainViewModel`: compone idiomas, borrador, entrada de audio y conversación temporal.
+- `LanguageSelectionViewModel`: selección manual español/inglés e intercambio. Cambiar
+  un idioma al del otro selector intercambia la pareja de forma atómica. Durante una
+  operación se bloquean los selectores y el comando, incluido su atajo de teclado.
+- `TextInputViewModel`: edición multilínea, contador, borrado y creación de solicitudes
+  validadas. Se conserva el original; 160 caracteres es un benchmark, no un límite.
+- `AudioInputViewModel` / `AudioInputView`: dispositivos, grabar, detener, descartar,
+  duración, progreso, errores y transcripción editable. Se conserva el dispositivo por
+  ID al actualizar; al desaparecer se elimina la selección obsoleta.
+- `ConversationMessageViewModel` / `ConversationView`: original, traducción, guía
+  aproximada o IPA, estados independientes de pronunciación y voz. Los resultados
+  parciales se muestran al llegar y un fallo posterior conserva el texto.
 
-Las vistas solamente inicializan XAML; las reglas de selección y entrada residen
-en ViewModels sin controles ni tipos de motores. Desktop referencia únicamente
-Translation.Contracts; no necesita arrancar Api, Identity ni un servidor.
+Los code-behind solo inicializan vistas y gestionan apertura/cierre de ventana. El
+cierre espera la cancelación de operaciones y la liberación del adaptador antes de
+terminar, incluso si se solicita cerrar varias veces.
 
-## Alcance y punto de integración
+## Composición de servicios futuros
 
-Este paquete construye la base de la ventana. Traducir y grabar se muestran
-deshabilitados con una explicación de disponibilidad. No se generan resultados
-de ejemplo ni se accede al micrófono. La conversación presenta su estado vacío
-y anticipa texto, pronunciación aproximada y voz automática según SRS v0.6.
+El constructor inyectable es:
 
-`TextInputViewModel.CreateRequest(source, target)` prepara un
-`TextTranslationRequest` validado para la integración posterior del comando de
-traducción. Rechaza entradas vacías o de espacios, preserva el original y usa
-los mismos idiomas del contrato. Los 160 caracteres del SRS son una condición
-de benchmark, no un límite de entrada.
+```csharp
+new MainViewModel(
+    audioInput: nativeAudioAdapter,         // IAudioInputAdapter
+    recognizer: localSpeechRecognizer,     // ISpeechRecognitionEngine, opcional
+    translation: localTranslationService); // ITranslationService, opcional
+```
 
-El envío, las actualizaciones progresivas del resultado, la conversación,
-STT/TTS, la reproducción y la comprobación de modelos corresponden a los
-siguientes paquetes. La reproducción deberá ocurrir una sola vez por operación
-vigente, conservando el texto ante errores de pronunciación o voz.
+La composición real se registra en `App.axaml.cs`. No se incluyen motores simulados en
+la aplicación. Los dobles de servicios existen exclusivamente en el proyecto de pruebas.
 
-## Uso y accesibilidad
+`AudioInputAdapterFactory.CreateDefault()` detecta Windows, macOS o Linux y devuelve
+un adaptador que declara la captura pendiente de configuración en esa plataforma.
+**Este paquete prepara la frontera multiplataforma; no implementa todavía captura
+nativa, permisos del SO ni acceso real a dispositivos.** Sin adaptador nativo no se
+inventan micrófonos y Grabar permanece deshabilitado. Sin servicio de traducción,
+Traducir permanece deshabilitado y la UI explica su disponibilidad.
 
-- Selectores y editor con etiquetas y nombres para tecnologías de asistencia.
-- Navegación con Tab y foco visible de Fluent; Alt+Abajo abre los selectores.
-- `Ctrl+Mayús+S`: intercambiar idiomas.
-- `Ctrl+L` dentro del editor: borrar el borrador; también existe un botón.
-- `Enter`: nueva línea. Los atajos habituales de copiar/pegar siguen disponibles.
-- Ventana inicial de 1080 × 820, mínimo de 760 × 740 unidades lógicas. El área
-  central se desplaza verticalmente cuando falta altura; el editor desplaza
-  internamente el texto largo.
+`IAudioInputAdapter` define:
+
+| Operación | Contrato del adaptador nativo |
+| --- | --- |
+| `GetDevicesAsync` | Enumerar micrófonos sin activar captura ni solicitar permisos. |
+| `StartAsync` | Solicitar acceso por acción explícita y capturar solo el micrófono seleccionado. |
+| `StopAsync` | Entregar PCM16 en memoria con frecuencia y canales válidos. |
+| `CancelAsync` | Liberar el dispositivo y descartar búferes, también después de un inicio fallido. |
+| `DisposeAsync` | Limpiar recursos al cerrar la aplicación. |
+
+El adaptador debe respetar cancelación, ser seguro ante limpieza repetida, imponer
+el máximo de 30 segundos en su propia capa y mapear permisos, desconexiones y fallos
+mediante `AudioInputException`. No debe capturar loopback ni audio de llamadas. No
+se exponen mensajes internos del proveedor en la interfaz.
+
+## Flujo de audio
+
+1. El empleado abre Voz y consulta o actualiza micrófonos.
+2. Selecciona un dispositivo e inicia voluntariamente la grabación.
+3. Los idiomas y el dispositivo quedan bloqueados durante la sesión de voz.
+4. Detener, o llegar a 30 segundos, finaliza la captura. La UI también rechaza una
+   salida que exceda ese límite. Un `TimeProvider` permite comprobarlo sin esperas reales.
+5. El motor STT inyectado recibe el audio y el idioma de origen capturado al iniciar.
+6. El empleado revisa y corrige la transcripción. No se traduce automáticamente.
+7. Añadir al mensaje agrega el texto revisado al borrador existente sin perderlo.
+8. Descartar cancela arranque, grabación o transcripción, elimina la transcripción y
+   libera recursos. Un fallo de limpieza bloquea nuevas grabaciones hasta recuperarse
+   mediante Actualizar.
+
+El micrófono nunca se inicia al abrir la ventana o al enumerar dispositivos. Sin STT,
+se informa de su ausencia y se descarta el audio tras detener. El adaptador debe
+hacer que el retorno de Cancel/Dispose implique que sus búferes han sido descartados.
+
+## Traducción y conversación
+
+`TranslateCommand` crea un `TextTranslationRequest` con el idioma y texto vigentes,
+consume una vez `ITranslationService.TranslateTextAsync` y aplica las actualizaciones
+al mensaje de esa operación. Cancela por token, ignora actualizaciones de otra operación
+y conserva el texto confirmado. La interfaz permanece reactiva y el borrador editable.
+
+Los mensajes y el audio generado se mantienen en memoria durante la sesión y se
+liberan al cerrar. La integración de reproducción, autoplay, selección de salida,
+repetición de voz, limpieza confirmada del chat y portapapeles queda para paquetes
+posteriores. Esta entrega muestra explícitamente la reproducción pendiente de configurar;
+no reproduce sonido ni transmite audio a aplicaciones externas.
+
+## Teclado y accesibilidad
+
+- Tab: navegación entre controles; foco visible de Fluent y etiquetas accesibles.
+- `Ctrl+Mayús+S`: intercambiar idiomas, cuando el contexto permite hacerlo.
+- `Ctrl+Enter`: solicitar traducción, cuando existe servicio y texto válido.
+- `Ctrl+L` dentro del editor: borrar el borrador.
+- Enter: nueva línea en el borrador o la transcripción.
+- Estados de audio y traducción anunciables a tecnologías de asistencia.
+
+La ventana inicial mide 1080 × 860 unidades lógicas; mínimo 760 × 640. El panel Voz
+se expande bajo el editor. La zona central se desplaza verticalmente cuando falta
+altura; la conversación y los editores también admiten desplazamiento de contenido.
 
 ## Validación
 
 ```powershell
-dotnet build Saylo.slnx -c Release
-dotnet test Saylo.slnx -c Release
+dotnet build src/Saylo.Desktop/Saylo.Desktop.csproj -c Release
+dotnet test tests/Saylo.Desktop.Tests/Saylo.Desktop.Tests.csproj -c Release
+dotnet test tests/Saylo.Architecture.Tests/Saylo.Architecture.Tests.csproj -c Release
 dotnet run --project src/Saylo.Desktop/Saylo.Desktop.csproj
 ```
 
-`Saylo.Desktop.Tests` verifica cambios de idioma sin estados inválidos, borrador
-conservado, validación de entradas, dirección del contrato y borrado de espacios.
-La comprobación visual se realiza en Windows; macOS y Linux requieren su propia
-validación antes de declarar compatibilidad.
+Las pruebas de escritorio usan adaptadores y motores de prueba, sin acceso a micrófonos,
+red o modelos reales. Verifican selección, revisión, cancelación durante arranque y STT,
+límite temporal, errores, cierre y entrega progresiva. La revisión visual se realiza en
+Windows; macOS y Linux necesitan validación con adaptadores nativos antes de declarar
+compatibilidad de captura. La prueba de cancelación de Whisper que fallaba en la suite
+general del paquete 1 pertenece al módulo de Translation, que este paquete no modifica.
