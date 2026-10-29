@@ -1,4 +1,5 @@
 using Avalonia.Controls;
+using Avalonia.Threading;
 using Saylo.Desktop.ViewModels;
 
 namespace Saylo.Desktop.Views;
@@ -24,7 +25,9 @@ public partial class MainWindow : Window
             IsEnabled = false;
             await model.DisposeAsync();
             _closing = true;
-            Close();
+            // Leave the original Closing event before requesting the final close,
+            // including when every cleanup task completed synchronously.
+            Dispatcher.UIThread.Post(Close);
         };
     }
 }
