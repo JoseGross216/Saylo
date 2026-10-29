@@ -1,65 +1,116 @@
 using System;
+using System.Threading;
+using System.Threading.Tasks;
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using Saylo.Desktop.Services;
+using Saylo.Desktop.Services.Audio;
+using Saylo.Modules.Conversations;
 using Saylo.Modules.Translation.Contracts;
 
 namespace Saylo.Desktop.ViewModels;
 
-/// <summary>Session-only visual projection; partial failures never remove delivered text.</summary>
-public partial class ConversationMessageViewModel(TextTranslationRequest request) : ViewModelBase
+public enum ChatPlaybackState { Ready, Playing, Stopped, Failed }
+
+public partial class ConversationMessageViewModel : ViewModelBase
 {
-    public string SourceText { get; } = request.Text;
-    public string DirectionLabel { get; } = $"{request.SourceLanguage.Code.ToUpperInvariant()} → {request.TargetLanguage.Code.ToUpperInvariant()}";
-    public Guid? OperationId { get; private set; }
-    public AudioData? Audio { get; private set; }
+    private readonly IClipboardService _clipboard;
+    private readonly ChatPlaybackController _playback;
+    private readonly Func<bool> _canInteract;
+    private ChatPlaybackState _playbackState;
+    public ConversationMessage Entry { get; }
 
-    [ObservableProperty]
-    [NotifyPropertyChangedFor(nameof(HasTranslation))]
-    private string _translatedText = string.Empty;
-    [ObservableProperty] private string _pronunciationText = string.Empty;
-    [ObservableProperty] private string _pronunciationLabel = "Pronunciación pendiente";
-    [ObservableProperty] private string _audioStatus = "Voz pendiente";
-    [ObservableProperty] private string _status = "Traduciendo…";
-
-    public bool HasTranslation => !string.IsNullOrWhiteSpace(TranslatedText);
-
-    public void Apply(TranslationUpdate update)
+    public ConversationMessageViewModel(ConversationMessage entry, IClipboardService clipboard,
+        ChatPlaybackController playback, Func<bool> canInteract)
     {
-        if (OperationId is { } id && id != update.OperationId) return;
-        OperationId ??= update.OperationId;
-        switch (update)
+        Entry = entry;
+        _clipboard = clipboard;
+        _playback = playback;
+        _canInteract = canInteract;
+    }
+
+    public string SourceText => Entry.SourceText;
+    public string TranslatedText => Entry.TranslatedText;
+    public string DirectionLabel => $"{Entry.SourceLanguage.Code.ToUpperInvariant()} → {Entry.TargetLanguage.Code.ToUpperInvariant()}";
+    public string OriginLabel => Entry.Origin switch
+    {
+        MessageOrigin.ReviewedVoice => "Voz revisada",
+        MessageOrigin.Mixed => "Texto y voz revisada",
+        _ => "Texto escrito"
+    };
+    public Guid? OperationId => Entry.OperationId;
+    public AudioData? Audio => Entry.Audio;
+    public bool HasTranslation => Entry.HasTranslation;
+    public string PronunciationText => Entry.Pronunciation?.Text ?? string.Empty;
+    public string PronunciationLabel => Entry.PronunciationState switch
+    {
+        ResultState.Ready when Entry.Pronunciation?.Notation == PronunciationNotation.Ipa => "Pronunciación · IPA",
+        ResultState.Ready => "Pronunciación · guía aproximada",
+        ResultState.Pending => "Preparando pronunciación…",
+        _ => "Pronunciación no disponible"
+    };
+    public string Status => Entry.State switch
+    {
+        MessageState.Translating => "Traduciendo…",
+        MessageState.Enriching => "Texto disponible",
+        MessageState.Ready => "Traducción disponible",
+        MessageState.Canceled => "Operación cancelada",
+        _ when HasTranslation => "La operación falló. El contenido disponible se conserva.",
+        _ => "No se pudo traducir. Conserva el mensaje y reintenta."
+    };
+    public string AudioStatus => Entry.AudioState switch
+    {
+        ResultState.Pending => "Generando voz…",
+        ResultState.Failed => "No se pudo generar la voz",
+        ResultState.Ready when !_playback.IsAvailable => "Reproducción local no disponible. El texto se conserva.",
+        ResultState.Ready when _playbackState == ChatPlaybackState.Playing => "Reproduciendo voz local…",
+        ResultState.Ready when _playbackState == ChatPlaybackState.Failed => "No se pudo reproducir. Pulsa Repetir audio para reintentar.",
+        ResultState.Ready when _playbackState == ChatPlaybackState.Stopped => "Audio detenido · disponible para repetir",
+        ResultState.Ready => "Voz lista · disponible para repetir",
+        _ => "Voz no disponible"
+    };
+    public bool IsPlaying => _playbackState == ChatPlaybackState.Playing && !Entry.IsErased;
+    public bool CanPlay => Audio is not null && !Entry.IsErased && _canInteract() && _playback.IsAvailable;
+    private bool CanRepeat => CanPlay && !IsPlaying;
+    private bool CanStop => IsPlaying;
+    private bool CanCopy => HasTranslation && !Entry.IsErased && _canInteract() && _clipboard.IsAvailable;
+
+    [ObservableProperty] private string _copyStatus = string.Empty;
+
+    [RelayCommand(CanExecute = nameof(CanCopy))]
+    private async Task CopyAsync()
+    {
+        if (!CanCopy) return;
+        var text = TranslatedText;
+        try
         {
-            case TextTranslationCompleted text:
-                TranslatedText = text.TranslatedText;
-                Status = "Texto disponible";
-                break;
-            case PronunciationCompleted pronunciation:
-                PronunciationText = pronunciation.Pronunciation.Text;
-                PronunciationLabel = pronunciation.Pronunciation.Notation == PronunciationNotation.Ipa
-                    ? "Pronunciación · IPA" : "Pronunciación · guía aproximada";
-                break;
-            case SpeechSynthesisCompleted speech:
-                Audio = speech.Audio;
-                AudioStatus = "Voz generada · reproducción pendiente de configurar";
-                break;
-            case TranslationStageFailed error when error.Stage == TranslationStage.Pronunciation:
-                PronunciationLabel = "Pronunciación no disponible";
-                break;
-            case TranslationStageFailed error when error.Stage == TranslationStage.SpeechSynthesis:
-                AudioStatus = "No se pudo generar la voz";
-                break;
-            case TranslationStageFailed:
-                Status = "No se pudo traducir. Conserva el mensaje y reintenta.";
-                break;
+            await _clipboard.SetTextAsync(text);
+            if (!Entry.IsErased) CopyStatus = "Traducción copiada";
         }
+        catch { if (!Entry.IsErased) CopyStatus = "No se pudo copiar. Puedes reintentar."; }
     }
 
-    public void Complete()
+    [RelayCommand(CanExecute = nameof(CanRepeat))]
+    private Task RepeatAsync() => CanRepeat ? _playback.PlayAsync(this, CancellationToken.None) : Task.CompletedTask;
+
+    [RelayCommand(CanExecute = nameof(CanStop))]
+    private Task StopAudioAsync() => _playback.StopAsync();
+
+    public void SetPlaybackState(ChatPlaybackState state)
     {
-        if (PronunciationLabel == "Pronunciación pendiente") PronunciationLabel = "Pronunciación no disponible";
-        if (AudioStatus == "Voz pendiente") AudioStatus = "Voz no disponible";
-        if (HasTranslation) Status = "Traducción disponible";
-        else if (Status == "Traduciendo…") Status = "No se recibió una traducción. Reintenta.";
+        if (Entry.IsErased) return;
+        _playbackState = state;
+        Refresh();
     }
 
-    public void ReleaseAudio() => Audio = null;
+    public void Refresh()
+    {
+        if (Entry.IsErased) CopyStatus = string.Empty;
+        foreach (var name in new[] { nameof(SourceText), nameof(TranslatedText), nameof(HasTranslation),
+            nameof(PronunciationText), nameof(PronunciationLabel), nameof(AudioStatus), nameof(Status),
+            nameof(Audio), nameof(OperationId), nameof(IsPlaying) }) OnPropertyChanged(name);
+        CopyCommand.NotifyCanExecuteChanged();
+        RepeatCommand.NotifyCanExecuteChanged();
+        StopAudioCommand.NotifyCanExecuteChanged();
+    }
 }

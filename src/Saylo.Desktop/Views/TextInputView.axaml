@@ -18,7 +18,7 @@
         <TextBox x:Name="MessageInput" Grid.Row="1" Classes="composer"
                  Text="{Binding Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                  PlaceholderText="Escribe el mensaje que quieres traducir…"
-                 AcceptsReturn="True" TextWrapping="Wrap" Height="88"
+                 AcceptsReturn="True" TextWrapping="Wrap" Height="64"
                  ScrollViewer.VerticalScrollBarVisibility="Auto"
                  AutomationProperties.Name="Mensaje para traducir"
                  AutomationProperties.HelpText="Escribe o pega una frase. Enter añade una nueva línea." />

@@ -14,6 +14,17 @@
     <Window.KeyBindings>
         <KeyBinding Gesture="Ctrl+Enter" Command="{Binding TranslateCommand}" />
     </Window.KeyBindings>
+    <Window.Styles>
+        <Style Selector="Grid.workspace">
+            <Setter Property="MinHeight" Value="720" />
+        </Style>
+        <Style Selector="Grid.workspace.audioOpen">
+            <Setter Property="MinHeight" Value="1040" />
+        </Style>
+        <Style Selector="Grid.workspace.reviewing">
+            <Setter Property="MinHeight" Value="1220" />
+        </Style>
+    </Window.Styles>
     <Grid RowDefinitions="80,*,40">
         <Border Background="{StaticResource SayloAccent}" Padding="32,0">
             <Grid ColumnDefinitions="Auto,*,Auto" VerticalAlignment="Center">
@@ -30,33 +41,31 @@
                 </Border>
             </Grid>
         </Border>
-        <ScrollViewer Grid.Row="1" Margin="32,24,32,20"
+        <ScrollViewer x:Name="WorkspaceScroll" Grid.Row="1" Margin="32,24,32,20"
                       HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
-            <Grid MaxWidth="1120" HorizontalAlignment="Stretch"
-                  RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="16">
-                <StackPanel Spacing="5">
-                    <TextBlock Text="Tu espacio de traducción" FontSize="24" FontWeight="SemiBold" />
-                    <TextBlock Text="Prepara tus mensajes en español e inglés." Classes="muted" FontSize="13" />
-                </StackPanel>
-                <views:LanguageSelectionView Grid.Row="1" DataContext="{Binding Languages}" />
-                <views:ConversationView Grid.Row="2" />
-                <Border Grid.Row="3" Classes="card" Padding="20,16">
-                    <Grid RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="14">
+            <Grid MaxWidth="1120" HorizontalAlignment="Stretch" Classes="workspace"
+                  Classes.audioOpen="{Binding IsAudioPanelOpen}" Classes.reviewing="{Binding AudioInput.IsReviewing}"
+                  Height="{Binding #WorkspaceScroll.Viewport.Height}"
+                  RowDefinitions="Auto,*,Auto" RowSpacing="16">
+                <views:LanguageSelectionView DataContext="{Binding Languages}" />
+                <views:ConversationView Grid.Row="1" />
+                <Border Grid.Row="2" Classes="card" Padding="20,16">
+                    <Grid RowDefinitions="Auto,Auto,Auto" RowSpacing="14">
                         <views:TextInputView DataContext="{Binding TextInput}" />
                         <Grid Grid.Row="1" ColumnDefinitions="*,Auto,Auto,Auto" ColumnSpacing="10">
-                            <TextBlock Text="Ctrl+Enter para traducir" Classes="muted" FontSize="11"
-                                       VerticalAlignment="Center" />
+                            <TextBlock Text="{Binding StatusMessage}" Classes="muted" FontSize="12"
+                                       VerticalAlignment="Center" TextWrapping="Wrap"
+                                       AutomationProperties.LiveSetting="Polite" />
                             <ToggleButton Grid.Column="1" IsChecked="{Binding IsAudioPanelOpen, Mode=TwoWay}"
                                           Content="Voz" Padding="16,8" MinHeight="40" CornerRadius="8"
                                           AutomationProperties.Name="Mostrar controles de entrada por voz" />
                             <Button Grid.Column="2" Content="Cancelar" Classes="secondary"
                                     Command="{Binding TranslateCancelCommand}" IsVisible="{Binding IsTranslating}" />
                             <Button Grid.Column="3" Classes="primary" Content="Traducir"
-                                    Command="{Binding TranslateCommand}" AutomationProperties.Name="Traducir mensaje" />
+                                    Command="{Binding TranslateCommand}" AutomationProperties.Name="Traducir mensaje"
+                                    ToolTip.Tip="Traducir (Ctrl+Enter)" />
                         </Grid>
-                        <TextBlock Grid.Row="2" Text="{Binding StatusMessage}" Classes="muted" FontSize="12"
-                                   TextWrapping="Wrap" AutomationProperties.LiveSetting="Polite" />
-                        <views:AudioInputView Grid.Row="3" DataContext="{Binding AudioInput}"
+                        <views:AudioInputView Grid.Row="2" DataContext="{Binding AudioInput}"
                                               IsVisible="{Binding $parent[Window].((vm:MainViewModel)DataContext).IsAudioPanelOpen}" />
                     </Grid>
                 </Border>

@@ -3,13 +3,29 @@
              xmlns:vm="using:Saylo.Desktop.ViewModels"
              x:Class="Saylo.Desktop.Views.ConversationView"
              x:DataType="vm:MainViewModel">
-    <Border Classes="card" Padding="20,16" MinHeight="220">
-        <Grid RowDefinitions="Auto,*,Auto" RowSpacing="12">
-            <Grid ColumnDefinitions="*,Auto">
-                <TextBlock Text="CONVERSACIÓN" Classes="eyebrow" />
-                <TextBlock Grid.Column="1" Text="{Binding Languages.DirectionLabel}" Classes="muted" FontSize="12" />
+    <Border Classes="card" Padding="20,16" MinHeight="240">
+        <Grid RowDefinitions="Auto,Auto,*,Auto" RowSpacing="12">
+            <Grid ColumnDefinitions="*,Auto,Auto" ColumnSpacing="12">
+                <TextBlock Text="CONVERSACIÓN" Classes="eyebrow" VerticalAlignment="Center" />
+                <TextBlock Grid.Column="1" Text="{Binding Languages.DirectionLabel}" Classes="muted"
+                           FontSize="12" VerticalAlignment="Center" />
+                <Button Grid.Column="2" Content="Limpiar chat" Classes="secondary" Padding="12,6"
+                        MinHeight="32" Command="{Binding RequestClearCommand}"
+                        AutomationProperties.Name="Solicitar limpieza de conversación" />
             </Grid>
-            <StackPanel Grid.Row="1" IsVisible="{Binding IsConversationEmpty}"
+            <Border Grid.Row="1" IsVisible="{Binding IsClearConfirmationOpen}" Background="#FFF5E6"
+                    BorderBrush="#EDCFA5" BorderThickness="1" CornerRadius="10" Padding="14">
+                <StackPanel Spacing="10">
+                    <TextBlock Text="¿Eliminar la conversación de esta sesión?" FontWeight="SemiBold" TextWrapping="Wrap" />
+                    <TextBlock Text="Se eliminarán los mensajes y se detendrá el audio. Tu borrador se conserva."
+                               FontSize="12" TextWrapping="Wrap" />
+                    <StackPanel Orientation="Horizontal" Spacing="10" HorizontalAlignment="Right">
+                        <Button Content="Conservar chat" Command="{Binding KeepConversationCommand}" Classes="secondary" />
+                        <Button Content="Eliminar conversación" Command="{Binding ConfirmClearCommand}" Classes="primary" />
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+            <StackPanel Grid.Row="2" IsVisible="{Binding IsConversationEmpty}"
                         VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="10" Margin="16,8">
                 <Border Background="#EDF3FA" CornerRadius="16" Width="48" Height="48" HorizontalAlignment="Center">
                     <Path Classes="lineIcon" Data="{StaticResource MessageIcon}" Width="24" Height="24" />
@@ -18,30 +34,57 @@
                 <TextBlock Text="Escribe o prepara una frase con tu micrófono."
                            Classes="muted" FontSize="13" TextWrapping="Wrap" TextAlignment="Center" />
             </StackPanel>
-            <ScrollViewer Grid.Row="1" IsVisible="{Binding HasMessages}" MaxHeight="380"
+            <ScrollViewer x:Name="MessageScroll" Grid.Row="2" IsVisible="{Binding HasMessages}" MaxHeight="420"
                           HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
                 <ItemsControl ItemsSource="{Binding Messages}">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate x:DataType="vm:ConversationMessageViewModel">
-                            <Border BorderBrush="{StaticResource SayloLine}" BorderThickness="0,0,0,1" Padding="0,12">
-                                <StackPanel Spacing="8">
-                                    <TextBlock Text="{Binding DirectionLabel}" Classes="eyebrow" />
-                                    <SelectableTextBlock Text="{Binding SourceText}" TextWrapping="Wrap" />
-                                    <Border Background="#F1F6FB" CornerRadius="8" Padding="12" IsVisible="{Binding HasTranslation}">
-                                        <SelectableTextBlock Text="{Binding TranslatedText}" FontWeight="SemiBold" TextWrapping="Wrap" />
-                                    </Border>
-                                    <TextBlock Text="{Binding PronunciationLabel}" Classes="eyebrow" />
-                                    <SelectableTextBlock Text="{Binding PronunciationText}" TextWrapping="Wrap" />
-                                    <TextBlock Text="{Binding AudioStatus}" Classes="muted" FontSize="11" TextWrapping="Wrap" />
-                                    <TextBlock Text="{Binding Status}" Classes="muted" FontSize="12" TextWrapping="Wrap" />
-                                </StackPanel>
-                            </Border>
+                            <StackPanel Spacing="10" Margin="0,8,0,18">
+                                <Border Background="{StaticResource SayloAccent}" CornerRadius="12,12,2,12"
+                                        Padding="14" Margin="48,0,0,0" HorizontalAlignment="Stretch">
+                                    <StackPanel Spacing="6">
+                                        <Grid ColumnDefinitions="*,Auto">
+                                            <TextBlock Text="{Binding OriginLabel}" Foreground="#D6E4F0" FontSize="11" />
+                                            <TextBlock Grid.Column="1" Text="{Binding DirectionLabel}" Foreground="#D6E4F0" FontSize="11" />
+                                        </Grid>
+                                        <SelectableTextBlock Text="{Binding SourceText}" TextWrapping="Wrap" Foreground="White" />
+                                    </StackPanel>
+                                </Border>
+                                <Border Background="#F3F7FC" CornerRadius="12,12,12,2" Padding="14" Margin="0,0,48,0">
+                                    <StackPanel Spacing="10">
+                                        <TextBlock Text="TRADUCCIÓN" Classes="eyebrow" />
+                                        <SelectableTextBlock Text="{Binding TranslatedText}" FontWeight="SemiBold"
+                                                             FontSize="16" TextWrapping="Wrap" IsVisible="{Binding HasTranslation}" />
+                                        <StackPanel Spacing="5" IsVisible="{Binding HasTranslation}">
+                                            <TextBlock Text="{Binding PronunciationLabel}" Classes="eyebrow" TextWrapping="Wrap" />
+                                            <SelectableTextBlock Text="{Binding PronunciationText}" TextWrapping="Wrap" />
+                                        </StackPanel>
+                                        <TextBlock Text="{Binding Status}" Classes="muted" FontSize="12" TextWrapping="Wrap"
+                                                   AutomationProperties.LiveSetting="Polite" />
+                                        <TextBlock Text="{Binding AudioStatus}" Classes="muted" FontSize="12" TextWrapping="Wrap"
+                                                   AutomationProperties.LiveSetting="Polite" />
+                                        <WrapPanel>
+                                            <Button Content="Copiar traducción" Command="{Binding CopyCommand}" Classes="secondary"
+                                                    Margin="0,0,8,6" FontSize="12" MinHeight="34" />
+                                            <Button Content="Repetir audio" Command="{Binding RepeatCommand}" Classes="secondary"
+                                                    Margin="0,0,8,6" FontSize="12" MinHeight="34" />
+                                            <Button Content="Detener audio" Command="{Binding StopAudioCommand}" Classes="secondary"
+                                                    IsVisible="{Binding IsPlaying}" Margin="0,0,0,6" FontSize="12" MinHeight="34" />
+                                        </WrapPanel>
+                                        <TextBlock Text="{Binding CopyStatus}" FontSize="11" MinHeight="16" TextWrapping="Wrap"
+                                                   AutomationProperties.LiveSetting="Polite" />
+                                    </StackPanel>
+                                </Border>
+                            </StackPanel>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>
             </ScrollViewer>
-            <TextBlock Grid.Row="2" Text="Texto · pronunciación aproximada o IPA · voz local"
-                       Classes="muted" FontSize="11" HorizontalAlignment="Center" TextWrapping="Wrap" />
+            <StackPanel Grid.Row="3" Spacing="6">
+                <ProgressBar IsIndeterminate="True" Height="3" IsVisible="{Binding IsClearing}" />
+                <TextBlock Text="Solo durante esta sesión · el audio se reproduce en este equipo"
+                           Classes="muted" FontSize="11" HorizontalAlignment="Center" TextWrapping="Wrap" />
+            </StackPanel>
         </Grid>
     </Border>
 </UserControl>
