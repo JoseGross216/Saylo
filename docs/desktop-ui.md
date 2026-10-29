@@ -107,6 +107,11 @@ instancia empieza vacía. El texto copiado queda bajo la gestión del portapapel
 
 Detalles de estados, reproducción, pruebas y límites: [Módulo de conversaciones](conversations-chat.md).
 
+El paquete 5 añade un indicador del estado actual, reproducción automática opcional,
+detención desde la cabecera del chat y recuperación ante fallos de audio sin perder
+la traducción. La captura queda bloqueada hasta confirmar que la salida se detuvo.
+Detalles: [Reproducción, estados y errores](playback-states-errors.md).
+
 ## Teclado y accesibilidad
 
 - Tab: navegación entre controles; foco visible de Fluent y etiquetas accesibles.

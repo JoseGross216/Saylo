@@ -32,6 +32,8 @@ public sealed class ConversationMessage
     public bool IsErased { get; private set; }
     public bool AutoplayClaimed { get; private set; }
     public TranslationErrorCode? FailureCode { get; private set; }
+    public TranslationErrorCode? PronunciationFailureCode { get; private set; }
+    public TranslationErrorCode? AudioFailureCode { get; private set; }
 
     internal bool Apply(TranslationUpdate update)
     {
@@ -58,10 +60,12 @@ public sealed class ConversationMessage
             case TranslationStageFailed error when HasTranslation && error.Stage == TranslationStage.Pronunciation
                 && PronunciationState == ResultState.Pending:
                 PronunciationState = ResultState.Failed;
+                PronunciationFailureCode = error.Code;
                 break;
             case TranslationStageFailed error when HasTranslation && error.Stage == TranslationStage.SpeechSynthesis
                 && AudioState == ResultState.Pending:
                 AudioState = ResultState.Failed;
+                AudioFailureCode = error.Code;
                 break;
             case TranslationStageFailed error when !HasTranslation && error.Stage == TranslationStage.TextTranslation:
                 FailureCode = error.Code;
@@ -115,6 +119,7 @@ public sealed class ConversationMessage
     {
         IsErased = true;
         FailureCode = null;
+        PronunciationFailureCode = AudioFailureCode = null;
         SourceText = TranslatedText = string.Empty;
         Pronunciation = null;
         Audio = null;

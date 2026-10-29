@@ -5,11 +5,13 @@
              x:DataType="vm:MainViewModel">
     <Border Classes="card" Padding="20,16" MinHeight="240">
         <Grid RowDefinitions="Auto,Auto,*,Auto" RowSpacing="12">
-            <Grid ColumnDefinitions="*,Auto,Auto" ColumnSpacing="12">
+            <Grid ColumnDefinitions="*,Auto,Auto,Auto" ColumnSpacing="12">
                 <TextBlock Text="CONVERSACIÓN" Classes="eyebrow" VerticalAlignment="Center" />
                 <TextBlock Grid.Column="1" Text="{Binding Languages.DirectionLabel}" Classes="muted"
                            FontSize="12" VerticalAlignment="Center" />
-                <Button Grid.Column="2" Content="Limpiar chat" Classes="secondary" Padding="12,6"
+                <Button Grid.Column="2" Content="{Binding StopPlaybackLabel}" Classes="secondary" Padding="12,6"
+                        MinHeight="32" Command="{Binding StopPlaybackCommand}" IsVisible="{Binding ShowStopPlayback}" />
+                <Button Grid.Column="3" Content="Limpiar chat" Classes="secondary" Padding="12,6"
                         MinHeight="32" Command="{Binding RequestClearCommand}"
                         AutomationProperties.Name="Solicitar limpieza de conversación" />
             </Grid>
@@ -86,8 +88,13 @@
             </ScrollViewer>
             <StackPanel Grid.Row="3" Spacing="6">
                 <ProgressBar IsIndeterminate="True" Height="3" IsVisible="{Binding IsClearing}" />
-                <TextBlock Text="Solo durante esta sesión · el audio se reproduce en este equipo"
-                           Classes="muted" FontSize="11" HorizontalAlignment="Center" TextWrapping="Wrap" />
+                <Grid ColumnDefinitions="*,Auto" ColumnSpacing="12">
+                    <TextBlock Text="Solo durante esta sesión · audio en este equipo"
+                               Classes="muted" FontSize="11" VerticalAlignment="Center" TextWrapping="Wrap" />
+                    <CheckBox Grid.Column="1" Content="Reproducir voz automáticamente" FontSize="12" MinHeight="24"
+                              IsChecked="{Binding IsAutoplayEnabled, Mode=TwoWay}"
+                              ToolTip.Tip="La voz se reproduce una vez al estar lista. Puedes repetirla desde el mensaje." />
+                </Grid>
             </StackPanel>
         </Grid>
     </Border>
