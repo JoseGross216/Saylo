@@ -1,12 +1,14 @@
-# Interfaz de SAYLO — Paquetes 1 y 2
+# Interfaz de SAYLO — Paquetes 1, 2 y 3
 
 La aplicación usa Avalonia 12, CommunityToolkit.Mvvm, bindings compilados y .NET 8,
-como el resto de la solución. La UI depende de los contratos públicos de Translation,
+como el resto de la solución. La UI depende de Conversations y los contratos públicos de Translation,
 sin arrancar Api, Identity ni servicios HTTP.
 
 ## Componentes
 
 - `MainViewModel`: compone idiomas, borrador, entrada de audio y conversación temporal.
+- `ConversationSession` / `ConversationMessage`: lógica de sesión en el módulo
+  Conversations, con estados independientes, origen de entrada e invalidación al limpiar.
 - `LanguageSelectionViewModel`: selección manual español/inglés e intercambio. Cambiar
   un idioma al del otro selector intercambia la pareja de forma atómica. Durante una
   operación se bloquean los selectores y el comando, incluido su atajo de teclado.
@@ -19,7 +21,7 @@ sin arrancar Api, Identity ni servicios HTTP.
   aproximada o IPA, estados independientes de pronunciación y voz. Los resultados
   parciales se muestran al llegar y un fallo posterior conserva el texto.
 
-Los code-behind solo inicializan vistas y gestionan apertura/cierre de ventana. El
+Los code-behind inicializan vistas, desplazan nuevos mensajes y gestionan apertura/cierre. El
 cierre espera la cancelación de operaciones y la liberación del adaptador antes de
 terminar, incluso si se solicita cerrar varias veces.
 
@@ -31,11 +33,13 @@ El constructor inyectable es:
 new MainViewModel(
     audioInput: nativeAudioAdapter,         // IAudioInputAdapter
     recognizer: localSpeechRecognizer,     // ISpeechRecognitionEngine, opcional
-    translation: localTranslationService); // ITranslationService, opcional
+    translation: localTranslationService,  // ITranslationService, opcional
+    playback: AudioPlaybackAdapterFactory.CreateDefault(),
+    clipboard: new AvaloniaClipboardService(() => window.Clipboard));
 ```
 
 La composición real se registra en `App.axaml.cs`. No se incluyen motores simulados en
-la aplicación. Los dobles de servicios existen exclusivamente en el proyecto de pruebas.
+la aplicación. Los dobles se utilizan únicamente en pruebas y verificaciones visuales.
 
 `AudioInputAdapterFactory.CreateDefault()` detecta Windows, macOS o Linux y devuelve
 un adaptador que declara la captura pendiente de configuración en esa plataforma.
@@ -84,11 +88,19 @@ consume una vez `ITranslationService.TranslateTextAsync` y aplica las actualizac
 al mensaje de esa operación. Cancela por token, ignora actualizaciones de otra operación
 y conserva el texto confirmado. La interfaz permanece reactiva y el borrador editable.
 
-Los mensajes y el audio generado se mantienen en memoria durante la sesión y se
-liberan al cerrar. La integración de reproducción, autoplay, selección de salida,
-repetición de voz, limpieza confirmada del chat y portapapeles queda para paquetes
-posteriores. Esta entrega muestra explícitamente la reproducción pendiente de configurar;
-no reproduce sonido ni transmite audio a aplicaciones externas.
+El paquete 3 añade copia de la traducción, limpieza confirmada, autoplay una vez por
+operación, repetición y detención. `ChatPlaybackController` evita superposición de voces
+y detiene el audio anterior al iniciar otra traducción. `WindowsAudioPlaybackAdapter`
+reproduce PCM16 en memoria en la salida predeterminada de Windows, sin archivos de audio.
+Otros sistemas utilizan `IAudioPlaybackAdapter` con diagnóstico de indisponibilidad hasta
+integrar su backend nativo. No se transmite audio a aplicaciones externas.
+
+Limpiar invalida las operaciones pendientes, cancela la traducción y la captura, detiene
+la voz y elimina los mensajes y sus referencias a audio. El borrador se conserva. Cerrar
+la ventana cancela y libera todos los recursos y elimina también el borrador. Una nueva
+instancia empieza vacía. El texto copiado queda bajo la gestión del portapapeles del SO.
+
+Detalles de estados, reproducción, pruebas y límites: [Módulo de conversaciones](conversations-chat.md).
 
 ## Teclado y accesibilidad
 
@@ -108,6 +120,7 @@ altura; la conversación y los editores también admiten desplazamiento de conte
 ```powershell
 dotnet build src/Saylo.Desktop/Saylo.Desktop.csproj -c Release
 dotnet test tests/Saylo.Desktop.Tests/Saylo.Desktop.Tests.csproj -c Release
+dotnet test tests/Saylo.Modules.Conversations.Tests/Saylo.Modules.Conversations.Tests.csproj -c Release
 dotnet test tests/Saylo.Architecture.Tests/Saylo.Architecture.Tests.csproj -c Release
 dotnet run --project src/Saylo.Desktop/Saylo.Desktop.csproj
 ```
