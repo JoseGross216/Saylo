@@ -1,4 +1,4 @@
-# Interfaz de SAYLO — Paquetes 1, 2 y 3
+# Interfaz de SAYLO — Paquetes 1, 2, 3 y 4
 
 La aplicación usa Avalonia 12, CommunityToolkit.Mvvm, bindings compilados y .NET 8,
 como el resto de la solución. La UI depende de Conversations y los contratos públicos de Translation,
@@ -38,8 +38,10 @@ new MainViewModel(
     clipboard: new AvaloniaClipboardService(() => window.Clipboard));
 ```
 
-La composición real se registra en `App.axaml.cs`. No se incluyen motores simulados en
-la aplicación. Los dobles se utilizan únicamente en pruebas y verificaciones visuales.
+La composición real se registra en `App.axaml.cs`. Desde el paquete 4,
+`DesktopTranslationFactory` conecta Argos cuando se configura y ofrece una demostración
+explícita con `--demo`. Nunca sustituye un fallo del motor real por resultados simulados.
+La demostración está identificada en la interfaz y solo conoce sus frases precargadas.
 
 `AudioInputAdapterFactory.CreateDefault()` detecta Windows, macOS o Linux y devuelve
 un adaptador que declara la captura pendiente de configuración en esa plataforma.
@@ -47,6 +49,9 @@ un adaptador que declara la captura pendiente de configuración en esa plataform
 nativa, permisos del SO ni acceso real a dispositivos.** Sin adaptador nativo no se
 inventan micrófonos y Grabar permanece deshabilitado. Sin servicio de traducción,
 Traducir permanece deshabilitado y la UI explica su disponibilidad.
+
+El flujo escrito, la configuración y la demostración del paquete 4 se documentan en
+[Traducción escrita y flujos UI](written-translation-ui.md).
 
 `IAudioInputAdapter` define:
 

@@ -47,12 +47,13 @@
                                             <TextBlock Text="{Binding OriginLabel}" Foreground="#D6E4F0" FontSize="11" />
                                             <TextBlock Grid.Column="1" Text="{Binding DirectionLabel}" Foreground="#D6E4F0" FontSize="11" />
                                         </Grid>
+                                        <TextBlock Text="{Binding OriginalLabel}" Foreground="#D6E4F0" FontSize="11" />
                                         <SelectableTextBlock Text="{Binding SourceText}" TextWrapping="Wrap" Foreground="White" />
                                     </StackPanel>
                                 </Border>
                                 <Border Background="#F3F7FC" CornerRadius="12,12,12,2" Padding="14" Margin="0,0,48,0">
                                     <StackPanel Spacing="10">
-                                        <TextBlock Text="TRADUCCIÓN" Classes="eyebrow" />
+                                        <TextBlock Text="{Binding TranslationLabel}" Classes="eyebrow" />
                                         <SelectableTextBlock Text="{Binding TranslatedText}" FontWeight="SemiBold"
                                                              FontSize="16" TextWrapping="Wrap" IsVisible="{Binding HasTranslation}" />
                                         <StackPanel Spacing="5" IsVisible="{Binding HasTranslation}">
@@ -64,6 +65,9 @@
                                         <TextBlock Text="{Binding AudioStatus}" Classes="muted" FontSize="12" TextWrapping="Wrap"
                                                    AutomationProperties.LiveSetting="Polite" />
                                         <WrapPanel>
+                                            <Button Content="Reintentar traducción" Command="{Binding RetryTranslationCommand}"
+                                                    IsVisible="{Binding ShowRetry}" Classes="secondary" Margin="0,0,8,6"
+                                                    FontSize="12" MinHeight="34" />
                                             <Button Content="Copiar traducción" Command="{Binding CopyCommand}" Classes="secondary"
                                                     Margin="0,0,8,6" FontSize="12" MinHeight="34" />
                                             <Button Content="Repetir audio" Command="{Binding RepeatCommand}" Classes="secondary"

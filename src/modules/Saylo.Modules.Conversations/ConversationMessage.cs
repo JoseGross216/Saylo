@@ -31,6 +31,7 @@ public sealed class ConversationMessage
     public bool HasTranslation => !string.IsNullOrWhiteSpace(TranslatedText);
     public bool IsErased { get; private set; }
     public bool AutoplayClaimed { get; private set; }
+    public TranslationErrorCode? FailureCode { get; private set; }
 
     internal bool Apply(TranslationUpdate update)
     {
@@ -63,6 +64,7 @@ public sealed class ConversationMessage
                 AudioState = ResultState.Failed;
                 break;
             case TranslationStageFailed error when !HasTranslation && error.Stage == TranslationStage.TextTranslation:
+                FailureCode = error.Code;
                 State = MessageState.Failed;
                 FinishPending();
                 break;
@@ -95,10 +97,11 @@ public sealed class ConversationMessage
         FinishPending();
     }
 
-    public void Fail()
+    public void Fail(TranslationErrorCode code = TranslationErrorCode.EngineFailure)
     {
         if (IsErased) return;
         State = MessageState.Failed;
+        FailureCode = code;
         FinishPending();
     }
 
@@ -111,6 +114,7 @@ public sealed class ConversationMessage
     internal void Erase()
     {
         IsErased = true;
+        FailureCode = null;
         SourceText = TranslatedText = string.Empty;
         Pronunciation = null;
         Audio = null;

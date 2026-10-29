@@ -6,7 +6,7 @@
     <UserControl.KeyBindings>
         <KeyBinding Gesture="Ctrl+L" Command="{Binding ClearCommand}" />
     </UserControl.KeyBindings>
-    <Grid RowDefinitions="Auto,Auto,Auto" RowSpacing="10">
+    <Grid RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="8">
         <Grid ColumnDefinitions="*,Auto">
             <Label Content="Tu mensaje" Target="{Binding #MessageInput}" Padding="0"
                    FontWeight="SemiBold" />
@@ -17,7 +17,7 @@
         </Grid>
         <TextBox x:Name="MessageInput" Grid.Row="1" Classes="composer"
                  Text="{Binding Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                 PlaceholderText="Escribe el mensaje que quieres traducir…"
+                 PlaceholderText="{Binding Placeholder}" Classes.invalid="{Binding HasValidationError}"
                  AcceptsReturn="True" TextWrapping="Wrap" Height="64"
                  ScrollViewer.VerticalScrollBarVisibility="Auto"
                  AutomationProperties.Name="Mensaje para traducir"
@@ -26,5 +26,7 @@
             <TextBlock Text="Enter para una nueva línea" Classes="muted" FontSize="11" />
             <TextBlock Grid.Column="1" Text="{Binding CharacterCountLabel}" Classes="muted" FontSize="11" />
         </Grid>
+        <TextBlock Grid.Row="3" Text="{Binding ValidationMessage}" IsVisible="{Binding HasValidationError}"
+                   Foreground="#8B3D21" FontSize="12" TextWrapping="Wrap" AutomationProperties.LiveSetting="Polite" />
     </Grid>
 </UserControl>

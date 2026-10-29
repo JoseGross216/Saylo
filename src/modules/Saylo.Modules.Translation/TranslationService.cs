@@ -145,6 +145,16 @@ public sealed class TranslationService : ITranslationService
             token.ThrowIfCancellationRequested();
             return new(null, exception.Code);
         }
+        catch (OutOfMemoryException)
+        {
+            token.ThrowIfCancellationRequested();
+            return new(null, TranslationErrorCode.InsufficientMemory);
+        }
+        catch (Exception exception) when (exception is IOException or UnauthorizedAccessException)
+        {
+            token.ThrowIfCancellationRequested();
+            return new(null, TranslationErrorCode.ResourceUnavailable);
+        }
         catch (Exception)
         {
             token.ThrowIfCancellationRequested();

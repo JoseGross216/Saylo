@@ -2,6 +2,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="using:Saylo.Desktop.ViewModels"
         xmlns:views="using:Saylo.Desktop.Views"
+        xmlns:services="using:Saylo.Desktop.Services.Translation"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="1080" d:DesignHeight="860"
@@ -34,25 +35,43 @@
                 </Border>
                 <StackPanel Grid.Column="1" Margin="12,0,0,0" Spacing="2">
                     <TextBlock Text="Saylo" FontSize="23" FontWeight="SemiBold" Foreground="White" />
-                    <TextBlock Text="Tu asistente de idiomas" FontSize="11" Foreground="#D6E4F0" />
+                    <TextBlock Text="{Binding BackendTitle}" FontSize="11" Foreground="#D6E4F0" />
                 </StackPanel>
-                <Border Grid.Column="2" Background="#335E83" CornerRadius="16" Padding="12,7">
-                    <TextBlock Text="Procesamiento local" FontSize="12" Foreground="White" />
+                <Border Grid.Column="2" Background="#335E83" CornerRadius="16" Padding="12,7"
+                        ToolTip.Tip="{Binding BackendDescription}">
+                    <TextBlock Text="{Binding BackendBadge}" FontSize="12" Foreground="White" />
                 </Border>
             </Grid>
         </Border>
         <ScrollViewer x:Name="WorkspaceScroll" Grid.Row="1" Margin="32,24,32,20"
                       HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
             <Grid MaxWidth="1120" HorizontalAlignment="Stretch" Classes="workspace"
+                  Classes.demonstration="{Binding IsDemonstration}"
                   Classes.audioOpen="{Binding IsAudioPanelOpen}" Classes.reviewing="{Binding AudioInput.IsReviewing}"
                   Height="{Binding #WorkspaceScroll.Viewport.Height}"
                   RowDefinitions="Auto,*,Auto" RowSpacing="16">
                 <views:LanguageSelectionView DataContext="{Binding Languages}" />
                 <views:ConversationView Grid.Row="1" />
                 <Border Grid.Row="2" Classes="card" Padding="20,16">
-                    <Grid RowDefinitions="Auto,Auto,Auto" RowSpacing="14">
+                    <StackPanel Spacing="12">
+                        <StackPanel IsVisible="{Binding IsDemonstration}" Spacing="6">
+                            <TextBlock Text="Frases de demostración · sin IA ni audio" Foreground="#886126" FontSize="12" />
+                            <Grid ColumnDefinitions="*,Auto" ColumnSpacing="10">
+                                <ComboBox ItemsSource="{Binding AvailableExamples}" SelectedItem="{Binding SelectedExample, Mode=TwoWay}"
+                                          HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" MinHeight="36"
+                                          AutomationProperties.Name="Frase de demostración">
+                                    <ComboBox.ItemTemplate>
+                                        <DataTemplate x:DataType="services:TranslationExample">
+                                            <TextBlock Text="{Binding SourceText}" TextTrimming="CharacterEllipsis" />
+                                        </DataTemplate>
+                                    </ComboBox.ItemTemplate>
+                                </ComboBox>
+                                <Button Grid.Column="1" Content="Usar ejemplo" Classes="secondary" Command="{Binding LoadExampleCommand}" />
+                            </Grid>
+                        </StackPanel>
                         <views:TextInputView DataContext="{Binding TextInput}" />
-                        <Grid Grid.Row="1" ColumnDefinitions="*,Auto,Auto,Auto" ColumnSpacing="10">
+                        <ProgressBar Height="3" IsIndeterminate="True" IsVisible="{Binding IsTranslating}" AutomationProperties.Name="Traduciendo el mensaje" />
+                        <Grid ColumnDefinitions="*,Auto,Auto,Auto" ColumnSpacing="10">
                             <TextBlock Text="{Binding StatusMessage}" Classes="muted" FontSize="12"
                                        VerticalAlignment="Center" TextWrapping="Wrap"
                                        AutomationProperties.LiveSetting="Polite" />
@@ -60,14 +79,14 @@
                                           Content="Voz" Padding="16,8" MinHeight="40" CornerRadius="8"
                                           AutomationProperties.Name="Mostrar controles de entrada por voz" />
                             <Button Grid.Column="2" Content="Cancelar" Classes="secondary"
-                                    Command="{Binding TranslateCancelCommand}" IsVisible="{Binding IsTranslating}" />
+                                    Command="{Binding CancelActiveTranslationCommand}" IsVisible="{Binding IsTranslating}" />
                             <Button Grid.Column="3" Classes="primary" Content="Traducir"
                                     Command="{Binding TranslateCommand}" AutomationProperties.Name="Traducir mensaje"
                                     ToolTip.Tip="Traducir (Ctrl+Enter)" />
                         </Grid>
-                        <views:AudioInputView Grid.Row="2" DataContext="{Binding AudioInput}"
+                        <views:AudioInputView DataContext="{Binding AudioInput}"
                                               IsVisible="{Binding $parent[Window].((vm:MainViewModel)DataContext).IsAudioPanelOpen}" />
-                    </Grid>
+                    </StackPanel>
                 </Border>
             </Grid>
         </ScrollViewer>
