@@ -11,7 +11,12 @@ public enum TranslationStage
 public enum TranslationErrorCode
 {
     EngineFailure,
-    InvalidEngineOutput
+    InvalidEngineOutput,
+    ModelUnavailable,
+    ModelInvalid,
+    RuntimeUnavailable,
+    UnsupportedAudioFormat,
+    UnsupportedLanguage
 }
 
 /// <summary>OperationId correlates updates without retaining conversation history.</summary>

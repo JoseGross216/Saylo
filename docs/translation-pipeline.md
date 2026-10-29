@@ -1,7 +1,9 @@
 # Coordinacion inicial de traduccion
 
-La implementacion se mantiene en .NET 8 y no incorpora motores reales ni paquetes
-adicionales. Los motores se reciben por el constructor de `TranslationService`.
+El coordinador se mantiene en .NET 8 y recibe los motores por el constructor de
+`TranslationService`, sin conocer proveedores concretos. La integracion STT local
+se documenta en [Reconocimiento con Whisper.net](whisper-speech-recognition.md).
+El adaptador de traduccion local se documenta en [Traduccion de texto](local-text-translation.md).
 Los dobles de prueba existen exclusivamente en el proyecto de pruebas.
 
 ## Contratos
@@ -57,6 +59,8 @@ Las entradas invalidas lanzan excepciones de argumentos antes de llamar motores.
 Los errores de motores producen `TranslationStageFailed`, con etapa y codigo
 `EngineFailure` o `InvalidEngineOutput`. No se exponen mensajes de excepciones de
 proveedores que puedan contener datos del usuario.
+Los adaptadores tambien pueden lanzar `TranslationEngineException` con codigos
+especificos de modelo, runtime o formato; el coordinador conserva esos codigos.
 
 Un fallo de STT o traduccion termina el flujo. Un fallo de pronunciacion o TTS
 no elimina el texto ya entregado ni impide completar la otra etapa opcional.
