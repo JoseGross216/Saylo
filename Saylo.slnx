@@ -11,6 +11,7 @@
     <Project Path="src/modules/Saylo.Modules.Translation/Saylo.Modules.Translation.csproj" />
   </Folder>
   <Folder Name="/tests/">
+    <Project Path="tests/Saylo.Desktop.Tests/Saylo.Desktop.Tests.csproj" />
     <Project Path="tests/Saylo.Architecture.Tests/Saylo.Architecture.Tests.csproj" />
     <Project Path="tests/Saylo.Modules.Conversations.Tests/Saylo.Modules.Conversations.Tests.csproj" />
     <Project Path="tests/Saylo.Modules.Identity.Tests/Saylo.Modules.Identity.Tests.csproj" />

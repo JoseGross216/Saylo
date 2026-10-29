@@ -1,9 +1,8 @@
-using CommunityToolkit.Mvvm.ComponentModel;
-
 namespace Saylo.Desktop.ViewModels;
 
-public partial class MainViewModel : ViewModelBase
+/// <summary>Composes the initial desktop workspace without depending on engine implementations.</summary>
+public sealed class MainViewModel : ViewModelBase
 {
-    [ObservableProperty]
-    private string _greeting = "Welcome to Avalonia!";
+    public LanguageSelectionViewModel Languages { get; } = new();
+    public TextInputViewModel TextInput { get; } = new();
 }

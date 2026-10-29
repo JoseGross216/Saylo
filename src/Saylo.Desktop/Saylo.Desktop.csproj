@@ -3,8 +3,13 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
+    <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\modules\Saylo.Modules.Translation.Contracts\Saylo.Modules.Translation.Contracts.csproj" />
+  </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Models\" />

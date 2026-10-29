@@ -1,0 +1,83 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Styles.Resources>
+        <SolidColorBrush x:Key="SayloBackground">#F4F7FB</SolidColorBrush>
+        <SolidColorBrush x:Key="SayloSurface">#FFFFFF</SolidColorBrush>
+        <SolidColorBrush x:Key="SayloInk">#18334D</SolidColorBrush>
+        <SolidColorBrush x:Key="SayloMuted">#60748A</SolidColorBrush>
+        <SolidColorBrush x:Key="SayloLine">#DFE7EF</SolidColorBrush>
+        <SolidColorBrush x:Key="SayloAccent">#244E76</SolidColorBrush>
+        <StreamGeometry x:Key="SwapIcon">M 3,7 L 21,7 M 17,3 L 21,7 L 17,11 M 21,17 L 3,17 M 7,13 L 3,17 L 7,21</StreamGeometry>
+        <StreamGeometry x:Key="MessageIcon">M 5,4 L 19,4 Q 21,4 21,6 L 21,15 Q 21,17 19,17 L 10,17 L 5,21 L 5,17 Q 3,17 3,15 L 3,6 Q 3,4 5,4 M 7,9 L 17,9 M 7,13 L 13,13</StreamGeometry>
+        <StreamGeometry x:Key="MicrophoneIcon">M 9,5 A 3,3 0 0 1 15,5 L 15,11 A 3,3 0 0 1 9,11 Z M 5,10 L 5,11 A 7,7 0 0 0 19,11 L 19,10 M 12,18 L 12,22 M 8,22 L 16,22</StreamGeometry>
+        <StreamGeometry x:Key="ArrowIcon">M 4,12 L 20,12 M 14,6 L 20,12 L 14,18</StreamGeometry>
+        <StreamGeometry x:Key="ShieldIcon">M 12,2 L 20,5 L 20,11 Q 20,18 12,22 Q 4,18 4,11 L 4,5 Z M 8,12 L 11,15 L 16,9</StreamGeometry>
+    </Styles.Resources>
+    <Style Selector="Window">
+        <Setter Property="FontFamily" Value="fonts:Inter#Inter" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Foreground" Value="{StaticResource SayloInk}" />
+        <Setter Property="Background" Value="{StaticResource SayloBackground}" />
+    </Style>
+    <Style Selector="TextBlock.muted">
+        <Setter Property="Foreground" Value="{StaticResource SayloMuted}" />
+    </Style>
+    <Style Selector="TextBlock.eyebrow">
+        <Setter Property="FontSize" Value="11" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="LetterSpacing" Value="1.2" />
+        <Setter Property="Foreground" Value="{StaticResource SayloMuted}" />
+    </Style>
+    <Style Selector="Border.card">
+        <Setter Property="Background" Value="{StaticResource SayloSurface}" />
+        <Setter Property="BorderBrush" Value="{StaticResource SayloLine}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="CornerRadius" Value="16" />
+    </Style>
+    <Style Selector="Border.chip">
+        <Setter Property="Background" Value="#EEF3F8" />
+        <Setter Property="CornerRadius" Value="6" />
+        <Setter Property="Padding" Value="10,6" />
+    </Style>
+    <Style Selector="Button">
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="CornerRadius" Value="8" />
+        <Setter Property="MinHeight" Value="40" />
+    </Style>
+    <Style Selector="Path.lineIcon">
+        <Setter Property="Stroke" Value="{StaticResource SayloAccent}" />
+        <Setter Property="StrokeThickness" Value="1.7" />
+        <Setter Property="StrokeLineCap" Value="Round" />
+        <Setter Property="StrokeJoin" Value="Round" />
+        <Setter Property="Stretch" Value="Uniform" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+    <Style Selector="Button.secondary">
+        <Setter Property="Background" Value="#EEF3F8" />
+        <Setter Property="Foreground" Value="{StaticResource SayloAccent}" />
+        <Setter Property="BorderThickness" Value="0" />
+    </Style>
+    <Style Selector="Button.primary">
+        <Setter Property="Background" Value="{StaticResource SayloAccent}" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Padding" Value="20,10" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+    </Style>
+    <Style Selector="ComboBox.language">
+        <Setter Property="MinHeight" Value="48" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="Background" Value="#F7F9FC" />
+        <Setter Property="BorderBrush" Value="{StaticResource SayloLine}" />
+        <Setter Property="CornerRadius" Value="8" />
+        <Setter Property="Padding" Value="14,10" />
+    </Style>
+    <Style Selector="TextBox.composer">
+        <Setter Property="Background" Value="#F7F9FC" />
+        <Setter Property="BorderBrush" Value="{StaticResource SayloLine}" />
+        <Setter Property="CornerRadius" Value="10" />
+        <Setter Property="Padding" Value="14,12" />
+        <Setter Property="FontSize" Value="15" />
+    </Style>
+</Styles>
