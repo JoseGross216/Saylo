@@ -1,0 +1,6 @@
+# CPU inference only; Argos package archives supply the model data.
+ctranslate2==4.8.4
+numpy==2.5.4
+sentencepiece==0.2.2
+sacremoses==0.1.1
+subword-nmt==0.3.8

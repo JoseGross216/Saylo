@@ -65,6 +65,11 @@ project.lock.json
 project.fragment.lock.json
 artifacts/
 
+# Local AI model weights must not be versioned.
+ggml-*.bin
+*.argosmodel
+.venv/
+
 # Tye
 .tye/
 

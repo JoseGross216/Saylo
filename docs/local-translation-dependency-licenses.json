@@ -1,0 +1,114 @@
+[
+  {
+    "name": "click",
+    "version": "8.5.0",
+    "licenseExpression": "BSD-3-Clause",
+    "licenseClassifiers": [],
+    "legacyLicense": null
+  },
+  {
+    "name": "cloudpickle",
+    "version": "3.1.2",
+    "licenseExpression": null,
+    "licenseClassifiers": [
+      "License :: OSI Approved :: BSD License"
+    ],
+    "legacyLicense": "BSD-3-Clause"
+  },
+  {
+    "name": "colorama",
+    "version": "0.4.6",
+    "licenseExpression": null,
+    "licenseClassifiers": [
+      "License :: OSI Approved :: BSD License"
+    ],
+    "legacyLicense": null
+  },
+  {
+    "name": "ctranslate2",
+    "version": "4.8.4",
+    "licenseExpression": null,
+    "licenseClassifiers": [],
+    "legacyLicense": "MIT"
+  },
+  {
+    "name": "joblib",
+    "version": "1.6.0",
+    "licenseExpression": "BSD-3-Clause",
+    "licenseClassifiers": [],
+    "legacyLicense": null
+  },
+  {
+    "name": "mock",
+    "version": "5.2.0",
+    "licenseExpression": null,
+    "licenseClassifiers": [
+      "License :: OSI Approved :: BSD License"
+    ],
+    "legacyLicense": null
+  },
+  {
+    "name": "numpy",
+    "version": "2.5.4",
+    "licenseExpression": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+    "licenseClassifiers": [],
+    "legacyLicense": null
+  },
+  {
+    "name": "pip",
+    "version": "25.0.1",
+    "licenseExpression": null,
+    "licenseClassifiers": [
+      "License :: OSI Approved :: MIT License"
+    ],
+    "legacyLicense": "MIT"
+  },
+  {
+    "name": "PyYAML",
+    "version": "6.0.3",
+    "licenseExpression": null,
+    "licenseClassifiers": [
+      "License :: OSI Approved :: MIT License"
+    ],
+    "legacyLicense": "MIT"
+  },
+  {
+    "name": "regex",
+    "version": "2026.9.29",
+    "licenseExpression": "Apache-2.0 AND CNRI-Python",
+    "licenseClassifiers": [],
+    "legacyLicense": null
+  },
+  {
+    "name": "sacremoses",
+    "version": "0.1.1",
+    "licenseExpression": null,
+    "licenseClassifiers": [
+      "License :: OSI Approved :: MIT License"
+    ],
+    "legacyLicense": null
+  },
+  {
+    "name": "sentencepiece",
+    "version": "0.2.2",
+    "licenseExpression": "Apache-2.0",
+    "licenseClassifiers": [],
+    "legacyLicense": null
+  },
+  {
+    "name": "subword-nmt",
+    "version": "0.3.8",
+    "licenseExpression": null,
+    "licenseClassifiers": [
+      "License :: OSI Approved :: MIT License"
+    ],
+    "legacyLicense": "MIT"
+  },
+  {
+    "name": "tqdm",
+    "version": "4.70.1",
+    "licenseExpression": null,
+    "licenseClassifiers": [],
+    "legacyLicense": "MPL-2.0 AND MIT"
+  }
+]
