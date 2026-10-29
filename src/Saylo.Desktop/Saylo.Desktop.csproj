@@ -10,6 +10,7 @@
   <ItemGroup>
     <ProjectReference Include="..\modules\Saylo.Modules.Translation.Contracts\Saylo.Modules.Translation.Contracts.csproj" />
     <ProjectReference Include="..\modules\Saylo.Modules.Conversations\Saylo.Modules.Conversations.csproj" />
+    <ProjectReference Include="..\modules\Saylo.Modules.Translation\Saylo.Modules.Translation.csproj" />
   </ItemGroup>
 
   <ItemGroup>
