@@ -11,7 +11,7 @@ internal static class NumericIntegrity
     };
 
     private const string Number = @"[-+\u2212]?\d+(?:[.,]\d+)*";
-    private const string Currency = @"(?:USD|EUR|GBP|CAD|AUD|NZD|DOP|VES|MXN|COP|ARS|CLP|BRL|JPY|CHF|CNY|euros?|dollars?|d[o\u00f3]lares?|[$\u20ac\u00a3])";
+    private const string Currency = @"(?:US\s*\$|USD|EUR|GBP|CAD|AUD|NZD|DOP|VES|MXN|COP|ARS|CLP|BRL|JPY|CHF|CNY|euros?|dollars?|d[o\u00f3]lares?|[$\u20ac\u00a3])";
     private const string Month = @"(?:enero|january|febrero|february|marzo|march|abril|april|mayo|may|junio|june|julio|july|agosto|august|septiembre|september|octubre|october|noviembre|november|diciembre|december)";
     private static readonly string[][] Months =
     [
@@ -83,7 +83,7 @@ internal static class NumericIntegrity
         Scan(@"(?<![\p{L}\d])(?<number>" + Number + @")(?:st|nd|rd|th)?(?![\p{L}\d])",
             match => ("number", Parse(match.Groups["number"].Value), ""));
         Scan(@"(?<!\p{L})(?<unit>" + Currency + @")(?!\p{L})",
-            match => ("currency-marker", "", match.Groups["unit"].Value.ToUpperInvariant()));
+            match => ("currency-marker", "", CurrencyUnit(match.Groups["unit"].Value)));
         for (var index = 0; index < input.Length; index++)
             if (char.IsDigit(input[index]) && !used[index])
                 throw ProtectedText.Failure();
@@ -101,19 +101,25 @@ internal static class NumericIntegrity
 
     private static (string, string, string) Money(Match match)
     {
-        var rawUnit = match.Groups["unit"].Value.ToUpperInvariant();
-        var unit = rawUnit switch
-        {
-            "EURO" or "EUROS" or "\u20ac" => "EUR",
-            "$" or "DOLLAR" or "DOLLARS" or "DOLAR" or "DOLARES" or "D\u00d3LAR" or "D\u00d3LARES" => "UNSPECIFIED_DOLLAR",
-            "\u00a3" => "GBP",
-            _ => rawUnit
-        };
+        var unit = CurrencyUnit(match.Groups["unit"].Value);
         var prefixSign = match.Groups["prefixSign"].Value;
         var number = match.Groups["number"].Value;
         if (prefixSign.Length > 0 && number[0] is '-' or '+' or '\u2212')
             throw ProtectedText.Failure(IntegrityConstraint.NumericAmbiguity);
         return ("number", Parse(prefixSign + number), "currency:" + unit);
+    }
+
+    private static string CurrencyUnit(string value)
+    {
+        var rawUnit = string.Concat(value.Where(character => !char.IsWhiteSpace(character))).ToUpperInvariant();
+        return rawUnit switch
+        {
+            "US$" => "USD",
+            "EURO" or "EUROS" or "\u20ac" => "EUR",
+            "$" or "DOLLAR" or "DOLLARS" or "DOLAR" or "DOLARES" or "D\u00d3LAR" or "D\u00d3LARES" => "UNSPECIFIED_DOLLAR",
+            "\u00a3" => "GBP",
+            _ => rawUnit
+        };
     }
 
     private static string Unit(string value) => value.ToLowerInvariant() switch

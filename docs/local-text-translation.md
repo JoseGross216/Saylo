@@ -1,5 +1,9 @@
 # Traduccion local de texto es <-> en
 
+Validacion ampliada de 80 frases, rendimiento, estabilidad y licencias:
+[Tarea 3.1](translation-quality-validation.md). Sus resultados y pendientes
+complementan las 14 muestras historicas descritas en esta guia.
+
 ## Decision tecnica y evaluacion de Argos
 
 Se evaluo **Argos Translate 1.11.0** en Python **3.12.14**, Windows x64. PyPI

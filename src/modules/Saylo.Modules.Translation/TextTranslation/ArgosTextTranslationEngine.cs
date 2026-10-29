@@ -16,6 +16,9 @@ public sealed class ArgosTextTranslationEngine : ITextTranslationEngine, IAsyncD
     private static readonly Histogram<double> PreparationTime = Meter.CreateHistogram<double>("saylo.argos.integrity_preparation", "ms");
     private static readonly Histogram<double> ValidationTime = Meter.CreateHistogram<double>("saylo.argos.integrity_validation", "ms");
     private static readonly Histogram<long> SegmentCount = Meter.CreateHistogram<long>("saylo.argos.segment_count", "{segment}");
+    private static readonly Counter<long> ReusedSegments = Meter.CreateCounter<long>("saylo.argos.reused_segments", "{segment}");
+    private static readonly Counter<long> CandidateRetries = Meter.CreateCounter<long>("saylo.argos.candidate_retries", "{retry}");
+    private static readonly Counter<long> CandidateRecoveries = Meter.CreateCounter<long>("saylo.argos.candidate_recoveries", "{segment}");
     private readonly ArgosTranslationOptions _options;
     private readonly IModelCatalog _catalog;
     private readonly Func<ArgosTranslationOptions, CancellationToken, Task<IArgosSession>> _start;
@@ -74,6 +77,8 @@ public sealed class ArgosTextTranslationEngine : ITextTranslationEngine, IAsyncD
             try
             {
                 var translated = new List<string>();
+                // Request-scoped memoization only: identical prepared source and immutable policy.
+                var validatedSegments = new Dictionary<string, string>(StringComparer.Ordinal);
                 foreach (var segment in plan.Segments)
                 {
                     deadline.Token.ThrowIfCancellationRequested();
@@ -82,13 +87,16 @@ public sealed class ArgosTextTranslationEngine : ITextTranslationEngine, IAsyncD
                         translated.Add("");
                         continue;
                     }
-                    var candidate = await _session!.TranslateAsync(Guid.NewGuid().ToString("N"), segment.Protection.Masked,
-                        sourceLanguage.Code, targetLanguage.Code, deadline.Token).ConfigureAwait(false);
-                    if (string.IsNullOrWhiteSpace(candidate))
-                        throw Error(TranslationErrorCode.InvalidEngineOutput, "The local engine returned no translated text.");
-                    var validationStarted = Stopwatch.GetTimestamp();
-                    try { translated.Add(plan.ValidateSegment(segment, candidate)); }
-                    finally { ValidationTime.Record(Stopwatch.GetElapsedTime(validationStarted).TotalMilliseconds); }
+                    if (validatedSegments.TryGetValue(segment.Protection.Source, out var reused))
+                    {
+                        translated.Add(reused);
+                        ReusedSegments.Add(1);
+                        continue;
+                    }
+                    var validated = await TranslateSegmentAsync(plan, segment, sourceLanguage.Code, targetLanguage.Code,
+                        deadline.Token).ConfigureAwait(false);
+                    validatedSegments.Add(segment.Protection.Source, validated);
+                    translated.Add(validated);
                 }
                 var result = plan.Complete(translated);
                 token.ThrowIfCancellationRequested();
@@ -126,6 +134,52 @@ public sealed class ArgosTextTranslationEngine : ITextTranslationEngine, IAsyncD
             finally { InferenceTime.Record(Stopwatch.GetElapsedTime(started).TotalMilliseconds); }
         }
         finally { _gate.Release(); }
+    }
+
+    private async Task<string> TranslateSegmentAsync(TranslationIntegrityPlan plan, TranslationIntegrityPlan.Segment segment,
+        string source, string target, CancellationToken token)
+    {
+        var candidate = await _session!.TranslateAsync(Guid.NewGuid().ToString("N"), segment.Protection.Masked,
+            source, target, token).ConfigureAwait(false);
+        token.ThrowIfCancellationRequested();
+        if (string.IsNullOrWhiteSpace(candidate))
+            throw Error(TranslationErrorCode.InvalidEngineOutput, "The local engine returned no translated text.");
+        try { return ValidateCandidate(plan, segment, candidate); }
+        catch (TranslationEngineException failure) when (failure.Code == TranslationErrorCode.IntegrityValidationFailed)
+        {
+            if (_session is not IArgosCandidateSession { SupportsRankedCandidates: true } ranked)
+                throw;
+            CandidateRetries.Add(1);
+            var alternatives = await ranked.TranslateCandidatesAsync(Guid.NewGuid().ToString("N"), segment.Protection.Masked,
+                source, target, token).ConfigureAwait(false);
+            if (alternatives.Count is < 1 or > 4)
+                throw new InvalidDataException("The worker exceeded its bounded candidate contract.");
+            foreach (var alternative in alternatives)
+            {
+                token.ThrowIfCancellationRequested();
+                if (alternative == candidate)
+                    continue;
+                try
+                {
+                    var validated = ValidateCandidate(plan, segment, alternative);
+                    token.ThrowIfCancellationRequested();
+                    CandidateRecoveries.Add(1);
+                    return validated;
+                }
+                catch (TranslationEngineException rejected) when (rejected.Code == TranslationErrorCode.IntegrityValidationFailed)
+                {
+                    // Each complete candidate must independently pass the unchanged integrity plan.
+                }
+            }
+            throw;
+        }
+    }
+
+    private static string ValidateCandidate(TranslationIntegrityPlan plan, TranslationIntegrityPlan.Segment segment, string candidate)
+    {
+        var started = Stopwatch.GetTimestamp();
+        try { return plan.ValidateSegment(segment, candidate); }
+        finally { ValidationTime.Record(Stopwatch.GetElapsedTime(started).TotalMilliseconds); }
     }
 
     private async Task StartAsync(CancellationToken token)

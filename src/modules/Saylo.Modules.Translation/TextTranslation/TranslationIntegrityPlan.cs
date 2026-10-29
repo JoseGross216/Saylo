@@ -97,6 +97,11 @@ internal static class LinguisticConstraints
         if (from == "es" && Has(translated, @"\b(his|her|their)\b") &&
             !Has(source, @"\bde\s+(?:[e\u00e9]l|ella|ellos|ellas)\b"))
             throw ProtectedText.Failure(IntegrityConstraint.Referent);
+        // Explicit plural commitments must not become a singular speaker's responsibility.
+        // This conservative finite vocabulary is not a general subject or discourse parser.
+        if (from == "es" && Has(source, @"\b(informaremos|confirmaremos|enviaremos|revisaremos|contactaremos)\b") &&
+            (!Has(translated, @"\bwe\b") || Has(translated, @"\b(I|me|my|mine)\b")))
+            throw ProtectedText.Failure(IntegrityConstraint.Referent);
         if (Has(source, from == "es" ? @"\bantes\b" : @"\b(before|prior\s+to)\b") &&
             !Has(translated, to == "es" ? @"\b(antes|previamente)\b" : @"\b(before|prior\s+to)\b"))
             throw ProtectedText.Failure(IntegrityConstraint.TemporalRelation);

@@ -12,6 +12,25 @@ import threading
 import time
 
 MAX_TEXT = 1000
+MAX_CANDIDATES = 4
+
+
+def decode_candidates(hypotheses, decode, target_prefix=""):
+    if not 1 <= len(hypotheses) <= MAX_CANDIDATES:
+        raise ValueError("Invalid hypothesis budget")
+    values = []
+    for tokens in hypotheses:
+        if len(tokens) >= 512:
+            continue
+        value = decode(tokens)
+        if target_prefix and value.startswith(target_prefix):
+            value = value[len(target_prefix):]
+        value = value.strip()
+        if value and len(value) <= 4096 and value not in values:
+            values.append(value)
+    if not values:
+        raise ValueError("No bounded complete candidate")
+    return values
 
 
 def deny_network(event, args):
@@ -28,6 +47,11 @@ def validate_request(request):
         raise ValueError("Unsupported language pair")
     if not isinstance(request.get("text"), str) or not request["text"].strip() or len(request["text"]) > MAX_TEXT:
         raise ValueError("Invalid text length")
+    count = request.get("candidates", 1)
+    if type(count) is not int or not 1 <= count <= MAX_CANDIDATES:
+        raise ValueError("Invalid candidate count")
+    if count > 1 and any(separator in request["text"] for separator in ("\n", "\r")):
+        raise ValueError("Candidates require one prepared segment")
 
 
 def load_models(root, threads):
@@ -85,7 +109,10 @@ def load_models(root, threads):
     if set(loaded) != {("es", "en"), ("en", "es")}:
         raise ValueError("Both direct models are required")
 
-    def translate(text, source, target):
+    def translate(text, source, target, candidates=1):
+        if (type(candidates) is not int or not 1 <= candidates <= MAX_CANDIDATES or
+                candidates > 1 and any(separator in text for separator in ("\n", "\r"))):
+            raise ValueError("Invalid candidate request")
         encode, decode, target_prefix, translator = loaded[(source, target)]
         translated = []
         for paragraph in text.split("\n"):
@@ -95,14 +122,12 @@ def load_models(root, threads):
             tokens = encode(paragraph)
             prefix = [[target_prefix]] if target_prefix else None
             result = translator.translate_batch([tokens], target_prefix=prefix, replace_unknowns=True,
-                                                beam_size=4, num_hypotheses=1, length_penalty=0.2,
+                                                beam_size=4, num_hypotheses=candidates, length_penalty=0.2,
                                                 max_input_length=0, max_decoding_length=512)[0]
-            if len(result.hypotheses[0]) >= 512:
-                raise ValueError("Translation exceeded the output token limit")
-            value = decode(result.hypotheses[0])
-            if target_prefix and value.startswith(target_prefix):
-                value = value[len(target_prefix):]
-            translated.append(value.strip())
+            values = decode_candidates(result.hypotheses, decode, target_prefix)
+            if candidates > 1:
+                return values
+            translated.append(values[0])
         return "\n".join(translated)
     return translate
 
@@ -144,7 +169,8 @@ def main():
     try:
         translate = load_models(args.models.resolve(), args.threads)
         threading.Thread(target=read_input, daemon=True).start()
-        send({"id": "ready", "ok": True, "pid": os.getpid(), "startupMs": (time.perf_counter() - started) * 1000})
+        send({"id": "ready", "ok": True, "pid": os.getpid(), "startupMs": (time.perf_counter() - started) * 1000,
+              "capabilities": ["ranked_candidates_v1"]})
     except (ValueError, FileNotFoundError):
         send({"id": "ready", "ok": False, "code": "model_invalid"})
         return 2
@@ -158,10 +184,17 @@ def main():
             validate_request(request)
             request_id = request["id"]
             with contextlib.redirect_stdout(sys.stderr):
-                text = translate(request["text"], request["source"], request["target"])
-            if not text.strip():
-                raise ValueError("Empty engine output")
-            send({"id": request_id, "ok": True, "text": text})
+                count = request.get("candidates", 1)
+                result = translate(request["text"], request["source"], request["target"], count)
+            if count > 1:
+                payload = {"id": request_id, "ok": True, "text": result[0], "candidates": result}
+                if len(json.dumps({"protocol": 1, **payload}, ensure_ascii=True)) > 65536:
+                    raise ValueError("Candidate response budget exceeded")
+                send(payload)
+            else:
+                if not result.strip():
+                    raise ValueError("Empty engine output")
+                send({"id": request_id, "ok": True, "text": result})
         except Exception:
             # Never print exception messages or request bodies: either can contain user text.
             send({"id": request_id, "ok": False, "code": "translation_failed"})
