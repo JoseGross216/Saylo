@@ -270,6 +270,72 @@ public sealed class WhisperSpeechRecognitionTests
     }
 
     [Fact]
+    public async Task DisposalDuringModelLoadNeverStartsInferenceOrPublishesLateResults()
+    {
+        // Repeat the hand-off to exercise the race between CancelAsync callbacks and model loading.
+        for (var attempt = 0; attempt < 100; attempt++)
+        {
+            var entered = new TaskCompletionSource(TaskCreationOptions.RunContinuationsAsynchronously);
+            using var release = new ManualResetEventSlim(false);
+            var inferenceCalls = 0;
+            var backend = new BackendStub { Recognize = (_, _, _) =>
+            {
+                Interlocked.Increment(ref inferenceCalls);
+                return Task.FromResult("late fixture");
+            } };
+            var engine = new WhisperSpeechRecognitionEngine(new CatalogStub(), 2, (_, _) =>
+            {
+                entered.TrySetResult();
+                if (!release.Wait(Timeout)) throw new TimeoutException("Model-load fixture was not released.");
+                return backend;
+            });
+            var run = engine.TranscribeAsync(Audio(), Language.Spanish);
+            try
+            {
+                await entered.Task.WaitAsync(Timeout);
+                var queued = engine.TranscribeAsync(Audio(), Language.English);
+                var disposal = engine.DisposeAsync().AsTask();
+                Assert.Same(disposal, engine.DisposeAsync().AsTask());
+                Assert.False(disposal.IsCompleted);
+                release.Set();
+                await Assert.ThrowsAnyAsync<OperationCanceledException>(() => run.WaitAsync(Timeout));
+                await Assert.ThrowsAnyAsync<OperationCanceledException>(() => queued.WaitAsync(Timeout));
+                await disposal.WaitAsync(Timeout);
+                Assert.Equal(0, inferenceCalls);
+                Assert.Equal(1, backend.Disposals);
+            }
+            finally
+            {
+                release.Set();
+                await engine.DisposeAsync().AsTask().WaitAsync(Timeout);
+            }
+        }
+    }
+
+    [Fact]
+    public async Task ShutdownRequestedBeforeInferenceReturnsDiscardsTheLateText()
+    {
+        WhisperSpeechRecognitionEngine? engine = null;
+        Task? disposal = null;
+        var backend = new BackendStub { Recognize = (_, _, _) =>
+        {
+            disposal = engine!.DisposeAsync().AsTask();
+            return Task.FromResult("late fixture");
+        } };
+        engine = new WhisperSpeechRecognitionEngine(new CatalogStub(), 2, (_, _) => backend);
+        try
+        {
+            await Assert.ThrowsAnyAsync<OperationCanceledException>(() =>
+                engine.TranscribeAsync(Audio(), Language.Spanish).WaitAsync(Timeout));
+            Assert.NotNull(disposal);
+            await disposal.WaitAsync(Timeout);
+            Assert.Equal(1, backend.Disposals);
+            await Assert.ThrowsAsync<ObjectDisposedException>(() => engine.TranscribeAsync(Audio(), Language.English));
+        }
+        finally { await engine.DisposeAsync().AsTask().WaitAsync(Timeout); }
+    }
+
+    [Fact]
     public async Task RecognizedTextFeedsTheExistingProgressivePipeline()
     {
         await using var engine = new WhisperSpeechRecognitionEngine(new CatalogStub(), 2, (_, _) => new BackendStub());

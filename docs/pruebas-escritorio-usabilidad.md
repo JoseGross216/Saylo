@@ -3,7 +3,8 @@
 Fecha: 29 de octubre de 2026, America/Santo_Domingo.
 Rama: `feature/jencer-paquete6-pruebas-manual-docs`.
 Base de aplicación: paquete 5, commit `4837830`. Este paquete añade pruebas y
-documentación; no cambia la composición de motores de la aplicación.
+documentación. La revisión posterior corrige el cierre de Whisper y mantiene la
+composición y los contratos públicos de motores de la aplicación.
 
 ## Alcance y significado de RF-026
 
@@ -97,7 +98,45 @@ dotnet test tests/Saylo.Desktop.Tests/Saylo.Desktop.Tests.csproj `
   --filter FullyQualifiedName~EmployeeAttentionWorkflowTests
 ```
 
-## Registro de esta ejecución
+## Corrección de cancelación de Whisper (29/10/2026)
+
+**Incidencia corregida.** `CancelAsync` señalaba el cierre, pero la notificación al
+token enlazado de la transcripción podía ejecutarse después de terminar la carga
+del modelo. En ese intervalo podía iniciarse inferencia o publicarse texto pese a
+que `DisposeAsync` ya había comenzado.
+
+Ahora las operaciones comprueban también el indicador de cierre publicado por el
+motor: después de esperar el turno, durante la preparación, tras la carga y antes
+de devolver el resultado. Las operaciones iniciadas antes del cierre se cancelan
+con `OperationCanceledException`; las solicitudes nuevas siguen rechazándose con
+`ObjectDisposedException`. El cierre continúa esperando la liberación del turno y
+libera el modelo una sola vez, sin soltar recursos mientras se utilizan.
+
+La regresión `DisposalDuringModelLoadNeverStartsInferenceOrPublishesLateResults`
+falló antes del cambio porque se inició una inferencia después de solicitar el
+cierre. Después del cambio completa 100 ciclos: cancela la operación activa y la
+solicitud en cola, no inicia inferencia y libera una sola vez cada modelo. Otra
+prueba, `ShutdownRequestedBeforeInferenceReturnsDiscardsTheLateText`, comprueba que
+no se publica un resultado cuando el cierre empieza antes de retornar del backend.
+Las 27 pruebas unitarias de Whisper, incluida la prueba original, pasan.
+
+Regresión completa Release posterior a la corrección:
+
+| Suite | Aprobadas | Fallidas | Omitidas |
+| --- | ---: | ---: | ---: |
+| Desktop, incluidas las dos comprobaciones Windows silenciosas | 90 | 0 | 0 |
+| Conversations | 8 | 0 | 0 |
+| Architecture | 8 | 0 | 0 |
+| Translation ampliada, incluidas dos regresiones nuevas | 120 | 0 | 5 |
+| **Total** | **226** | **0** | **5** |
+
+Comando: `./tools/Test-Desktop.ps1 -NativeAudio -IncludeTranslation -NoRestore`.
+Código de salida: **0**. Se conservan el [resumen actualizado](evidence/package6-summary.json)
+y la [evidencia de reproducción y corrección](evidence/whisper-cancellation-fix.json).
+Las pruebas de ciclo de vida utilizan un backend controlado; no sustituyen las
+cinco integraciones con motores/modelos reales todavía omitidas.
+
+## Validación inicial del paquete 6 (antes de la corrección)
 
 Los cuatro recorridos nuevos de RF-026 se compilaron y ejecutaron: **4 aprobados**.
 Resultado local: `artifacts/package6/test-results/employee-attention.trx`.
@@ -118,10 +157,10 @@ compilación concluyó con estos resultados:
 | Translation ampliada | 117 | 1 | 5 |
 | **Total** | **223** | **1** | **5** |
 
-Comando final: `./tools/Test-Desktop.ps1 -NativeAudio -IncludeTranslation -NoRestore`.
-Código de salida: **1**. Las 106 pruebas de escritorio, conversación y arquitectura
-están aprobadas; la batería ampliada **no está completamente aprobada**.
-Se conserva una copia del [resumen final](evidence/package6-summary.json) en la
+Comando de la validación inicial: `./tools/Test-Desktop.ps1 -NativeAudio -IncludeTranslation -NoRestore`.
+Código de salida inicial: **1**. Las 106 pruebas de escritorio, conversación y arquitectura
+pasaron; esa batería ampliada no quedó completamente aprobada.
+Se conserva una copia del [resumen inicial](evidence/package6-summary-before-whisper-fix.json) en la
 documentación. Los TRX completos quedan en artifacts, fuera de Git, pues contienen
 rutas del entorno de ejecución. La primera ejecución se conservó en `first-run/`.
 
@@ -129,10 +168,9 @@ Una ejecución intermedia con `-NoBuild` había aprobado 224 pruebas y omitido c
 Al repetir con compilación se reprodujo la incidencia histórica de Whisper:
 `WhisperSpeechRecognitionTests.DisposalDuringModelLoadWaitsAndReleasesTheCreatedModel`,
 línea 268, esperaba `OperationCanceledException` y la tarea terminó sin excepción.
-Su variación entre ejecuciones se registra como **intermitente**, no como resuelta.
-El archivo afectado procede del commit `86df9f4` y no se modifica en este paquete.
-Equipo de reconocimiento: revisar la coordinación entre carga del modelo,
-cancelación y cierre; repetir la prueba de manera controlada después de corregirla.
+Su variación se registró inicialmente como intermitente. El archivo afectado
+procedía del commit `86df9f4`; la corrección y su regresión se describen en la
+sección anterior. Este registro se conserva como evidencia histórica del fallo.
 
 Las cinco omisiones corresponden a tres integraciones Whisper y dos Argos con
 modelos/configuración reales no disponibles. No son pruebas aprobadas ni una
