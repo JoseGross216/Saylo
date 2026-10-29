@@ -1,0 +1,1419 @@
+{
+  "schemaVersion": 1,
+  "environment": {
+    "python": "3.12.14",
+    "architecture": "AMD64"
+  },
+  "scope": "Installed reduced translation runtime, excluding unrelated evaluation venv and full application SBOM.",
+  "pythonLicenseEvidence": {
+    "path": "CPython/LICENSE.txt",
+    "sizeBytes": 25066,
+    "sha256": "886a0ead2d89030ee62dbff52b04e47ab91998341295bb9c56fb952b4e081c7a"
+  },
+  "packages": [
+    {
+      "name": "click",
+      "version": "8.5.0",
+      "source": "https://pypi.org/project/click/8.5.0/",
+      "projectUrls": [
+        "Changes, https://click.palletsprojects.com/page/changes/",
+        "Chat, https://discord.gg/pallets",
+        "Documentation, https://click.palletsprojects.com/",
+        "Donate, https://palletsprojects.com/donate",
+        "Source, https://github.com/pallets/click/"
+      ],
+      "declaredLicense": "BSD-3-Clause",
+      "licenseClassifiers": [],
+      "requiresDist": [],
+      "noticeFiles": [
+        {
+          "path": "click-8.5.0.dist-info/licenses/LICENSE.txt",
+          "sizeBytes": 1475,
+          "sha256": "9a8ad106a394e853bfe21f42f4e72d592819a22805d991b5f3275029292b658d"
+        }
+      ],
+      "nativeFiles": [],
+      "embeddedResources": [],
+      "metadataEvidence": {
+        "path": "click-8.5.0.dist-info/METADATA",
+        "sizeBytes": 2567,
+        "sha256": "e87bce0bd194de70dfb8e708e0a6b0483009f25611804eaf87bfeb63e6c20501"
+      },
+      "status": "evidence_collected_not_redistribution_approval",
+      "registryEvidence": {
+        "url": "https://pypi.org/pypi/click/8.5.0/json",
+        "responseSha256": "4e36adc9b46f837e10ce801b7a478f9146fefdfb287292b7668fc64b1474e41d",
+        "license": "BSD-3-Clause",
+        "compatibleWheelCandidates": [
+          {
+            "filename": "click-8.5.0-py3-none-any.whl",
+            "sha256": "255bc9599cf7748b4b1a446ccc735421bd08a2ae529a8b88597d3de5664ee360",
+            "url": "https://files.pythonhosted.org/packages/58/50/6c0d534c5f134586a8e1ba4e330569e32f057e33372ae556463212fb4cd3/click-8.5.0-py3-none-any.whl"
+          }
+        ],
+        "note": "Registry candidate hashes do not prove the exact installed wheel origin."
+      }
+    },
+    {
+      "name": "cloudpickle",
+      "version": "3.1.2",
+      "source": "https://pypi.org/project/cloudpickle/3.1.2/",
+      "projectUrls": [
+        "https://github.com/cloudpipe/cloudpickle"
+      ],
+      "declaredLicense": "BSD-3-Clause",
+      "licenseClassifiers": [
+        "License :: OSI Approved :: BSD License"
+      ],
+      "requiresDist": [],
+      "noticeFiles": [
+        {
+          "path": "cloudpickle-3.1.2.dist-info/licenses/LICENSE",
+          "sizeBytes": 1754,
+          "sha256": "3029ea34173e9fdc233ad315dc6b100bd1ea71f529b1c1af97664a272fdc55f5"
+        }
+      ],
+      "nativeFiles": [],
+      "embeddedResources": [],
+      "metadataEvidence": {
+        "path": "cloudpickle-3.1.2.dist-info/METADATA",
+        "sizeBytes": 7079,
+        "sha256": "3d0263bfe9ee4f23b244bdcaff73acbe7a1957ebf82743b6ae42693adc48d721"
+      },
+      "status": "evidence_collected_not_redistribution_approval",
+      "registryEvidence": {
+        "url": "https://pypi.org/pypi/cloudpickle/3.1.2/json",
+        "responseSha256": "36cd9b8b2a3b6691c78f87bac524652edbe9e81cda0f13767577174de31954bc",
+        "license": "BSD-3-Clause",
+        "compatibleWheelCandidates": [
+          {
+            "filename": "cloudpickle-3.1.2-py3-none-any.whl",
+            "sha256": "9acb47f6afd73f60dc1df93bb801b472f05ff42fa6c84167d25cb206be1fbf4a",
+            "url": "https://files.pythonhosted.org/packages/88/39/799be3f2f0f38cc727ee3b4f1445fe6d5e4133064ec2e4115069418a5bb6/cloudpickle-3.1.2-py3-none-any.whl"
+          }
+        ],
+        "note": "Registry candidate hashes do not prove the exact installed wheel origin."
+      }
+    },
+    {
+      "name": "colorama",
+      "version": "0.4.6",
+      "source": "https://pypi.org/project/colorama/0.4.6/",
+      "projectUrls": [
+        "Homepage, https://github.com/tartley/colorama"
+      ],
+      "declaredLicense": null,
+      "licenseClassifiers": [
+        "License :: OSI Approved :: BSD License"
+      ],
+      "requiresDist": [],
+      "noticeFiles": [
+        {
+          "path": "colorama-0.4.6.dist-info/licenses/LICENSE.txt",
+          "sizeBytes": 1491,
+          "sha256": "cac35c02686e5d04a5a7140bfb3b36e73aed496656e891102e428886d7930318"
+        }
+      ],
+      "nativeFiles": [],
+      "embeddedResources": [],
+      "metadataEvidence": {
+        "path": "colorama-0.4.6.dist-info/METADATA",
+        "sizeBytes": 17158,
+        "sha256": "7baed29eb50c3b29bdb33ff84e3177bf1bc05784f7685ecdcaa4471c7dd810cc"
+      },
+      "status": "evidence_collected_not_redistribution_approval",
+      "registryEvidence": {
+        "url": "https://pypi.org/pypi/colorama/0.4.6/json",
+        "responseSha256": "43fb351344384a44c2b7d7fff1c63496b89ac830aea714301525c1f3718addd1",
+        "license": "",
+        "compatibleWheelCandidates": [
+          {
+            "filename": "colorama-0.4.6-py2.py3-none-any.whl",
+            "sha256": "4f1d9991f5acc0ca119f9d443620b77f9d6b33703e51011c16baf57afb285fc6",
+            "url": "https://files.pythonhosted.org/packages/d1/d6/3965ed04c63042e047cb6a3e6ed1a63a35087b6a609aa3a15ed8ac56c221/colorama-0.4.6-py2.py3-none-any.whl"
+          }
+        ],
+        "note": "Registry candidate hashes do not prove the exact installed wheel origin."
+      }
+    },
+    {
+      "name": "ctranslate2",
+      "version": "4.8.4",
+      "source": "https://pypi.org/project/ctranslate2/4.8.4/",
+      "projectUrls": [
+        "Documentation, https://opennmt.net/CTranslate2",
+        "Forum, https://forum.opennmt.net",
+        "Gitter, https://gitter.im/OpenNMT/CTranslate2",
+        "Source, https://github.com/OpenNMT/CTranslate2"
+      ],
+      "declaredLicense": "MIT",
+      "licenseClassifiers": [],
+      "requiresDist": [
+        "numpy",
+        "pyyaml<7,>=5.3"
+      ],
+      "noticeFiles": [],
+      "nativeFiles": [
+        {
+          "path": "ctranslate2/_ext.cp312-win_amd64.pyd",
+          "sizeBytes": 804352,
+          "sha256": "c60d877050bff4e93365ed2dd8f045f066d5cfa1573a75cf594768c5a4b0bcf9"
+        },
+        {
+          "path": "ctranslate2/ctranslate2.dll",
+          "sizeBytes": 61254144,
+          "sha256": "30e16517244907c60f97a09931e7bce282e86eb93011b55a343a652cb360eb06"
+        },
+        {
+          "path": "ctranslate2/cudnn64_9.dll",
+          "sizeBytes": 266288,
+          "sha256": "9edbcdff73b0af070eb160b2ce66e59feca04aa017351d8eedcc5e8e149967d2"
+        },
+        {
+          "path": "ctranslate2/libiomp5md.dll",
+          "sizeBytes": 1614192,
+          "sha256": "982233366b0afcda1e0f55a0b134097e35b779613f54ddb69e685e6cd06b755f"
+        }
+      ],
+      "embeddedResources": [],
+      "metadataEvidence": {
+        "path": "ctranslate2-4.8.4.dist-info/METADATA",
+        "sizeBytes": 11526,
+        "sha256": "c1bb7364dbb3e9f8c8af2de5331a6f85e5ed00ad0d583ae2212917c74234a86c"
+      },
+      "status": "evidence_collected_not_redistribution_approval",
+      "registryEvidence": {
+        "url": "https://pypi.org/pypi/ctranslate2/4.8.4/json",
+        "responseSha256": "513f40517fa35e285749c6e4562cae3d87804efb9c4f3ed3b54b89a95cacf14c",
+        "license": "MIT",
+        "compatibleWheelCandidates": [
+          {
+            "filename": "ctranslate2-4.8.4-cp312-cp312-win_amd64.whl",
+            "sha256": "056db4b4c2a31b7811d453155a3d6ab316ddb1dc104f413beee7bce26bcbf92d",
+            "url": "https://files.pythonhosted.org/packages/af/25/cca7f6807d37cbfd9eebed8bbf136f5214c31d7d66de267ad05b676e9deb/ctranslate2-4.8.4-cp312-cp312-win_amd64.whl"
+          }
+        ],
+        "note": "Registry candidate hashes do not prove the exact installed wheel origin."
+      }
+    },
+    {
+      "name": "joblib",
+      "version": "1.6.0",
+      "source": "https://pypi.org/project/joblib/1.6.0/",
+      "projectUrls": [
+        "Homepage, https://joblib.readthedocs.io",
+        "Source, https://github.com/joblib/joblib"
+      ],
+      "declaredLicense": "BSD-3-Clause",
+      "licenseClassifiers": [],
+      "requiresDist": [
+        "cloudpickle>=3.0",
+        "distributed; extra == \"test\"",
+        "lz4; extra == \"test\"",
+        "numpy; extra == \"test\"",
+        "memory_profiler; extra == \"test\"",
+        "pytest; extra == \"test\"",
+        "pytest-asyncio; extra == \"test\"",
+        "pytest-cov; extra == \"test\"",
+        "pytest-run-parallel; extra == \"test\"",
+        "pytest-timeout; extra == \"test\"",
+        "threadpoolctl; extra == \"test\"",
+        "distributed; extra == \"docs\"",
+        "lz4; extra == \"docs\"",
+        "numpy; extra == \"docs\"",
+        "numpydoc; extra == \"docs\"",
+        "matplotlib; extra == \"docs\"",
+        "pandas; extra == \"docs\"",
+        "psutil; extra == \"docs\"",
+        "sphinx; extra == \"docs\"",
+        "pydata-sphinx-theme; extra == \"docs\"",
+        "sphinx-gallery; extra == \"docs\"",
+        "sphinx-copybutton; extra == \"docs\"",
+        "sphinx-design; extra == \"docs\"",
+        "tqdm; extra == \"docs\""
+      ],
+      "noticeFiles": [
+        {
+          "path": "joblib-1.6.0.dist-info/licenses/LICENSE.txt",
+          "sizeBytes": 1527,
+          "sha256": "42612911c1872c5e4b43f6ae0e8ee59467cd350332241cf72ce90640264fae6a"
+        }
+      ],
+      "nativeFiles": [],
+      "embeddedResources": [],
+      "metadataEvidence": {
+        "path": "joblib-1.6.0.dist-info/METADATA",
+        "sizeBytes": 6540,
+        "sha256": "c5fd6509906c5795fd6724d97bc1709d1f266b78aff92c0156d6cf5ad7c045e3"
+      },
+      "status": "evidence_collected_not_redistribution_approval",
+      "registryEvidence": {
+        "url": "https://pypi.org/pypi/joblib/1.6.0/json",
+        "responseSha256": "7b5f78a64b3685fd996ea5e641ae14b8990a40f3998a24a9e7adc03d84f7e7fa",
+        "license": "BSD-3-Clause",
+        "compatibleWheelCandidates": [
+          {
+            "filename": "joblib-1.6.0-py3-none-any.whl",
+            "sha256": "3dbbf9f6e4b592a2357b854608e980fe6390d131d7a82f011a377ef2ebef7aba",
+            "url": "https://files.pythonhosted.org/packages/18/53/84099323c2ec4be98d935f63c033ac4151ee83836ca1050ede3b3aadf155/joblib-1.6.0-py3-none-any.whl"
+          }
+        ],
+        "note": "Registry candidate hashes do not prove the exact installed wheel origin."
+      }
+    },
+    {
+      "name": "mock",
+      "version": "5.2.0",
+      "source": "https://pypi.org/project/mock/5.2.0/",
+      "projectUrls": [
+        "Source, https://github.com/testing-cabal/mock"
+      ],
+      "declaredLicense": null,
+      "licenseClassifiers": [
+        "License :: OSI Approved :: BSD License"
+      ],
+      "requiresDist": [
+        "sphinx; extra == \"docs\"",
+        "pytest; extra == \"test\"",
+        "pytest-cov; extra == \"test\"",
+        "twine; extra == \"build\"",
+        "wheel; extra == \"build\"",
+        "blurb; extra == \"build\""
+      ],
+      "noticeFiles": [
+        {
+          "path": "mock-5.2.0.dist-info/LICENSE.txt",
+          "sizeBytes": 1342,
+          "sha256": "5831ee149d3850b28df8ff02fb7bd07cecda81e85cc8435c20827d3922202d34"
+        }
+      ],
+      "nativeFiles": [],
+      "embeddedResources": [],
+      "metadataEvidence": {
+        "path": "mock-5.2.0.dist-info/METADATA",
+        "sizeBytes": 3136,
+        "sha256": "f5b6d51ec93dbc151bffe43d49edaaf13091129844fb7a9558c33a3de6bca9ad"
+      },
+      "status": "evidence_collected_not_redistribution_approval",
+      "registryEvidence": {
+        "url": "https://pypi.org/pypi/mock/5.2.0/json",
+        "responseSha256": "c48f600933837e362565c4676572a96bd26cf429389a9dd62d2afa026c855b84",
+        "license": null,
+        "compatibleWheelCandidates": [
+          {
+            "filename": "mock-5.2.0-py3-none-any.whl",
+            "sha256": "7ba87f72ca0e915175596069dbbcc7c75af7b5e9b9bc107ad6349ede0819982f",
+            "url": "https://files.pythonhosted.org/packages/bd/d9/617e6af809bf3a1d468e0d58c3997b1dc219a9a9202e650d30c2fc85d481/mock-5.2.0-py3-none-any.whl"
+          }
+        ],
+        "note": "Registry candidate hashes do not prove the exact installed wheel origin."
+      }
+    },
+    {
+      "name": "numpy",
+      "version": "2.5.4",
+      "source": "https://pypi.org/project/numpy/2.5.4/",
+      "projectUrls": [
+        "homepage, https://numpy.org",
+        "documentation, https://numpy.org/doc/",
+        "source, https://github.com/numpy/numpy",
+        "download, https://pypi.org/project/numpy/#files",
+        "tracker, https://github.com/numpy/numpy/issues",
+        "release notes, https://numpy.org/doc/stable/release"
+      ],
+      "declaredLicense": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+      "licenseClassifiers": [],
+      "requiresDist": [],
+      "noticeFiles": [
+        {
+          "path": "numpy-2.5.4.dist-info/licenses/LICENSE.txt",
+          "sizeBytes": 45831,
+          "sha256": "a804dff0ead9fadc5293456410bcbfc32bf024be9c4513459663fb7b442d2341"
+        },
+        {
+          "path": "numpy-2.5.4.dist-info/licenses/numpy/_core/include/numpy/libdivide/LICENSE.txt",
+          "sizeBytes": 1039,
+          "sha256": "d544761558b510866c21f7e8a2d5716fca76e0b98117e3b6b86314db7244d150"
+        },
+        {
+          "path": "numpy-2.5.4.dist-info/licenses/numpy/_core/src/common/pythoncapi-compat/COPYING",
+          "sizeBytes": 704,
+          "sha256": "aea41976c720f91bd19725c16916a1ace40eb1ea42620d340e587a5de4bbcea0"
+        },
+        {
+          "path": "numpy-2.5.4.dist-info/licenses/numpy/_core/src/highway/LICENSE",
+          "sizeBytes": 21155,
+          "sha256": "d208152e2777ffd0126eacc1bd21c0320d69e4e6b622d21a2a12a47e8ef73763"
+        },
+        {
+          "path": "numpy-2.5.4.dist-info/licenses/numpy/_core/src/npysort/x86-simd-sort/LICENSE.md",
+          "sizeBytes": 1542,
+          "sha256": "a732977853530066790c42817087f4829b518dd98d340c916acbfd227e39d3cb"
+        },
+        {
+          "path": "numpy-2.5.4.dist-info/licenses/numpy/_core/src/umath/svml/LICENSE",
+          "sizeBytes": 1573,
+          "sha256": "585483905b13d4b42f800c55ba99e89d6e2e33ccd5f503e201c07531d148ff41"
+        },
+        {
+          "path": "numpy-2.5.4.dist-info/licenses/numpy/fft/pocketfft/LICENSE.md",
+          "sizeBytes": 1523,
+          "sha256": "8db000e158c162e7249787852d8c69764706502ccee725c06641b31c1e95c8af"
+        },
+        {
+          "path": "numpy-2.5.4.dist-info/licenses/numpy/linalg/lapack_lite/LICENSE.txt",
+          "sizeBytes": 2314,
+          "sha256": "19060ef465e1797d682ee0fc3081bd25ab1395e995e43d25c9d13c95d9a3cd6b"
+        },
+        {
+          "path": "numpy-2.5.4.dist-info/licenses/numpy/ma/LICENSE",
+          "sizeBytes": 1616,
+          "sha256": "d78dbb208b80d92b4d333e41a4baae50d12444f46e53199fa7726a91de6e2da7"
+        },
+        {
+          "path": "numpy-2.5.4.dist-info/licenses/numpy/random/LICENSE.md",
+          "sizeBytes": 3582,
+          "sha256": "b4bc2f4fa1c95778f1ed3dd8f14706bece399475b978f9f34b5d3cd72521b48a"
+        },
+        {
+          "path": "numpy-2.5.4.dist-info/licenses/numpy/random/src/distributions/LICENSE.md",
+          "sizeBytes": 2805,
+          "sha256": "cf5619f25b112d5ce7c896efffc8e610bcb345dfadcc19f2c1460aa48fff2c9e"
+        },
+        {
+          "path": "numpy-2.5.4.dist-info/licenses/numpy/random/src/mt19937/LICENSE.md",
+          "sizeBytes": 2986,
+          "sha256": "92c10699884321f1c2947fe2a70ab23b0fbf1507f756d89dd08f38c61fc3d4fa"
+        },
+        {
+          "path": "numpy-2.5.4.dist-info/licenses/numpy/random/src/pcg64/LICENSE.md",
+          "sizeBytes": 1176,
+          "sha256": "41190663b77bee5302386495a07b7eabfbfa571aa0ae2f11da6764162062fc4f"
+        },
+        {
+          "path": "numpy-2.5.4.dist-info/licenses/numpy/random/src/philox/LICENSE.md",
+          "sizeBytes": 1540,
+          "sha256": "322ac46d870c8aeead6c53adcccc839296fb3c8e456eae155081297daf7f8013"
+        },
+        {
+          "path": "numpy-2.5.4.dist-info/licenses/numpy/random/src/sfc64/LICENSE.md",
+          "sizeBytes": 1253,
+          "sha256": "28cad82ce1379dc529df30da78ec012d7d0d1d576b03ddcb93388aee53659f59"
+        },
+        {
+          "path": "numpy-2.5.4.dist-info/licenses/numpy/random/src/splitmix64/LICENSE.md",
+          "sizeBytes": 340,
+          "sha256": "454ec7350e478e037061850b67395753b425b1cb0a34bbc26290b020bf89d763"
+        },
+        {
+          "path": "numpy/_core/include/numpy/random/LICENSE.txt",
+          "sizeBytes": 1039,
+          "sha256": "d544761558b510866c21f7e8a2d5716fca76e0b98117e3b6b86314db7244d150"
+        },
+        {
+          "path": "numpy/ma/LICENSE",
+          "sizeBytes": 1616,
+          "sha256": "d78dbb208b80d92b4d333e41a4baae50d12444f46e53199fa7726a91de6e2da7"
+        },
+        {
+          "path": "numpy/random/LICENSE.md",
+          "sizeBytes": 3582,
+          "sha256": "b4bc2f4fa1c95778f1ed3dd8f14706bece399475b978f9f34b5d3cd72521b48a"
+        }
+      ],
+      "nativeFiles": [
+        {
+          "path": "numpy.libs/libscipy_openblas64_-ed4f167a5330424524f45258e7ca2c8d.dll",
+          "sizeBytes": 20589056,
+          "sha256": "ed4f167a5330424524f45258e7ca2c8d7f03c0cba1f30ee4985553ac1f88ecf8"
+        },
+        {
+          "path": "numpy.libs/msvcp140-a4c2229bdc2a2a630acdc095b4d86008.dll",
+          "sizeBytes": 575056,
+          "sha256": "a4c2229bdc2a2a630acdc095b4d86008e5c3e3bc7773174354f3da4f5beb9cde"
+        },
+        {
+          "path": "numpy/_core/_multiarray_tests.cp312-win_amd64.pyd",
+          "sizeBytes": 65536,
+          "sha256": "f09f60242eaed510e1af6384284f53ff56ae42770a62e630bd415bc2b6854d66"
+        },
+        {
+          "path": "numpy/_core/_multiarray_umath.cp312-win_amd64.pyd",
+          "sizeBytes": 3855872,
+          "sha256": "9c10617e66e992b5ac6d9f78fe7cedd0011618e1c2f89d09a185bb63073e2c90"
+        },
+        {
+          "path": "numpy/_core/_operand_flag_tests.cp312-win_amd64.pyd",
+          "sizeBytes": 12288,
+          "sha256": "1a392918237439dcb48a6562ae7d44d4e12b5c9d4d7333ffb377ba795c94bb47"
+        },
+        {
+          "path": "numpy/_core/_rational_tests.cp312-win_amd64.pyd",
+          "sizeBytes": 43520,
+          "sha256": "78d4ee6d7f8a0c2ff10d4e093e10f4bf5d27ebbdb434b8c1a4a837d7c6b47081"
+        },
+        {
+          "path": "numpy/_core/_simd.cp312-win_amd64.pyd",
+          "sizeBytes": 831488,
+          "sha256": "cf6064fb2c44cc27983359b0c7e19e53e16e585357fc33783a6a93ea50e35022"
+        },
+        {
+          "path": "numpy/_core/_struct_ufunc_tests.cp312-win_amd64.pyd",
+          "sizeBytes": 14336,
+          "sha256": "d82ae25c7b7e370b47bf71f768452528b22aac055074786a7a81465028a26a1d"
+        },
+        {
+          "path": "numpy/_core/_umath_tests.cp312-win_amd64.pyd",
+          "sizeBytes": 34304,
+          "sha256": "0c955075230dde0907ee573e470cedc97f771fb10fda2c528d1b9cafadbb06f5"
+        },
+        {
+          "path": "numpy/fft/_pocketfft_umath.cp312-win_amd64.pyd",
+          "sizeBytes": 276480,
+          "sha256": "4f008612d6b9e2ab3820ee17a1c758c499e45e80a36764c9dfb7bf304b066f03"
+        },
+        {
+          "path": "numpy/linalg/_umath_linalg.cp312-win_amd64.pyd",
+          "sizeBytes": 112640,
+          "sha256": "03bc9de2d6d8e2d9ea3ec781f3c16bcbc9960095cc02ca588f4229cd1560c661"
+        },
+        {
+          "path": "numpy/linalg/lapack_lite.cp312-win_amd64.pyd",
+          "sizeBytes": 18944,
+          "sha256": "7558dc0d0a5ef5f584d40f0caf3914c1e6ed8f09632000d1be1b8e240c9a1d67"
+        },
+        {
+          "path": "numpy/random/_bounded_integers.cp312-win_amd64.pyd",
+          "sizeBytes": 208896,
+          "sha256": "927c1673ba698a85e6253b4d8d2223eb019b021792c54604489767c694d2ab93"
+        },
+        {
+          "path": "numpy/random/_common.cp312-win_amd64.pyd",
+          "sizeBytes": 174080,
+          "sha256": "712a7bb4b2d3e56548cdf255eb4e6c1ca0737d7d81d76f09bdccebb0703ae572"
+        },
+        {
+          "path": "numpy/random/_generator.cp312-win_amd64.pyd",
+          "sizeBytes": 624640,
+          "sha256": "0fa509dcf5ae21910cb2b3c74271977d0fac7fab15ffd5f32017e08b97e71de6"
+        },
+        {
+          "path": "numpy/random/_mt19937.cp312-win_amd64.pyd",
+          "sizeBytes": 92672,
+          "sha256": "e6938df4dd3a193b7d9171d3e192702be3a70de2ebe866cf6fcd92f9e368349d"
+        },
+        {
+          "path": "numpy/random/_pcg64.cp312-win_amd64.pyd",
+          "sizeBytes": 105984,
+          "sha256": "8eb5569b221d40884093def83d897376bddd99c9279f182b9db3145b9b897d34"
+        },
+        {
+          "path": "numpy/random/_philox.cp312-win_amd64.pyd",
+          "sizeBytes": 89088,
+          "sha256": "cc0c03e2c1443e8981300ddb9cc5ceb504e7f8494323d4ec0a1ad95ae16fbf75"
+        },
+        {
+          "path": "numpy/random/_sfc64.cp312-win_amd64.pyd",
+          "sizeBytes": 64000,
+          "sha256": "20c551734cd2b2be2425c8773b795f1e92de8826ebbe6c1103cd0fa6b5c94408"
+        },
+        {
+          "path": "numpy/random/bit_generator.cp312-win_amd64.pyd",
+          "sizeBytes": 173056,
+          "sha256": "c7f637df1fa0db9fe4bba6c05dac680d89aed245401423f1ffd16d93366a35a7"
+        },
+        {
+          "path": "numpy/random/mtrand.cp312-win_amd64.pyd",
+          "sizeBytes": 522752,
+          "sha256": "e8bdaf22830ceaabc596854a816d39d96d1d60e96c2e12a9a17950b624d480a1"
+        }
+      ],
+      "embeddedResources": [],
+      "metadataEvidence": {
+        "path": "numpy-2.5.4.dist-info/METADATA",
+        "sizeBytes": 6635,
+        "sha256": "e2b909d6a37d76c2bc130f528d7fed0c517322bce16dc7846b6a6df30e200403"
+      },
+      "status": "evidence_collected_not_redistribution_approval",
+      "registryEvidence": {
+        "url": "https://pypi.org/pypi/numpy/2.5.4/json",
+        "responseSha256": "a42b40d53fac5388e974f21aa1f01d3b47440ad8181fc827b08023bf8ca3cc96",
+        "license": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+        "compatibleWheelCandidates": [
+          {
+            "filename": "numpy-2.5.4-cp312-cp312-win_amd64.whl",
+            "sha256": "a7b1b6353e36a7e50de2973a38d705c88ee93adcf120673cee7f45a4a3fa223a",
+            "url": "https://files.pythonhosted.org/packages/12/33/fefe62073dc8acfd0f2b9ed7c003af2f50aa61555e113e6db02b8f79f145/numpy-2.5.4-cp312-cp312-win_amd64.whl"
+          }
+        ],
+        "note": "Registry candidate hashes do not prove the exact installed wheel origin."
+      }
+    },
+    {
+      "name": "pip",
+      "version": "25.0.1",
+      "source": "https://pypi.org/project/pip/25.0.1/",
+      "projectUrls": [
+        "Homepage, https://pip.pypa.io/",
+        "Documentation, https://pip.pypa.io",
+        "Source, https://github.com/pypa/pip",
+        "Changelog, https://pip.pypa.io/en/stable/news/"
+      ],
+      "declaredLicense": "MIT",
+      "licenseClassifiers": [
+        "License :: OSI Approved :: MIT License"
+      ],
+      "requiresDist": [],
+      "noticeFiles": [
+        {
+          "path": "pip-25.0.1.dist-info/AUTHORS.txt",
+          "sizeBytes": 11018,
+          "sha256": "1eace90552df4f5941b61a907e20e555e16483ae6127b650bef5a1a2af8102c0"
+        },
+        {
+          "path": "pip-25.0.1.dist-info/LICENSE.txt",
+          "sizeBytes": 1093,
+          "sha256": "634300a669d49aeae65b12c6c48c924c51a4cdf3d1ff086dc3456dc8bcaa2104"
+        }
+      ],
+      "nativeFiles": [],
+      "embeddedResources": [],
+      "metadataEvidence": {
+        "path": "pip-25.0.1.dist-info/METADATA",
+        "sizeBytes": 3677,
+        "sha256": "4fa7318cf30f979db7cec45c12cbbc2b4f88a15f12eefbf59a6291d0a03af926"
+      },
+      "status": "evidence_collected_not_redistribution_approval",
+      "registryEvidence": {
+        "url": "https://pypi.org/pypi/pip/25.0.1/json",
+        "responseSha256": "14f6c8434d14a8211078597cded44c3e4a1539fd8cb48e1095b294ed3daa34a8",
+        "license": "MIT",
+        "compatibleWheelCandidates": [
+          {
+            "filename": "pip-25.0.1-py3-none-any.whl",
+            "sha256": "c46efd13b6aa8279f33f2864459c8ce587ea6a1a59ee20de055868d8f7688f7f",
+            "url": "https://files.pythonhosted.org/packages/c9/bc/b7db44f5f39f9d0494071bddae6880eb645970366d0a200022a1a93d57f5/pip-25.0.1-py3-none-any.whl"
+          }
+        ],
+        "note": "Registry candidate hashes do not prove the exact installed wheel origin."
+      }
+    },
+    {
+      "name": "PyYAML",
+      "version": "6.0.3",
+      "source": "https://pypi.org/project/PyYAML/6.0.3/",
+      "projectUrls": [
+        "Bug Tracker, https://github.com/yaml/pyyaml/issues",
+        "CI, https://github.com/yaml/pyyaml/actions",
+        "Documentation, https://pyyaml.org/wiki/PyYAMLDocumentation",
+        "Mailing lists, http://lists.sourceforge.net/lists/listinfo/yaml-core",
+        "Source Code, https://github.com/yaml/pyyaml"
+      ],
+      "declaredLicense": "MIT",
+      "licenseClassifiers": [
+        "License :: OSI Approved :: MIT License"
+      ],
+      "requiresDist": [],
+      "noticeFiles": [
+        {
+          "path": "pyyaml-6.0.3.dist-info/licenses/LICENSE",
+          "sizeBytes": 1101,
+          "sha256": "8d3928f9dc4490fd635707cb88eb26bd764102a7282954307d3e5167a577e8a4"
+        }
+      ],
+      "nativeFiles": [
+        {
+          "path": "yaml/_yaml.cp312-win_amd64.pyd",
+          "sizeBytes": 253952,
+          "sha256": "4fd0e84f50261ed0886cffcdd8008b055af3352546e649c3d741b50eae1f9b5f"
+        }
+      ],
+      "embeddedResources": [],
+      "metadataEvidence": {
+        "path": "pyyaml-6.0.3.dist-info/METADATA",
+        "sizeBytes": 2410,
+        "sha256": "847a701020334386852b6e07bad1053cb0ce3da9ee1846e7e9d02b24e8bb3f8d"
+      },
+      "status": "evidence_collected_not_redistribution_approval",
+      "registryEvidence": {
+        "url": "https://pypi.org/pypi/PyYAML/6.0.3/json",
+        "responseSha256": "c3f35597bc2f08cc990c2a5fe57bef6687b3a3d7c61d8b0ba4cc067777eb1def",
+        "license": "MIT",
+        "compatibleWheelCandidates": [
+          {
+            "filename": "pyyaml-6.0.3-cp312-cp312-win_amd64.whl",
+            "sha256": "5fcd34e47f6e0b794d17de1b4ff496c00986e1c83f7ab2fb8fcfe9616ff7477b",
+            "url": "https://files.pythonhosted.org/packages/86/bf/899e81e4cce32febab4fb42bb97dcdf66bc135272882d1987881a4b519e9/pyyaml-6.0.3-cp312-cp312-win_amd64.whl"
+          }
+        ],
+        "note": "Registry candidate hashes do not prove the exact installed wheel origin."
+      }
+    },
+    {
+      "name": "regex",
+      "version": "2026.9.29",
+      "source": "https://pypi.org/project/regex/2026.9.29/",
+      "projectUrls": [
+        "Homepage, https://github.com/mrabarnett/mrab-regex"
+      ],
+      "declaredLicense": "Apache-2.0 AND CNRI-Python",
+      "licenseClassifiers": [],
+      "requiresDist": [],
+      "noticeFiles": [
+        {
+          "path": "regex-2026.9.29.dist-info/licenses/LICENSE.txt",
+          "sizeBytes": 11792,
+          "sha256": "3d220c06594b826bbabf110312f60f385f99e57e529fa4b9e536f79091f8b4c7"
+        }
+      ],
+      "nativeFiles": [
+        {
+          "path": "regex/_regex.cp312-win_amd64.pyd",
+          "sizeBytes": 736768,
+          "sha256": "4beee916c5d638552d1a71c6fd25e45d83ae8369ac9cb38009060e8bedcdc5dc"
+        }
+      ],
+      "embeddedResources": [],
+      "metadataEvidence": {
+        "path": "regex-2026.9.29.dist-info/METADATA",
+        "sizeBytes": 41625,
+        "sha256": "726c658b5d0ee420e773f9e6c843918e8a2ad7c27577d20c8f502c08eccb211e"
+      },
+      "status": "evidence_collected_not_redistribution_approval",
+      "registryEvidence": {
+        "url": "https://pypi.org/pypi/regex/2026.9.29/json",
+        "responseSha256": "08fc1fa7daa8db0404cbbaea4eed71acc7798421386d3de50f92302068fe58c5",
+        "license": "Apache-2.0 AND CNRI-Python",
+        "compatibleWheelCandidates": [
+          {
+            "filename": "regex-2026.9.29-cp312-cp312-win_amd64.whl",
+            "sha256": "fdd88ed5e20b1bcdd234421e454962c971aa44b653bdb7f1ea9ef683e90fb649",
+            "url": "https://files.pythonhosted.org/packages/93/19/489bc8db91196381c935752df01ba3f607140daece33b78d88573f028e64/regex-2026.9.29-cp312-cp312-win_amd64.whl"
+          }
+        ],
+        "note": "Registry candidate hashes do not prove the exact installed wheel origin."
+      }
+    },
+    {
+      "name": "sacremoses",
+      "version": "0.1.1",
+      "source": "https://pypi.org/project/sacremoses/0.1.1/",
+      "projectUrls": [
+        "https://github.com/hplt-project/sacremoses"
+      ],
+      "declaredLicense": null,
+      "licenseClassifiers": [
+        "License :: OSI Approved :: MIT License"
+      ],
+      "requiresDist": [
+        "regex",
+        "click",
+        "joblib",
+        "tqdm"
+      ],
+      "noticeFiles": [
+        {
+          "path": "sacremoses-0.1.1.dist-info/LICENSE",
+          "sizeBytes": 1066,
+          "sha256": "efe03a5e303b216ad2008b100da2ac2fbe6aa3ca442f2cfb931227f996fd2ebe"
+        }
+      ],
+      "nativeFiles": [],
+      "embeddedResources": [
+        {
+          "path": "sacremoses/data/nonbreaking_prefixes/nonbreaking_prefix.as",
+          "sizeBytes": 495,
+          "sha256": "031e8c1e475846eea5d50dd09a0c068f96b2520d63ede25828bd7ba2ae1d8156"
+        },
+        {
+          "path": "sacremoses/data/nonbreaking_prefixes/nonbreaking_prefix.bn",
+          "sizeBytes": 495,
+          "sha256": "031e8c1e475846eea5d50dd09a0c068f96b2520d63ede25828bd7ba2ae1d8156"
+        },
+        {
+          "path": "sacremoses/data/nonbreaking_prefixes/nonbreaking_prefix.ca",
+          "sizeBytes": 249,
+          "sha256": "dd4a4db930ac77d7e886c01a038a52586e53109437f18ec13326d050c9562fc4"
+        },
+        {
+          "path": "sacremoses/data/nonbreaking_prefixes/nonbreaking_prefix.cs",
+          "sizeBytes": 1892,
+          "sha256": "ea4a99eac36237a22ea1d312f2881abd7ca831eec9d3b1513c3ac0a78ac1e073"
+        },
+        {
+          "path": "sacremoses/data/nonbreaking_prefixes/nonbreaking_prefix.de",
+          "sizeBytes": 1768,
+          "sha256": "caec29277f3cb15748430cdcd41dc341d3d01aab7ef849cda131818b3e52df83"
+        },
+        {
+          "path": "sacremoses/data/nonbreaking_prefixes/nonbreaking_prefix.el",
+          "sizeBytes": 17034,
+          "sha256": "d08c8ffc224910d37c9c3a0e919cea9bc6da721cb12249d6ceea4d89bdc8bbd8"
+        },
+        {
+          "path": "sacremoses/data/nonbreaking_prefixes/nonbreaking_prefix.en",
+          "sizeBytes": 1339,
+          "sha256": "7bc4b62cb97fef5f85f283365f2e045b12ef2cc4f946d39d100b9955d8f42ab1"
+        },
+        {
+          "path": "sacremoses/data/nonbreaking_prefixes/nonbreaking_prefix.es",
+          "sizeBytes": 835,
+          "sha256": "c93467ede290beb7d3fbda03598f3f7c8423f70a95d13bb459e7fe1accc5381e"
+        },
+        {
+          "path": "sacremoses/data/nonbreaking_prefixes/nonbreaking_prefix.et",
+          "sizeBytes": 1281,
+          "sha256": "b4d09661817c5e85d841b588f47eb48339817441dcd444572e8473f02e99d659"
+        },
+        {
+          "path": "sacremoses/data/nonbreaking_prefixes/nonbreaking_prefix.fi",
+          "sizeBytes": 1281,
+          "sha256": "b4d09661817c5e85d841b588f47eb48339817441dcd444572e8473f02e99d659"
+        },
+        {
+          "path": "sacremoses/data/nonbreaking_prefixes/nonbreaking_prefix.fr",
+          "sizeBytes": 1009,
+          "sha256": "c4442c07e22e30ecc89b075f6d5fd0867f7a8177f907992d3f53a75fe5c22547"
+        },
+        {
+          "path": "sacremoses/data/nonbreaking_prefixes/nonbreaking_prefix.ga",
+          "sizeBytes": 171,
+          "sha256": "aaff8e3d1490c2524eb3eda582f144e600c32470eb79979b31d264494ba31ec6"
+        },
+        {
+          "path": "sacremoses/data/nonbreaking_prefixes/nonbreaking_prefix.gu",
+          "sizeBytes": 669,
+          "sha256": "84568151b8dd514355f5d0902f2f44e73d8ab2933f17d67028e3468641b803d3"
+        },
+        {
+          "path": "sacremoses/data/nonbreaking_prefixes/nonbreaking_prefix.hi",
+          "sizeBytes": 752,
+          "sha256": "f1a514229d87c55df9a9c577406a8f37e5c82b7394bbb5c02c959f5e70da5bd3"
+        },
+        {
+          "path": "sacremoses/data/nonbreaking_prefixes/nonbreaking_prefix.hu",
+          "sizeBytes": 1505,
+          "sha256": "fffbfbf65e683699aae9a1c9c8c028ab47b9c2e085dc4ffcbe8bb7bce5b0b3de"
+        },
+        {
+          "path": "sacremoses/data/nonbreaking_prefixes/nonbreaking_prefix.is",
+          "sizeBytes": 1059,
+          "sha256": "9f22564c27bd2bb87bd5e0464c578b8ed2183d8f9b9fb71dadff1d765c45d36e"
+        },
+        {
+          "path": "sacremoses/data/nonbreaking_prefixes/nonbreaking_prefix.it",
+          "sizeBytes": 1563,
+          "sha256": "4e8ecd84556d155949cd503e6e2bf0909291e2503c7bcafcad625038cdcfd794"
+        },
+        {
+          "path": "sacremoses/data/nonbreaking_prefixes/nonbreaking_prefix.kn",
+          "sizeBytes": 558,
+          "sha256": "07e86609177067e12105183746b24bbcb15ab9bb707dc000454d2c5da3c976da"
+        },
+        {
+          "path": "sacremoses/data/nonbreaking_prefixes/nonbreaking_prefix.lt",
+          "sizeBytes": 6384,
+          "sha256": "1601959793a2d25cad043b265b4ea2b5102c1544cf73a83a55ee741766b5b8c4"
+        },
+        {
+          "path": "sacremoses/data/nonbreaking_prefixes/nonbreaking_prefix.lv",
+          "sizeBytes": 1223,
+          "sha256": "b52631e328cda3c25f973a8ad8248c8e89b91b413c2f42c31a3849b84b0a56e1"
+        },
+        {
+          "path": "sacremoses/data/nonbreaking_prefixes/nonbreaking_prefix.ml",
+          "sizeBytes": 528,
+          "sha256": "42cb2c662a272579e9bd111ebf4eda922f7f534b9011fb4163d17401cd5380a5"
+        },
+        {
+          "path": "sacremoses/data/nonbreaking_prefixes/nonbreaking_prefix.mni",
+          "sizeBytes": 498,
+          "sha256": "a5fa99222d4ac59a902a3cf43d4d2e3c299352cbf345d25a0d2dcfb2a20a8910"
+        },
+        {
+          "path": "sacremoses/data/nonbreaking_prefixes/nonbreaking_prefix.mr",
+          "sizeBytes": 740,
+          "sha256": "76ea1393c3a7f4ab427945bfa1e70e13a400d84af4852eb8fb0e722b0fc1cf8b"
+        },
+        {
+          "path": "sacremoses/data/nonbreaking_prefixes/nonbreaking_prefix.nl",
+          "sizeBytes": 1582,
+          "sha256": "de3605637841a69626f1605e2dad21880f2016ce8adbb10396d1a8e11539c518"
+        },
+        {
+          "path": "sacremoses/data/nonbreaking_prefixes/nonbreaking_prefix.or",
+          "sizeBytes": 458,
+          "sha256": "92644d8a416d8812caa97af44fe3623019b17f0715d887108727828841d4b28f"
+        },
+        {
+          "path": "sacremoses/data/nonbreaking_prefixes/nonbreaking_prefix.pa",
+          "sizeBytes": 665,
+          "sha256": "dd934deb0a0edab158b6957d7790e65fac00931f97895a4986a19c68a04344d0"
+        },
+        {
+          "path": "sacremoses/data/nonbreaking_prefixes/nonbreaking_prefix.pl",
+          "sizeBytes": 1311,
+          "sha256": "c56bfa8260f2d2cd780cb84476a8d5afdd2d5df0df531b313c0135a411134a31"
+        },
+        {
+          "path": "sacremoses/data/nonbreaking_prefixes/nonbreaking_prefix.pt",
+          "sizeBytes": 1792,
+          "sha256": "4477f9ad690e262c04bc057f4757e12b16777892f80016539130f3b7eebd58b4"
+        },
+        {
+          "path": "sacremoses/data/nonbreaking_prefixes/nonbreaking_prefix.ro",
+          "sizeBytes": 104,
+          "sha256": "43beedf98c092da62d4d29389130d5601996ed18b1a112b80861fc9f7730b047"
+        },
+        {
+          "path": "sacremoses/data/nonbreaking_prefixes/nonbreaking_prefix.ru",
+          "sizeBytes": 1649,
+          "sha256": "15079357ab2f2499d2ef589e52585655cffa9d59bdfee6ec36fce118285c4e6f"
+        },
+        {
+          "path": "sacremoses/data/nonbreaking_prefixes/nonbreaking_prefix.sk",
+          "sizeBytes": 2460,
+          "sha256": "029aa208e8dbc9934a3f60c594ada0ec5d0077b99246d9f1f7275f32d085c21d"
+        },
+        {
+          "path": "sacremoses/data/nonbreaking_prefixes/nonbreaking_prefix.sl",
+          "sizeBytes": 278,
+          "sha256": "957ef3455f4aa5d708c3d23935a4542c384eb2701ad8327560ea83da6a938754"
+        },
+        {
+          "path": "sacremoses/data/nonbreaking_prefixes/nonbreaking_prefix.sv",
+          "sizeBytes": 712,
+          "sha256": "3aff8bd2ea50bc4cb88b8a1b64071929a20a49a72dccf5200e7aa54a9e3ee992"
+        },
+        {
+          "path": "sacremoses/data/nonbreaking_prefixes/nonbreaking_prefix.ta",
+          "sizeBytes": 575,
+          "sha256": "783e13f3e1f20d02031608572ccdd9967ce8df985b4510df519c0f402916d752"
+        },
+        {
+          "path": "sacremoses/data/nonbreaking_prefixes/nonbreaking_prefix.tdt",
+          "sizeBytes": 1741,
+          "sha256": "38c7f8cdf09dc7a3c46107191a71ce004989dd8788c90bef8fe2039ffed6e75d"
+        },
+        {
+          "path": "sacremoses/data/nonbreaking_prefixes/nonbreaking_prefix.te",
+          "sizeBytes": 552,
+          "sha256": "3e4c0eaf0ff110d4ee34faba3fd4dc4a935f76bb375e257bb4f71cfe85a47cde"
+        },
+        {
+          "path": "sacremoses/data/nonbreaking_prefixes/nonbreaking_prefix.yue",
+          "sizeBytes": 610,
+          "sha256": "8928af2c87c632ccc49c74c19744ed5908dd108f1ef1d1207e6327e70a6ce834"
+        },
+        {
+          "path": "sacremoses/data/nonbreaking_prefixes/nonbreaking_prefix.zh",
+          "sizeBytes": 609,
+          "sha256": "7d93c9ea9c396f30264d7127fdd98a1378db812162d4651e0bfffe674a2c2c41"
+        },
+        {
+          "path": "sacremoses/data/perluniprops/CJK.txt",
+          "sizeBytes": 92533,
+          "sha256": "e889430c9333b866ab3bc9b0999fbf6dfcbc34e83315d8200925f4a6289ee8e3"
+        },
+        {
+          "path": "sacremoses/data/perluniprops/CJKSymbols.txt",
+          "sizeBytes": 205,
+          "sha256": "35774f048697859b6571262210511c0b324cdeaa739342429443adf0a1d15ba0"
+        },
+        {
+          "path": "sacremoses/data/perluniprops/Close_Punctuation.txt",
+          "sizeBytes": 214,
+          "sha256": "36eeabfdec22f929c20ba0320b90500271faed2a74b29cce38b92f89d3dfdf69"
+        },
+        {
+          "path": "sacremoses/data/perluniprops/Currency_Symbol.txt",
+          "sizeBytes": 149,
+          "sha256": "f4553edf27f3016bc7796aca90cdcf98d2b1660732958eeca97fe91cb209457a"
+        },
+        {
+          "path": "sacremoses/data/perluniprops/Han.txt",
+          "sizeBytes": 299457,
+          "sha256": "1da36e2243ba025ee2a58c5ee6f74178966f06b148c49ec0049f7b8d495c26cb"
+        },
+        {
+          "path": "sacremoses/data/perluniprops/Hangul.txt",
+          "sizeBytes": 35325,
+          "sha256": "69fc69377ce3b089348448aa9946fed50b40d2b4aea01b0a5805cd445dcbe3e9"
+        },
+        {
+          "path": "sacremoses/data/perluniprops/Hangul_Syllables.txt",
+          "sizeBytes": 33564,
+          "sha256": "2a668294832c2a0ff1f7c1886963d708df96bf24c370b6e537d82836b2943d90"
+        },
+        {
+          "path": "sacremoses/data/perluniprops/Hiragana.txt",
+          "sizeBytes": 437,
+          "sha256": "87d31577a1e54b5c00ba24cb1ebd5a69d4c4adc802a9271f0bf0388225ba99aa"
+        },
+        {
+          "path": "sacremoses/data/perluniprops/IsAlnum-unichars-au.txt",
+          "sizeBytes": 425929,
+          "sha256": "b9744688c6dbb631ea446f5257c29fafbd82a0b4c18e75be2a24d108744e2c5b"
+        },
+        {
+          "path": "sacremoses/data/perluniprops/IsAlnum.txt",
+          "sizeBytes": 31881,
+          "sha256": "e0e4d5536faec4a2dfb87e81ca959469e328477cbd17980e296484bcd0690a6b"
+        },
+        {
+          "path": "sacremoses/data/perluniprops/IsAlpha-unichars-au.txt",
+          "sizeBytes": 424029,
+          "sha256": "ea7636aa4a10ee13bde0d745e496665a1b358a3134016ce23b9d1a6b09d40a08"
+        },
+        {
+          "path": "sacremoses/data/perluniprops/IsAlpha.txt",
+          "sizeBytes": 30821,
+          "sha256": "c8b2677a3a307e1bbcc93e90a3aeb4970270f28707fcf4733d53370c07f289ca"
+        },
+        {
+          "path": "sacremoses/data/perluniprops/IsLower.txt",
+          "sizeBytes": 6829,
+          "sha256": "59f87508684232f8fecc1868960f3ab550e3be28700e3b5a76208705d3ba99e9"
+        },
+        {
+          "path": "sacremoses/data/perluniprops/IsN.txt",
+          "sizeBytes": 2081,
+          "sha256": "b39d19ae130b8526ebdfd010b88dad695a61983bb831a270e05062f6ba6b0d14"
+        },
+        {
+          "path": "sacremoses/data/perluniprops/IsPf.txt",
+          "sizeBytes": 29,
+          "sha256": "f8619f2ddfd7c63b10290c7ab4d868fd3b98da3d1e6da411691167b6fdabec57"
+        },
+        {
+          "path": "sacremoses/data/perluniprops/IsPi.txt",
+          "sizeBytes": 35,
+          "sha256": "16e58a42cd6462e830d6edc15de02ec925999b897eed1504eb9bc66738b4af46"
+        },
+        {
+          "path": "sacremoses/data/perluniprops/IsSc.txt",
+          "sizeBytes": 149,
+          "sha256": "f4553edf27f3016bc7796aca90cdcf98d2b1660732958eeca97fe91cb209457a"
+        },
+        {
+          "path": "sacremoses/data/perluniprops/IsSo.txt",
+          "sizeBytes": 6947,
+          "sha256": "720612794517f22be981ffe8ea4b7865a2a54180d42053d412b1ff151ce8c3fd"
+        },
+        {
+          "path": "sacremoses/data/perluniprops/IsUpper.txt",
+          "sizeBytes": 5687,
+          "sha256": "028cc842b41ae6070460593cfde23a7464888307168832207741ceb94796e55c"
+        },
+        {
+          "path": "sacremoses/data/perluniprops/Katakana.txt",
+          "sizeBytes": 1063,
+          "sha256": "97a2eded8653759f773aa27e9bd91ab25cc97d674eafde199ea0102c112ddacf"
+        },
+        {
+          "path": "sacremoses/data/perluniprops/Line_Separator.txt",
+          "sizeBytes": 5,
+          "sha256": "e1eefe9c266415e925638de4dd389e5224e64e93ffadf000ac343479a50ba7e4"
+        },
+        {
+          "path": "sacremoses/data/perluniprops/Lowercase_Letter.txt",
+          "sizeBytes": 3539,
+          "sha256": "18e7914759b0157ebe30f83abe401da3acaed860f49976a4f219b0e47335c76f"
+        },
+        {
+          "path": "sacremoses/data/perluniprops/Number.txt",
+          "sizeBytes": 45664,
+          "sha256": "bdd4091ffb857b47bb10e10c82f750e30419aa7a3ce6da39dae92f77efa28476"
+        },
+        {
+          "path": "sacremoses/data/perluniprops/Open_Punctuation.txt",
+          "sizeBytes": 220,
+          "sha256": "1c3c61b9d9c51afc8f016663cdf0c6ceedcdf2d1c603c3c1a6abf4e724da2aa4"
+        },
+        {
+          "path": "sacremoses/data/perluniprops/Punctuation.txt",
+          "sizeBytes": 1682,
+          "sha256": "e2f503ffac0d4c69620ff0ce22a6b4a28b328363602a74270efbbe92ed0efcac"
+        },
+        {
+          "path": "sacremoses/data/perluniprops/Separator.txt",
+          "sizeBytes": 77,
+          "sha256": "3d13f1e1ca15c997a8f0325092384acbc7f3d6885eac370658aaac13ab1cd51e"
+        },
+        {
+          "path": "sacremoses/data/perluniprops/Symbol.txt",
+          "sizeBytes": 9804,
+          "sha256": "d57b6f965049bb8a0b2f43e17bb32a71bd4ca82bc86766c059ca80273660c99e"
+        },
+        {
+          "path": "sacremoses/data/perluniprops/Titlecase_Letter.txt",
+          "sizeBytes": 89,
+          "sha256": "fabb3e205241fd09f27e5bf259c0b4275382f6eb55ce4d6a6d7de8fefe68e8e1"
+        },
+        {
+          "path": "sacremoses/data/perluniprops/Uppercase_Letter.txt",
+          "sizeBytes": 2701,
+          "sha256": "df6fa9b7160e2297817d63f1f975fe68d1d427ce3bfdc3695c607a1114e8b810"
+        }
+      ],
+      "metadataEvidence": {
+        "path": "sacremoses-0.1.1.dist-info/METADATA",
+        "sizeBytes": 8257,
+        "sha256": "249c7c18d37c85c7552cb8107a12eb17f3ac36b545b7c6eb7613c1dcf7563014"
+      },
+      "status": "evidence_collected_not_redistribution_approval",
+      "registryEvidence": {
+        "url": "https://pypi.org/pypi/sacremoses/0.1.1/json",
+        "responseSha256": "1396478fb1099508a10bdf1a231a83ef3f7b4aa2816f367704b683a393768eb5",
+        "license": "",
+        "compatibleWheelCandidates": [
+          {
+            "filename": "sacremoses-0.1.1-py3-none-any.whl",
+            "sha256": "31e04c98b169bfd902144824d191825cd69220cdb4ae4bcf1ec58a7db5587b1a",
+            "url": "https://files.pythonhosted.org/packages/0b/f0/89ee2bc9da434bd78464f288fdb346bc2932f2ee80a90b2a4bbbac262c74/sacremoses-0.1.1-py3-none-any.whl"
+          }
+        ],
+        "note": "Registry candidate hashes do not prove the exact installed wheel origin."
+      }
+    },
+    {
+      "name": "sentencepiece",
+      "version": "0.2.2",
+      "source": "https://pypi.org/project/sentencepiece/0.2.2/",
+      "projectUrls": [
+        "Homepage, https://github.com/google/sentencepiece"
+      ],
+      "declaredLicense": "Apache-2.0",
+      "licenseClassifiers": [],
+      "requiresDist": [
+        "numpy; extra == \"numpy\"",
+        "protobuf; extra == \"protobuf\"",
+        "pytest; extra == \"test\"",
+        "numpy; extra == \"test\"",
+        "protobuf; extra == \"test\""
+      ],
+      "noticeFiles": [],
+      "nativeFiles": [
+        {
+          "path": "sentencepiece/_sentencepiece.cp312-win_amd64.pyd",
+          "sizeBytes": 1459712,
+          "sha256": "6fb545d1295cb7a4e87ae1884ea0eb3775d8261caed4132d1db5266b113bb781"
+        }
+      ],
+      "embeddedResources": [],
+      "metadataEvidence": {
+        "path": "sentencepiece-0.2.2.dist-info/METADATA",
+        "sizeBytes": 34480,
+        "sha256": "eb1173d40630c7d15aba70e145e6d378ba9137ec1634e74b2f4e4ccd0dc5ffc7"
+      },
+      "status": "evidence_collected_not_redistribution_approval",
+      "registryEvidence": {
+        "url": "https://pypi.org/pypi/sentencepiece/0.2.2/json",
+        "responseSha256": "85007aeaf57c3f63de1c460a3a8d82ab530f06e55d529f7a20ac6f92227a0412",
+        "license": "Apache-2.0",
+        "compatibleWheelCandidates": [
+          {
+            "filename": "sentencepiece-0.2.2-cp312-cp312-win_amd64.whl",
+            "sha256": "7c6e7bf684dc12145bfa685d3060beaea55139134ba848289bee514ed42e7383",
+            "url": "https://files.pythonhosted.org/packages/8d/11/753fca2e6b109be3ab7867abf357dfe48677fe726ae5a5363d0b54ca9450/sentencepiece-0.2.2-cp312-cp312-win_amd64.whl"
+          }
+        ],
+        "note": "Registry candidate hashes do not prove the exact installed wheel origin."
+      }
+    },
+    {
+      "name": "subword-nmt",
+      "version": "0.3.8",
+      "source": "https://pypi.org/project/subword-nmt/0.3.8/",
+      "projectUrls": [
+        "https://github.com/rsennrich/subword-nmt"
+      ],
+      "declaredLicense": "MIT",
+      "licenseClassifiers": [
+        "License :: OSI Approved :: MIT License"
+      ],
+      "requiresDist": [
+        "mock",
+        "tqdm"
+      ],
+      "noticeFiles": [
+        {
+          "path": "subword_nmt-0.3.8.dist-info/LICENSE",
+          "sizeBytes": 1089,
+          "sha256": "448ac7bb5eae8da0f42cf971c99bfc4c484a73ff0b5fa899ac3573a3ca8956fb"
+        }
+      ],
+      "nativeFiles": [],
+      "embeddedResources": [],
+      "metadataEvidence": {
+        "path": "subword_nmt-0.3.8.dist-info/METADATA",
+        "sizeBytes": 9152,
+        "sha256": "c5e95a186605eb3c40f956765e029a3d4f98857764305d67fa0eb2e66324f01a"
+      },
+      "status": "evidence_collected_not_redistribution_approval",
+      "registryEvidence": {
+        "url": "https://pypi.org/pypi/subword-nmt/0.3.8/json",
+        "responseSha256": "fbe35d19a4aa7d2e30816f3909af04b6c31dfd4c70a110f04b3503617c3c7595",
+        "license": "MIT",
+        "compatibleWheelCandidates": [
+          {
+            "filename": "subword_nmt-0.3.8-py3-none-any.whl",
+            "sha256": "d22526b557752f35ac15e8ea384ea7773e50a51d966b8752d023d16cb87eac36",
+            "url": "https://files.pythonhosted.org/packages/1b/9a/488ecac22d78eb429928b9ee4f6b6c692e116ca4bd43ef42a475698def32/subword_nmt-0.3.8-py3-none-any.whl"
+          }
+        ],
+        "note": "Registry candidate hashes do not prove the exact installed wheel origin."
+      }
+    },
+    {
+      "name": "tqdm",
+      "version": "4.70.1",
+      "source": "https://pypi.org/project/tqdm/4.70.1/",
+      "projectUrls": [
+        "homepage, https://tqdm.github.io",
+        "repository, https://github.com/tqdm/tqdm",
+        "changelog, https://tqdm.github.io/releases",
+        "wiki, https://github.com/tqdm/tqdm/wiki"
+      ],
+      "declaredLicense": "MPL-2.0 AND MIT",
+      "licenseClassifiers": [],
+      "requiresDist": [
+        "colorama; platform_system == \"Windows\"",
+        "requests; extra == \"discord\"",
+        "envwrap; extra == \"discord\"",
+        "slack-sdk; extra == \"slack\"",
+        "envwrap; extra == \"slack\"",
+        "requests; extra == \"telegram\"",
+        "envwrap; extra == \"telegram\"",
+        "ipywidgets>=6; extra == \"notebook\""
+      ],
+      "noticeFiles": [
+        {
+          "path": "tqdm-4.70.1.dist-info/licenses/LICENCE",
+          "sizeBytes": 1985,
+          "sha256": "fcff87c3a47ce8028a8512aa182d4fcf0ad1c90544ee75cf9b343684cac194de"
+        }
+      ],
+      "nativeFiles": [],
+      "embeddedResources": [],
+      "metadataEvidence": {
+        "path": "tqdm-4.70.1.dist-info/METADATA",
+        "sizeBytes": 57366,
+        "sha256": "a5da70b966afea3a759716041bad7187f2ece02c22348cf9e7c0a512bbf15f57"
+      },
+      "status": "evidence_collected_not_redistribution_approval",
+      "registryEvidence": {
+        "url": "https://pypi.org/pypi/tqdm/4.70.1/json",
+        "responseSha256": "0589819a1bc3437c8f215d95f3f64ff24d602dc6a62598eb8d2e420c8e6a0b25",
+        "license": "MPL-2.0 AND MIT",
+        "compatibleWheelCandidates": [
+          {
+            "filename": "tqdm-4.70.1-py3-none-any.whl",
+            "sha256": "c293e525e6fef9c20e8728fd4612df02a0aa31bb5fe91ecd93e123b1b7bffa73",
+            "url": "https://files.pythonhosted.org/packages/a7/03/921a3d3c75785aca9ebfbfcabfbc3a1be12e2ab5265deb026d55a5a3f83e/tqdm-4.70.1-py3-none-any.whl"
+          }
+        ],
+        "note": "Registry candidate hashes do not prove the exact installed wheel origin."
+      }
+    }
+  ],
+  "forbiddenPackagesInstalled": [],
+  "modelsManifest": {
+    "path": "argos-models.json",
+    "sizeBytes": 2646,
+    "sha256": "021d969e49d37fe67f865c34a8f2054b67c8df6075ef70fccb5175af920c2924"
+  },
+  "models": [
+    {
+      "id": "argos-es-en",
+      "version": "1.9",
+      "source": "https://argos-net.com/v1/translate-es_en-1_9.argosmodel",
+      "readme": "# Castilian - English version 1.0\n\nAuthors: Jörg Tiedemann and Santhosh Thottingal\nTitle: \"OPUS-MT — Building open translation services for the World\"\nBook Title: Proceedings of the 22nd Annual Conference of the European Association for Machine Translation (EAMT)\nYear: 2020\nLocation: Lisbon, Portugal\n\nThe original OPUS model from which this packaged model is derived is licensed CC-BY 4.0\n",
+      "metadata": {
+        "package_version": "1.9",
+        "argos_version": "1.9.0",
+        "from_code": "es",
+        "from_name": "Spanish",
+        "to_code": "en",
+        "to_name": "English"
+      },
+      "files": [
+        {
+          "path": "bpe.model",
+          "sizeBytes": 362679,
+          "sha256": "567708133d5a722ac57c1431f9490904d9bcacd85134778e34ca2f901855855e",
+          "matchesManifest": true,
+          "licenseStatus": "package_specific_scope_and_provenance_pending",
+          "matchesPinnedArchiveMember": true
+        },
+        {
+          "path": "metadata.json",
+          "sizeBytes": 161,
+          "sha256": "976bb0aafb1142b7f2936ed2becad224b47aef619685fb8b17faab81080cc725",
+          "matchesManifest": true,
+          "licenseStatus": "package_specific_scope_and_provenance_pending",
+          "matchesPinnedArchiveMember": true
+        },
+        {
+          "path": "model/config.json",
+          "sizeBytes": 221,
+          "sha256": "152eb448f1020eb55f90971d7b95f61896abee8415d555ca51ae7897ac0a0e68",
+          "matchesManifest": true,
+          "licenseStatus": "package_specific_scope_and_provenance_pending",
+          "matchesPinnedArchiveMember": true
+        },
+        {
+          "path": "model/model.bin",
+          "sizeBytes": 314139617,
+          "sha256": "3c634f2fbfce11ba9c3db839db50079c08d3cdb12c74f2c21671f742dbbb30f1",
+          "matchesManifest": true,
+          "licenseStatus": "package_specific_scope_and_provenance_pending",
+          "matchesPinnedArchiveMember": true
+        },
+        {
+          "path": "model/shared_vocabulary.json",
+          "sizeBytes": 864016,
+          "sha256": "8ba15845314c1291fad86b0bf52b4a8a5db2a2f01b898c8c44d9e21e896a041f",
+          "matchesManifest": true,
+          "licenseStatus": "package_specific_scope_and_provenance_pending",
+          "matchesPinnedArchiveMember": true
+        },
+        {
+          "path": "README.md",
+          "sizeBytes": 394,
+          "sha256": "ca784d58b3fe81e557774db5ae33c4278bd6cfe64a43a6aa7301cce062b201c6",
+          "matchesManifest": true,
+          "licenseStatus": "package_specific_scope_and_provenance_pending",
+          "matchesPinnedArchiveMember": true
+        }
+      ],
+      "unexpectedFiles": [],
+      "missingFiles": [],
+      "generalPublisherStatement": "https://github.com/argosopentech/argos-translate/issues/533",
+      "redistributionApproved": false,
+      "archiveEvidence": {
+        "path": "translate-es_en-1_9.argosmodel",
+        "sizeBytes": 285208831,
+        "sha256": "c54df2b62fceaf54a3ce5d97db6bf56efd7940063329f6778f4212d2acb370d4"
+      },
+      "archiveMatchesPinnedHash": true,
+      "archiveNoticePaths": [],
+      "excludedStanzaEntries": 5
+    },
+    {
+      "id": "argos-en-es",
+      "version": "1.0",
+      "source": "https://argos-net.com/v1/translate-en_es-1_0.argosmodel",
+      "readme": "# English-Spanish\n\nTrained on [OpenSubtitles](opus.nlpl.eu/OpenSubtitles.php), [ParaCrawl](http://opus.nlpl.eu/ParaCrawl.php), and [UNPC](http://opus.nlpl.eu/UNPC.php) parallel corpuses compiled by [Opus](http://opus.nlpl.eu/index.php)\n\nIncludes pretrained models from [Stanza](https://github.com/stanfordnlp/stanza/blob/master/LICENSE).\n\n",
+      "metadata": {
+        "package_version": "1.0",
+        "argos_version": "1.0",
+        "from_code": "en",
+        "from_name": "English",
+        "to_code": "es",
+        "to_name": "Spanish"
+      },
+      "files": [
+        {
+          "path": "metadata.json",
+          "sizeBytes": 159,
+          "sha256": "d3360ebfd9b5458b84d7c75d078e379541e4f2ce009bca84f20f360572547bbd",
+          "matchesManifest": true,
+          "licenseStatus": "package_specific_scope_and_provenance_pending",
+          "matchesPinnedArchiveMember": true
+        },
+        {
+          "path": "model/model.bin",
+          "sizeBytes": 94392546,
+          "sha256": "d5771f823c9dd7eedcf9367c116aede65613a194f761a81826351e2bccb194c4",
+          "matchesManifest": true,
+          "licenseStatus": "package_specific_scope_and_provenance_pending",
+          "matchesPinnedArchiveMember": true
+        },
+        {
+          "path": "model/shared_vocabulary.txt",
+          "sizeBytes": 301928,
+          "sha256": "e03caf337f37b61d2e056b9cfbc5551a0c8ae7555541fba14c067d4574db1132",
+          "matchesManifest": true,
+          "licenseStatus": "package_specific_scope_and_provenance_pending",
+          "matchesPinnedArchiveMember": true
+        },
+        {
+          "path": "README.md",
+          "sizeBytes": 339,
+          "sha256": "cd8423493ed8817466822957d8c95070b5b4cc87eb122f06d60e7e31f138a3cf",
+          "matchesManifest": true,
+          "licenseStatus": "package_specific_scope_and_provenance_pending",
+          "matchesPinnedArchiveMember": true
+        },
+        {
+          "path": "sentencepiece.model",
+          "sizeBytes": 795667,
+          "sha256": "71790fd75854ce996bc9f7da40fb72af41b74296d53fee64bce141967e8e81b1",
+          "matchesManifest": true,
+          "licenseStatus": "package_specific_scope_and_provenance_pending",
+          "matchesPinnedArchiveMember": true
+        }
+      ],
+      "unexpectedFiles": [],
+      "missingFiles": [],
+      "generalPublisherStatement": "https://github.com/argosopentech/argos-translate/issues/533",
+      "redistributionApproved": false,
+      "archiveEvidence": {
+        "path": "translate-en_es-1_0.argosmodel",
+        "sizeBytes": 87503191,
+        "sha256": "d698d0ef87ad70d5d184b7fa6965905bf4368f09a2bb9ffb165a79bac96af0c4"
+      },
+      "archiveMatchesPinnedHash": true,
+      "archiveNoticePaths": [],
+      "excludedStanzaEntries": 5
+    }
+  ],
+  "redistributionApproved": false,
+  "limitations": [
+    "Versions alone are not a hash-locked supply chain.",
+    "Native transitive and statically linked components require upstream build provenance.",
+    "Tokenizer data and vocabulary rights are not established by software license alone.",
+    "pip and its vendored libraries are build tools; do not bundle them without a separate inventory."
+  ],
+  "onlineSources": [
+    {
+      "url": "https://raw.githubusercontent.com/OpenNMT/CTranslate2/v4.8.4/LICENSE",
+      "sha256": "54aa79d9fe3c09e67a16dcd95b9e88676405a6ec174efda31036983cf7672ecb",
+      "sizeBytes": 1115
+    },
+    {
+      "url": "https://raw.githubusercontent.com/OpenNMT/CTranslate2/v4.8.4/.github/workflows/ci.yml",
+      "sha256": "7d81eef9111f059502dfd6387b0f27f9f593502f0c03a8eabc3286a113311400",
+      "sizeBytes": 21789
+    },
+    {
+      "url": "https://raw.githubusercontent.com/OpenNMT/CTranslate2/v4.8.4/python/tools/prepare_build_environment_windows.sh",
+      "sha256": "413d8cec729bf4348939e5d8ce6f76195814e26e35cd406dff6100703f2a8115",
+      "sizeBytes": 2999
+    },
+    {
+      "url": "https://raw.githubusercontent.com/google/sentencepiece/v0.2.2/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "sizeBytes": 11358
+    },
+    {
+      "url": "https://raw.githubusercontent.com/python/cpython/v3.12.14/LICENSE",
+      "sha256": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf",
+      "sizeBytes": 13936
+    },
+    {
+      "url": "https://api.github.com/repos/argosopentech/argos-translate/issues/533/comments",
+      "sha256": "5afd484fff8d65d6869e1ff63974d3e6281f19c150b184404a264a37206bcae6",
+      "sizeBytes": 10920,
+      "publisherStatements": [
+        {
+          "author": "PJ-Finlay",
+          "createdAt": "2026-08-02T19:57:39Z",
+          "url": "https://github.com/argosopentech/argos-translate/issues/533#issuecomment-5160080718",
+          "statement": "The maintainer declares model binaries MIT/CC0; package-specific third-party scope remains unconfirmed."
+        }
+      ]
+    }
+  ]
+}

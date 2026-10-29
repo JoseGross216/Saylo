@@ -16,7 +16,8 @@ public enum TranslationErrorCode
     ModelInvalid,
     RuntimeUnavailable,
     UnsupportedAudioFormat,
-    UnsupportedLanguage
+    UnsupportedLanguage,
+    IntegrityValidationFailed
 }
 
 /// <summary>OperationId correlates updates without retaining conversation history.</summary>

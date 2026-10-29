@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using System.Diagnostics.Metrics;
+using System.Text.RegularExpressions;
 using Saylo.Modules.ModelManagement.Contracts;
 using Saylo.Modules.Translation.Contracts;
 
@@ -12,6 +13,9 @@ public sealed class ArgosTextTranslationEngine : ITextTranslationEngine, IAsyncD
     private static readonly Histogram<double> StartupTime = Meter.CreateHistogram<double>("saylo.argos.startup", "ms");
     private static readonly Histogram<double> InferenceTime = Meter.CreateHistogram<double>("saylo.argos.translation", "ms");
     private static readonly Histogram<long> WorkerMemory = Meter.CreateHistogram<long>("saylo.argos.worker_memory", "By");
+    private static readonly Histogram<double> PreparationTime = Meter.CreateHistogram<double>("saylo.argos.integrity_preparation", "ms");
+    private static readonly Histogram<double> ValidationTime = Meter.CreateHistogram<double>("saylo.argos.integrity_validation", "ms");
+    private static readonly Histogram<long> SegmentCount = Meter.CreateHistogram<long>("saylo.argos.segment_count", "{segment}");
     private readonly ArgosTranslationOptions _options;
     private readonly IModelCatalog _catalog;
     private readonly Func<ArgosTranslationOptions, CancellationToken, Task<IArgosSession>> _start;
@@ -55,6 +59,13 @@ public sealed class ArgosTextTranslationEngine : ITextTranslationEngine, IAsyncD
         try
         {
             ObjectDisposedException.ThrowIf(Volatile.Read(ref _disposing) != 0, this);
+            token.ThrowIfCancellationRequested();
+            var preparationStarted = Stopwatch.GetTimestamp();
+            TranslationIntegrityPlan plan;
+            try { plan = TranslationIntegrityPlan.Prepare(text, sourceLanguage.Code, targetLanguage.Code, _options.Integrity); }
+            catch (RegexMatchTimeoutException) { throw ProtectedText.Failure(); }
+            finally { PreparationTime.Record(Stopwatch.GetElapsedTime(preparationStarted).TotalMilliseconds); }
+            SegmentCount.Record(plan.Segments.Count);
             if (_session is null)
                 await StartAsync(token).ConfigureAwait(false);
             using var deadline = CancellationTokenSource.CreateLinkedTokenSource(token);
@@ -62,13 +73,38 @@ public sealed class ArgosTextTranslationEngine : ITextTranslationEngine, IAsyncD
             var started = Stopwatch.GetTimestamp();
             try
             {
-                var result = await _session!.TranslateAsync(Guid.NewGuid().ToString("N"), text, sourceLanguage.Code,
-                    targetLanguage.Code, deadline.Token).ConfigureAwait(false);
+                var translated = new List<string>();
+                foreach (var segment in plan.Segments)
+                {
+                    deadline.Token.ThrowIfCancellationRequested();
+                    if (string.IsNullOrWhiteSpace(segment.Protection.Source))
+                    {
+                        translated.Add("");
+                        continue;
+                    }
+                    var candidate = await _session!.TranslateAsync(Guid.NewGuid().ToString("N"), segment.Protection.Masked,
+                        sourceLanguage.Code, targetLanguage.Code, deadline.Token).ConfigureAwait(false);
+                    if (string.IsNullOrWhiteSpace(candidate))
+                        throw Error(TranslationErrorCode.InvalidEngineOutput, "The local engine returned no translated text.");
+                    var validationStarted = Stopwatch.GetTimestamp();
+                    try { translated.Add(plan.ValidateSegment(segment, candidate)); }
+                    finally { ValidationTime.Record(Stopwatch.GetElapsedTime(validationStarted).TotalMilliseconds); }
+                }
+                var result = plan.Complete(translated);
                 token.ThrowIfCancellationRequested();
                 if (string.IsNullOrWhiteSpace(result))
                     throw Error(TranslationErrorCode.InvalidEngineOutput, "The local engine returned no translated text.");
-                WorkerMemory.Record(_session.WorkingSetBytes);
+                WorkerMemory.Record(_session!.WorkingSetBytes);
                 return result;
+            }
+            catch (RegexMatchTimeoutException)
+            {
+                throw ProtectedText.Failure();
+            }
+            catch (TranslationEngineException exception) when (exception.Code == TranslationErrorCode.IntegrityValidationFailed)
+            {
+                // A complete correlated response was consumed; the healthy worker can be reused.
+                throw;
             }
             catch (OperationCanceledException) when (token.IsCancellationRequested)
             {

@@ -1,0 +1,1793 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "saylo-customer-service-80-v1",
+  "reviewDate": "2026-10-28",
+  "scope": "80 real engine outputs; no private customer conversations.",
+  "method": "Provisional linguistic analysis by the coding assistant. No human bilingual validation has been completed. Observed absence of an issue is not certification.",
+  "severityRubric": {
+    "critical": "Corrupts an actionable destination or identifier and can misdirect an operation.",
+    "major": "Changes a participant, deadline, warranty condition, instruction or explicit currency.",
+    "moderate": "Loses useful meaning, uses unclear business terminology or violates required formal register.",
+    "minor": "Grammar, naturalness or courtesy issue with broadly recoverable meaning.",
+    "none_observed": "No issue observed in this fixture; human validation remains pending."
+  },
+  "countsByMaximumSeverity": {
+    "none_observed": 46,
+    "minor": 14,
+    "major": 8,
+    "moderate": 10,
+    "critical": 2
+  },
+  "longStressFindings": [
+    {
+      "direction": "es->en",
+      "probe": "repeated_passage_927_utf16",
+      "severity": "major",
+      "observation": "El pasaje repetido nueve veces se comprime y altera. Introduce 'Your request will be closed by email 12345', que no existe en la entrada.",
+      "affectedAttempts": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "humanBilingualReview": "pending",
+      "includedIn80CaseSeverityCounts": false
+    },
+    {
+      "direction": "en->es",
+      "probe": "repeated_passage_918_utf16",
+      "severity": "major",
+      "observation": "Omite repeticiones, cambia 'Do not cancel' por 'No cancelaremos' y anade 'Su solicitud no sera completada', una negacion no presente en la entrada.",
+      "affectedAttempts": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "humanBilingualReview": "pending",
+      "includedIn80CaseSeverityCounts": false
+    }
+  ],
+  "results": [
+    {
+      "id": "es-01",
+      "observedOutput": "Good morning. How can I help you today?",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "none_observed",
+      "findings": [],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "es-02",
+      "observedOutput": "Good afternoon, thank you for contacting with support.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "minor",
+      "findings": [
+        {
+          "severity": "minor",
+          "dimensions": [
+            "grammar",
+            "naturalness"
+          ],
+          "observation": "La preposicion 'contacting with support' es poco natural; el destinatario de soporte se conserva."
+        }
+      ],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "concern",
+        "naturalness": "concern",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "es-03",
+      "observedOutput": "Can I have your order number, please?",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "none_observed",
+      "findings": [],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "es-04",
+      "observedOutput": "I need to confirm his delivery address.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "major",
+      "findings": [
+        {
+          "severity": "major",
+          "dimensions": [
+            "meaning",
+            "pronoun_reference"
+          ],
+          "observation": "'su direccion' se convierte en 'his delivery address'; se atribuye la direccion a un tercero."
+        }
+      ],
+      "assessment": {
+        "meaning": "concern",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "es-05",
+      "observedOutput": "Your request has been properly processed.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "none_observed",
+      "findings": [],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "es-06",
+      "observedOutput": "Do you wish to receive an invoice by email?",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "minor",
+      "findings": [
+        {
+          "severity": "minor",
+          "dimensions": [
+            "meaning"
+          ],
+          "observation": "'la factura' pasa a 'an invoice'; cambia la especificidad."
+        }
+      ],
+      "assessment": {
+        "meaning": "concern",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "es-07",
+      "observedOutput": "Yes, the product's available at this time.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "none_observed",
+      "findings": [],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "es-08",
+      "observedOutput": "Do not cancel order 12345.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "none_observed",
+      "findings": [],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "es-09",
+      "observedOutput": "We haven't been paid yet.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "moderate",
+      "findings": [
+        {
+          "severity": "moderate",
+          "dimensions": [
+            "meaning"
+          ],
+          "observation": "'We haven't been paid' omite la referencia explicita al pago del cliente."
+        }
+      ],
+      "assessment": {
+        "meaning": "concern",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "es-10",
+      "observedOutput": "We'll never ask for his password by phone.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "major",
+      "findings": [
+        {
+          "severity": "major",
+          "dimensions": [
+            "meaning",
+            "pronoun_reference",
+            "security"
+          ],
+          "observation": "'su contrasena' pasa a 'his password'; cambia el referente de una instruccion de seguridad."
+        }
+      ],
+      "assessment": {
+        "meaning": "concern",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "es-11",
+      "observedOutput": "The delivery's scheduled for November 15th 2026.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "none_observed",
+      "findings": [],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "es-12",
+      "observedOutput": "Your date is 03 / 04 / 2026 and confirm if you mean 3 April.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "moderate",
+      "findings": [
+        {
+          "severity": "moderate",
+          "dimensions": [
+            "meaning",
+            "formatting"
+          ],
+          "observation": "'cita' se traduce como 'date', ambiguo; el token de fecha se separa con espacios. La peticion de aclarar abril se conserva."
+        }
+      ],
+      "assessment": {
+        "meaning": "concern",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": "Date separator spacing triggers exact-token warning; ambiguity is intentionally retained for confirmation."
+    },
+    {
+      "id": "es-13",
+      "observedOutput": "We attend from 9: 00 to 17: 30, Monday to Friday.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "minor",
+      "findings": [
+        {
+          "severity": "minor",
+          "dimensions": [
+            "grammar",
+            "naturalness",
+            "formatting"
+          ],
+          "observation": "'We attend' es un calco para el horario de atencion. Los espacios y cero inicial cambian, pero las horas siguen siendo 09:00 y 17:30."
+        }
+      ],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "concern",
+        "naturalness": "concern",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": "Hours retain their value; exact formatting changed."
+    },
+    {
+      "id": "es-14",
+      "observedOutput": "The total price is USD 49.95, including taxes.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "none_observed",
+      "findings": [],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "es-15",
+      "observedOutput": "Reimbursement shall be EUR 25 and not EUR 250.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "minor",
+      "findings": [
+        {
+          "severity": "minor",
+          "dimensions": [
+            "naturalness"
+          ],
+          "observation": "'shall' introduce un registro contractual poco natural para atencion al cliente; cantidades y negacion conservadas."
+        }
+      ],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "concern",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "es-16",
+      "observedOutput": "Your order AB-009871 will come tomorrow.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "none_observed",
+      "findings": [],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "es-17",
+      "observedOutput": "The engineer María López will review his case.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "major",
+      "findings": [
+        {
+          "severity": "major",
+          "dimensions": [
+            "meaning",
+            "pronoun_reference"
+          ],
+          "observation": "'su caso' pasa a 'his case'; el referente del cliente cambia."
+        }
+      ],
+      "assessment": {
+        "meaning": "concern",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "es-18",
+      "observedOutput": "Please send the documents to support @ example.com.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "critical",
+      "findings": [
+        {
+          "severity": "critical",
+          "dimensions": [
+            "meaning",
+            "literal_integrity",
+            "email"
+          ],
+          "observation": "La direccion soporte@example.com cambia a support @ example.com. Traduce el identificador y lo fragmenta; no es un destino fiable."
+        }
+      ],
+      "assessment": {
+        "meaning": "concern",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "es-19",
+      "observedOutput": "Reboot SQL server after saving settings.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "minor",
+      "findings": [
+        {
+          "severity": "minor",
+          "dimensions": [
+            "grammar",
+            "naturalness"
+          ],
+          "observation": "Omite el articulo en 'Reboot SQL server'; instruccion tecnica conservada."
+        }
+      ],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "concern",
+        "naturalness": "concern",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "es-20",
+      "observedOutput": "The VPN connection requires authentication of two factors.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "minor",
+      "findings": [
+        {
+          "severity": "minor",
+          "dimensions": [
+            "naturalness",
+            "terminology"
+          ],
+          "observation": "'authentication of two factors' es comprensible pero no es la expresion tecnica usual 'two-factor authentication'."
+        }
+      ],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "concern",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "concern"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "es-21",
+      "observedOutput": "We should be grateful if you would have a copy of the invoice attached.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "moderate",
+      "findings": [
+        {
+          "severity": "moderate",
+          "dimensions": [
+            "grammar",
+            "naturalness"
+          ],
+          "observation": "'would have a copy ... attached' resulta forzado y puede dificultar la solicitud de adjuntar la factura."
+        }
+      ],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "concern",
+        "naturalness": "concern",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "es-22",
+      "observedOutput": "Would you be so kind as to have a moment while I check information?",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "moderate",
+      "findings": [
+        {
+          "severity": "moderate",
+          "dimensions": [
+            "meaning",
+            "naturalness"
+          ],
+          "observation": "'have a moment' no expresa con claridad la instruccion de esperar; conserva una formula cortes."
+        }
+      ],
+      "assessment": {
+        "meaning": "concern",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "concern",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "es-23",
+      "observedOutput": "The charge appears double in my account.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "minor",
+      "findings": [
+        {
+          "severity": "minor",
+          "dimensions": [
+            "naturalness",
+            "terminology"
+          ],
+          "observation": "'appears double in my account' es poco natural para un cargo duplicado."
+        }
+      ],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "concern",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "concern"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "es-24",
+      "observedOutput": "I'm going to the bank to check the payment.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "none_observed",
+      "findings": [],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "es-25",
+      "observedOutput": "My account's been blocked and I can't get in.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "none_observed",
+      "findings": [],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "es-26",
+      "observedOutput": "Yesterday I called and they told me that the dispatch's out.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "minor",
+      "findings": [
+        {
+          "severity": "minor",
+          "dimensions": [
+            "naturalness"
+          ],
+          "observation": "'the dispatch's out' es una formulacion poco natural para un envio que ya salio."
+        }
+      ],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "concern",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "es-27",
+      "observedOutput": "I don't want a replacement. I want a refund.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "none_observed",
+      "findings": [],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "es-28",
+      "observedOutput": "If the package doesn't come by Friday, contact us again.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "major",
+      "findings": [
+        {
+          "severity": "major",
+          "dimensions": [
+            "meaning",
+            "temporal_scope"
+          ],
+          "observation": "'antes del viernes' pasa a 'by Friday', que puede incluir el viernes; altera el limite temporal."
+        }
+      ],
+      "assessment": {
+        "meaning": "concern",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "es-29",
+      "observedOutput": "Confirm 3 units from model X200 and 2 from model X300.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "minor",
+      "findings": [
+        {
+          "severity": "minor",
+          "dimensions": [
+            "grammar"
+          ],
+          "observation": "'units from model' es menos natural que 'units of model'; modelos y cantidades conservados."
+        }
+      ],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "concern",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "es-30",
+      "observedOutput": "The discount is 15% but does not apply to sending.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "moderate",
+      "findings": [
+        {
+          "severity": "moderate",
+          "dimensions": [
+            "terminology",
+            "meaning"
+          ],
+          "observation": "'envio' pasa a 'sending'; no identifica con claridad el coste de transporte."
+        }
+      ],
+      "assessment": {
+        "meaning": "concern",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "concern"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "es-31",
+      "observedOutput": "The payment was rejected, but did not approve.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "moderate",
+      "findings": [
+        {
+          "severity": "moderate",
+          "dimensions": [
+            "grammar",
+            "meaning"
+          ],
+          "observation": "'but did not approve' introduce una clausula sin sujeto claro; no equivale a la formulacion pasiva 'not approved'."
+        }
+      ],
+      "assessment": {
+        "meaning": "concern",
+        "numbers": "no_value_change_observed",
+        "negationScope": "requires_review",
+        "grammar": "concern",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "es-32",
+      "observedOutput": "The outstanding balance is USD 0.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "none_observed",
+      "findings": [],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "es-33",
+      "observedOutput": "The monitoring number is ZX987654310EN.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "critical",
+      "findings": [
+        {
+          "severity": "critical",
+          "dimensions": [
+            "literal_integrity",
+            "numbers",
+            "terminology"
+          ],
+          "observation": "ZX987654321ES se convierte en ZX987654310EN; cambia digitos y sufijo. 'monitoring number' tampoco es la denominacion de seguimiento."
+        }
+      ],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "changed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "concern"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "es-34",
+      "observedOutput": "Mrs. Ana Pérez can pick up the package with her ID.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "none_observed",
+      "findings": [],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "es-35",
+      "observedOutput": "Do not share code 004812 with anyone.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "none_observed",
+      "findings": [],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "es-36",
+      "observedOutput": "Can you confirm that you received both attachments?",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "none_observed",
+      "findings": [],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "es-37",
+      "observedOutput": "The guarantee cover parts but excludes water damage.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "minor",
+      "findings": [
+        {
+          "severity": "minor",
+          "dimensions": [
+            "grammar",
+            "terminology"
+          ],
+          "observation": "'The guarantee cover parts' tiene un error de concordancia; se mantiene la exclusion por agua."
+        }
+      ],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "concern",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "concern"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "es-38",
+      "observedOutput": "Let's scale up the incidence to the technical team.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "major",
+      "findings": [
+        {
+          "severity": "major",
+          "dimensions": [
+            "meaning",
+            "terminology"
+          ],
+          "observation": "'scale up the incidence' no expresa derivar o escalar una incidencia al soporte tecnico."
+        }
+      ],
+      "assessment": {
+        "meaning": "concern",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "concern"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "es-39",
+      "observedOutput": "Thank you for your patience. We'll report back to you after the review.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "none_observed",
+      "findings": [],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "es-40",
+      "observedOutput": "The client said, \"I did not authorize that $80 charge.\"",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "major",
+      "findings": [
+        {
+          "severity": "major",
+          "dimensions": [
+            "currency"
+          ],
+          "observation": "USD se sustituye por '$'; conserva 80, pero el simbolo es ambiguo entre monedas denominadas dolar."
+        }
+      ],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "en-01",
+      "observedOutput": "Buenos días. ¿Cómo puedo ayudarle hoy?",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "none_observed",
+      "findings": [],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "en-02",
+      "observedOutput": "Buenas tardes, gracias por contactar con el cliente.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "major",
+      "findings": [
+        {
+          "severity": "major",
+          "dimensions": [
+            "meaning",
+            "terminology"
+          ],
+          "observation": "'customer support' pasa a 'el cliente'; cambia el destinatario del contacto."
+        }
+      ],
+      "assessment": {
+        "meaning": "concern",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "concern"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "en-03",
+      "observedOutput": "¿Podría confirmar su número de pedido?",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "minor",
+      "findings": [
+        {
+          "severity": "minor",
+          "dimensions": [
+            "courtesy"
+          ],
+          "observation": "Omite 'please'. Mantiene la cortesia condicional de 'Podria'."
+        }
+      ],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "concern",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "en-04",
+      "observedOutput": "Necesito verificar tu dirección de entrega.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "moderate",
+      "findings": [
+        {
+          "severity": "moderate",
+          "dimensions": [
+            "professional_register"
+          ],
+          "observation": "Usa 'tu direccion' en un corpus de atencion formal que pide tratamiento de usted."
+        }
+      ],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "concern",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "en-05",
+      "observedOutput": "Su solicitud ha sido procesada con éxito.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "none_observed",
+      "findings": [],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "en-06",
+      "observedOutput": "¿Le gustaría que le enviara la factura?",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "moderate",
+      "findings": [
+        {
+          "severity": "moderate",
+          "dimensions": [
+            "meaning"
+          ],
+          "observation": "Omite el canal de correo electronico y cambia 'us' por un emisor singular."
+        }
+      ],
+      "assessment": {
+        "meaning": "concern",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "en-07",
+      "observedOutput": "Sí, el artículo está actualmente en stock.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "none_observed",
+      "findings": [],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "en-08",
+      "observedOutput": "No cancele el pedido 12345.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "none_observed",
+      "findings": [],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "en-09",
+      "observedOutput": "Aún no hemos recibido su pago.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "none_observed",
+      "findings": [],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "en-10",
+      "observedOutput": "Nunca pediremos su contraseña por teléfono.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "none_observed",
+      "findings": [],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "en-11",
+      "observedOutput": "La entrega está prevista para el 15 de noviembre de 2026.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "none_observed",
+      "findings": [],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "en-12",
+      "observedOutput": "Su cita es el 04/03/2026; por favor confirme si esto significa el 3 de abril.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "none_observed",
+      "findings": [],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "en-13",
+      "observedOutput": "Estamos abiertos de 09:00 a 17:30, de lunes a viernes.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "none_observed",
+      "findings": [],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "en-14",
+      "observedOutput": "El precio total es de 49,95 USD, incluyendo impuestos.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "none_observed",
+      "findings": [],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": "Decimal comma is acceptable localization; automated token mismatch is not a value error."
+    },
+    {
+      "id": "en-15",
+      "observedOutput": "El reembolso será de 25 EUR, no 250 EUR.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "none_observed",
+      "findings": [],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "en-16",
+      "observedOutput": "Su pedido AB-009871 llegará mañana.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "none_observed",
+      "findings": [],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "en-17",
+      "observedOutput": "El ingeniero María López revisará su caso.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "minor",
+      "findings": [
+        {
+          "severity": "minor",
+          "dimensions": [
+            "professional_register",
+            "ambiguity"
+          ],
+          "observation": "Usa masculino en 'El ingeniero Maria Lopez'. El ingles no explicita genero; requiere confirmar el tratamiento preferido, sin inferirlo solo del nombre."
+        }
+      ],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "concern",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "en-18",
+      "observedOutput": "Por favor envíe los documentos a support@example.com.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "none_observed",
+      "findings": [],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "en-19",
+      "observedOutput": "Reinicie el servidor SQL después de guardar la configuración.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "none_observed",
+      "findings": [],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "en-20",
+      "observedOutput": "La conexión VPN requiere autenticación de dos factores.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "none_observed",
+      "findings": [],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "en-21",
+      "observedOutput": "Le agradeceríamos que adjuntara una copia de la factura.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "none_observed",
+      "findings": [],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "en-22",
+      "observedOutput": "¿Podría esperar mientras compruebo esa información?",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "none_observed",
+      "findings": [],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "en-23",
+      "observedOutput": "Hay una carga duplicada en mi cuenta.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "moderate",
+      "findings": [
+        {
+          "severity": "moderate",
+          "dimensions": [
+            "terminology"
+          ],
+          "observation": "'charge' se traduce como 'carga' en contexto de facturacion; corresponde 'cargo' o 'cobro'."
+        }
+      ],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "concern"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "en-24",
+      "observedOutput": "Por favor, compruebe el saldo antes de cargar la tarjeta.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "minor",
+      "findings": [
+        {
+          "severity": "minor",
+          "dimensions": [
+            "naturalness",
+            "terminology"
+          ],
+          "observation": "'cargar la tarjeta' puede ser ambiguo entre cargar saldo y efectuar un cobro."
+        }
+      ],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "concern",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "concern"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "en-25",
+      "observedOutput": "Mi cuenta no funciona y no puedo entrar.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "none_observed",
+      "findings": [],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "en-26",
+      "observedOutput": "He ido a la tienda, pero no pudieron ayudarme.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "none_observed",
+      "findings": [],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "en-27",
+      "observedOutput": "No quiero un reemplazo; quiero un reembolso.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "none_observed",
+      "findings": [],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "en-28",
+      "observedOutput": "Si el paquete no llega antes del viernes, póngase en contacto con nosotros de nuevo.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "none_observed",
+      "findings": [],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "en-29",
+      "observedOutput": "Confirme 3 unidades del modelo X200 y 2 unidades del modelo X300.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "none_observed",
+      "findings": [],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "en-30",
+      "observedOutput": "El descuento es del 15%, pero no se aplica al envío.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "none_observed",
+      "findings": [],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "en-31",
+      "observedOutput": "El pago fue rechazado, no aprobado.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "none_observed",
+      "findings": [],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "en-32",
+      "observedOutput": "Su saldo pendiente es de 0 USD.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "none_observed",
+      "findings": [],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "en-33",
+      "observedOutput": "El número de seguimiento es ZX987654321EN.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "none_observed",
+      "findings": [],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "en-34",
+      "observedOutput": "La Sra. Ana Pérez puede recoger el paquete con su identificación.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "none_observed",
+      "findings": [],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "en-35",
+      "observedOutput": "No comparta el código 004812 con nadie.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "none_observed",
+      "findings": [],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "en-36",
+      "observedOutput": "¿Puede confirmar que recibió ambos archivos adjuntos?",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "none_observed",
+      "findings": [],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "en-37",
+      "observedOutput": "La garantía cubre partes pero excluye el daño al agua.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "major",
+      "findings": [
+        {
+          "severity": "major",
+          "dimensions": [
+            "meaning",
+            "warranty"
+          ],
+          "observation": "'water damage' pasa a 'dano al agua' en vez de dano causado por agua; altera la exclusion de garantia."
+        }
+      ],
+      "assessment": {
+        "meaning": "concern",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "en-38",
+      "observedOutput": "Vamos a escalar el incidente a nuestro equipo técnico.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "none_observed",
+      "findings": [],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "en-39",
+      "observedOutput": "Gracias por su paciencia; le actualizaremos cuando la revisión esté completa.",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "minor",
+      "findings": [
+        {
+          "severity": "minor",
+          "dimensions": [
+            "naturalness"
+          ],
+          "observation": "'le actualizaremos' es un calco de 'update you'; seria mas natural 'le informaremos'."
+        }
+      ],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "concern",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "no_issue_observed"
+      },
+      "automatedFlagDisposition": null
+    },
+    {
+      "id": "en-40",
+      "observedOutput": "El cliente dijo: \"No autoricé esa carga de 80 USD\".",
+      "reviewerType": "assistant_provisional_linguistic_review",
+      "humanBilingualReview": "pending",
+      "maximumSeverity": "moderate",
+      "findings": [
+        {
+          "severity": "moderate",
+          "dimensions": [
+            "terminology"
+          ],
+          "observation": "'charge' vuelve a traducirse como 'carga' en contexto de un cargo no autorizado."
+        }
+      ],
+      "assessment": {
+        "meaning": "no_issue_observed",
+        "numbers": "no_value_change_observed",
+        "negationScope": "no_reversal_observed",
+        "grammar": "no_issue_observed",
+        "naturalness": "acceptable_in_this_fixture",
+        "professionalCourtesy": "no_issue_observed",
+        "terminology": "concern"
+      },
+      "automatedFlagDisposition": null
+    }
+  ]
+}

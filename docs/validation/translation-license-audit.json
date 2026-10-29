@@ -1,0 +1,648 @@
+{
+  "schemaVersion": 1,
+  "auditDate": "2026-10-28",
+  "scope": "Technical license evidence and redistribution requirements for the installed translation profile; not final legal/distribution approval.",
+  "commercialPackagingApproved": false,
+  "pythonPackages": [
+    {
+      "name": "click",
+      "version": "8.5.0",
+      "source": "https://pypi.org/project/click/8.5.0/",
+      "declaredLicense": "BSD-3-Clause",
+      "reviewedLicense": "BSD-3-Clause",
+      "evidence": {
+        "inventoryFile": "translation-license-evidence.json",
+        "noticeFiles": [
+          {
+            "path": "click-8.5.0.dist-info/licenses/LICENSE.txt",
+            "sizeBytes": 1475,
+            "sha256": "9a8ad106a394e853bfe21f42f4e72d592819a22805d991b5f3275029292b658d"
+          }
+        ],
+        "registryMetadata": "https://pypi.org/pypi/click/8.5.0/json",
+        "metadataSha256": "e87bce0bd194de70dfb8e708e0a6b0483009f25611804eaf87bfeb63e6c20501"
+      },
+      "redistributionObligations": "Conservar copyright, condiciones y descargo; no usar nombres para promocion sin permiso.",
+      "risksOrPending": "Texto de licencia incluido y hash registrado.",
+      "status": "conditional_on_notices_and_pending_review"
+    },
+    {
+      "name": "cloudpickle",
+      "version": "3.1.2",
+      "source": "https://pypi.org/project/cloudpickle/3.1.2/",
+      "declaredLicense": "BSD-3-Clause",
+      "reviewedLicense": "BSD-3-Clause",
+      "evidence": {
+        "inventoryFile": "translation-license-evidence.json",
+        "noticeFiles": [
+          {
+            "path": "cloudpickle-3.1.2.dist-info/licenses/LICENSE",
+            "sizeBytes": 1754,
+            "sha256": "3029ea34173e9fdc233ad315dc6b100bd1ea71f529b1c1af97664a272fdc55f5"
+          }
+        ],
+        "registryMetadata": "https://pypi.org/pypi/cloudpickle/3.1.2/json",
+        "metadataSha256": "3d0263bfe9ee4f23b244bdcaff73acbe7a1957ebf82743b6ae42693adc48d721"
+      },
+      "redistributionObligations": "Conservar copyright, condiciones y descargo; no usar nombres para promocion sin permiso.",
+      "risksOrPending": "Texto de licencia incluido y hash registrado.",
+      "status": "conditional_on_notices_and_pending_review"
+    },
+    {
+      "name": "colorama",
+      "version": "0.4.6",
+      "source": "https://pypi.org/project/colorama/0.4.6/",
+      "declaredLicense": null,
+      "reviewedLicense": "BSD-3-Clause",
+      "evidence": {
+        "inventoryFile": "translation-license-evidence.json",
+        "noticeFiles": [
+          {
+            "path": "colorama-0.4.6.dist-info/licenses/LICENSE.txt",
+            "sizeBytes": 1491,
+            "sha256": "cac35c02686e5d04a5a7140bfb3b36e73aed496656e891102e428886d7930318"
+          }
+        ],
+        "registryMetadata": "https://pypi.org/pypi/colorama/0.4.6/json",
+        "metadataSha256": "7baed29eb50c3b29bdb33ff84e3177bf1bc05784f7685ecdcaa4471c7dd810cc"
+      },
+      "redistributionObligations": "Conservar copyright, condiciones y descargo; no usar nombres para promocion sin permiso.",
+      "risksOrPending": "Metadatos sin expresion SPDX; texto local confirma tres clausulas BSD.",
+      "status": "conditional_on_notices_and_pending_review"
+    },
+    {
+      "name": "ctranslate2",
+      "version": "4.8.4",
+      "source": "https://pypi.org/project/ctranslate2/4.8.4/",
+      "declaredLicense": "MIT",
+      "reviewedLicense": "MIT",
+      "evidence": {
+        "inventoryFile": "translation-license-evidence.json",
+        "noticeFiles": [],
+        "registryMetadata": "https://pypi.org/pypi/ctranslate2/4.8.4/json",
+        "metadataSha256": "c1bb7364dbb3e9f8c8af2de5331a6f85e5ed00ad0d583ae2212917c74234a86c"
+      },
+      "redistributionObligations": "Incluir licencia y copyrights de SYSTRAN/OpenNMT; auditar por separado cada componente nativo.",
+      "risksOrPending": "La rueda instalada carece de LICENSE/NOTICE en RECORD. Recuperar avisos del tag v4.8.4. Incluye cuDNN y OpenMP; MIT no cubre todo el binario.",
+      "status": "conditional_on_notices_and_pending_review"
+    },
+    {
+      "name": "joblib",
+      "version": "1.6.0",
+      "source": "https://pypi.org/project/joblib/1.6.0/",
+      "declaredLicense": "BSD-3-Clause",
+      "reviewedLicense": "BSD-3-Clause",
+      "evidence": {
+        "inventoryFile": "translation-license-evidence.json",
+        "noticeFiles": [
+          {
+            "path": "joblib-1.6.0.dist-info/licenses/LICENSE.txt",
+            "sizeBytes": 1527,
+            "sha256": "42612911c1872c5e4b43f6ae0e8ee59467cd350332241cf72ce90640264fae6a"
+          }
+        ],
+        "registryMetadata": "https://pypi.org/pypi/joblib/1.6.0/json",
+        "metadataSha256": "c5fd6509906c5795fd6724d97bc1709d1f266b78aff92c0156d6cf5ad7c045e3"
+      },
+      "redistributionObligations": "Conservar copyright, condiciones y descargo; no usar nombres para promocion sin permiso.",
+      "risksOrPending": "Incluye cloudpickle como dependencia; extras de pruebas no forman parte del perfil instalado.",
+      "status": "conditional_on_notices_and_pending_review"
+    },
+    {
+      "name": "mock",
+      "version": "5.2.0",
+      "source": "https://pypi.org/project/mock/5.2.0/",
+      "declaredLicense": null,
+      "reviewedLicense": "BSD-3-Clause",
+      "evidence": {
+        "inventoryFile": "translation-license-evidence.json",
+        "noticeFiles": [
+          {
+            "path": "mock-5.2.0.dist-info/LICENSE.txt",
+            "sizeBytes": 1342,
+            "sha256": "5831ee149d3850b28df8ff02fb7bd07cecda81e85cc8435c20827d3922202d34"
+          }
+        ],
+        "registryMetadata": "https://pypi.org/pypi/mock/5.2.0/json",
+        "metadataSha256": "f5b6d51ec93dbc151bffe43d49edaaf13091129844fb7a9558c33a3de6bca9ad"
+      },
+      "redistributionObligations": "Conservar copyright, condiciones y descargo; no usar nombres para promocion sin permiso.",
+      "risksOrPending": "Dependencia requerida por subword-nmt; no retirarla sin comprobar el perfil.",
+      "status": "conditional_on_notices_and_pending_review"
+    },
+    {
+      "name": "numpy",
+      "version": "2.5.4",
+      "source": "https://pypi.org/project/numpy/2.5.4/",
+      "declaredLicense": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+      "reviewedLicense": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+      "evidence": {
+        "inventoryFile": "translation-license-evidence.json",
+        "noticeFiles": [
+          {
+            "path": "numpy-2.5.4.dist-info/licenses/LICENSE.txt",
+            "sizeBytes": 45831,
+            "sha256": "a804dff0ead9fadc5293456410bcbfc32bf024be9c4513459663fb7b442d2341"
+          },
+          {
+            "path": "numpy-2.5.4.dist-info/licenses/numpy/_core/include/numpy/libdivide/LICENSE.txt",
+            "sizeBytes": 1039,
+            "sha256": "d544761558b510866c21f7e8a2d5716fca76e0b98117e3b6b86314db7244d150"
+          },
+          {
+            "path": "numpy-2.5.4.dist-info/licenses/numpy/_core/src/common/pythoncapi-compat/COPYING",
+            "sizeBytes": 704,
+            "sha256": "aea41976c720f91bd19725c16916a1ace40eb1ea42620d340e587a5de4bbcea0"
+          },
+          {
+            "path": "numpy-2.5.4.dist-info/licenses/numpy/_core/src/highway/LICENSE",
+            "sizeBytes": 21155,
+            "sha256": "d208152e2777ffd0126eacc1bd21c0320d69e4e6b622d21a2a12a47e8ef73763"
+          },
+          {
+            "path": "numpy-2.5.4.dist-info/licenses/numpy/_core/src/npysort/x86-simd-sort/LICENSE.md",
+            "sizeBytes": 1542,
+            "sha256": "a732977853530066790c42817087f4829b518dd98d340c916acbfd227e39d3cb"
+          },
+          {
+            "path": "numpy-2.5.4.dist-info/licenses/numpy/_core/src/umath/svml/LICENSE",
+            "sizeBytes": 1573,
+            "sha256": "585483905b13d4b42f800c55ba99e89d6e2e33ccd5f503e201c07531d148ff41"
+          },
+          {
+            "path": "numpy-2.5.4.dist-info/licenses/numpy/fft/pocketfft/LICENSE.md",
+            "sizeBytes": 1523,
+            "sha256": "8db000e158c162e7249787852d8c69764706502ccee725c06641b31c1e95c8af"
+          },
+          {
+            "path": "numpy-2.5.4.dist-info/licenses/numpy/linalg/lapack_lite/LICENSE.txt",
+            "sizeBytes": 2314,
+            "sha256": "19060ef465e1797d682ee0fc3081bd25ab1395e995e43d25c9d13c95d9a3cd6b"
+          },
+          {
+            "path": "numpy-2.5.4.dist-info/licenses/numpy/ma/LICENSE",
+            "sizeBytes": 1616,
+            "sha256": "d78dbb208b80d92b4d333e41a4baae50d12444f46e53199fa7726a91de6e2da7"
+          },
+          {
+            "path": "numpy-2.5.4.dist-info/licenses/numpy/random/LICENSE.md",
+            "sizeBytes": 3582,
+            "sha256": "b4bc2f4fa1c95778f1ed3dd8f14706bece399475b978f9f34b5d3cd72521b48a"
+          },
+          {
+            "path": "numpy-2.5.4.dist-info/licenses/numpy/random/src/distributions/LICENSE.md",
+            "sizeBytes": 2805,
+            "sha256": "cf5619f25b112d5ce7c896efffc8e610bcb345dfadcc19f2c1460aa48fff2c9e"
+          },
+          {
+            "path": "numpy-2.5.4.dist-info/licenses/numpy/random/src/mt19937/LICENSE.md",
+            "sizeBytes": 2986,
+            "sha256": "92c10699884321f1c2947fe2a70ab23b0fbf1507f756d89dd08f38c61fc3d4fa"
+          },
+          {
+            "path": "numpy-2.5.4.dist-info/licenses/numpy/random/src/pcg64/LICENSE.md",
+            "sizeBytes": 1176,
+            "sha256": "41190663b77bee5302386495a07b7eabfbfa571aa0ae2f11da6764162062fc4f"
+          },
+          {
+            "path": "numpy-2.5.4.dist-info/licenses/numpy/random/src/philox/LICENSE.md",
+            "sizeBytes": 1540,
+            "sha256": "322ac46d870c8aeead6c53adcccc839296fb3c8e456eae155081297daf7f8013"
+          },
+          {
+            "path": "numpy-2.5.4.dist-info/licenses/numpy/random/src/sfc64/LICENSE.md",
+            "sizeBytes": 1253,
+            "sha256": "28cad82ce1379dc529df30da78ec012d7d0d1d576b03ddcb93388aee53659f59"
+          },
+          {
+            "path": "numpy-2.5.4.dist-info/licenses/numpy/random/src/splitmix64/LICENSE.md",
+            "sizeBytes": 340,
+            "sha256": "454ec7350e478e037061850b67395753b425b1cb0a34bbc26290b020bf89d763"
+          },
+          {
+            "path": "numpy/_core/include/numpy/random/LICENSE.txt",
+            "sizeBytes": 1039,
+            "sha256": "d544761558b510866c21f7e8a2d5716fca76e0b98117e3b6b86314db7244d150"
+          },
+          {
+            "path": "numpy/ma/LICENSE",
+            "sizeBytes": 1616,
+            "sha256": "d78dbb208b80d92b4d333e41a4baae50d12444f46e53199fa7726a91de6e2da7"
+          },
+          {
+            "path": "numpy/random/LICENSE.md",
+            "sizeBytes": 3582,
+            "sha256": "b4bc2f4fa1c95778f1ed3dd8f14706bece399475b978f9f34b5d3cd72521b48a"
+          }
+        ],
+        "registryMetadata": "https://pypi.org/pypi/numpy/2.5.4/json",
+        "metadataSha256": "e2b909d6a37d76c2bc130f528d7fed0c517322bce16dc7846b6a6df30e200403"
+      },
+      "redistributionObligations": "Conservar todos los avisos y revisar tambien los avisos OpenBLAS/LAPACK/GCC incorporados en LICENSE.txt.",
+      "risksOrPending": "La expresion de METADATA no enumera por si sola todos los avisos del binario. Versiones exactas de OpenBLAS/LAPACK/GCC pendientes de procedencia de build.",
+      "status": "conditional_on_notices_and_pending_review"
+    },
+    {
+      "name": "pip",
+      "version": "25.0.1",
+      "source": "https://pypi.org/project/pip/25.0.1/",
+      "declaredLicense": "MIT",
+      "reviewedLicense": "MIT; licencias adicionales en componentes vendorizados",
+      "evidence": {
+        "inventoryFile": "translation-license-evidence.json",
+        "noticeFiles": [
+          {
+            "path": "pip-25.0.1.dist-info/AUTHORS.txt",
+            "sizeBytes": 11018,
+            "sha256": "1eace90552df4f5941b61a907e20e555e16483ae6127b650bef5a1a2af8102c0"
+          },
+          {
+            "path": "pip-25.0.1.dist-info/LICENSE.txt",
+            "sizeBytes": 1093,
+            "sha256": "634300a669d49aeae65b12c6c48c924c51a4cdf3d1ff086dc3456dc8bcaa2104"
+          }
+        ],
+        "registryMetadata": "https://pypi.org/pypi/pip/25.0.1/json",
+        "metadataSha256": "4fa7318cf30f979db7cec45c12cbbc2b4f88a15f12eefbf59a6291d0a03af926"
+      },
+      "redistributionObligations": "Conservar avisos si se redistribuye; auditar dependencias vendorizadas por separado.",
+      "risksOrPending": "Herramienta de construccion, excluir del runtime de empleados. El inventario de pip no es una aprobacion de sus componentes vendorizados.",
+      "status": "build_tool_not_for_employee_runtime"
+    },
+    {
+      "name": "PyYAML",
+      "version": "6.0.3",
+      "source": "https://pypi.org/project/PyYAML/6.0.3/",
+      "declaredLicense": "MIT",
+      "reviewedLicense": "MIT",
+      "evidence": {
+        "inventoryFile": "translation-license-evidence.json",
+        "noticeFiles": [
+          {
+            "path": "pyyaml-6.0.3.dist-info/licenses/LICENSE",
+            "sizeBytes": 1101,
+            "sha256": "8d3928f9dc4490fd635707cb88eb26bd764102a7282954307d3e5167a577e8a4"
+          }
+        ],
+        "registryMetadata": "https://pypi.org/pypi/PyYAML/6.0.3/json",
+        "metadataSha256": "847a701020334386852b6e07bad1053cb0ce3da9ee1846e7e9d02b24e8bb3f8d"
+      },
+      "redistributionObligations": "Conservar copyright y texto MIT, junto a avisos de libyaml si esta incorporada.",
+      "risksOrPending": "La extension yaml/_yaml requiere trazabilidad de libyaml y su version nativa exacta.",
+      "status": "conditional_on_notices_and_pending_review"
+    },
+    {
+      "name": "regex",
+      "version": "2026.9.29",
+      "source": "https://pypi.org/project/regex/2026.9.29/",
+      "declaredLicense": "Apache-2.0 AND CNRI-Python",
+      "reviewedLicense": "Apache-2.0 AND CNRI-Python",
+      "evidence": {
+        "inventoryFile": "translation-license-evidence.json",
+        "noticeFiles": [
+          {
+            "path": "regex-2026.9.29.dist-info/licenses/LICENSE.txt",
+            "sizeBytes": 11792,
+            "sha256": "3d220c06594b826bbabf110312f60f385f99e57e529fa4b9e536f79091f8b4c7"
+          }
+        ],
+        "registryMetadata": "https://pypi.org/pypi/regex/2026.9.29/json",
+        "metadataSha256": "726c658b5d0ee420e773f9e6c843918e8a2ad7c27577d20c8f502c08eccb211e"
+      },
+      "redistributionObligations": "Incluir ambos textos, atribuciones y NOTICE aplicable; documentar modificaciones.",
+      "risksOrPending": "No reducir la licencia compuesta a Apache-2.0 solamente.",
+      "status": "conditional_on_notices_and_pending_review"
+    },
+    {
+      "name": "sacremoses",
+      "version": "0.1.1",
+      "source": "https://pypi.org/project/sacremoses/0.1.1/",
+      "declaredLicense": null,
+      "reviewedLicense": "MIT",
+      "evidence": {
+        "inventoryFile": "translation-license-evidence.json",
+        "noticeFiles": [
+          {
+            "path": "sacremoses-0.1.1.dist-info/LICENSE",
+            "sizeBytes": 1066,
+            "sha256": "efe03a5e303b216ad2008b100da2ac2fbe6aa3ca442f2cfb931227f996fd2ebe"
+          }
+        ],
+        "registryMetadata": "https://pypi.org/pypi/sacremoses/0.1.1/json",
+        "metadataSha256": "249c7c18d37c85c7552cb8107a12eb17f3ac36b545b7c6eb7613c1dcf7563014"
+      },
+      "redistributionObligations": "Conservar copyright y texto MIT; revisar avisos y procedencia de datos de tokenizacion.",
+      "risksOrPending": "Los archivos data/nonbreaking_prefixes y otros recursos estan enumerados con hashes, pero su alcance de licencia por archivo requiere confirmacion.",
+      "status": "conditional_on_notices_and_pending_review"
+    },
+    {
+      "name": "sentencepiece",
+      "version": "0.2.2",
+      "source": "https://pypi.org/project/sentencepiece/0.2.2/",
+      "declaredLicense": "Apache-2.0",
+      "reviewedLicense": "Apache-2.0",
+      "evidence": {
+        "inventoryFile": "translation-license-evidence.json",
+        "noticeFiles": [],
+        "registryMetadata": "https://pypi.org/pypi/sentencepiece/0.2.2/json",
+        "metadataSha256": "eb1173d40630c7d15aba70e145e6d378ba9137ec1634e74b2f4e4ccd0dc5ffc7"
+      },
+      "redistributionObligations": "Incluir licencia Apache-2.0, atribuciones, NOTICE aplicable y cambios.",
+      "risksOrPending": "La rueda instalada no contiene un archivo LICENSE/NOTICE en RECORD; recuperar del tag v0.2.2. No cubre automaticamente sentencepiece.model entrenado; protobuf/otras partes nativas requieren procedencia.",
+      "status": "conditional_on_notices_and_pending_review"
+    },
+    {
+      "name": "subword-nmt",
+      "version": "0.3.8",
+      "source": "https://pypi.org/project/subword-nmt/0.3.8/",
+      "declaredLicense": "MIT",
+      "reviewedLicense": "MIT",
+      "evidence": {
+        "inventoryFile": "translation-license-evidence.json",
+        "noticeFiles": [
+          {
+            "path": "subword_nmt-0.3.8.dist-info/LICENSE",
+            "sizeBytes": 1089,
+            "sha256": "448ac7bb5eae8da0f42cf971c99bfc4c484a73ff0b5fa899ac3573a3ca8956fb"
+          }
+        ],
+        "registryMetadata": "https://pypi.org/pypi/subword-nmt/0.3.8/json",
+        "metadataSha256": "c5e95a186605eb3c40f956765e029a3d4f98857764305d67fa0eb2e66324f01a"
+      },
+      "redistributionObligations": "Conservar copyright y texto MIT.",
+      "risksOrPending": "La licencia del algoritmo no establece la de bpe.model entrenado.",
+      "status": "conditional_on_notices_and_pending_review"
+    },
+    {
+      "name": "tqdm",
+      "version": "4.70.1",
+      "source": "https://pypi.org/project/tqdm/4.70.1/",
+      "declaredLicense": "MPL-2.0 AND MIT",
+      "reviewedLicense": "MPL-2.0 AND MIT",
+      "evidence": {
+        "inventoryFile": "translation-license-evidence.json",
+        "noticeFiles": [
+          {
+            "path": "tqdm-4.70.1.dist-info/licenses/LICENCE",
+            "sizeBytes": 1985,
+            "sha256": "fcff87c3a47ce8028a8512aa182d4fcf0ad1c90544ee75cf9b343684cac194de"
+          }
+        ],
+        "registryMetadata": "https://pypi.org/pypi/tqdm/4.70.1/json",
+        "metadataSha256": "a5da70b966afea3a759716041bad7187f2ece02c22348cf9e7c0a512bbf15f57"
+      },
+      "redistributionObligations": "Conservar avisos MIT/MPL; facilitar a destinatarios el codigo fuente de los archivos cubiertos por MPL y sus modificaciones, con instrucciones de acceso.",
+      "risksOrPending": "No tratar como MIT puro ni AGPL. Aprobar el ofrecimiento de fuente de la version exacta antes de distribuir.",
+      "status": "conditional_on_notices_and_pending_review"
+    }
+  ],
+  "runtimeAndNativeComponents": [
+    {
+      "name": "CPython",
+      "version": "3.12.14",
+      "source": "https://raw.githubusercontent.com/python/cpython/v3.12.14/LICENSE",
+      "declaredOrCandidateLicense": "PSF-2.0 and historical/included-component notices",
+      "redistributionObligations": "Conservar licencia historica y avisos de cada componente; documentar cambios al runtime.",
+      "risksOrPending": "El venv de desarrollo depende del interprete base y no es una distribucion portable aprobada.",
+      "status": "pending_final_binary_provenance_and_notices"
+    },
+    {
+      "name": "NVIDIA cuDNN",
+      "version": "9.10.2.21 (DLL file/product version)",
+      "source": "https://docs.nvidia.com/deeplearning/cudnn/backend/v9.10.2/reference/eula.html",
+      "declaredOrCandidateLicense": "NVIDIA SDK Software License Agreement",
+      "redistributionObligations": "Revisar partes redistribuibles, condiciones de distribucion y contrato del producto.",
+      "risksOrPending": "cudnn64_9.dll esta presente en la rueda CPU utilizada; no asumir MIT ni distribuir sin revision. No se elimino la DLL.",
+      "status": "pending_final_binary_provenance_and_notices"
+    },
+    {
+      "name": "Intel OpenMP",
+      "version": "file version 20250910; product 5.0; upstream toolkit 2025.3",
+      "source": "https://raw.githubusercontent.com/OpenNMT/CTranslate2/v4.8.4/python/tools/prepare_build_environment_windows.sh",
+      "declaredOrCandidateLicense": "Intel proprietary redistribution terms; exact bundled notice pending",
+      "redistributionObligations": "Obtener y conservar el aviso de redistribucion de la version exacta del toolkit.",
+      "risksOrPending": "No se encontro LICENSE junto a libiomp5md.dll; no inferir la revision de ISSL a partir del nombre de la biblioteca.",
+      "status": "pending_final_binary_provenance_and_notices"
+    },
+    {
+      "name": "Intel MKL",
+      "version": "upstream build toolkit 2025.3.0.372; installed static provenance pending",
+      "source": "https://raw.githubusercontent.com/OpenNMT/CTranslate2/v4.8.4/python/tools/prepare_build_environment_windows.sh",
+      "declaredOrCandidateLicense": "Intel terms; exact notice pending",
+      "redistributionObligations": "Recuperar avisos/terminos del toolkit correspondiente al binario construido.",
+      "risksOrPending": "El script upstream es evidencia de receta, no prueba de que la rueda instalada fue producida por esa ejecucion.",
+      "status": "pending_final_binary_provenance_and_notices"
+    },
+    {
+      "name": "oneDNN",
+      "version": "3.1.1 in upstream build recipe",
+      "source": "https://raw.githubusercontent.com/oneapi-src/oneDNN/v3.1.1/LICENSE",
+      "declaredOrCandidateLicense": "Apache-2.0",
+      "redistributionObligations": "Conservar licencia, NOTICE y atribuciones aplicables a la libreria estatica.",
+      "risksOrPending": "Correlacion exacta rueda/receta y avisos de componentes incluidos pendiente.",
+      "status": "pending_final_binary_provenance_and_notices"
+    },
+    {
+      "name": "NumPy bundled OpenBLAS",
+      "version": "exact version pending",
+      "source": "https://github.com/OpenMathLib/OpenBLAS",
+      "declaredOrCandidateLicense": "BSD-3-Clause",
+      "redistributionObligations": "Conservar el aviso OpenBLAS incluido en el LICENSE de la rueda NumPy.",
+      "risksOrPending": "DLL identificada por hash; no se deduce version del hash del nombre.",
+      "status": "pending_final_binary_provenance_and_notices"
+    },
+    {
+      "name": "NumPy bundled LAPACK",
+      "version": "exact version pending",
+      "source": "https://www.netlib.org/lapack/",
+      "declaredOrCandidateLicense": "BSD-3-Clause-Open-MPI",
+      "redistributionObligations": "Conservar condiciones y descargos de LAPACK.",
+      "risksOrPending": "Incorporado en OpenBLAS segun LICENSE de NumPy; falta version exacta.",
+      "status": "pending_final_binary_provenance_and_notices"
+    },
+    {
+      "name": "NumPy GCC runtime",
+      "version": "exact version pending",
+      "source": "https://www.gnu.org/licenses/gcc-exception-3.1.html",
+      "declaredOrCandidateLicense": "GPL-3.0-or-later WITH GCC-exception-3.1",
+      "redistributionObligations": "Conservar licencias y excepcion; comprobar condiciones de compilacion elegible para la excepcion.",
+      "risksOrPending": "No presentar la excepcion como ausencia total de obligaciones GPL ni extenderla a otros componentes.",
+      "status": "pending_final_binary_provenance_and_notices"
+    },
+    {
+      "name": "Microsoft C/C++ runtime",
+      "version": "exact redistribution package version pending",
+      "source": "https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist",
+      "declaredOrCandidateLicense": "Microsoft redistributable software terms",
+      "redistributionObligations": "Distribuir solo los componentes permitidos bajo los terminos de la version seleccionada.",
+      "risksOrPending": "NumPy incorpora msvcp140 con nombre modificado; inventario y ruta de VC runtime final pendientes.",
+      "status": "pending_final_binary_provenance_and_notices"
+    },
+    {
+      "name": "CPython OpenSSL",
+      "version": "3.5.8 observed through ssl.OPENSSL_VERSION",
+      "source": "https://www.openssl.org/source/license.html",
+      "declaredOrCandidateLicense": "Apache-2.0; native third-party notices to inventory",
+      "redistributionObligations": "Conservar licencia y avisos del runtime exacto si se incluye.",
+      "risksOrPending": "Componente del interprete base de desarrollo; no necesario para inferencia en si. Runtime final por definir.",
+      "status": "pending_final_binary_provenance_and_notices"
+    },
+    {
+      "name": "CPython SQLite",
+      "version": "3.53.1 observed through sqlite3.sqlite_version",
+      "source": "https://www.sqlite.org/copyright.html",
+      "declaredOrCandidateLicense": "Public domain declaration; build/component notices to inventory",
+      "redistributionObligations": "Documentar declaracion y procedencia del binario incluido.",
+      "risksOrPending": "No se incorpora base de datos a Saylo; solo se inventaria el interprete existente.",
+      "status": "pending_final_binary_provenance_and_notices"
+    },
+    {
+      "name": "CPython zlib",
+      "version": "1.3.2 observed through zlib.ZLIB_RUNTIME_VERSION",
+      "source": "https://zlib.net/zlib_license.html",
+      "declaredOrCandidateLicense": "Zlib",
+      "redistributionObligations": "Conservar avisos de fuente y no falsear procedencia/modificaciones.",
+      "risksOrPending": "Forma parte del runtime base; hash del runtime final todavia pendiente.",
+      "status": "pending_final_binary_provenance_and_notices"
+    },
+    {
+      "name": "CTranslate2 static third-party components",
+      "version": "v4.8.4 dependency revisions; exact installed linkage pending",
+      "source": "https://github.com/OpenNMT/CTranslate2/blob/v4.8.4/.gitmodules",
+      "declaredOrCandidateLicense": "Per-component; unresolved",
+      "redistributionObligations": "Recopilar avisos de cpu_features, spdlog/fmt, ruy, CUTLASS, CCCL/Thrust, encabezados matematicos y pybind11 segun linkage real.",
+      "risksOrPending": "No hay SBOM nativo completo de la rueda ni prueba de build. Googletest/cxxopts pueden ser solo build/test: no asumir que se distribuyen.",
+      "status": "pending_final_binary_provenance_and_notices"
+    },
+    {
+      "name": "SentencePiece/PyYAML native components",
+      "version": "exact protobuf/libyaml and other linked versions pending",
+      "source": "https://github.com/google/sentencepiece/tree/v0.2.2",
+      "declaredOrCandidateLicense": "Per-component; unresolved",
+      "redistributionObligations": "Revisar dependencias enlazadas y recopilar avisos por version.",
+      "risksOrPending": "No se considera que la etiqueta Apache/MIT de la extension resuelva todos los componentes incluidos.",
+      "status": "pending_final_binary_provenance_and_notices"
+    }
+  ],
+  "models": [
+    {
+      "name": "argos-es-en",
+      "version": "1.9",
+      "source": "https://argos-net.com/v1/translate-es_en-1_9.argosmodel",
+      "declaredLicense": "README: original OPUS model CC-BY-4.0; publisher general binary statement MIT/CC0",
+      "evidence": {
+        "archiveSha256": "c54df2b62fceaf54a3ce5d97db6bf56efd7940063329f6778f4212d2acb370d4",
+        "readmeSha256": "ca784d58b3fe81e557774db5ae33c4278bd6cfe64a43a6aa7301cce062b201c6",
+        "publisherStatement": "https://github.com/argosopentech/argos-translate/issues/533#issuecomment-5160080718"
+      },
+      "redistributionObligations": "Preservar atribucion OPUS-MT, autores y cita; incluir enlace CC-BY-4.0 e indicar conversiones/modificaciones. Resolver alcance junto a declaracion MIT/CC0.",
+      "risksOrPending": "Faltan procedencia de tokenizer/vocabulario y licencia por recurso. No inferir de la licencia de Argos, SentencePiece o del indice. El README es evidencia parcial.",
+      "redistributionApproved": false,
+      "files": [
+        {
+          "path": "bpe.model",
+          "sha256": "567708133d5a722ac57c1431f9490904d9bcacd85134778e34ca2f901855855e",
+          "status": "package_specific_rights_pending",
+          "integrityVerified": true
+        },
+        {
+          "path": "metadata.json",
+          "sha256": "976bb0aafb1142b7f2936ed2becad224b47aef619685fb8b17faab81080cc725",
+          "status": "package_specific_rights_pending",
+          "integrityVerified": true
+        },
+        {
+          "path": "model/config.json",
+          "sha256": "152eb448f1020eb55f90971d7b95f61896abee8415d555ca51ae7897ac0a0e68",
+          "status": "package_specific_rights_pending",
+          "integrityVerified": true
+        },
+        {
+          "path": "model/model.bin",
+          "sha256": "3c634f2fbfce11ba9c3db839db50079c08d3cdb12c74f2c21671f742dbbb30f1",
+          "status": "package_specific_rights_pending",
+          "integrityVerified": true
+        },
+        {
+          "path": "model/shared_vocabulary.json",
+          "sha256": "8ba15845314c1291fad86b0bf52b4a8a5db2a2f01b898c8c44d9e21e896a041f",
+          "status": "package_specific_rights_pending",
+          "integrityVerified": true
+        },
+        {
+          "path": "README.md",
+          "sha256": "ca784d58b3fe81e557774db5ae33c4278bd6cfe64a43a6aa7301cce062b201c6",
+          "status": "package_specific_rights_pending",
+          "integrityVerified": true
+        }
+      ]
+    },
+    {
+      "name": "argos-en-es",
+      "version": "1.0",
+      "source": "https://argos-net.com/v1/translate-en_es-1_0.argosmodel",
+      "declaredLicense": "No LICENSE or license field in this package; publisher general binary statement MIT/CC0",
+      "evidence": {
+        "archiveSha256": "d698d0ef87ad70d5d184b7fa6965905bf4368f09a2bb9ffb165a79bac96af0c4",
+        "readmeSha256": "cd8423493ed8817466822957d8c95070b5b4cc87eb122f06d60e7e31f138a3cf",
+        "publisherStatement": "https://github.com/argosopentech/argos-translate/issues/533#issuecomment-5160080718"
+      },
+      "redistributionObligations": "Obtener declaracion aplicable a este paquete y recursos; preservar los avisos que el editor confirme.",
+      "risksOrPending": "Faltan procedencia de tokenizer/vocabulario y licencia por recurso. No inferir de la licencia de Argos, SentencePiece o del indice. El README es evidencia parcial.",
+      "redistributionApproved": false,
+      "files": [
+        {
+          "path": "metadata.json",
+          "sha256": "d3360ebfd9b5458b84d7c75d078e379541e4f2ce009bca84f20f360572547bbd",
+          "status": "package_specific_rights_pending",
+          "integrityVerified": true
+        },
+        {
+          "path": "model/model.bin",
+          "sha256": "d5771f823c9dd7eedcf9367c116aede65613a194f761a81826351e2bccb194c4",
+          "status": "package_specific_rights_pending",
+          "integrityVerified": true
+        },
+        {
+          "path": "model/shared_vocabulary.txt",
+          "sha256": "e03caf337f37b61d2e056b9cfbc5551a0c8ae7555541fba14c067d4574db1132",
+          "status": "package_specific_rights_pending",
+          "integrityVerified": true
+        },
+        {
+          "path": "README.md",
+          "sha256": "cd8423493ed8817466822957d8c95070b5b4cc87eb122f06d60e7e31f138a3cf",
+          "status": "package_specific_rights_pending",
+          "integrityVerified": true
+        },
+        {
+          "path": "sentencepiece.model",
+          "sha256": "71790fd75854ce996bc9f7da40fb72af41b74296d53fee64bce141967e8e81b1",
+          "status": "package_specific_rights_pending",
+          "integrityVerified": true
+        }
+      ]
+    }
+  ],
+  "miniSbd": {
+    "versionObservedOnlyInSeparateEvaluationVenv": "0.9.5",
+    "declaredLicense": "AGPL-3.0; some internal modules have separate notices",
+    "evidence": "artifacts/argos/venv/Lib/site-packages/minisbd-0.9.5.dist-info/licenses/LICENSE",
+    "selectedRuntimeContainsMiniSbd": false,
+    "excludedAlso": [
+      "argostranslate",
+      "stanza",
+      "torch",
+      "spacy",
+      "onnxruntime"
+    ],
+    "requirement": "Package only the inventoried reduced runtime. Never bundle artifacts/argos/venv or use recursive copies of artifacts/."
+  },
+  "remainingReleaseGates": [
+    "Confirm package-specific model/tokenizer/vocabulary rights.",
+    "Complete native build SBOM and exact redistribution notices, including NVIDIA and Intel.",
+    "Prepare a relocatable private Python runtime and validate on a clean Windows machine.",
+    "Approve wheel hashes and signed model manifests; installed RECORD hashes are not publisher authenticity.",
+    "Complete OS-level offline replay and bilingual human acceptance."
+  ]
+}

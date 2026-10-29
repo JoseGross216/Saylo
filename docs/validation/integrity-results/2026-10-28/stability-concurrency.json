@@ -1,0 +1,9 @@
+{
+  "Status": "passed",
+  "Requests": 8,
+  "BaselineRequests": 8,
+  "SingleWorker": true,
+  "CorrelationCheckedByProductionProtocol": true,
+  "WorkerExited": true,
+  "ElapsedMs": 3045.0086
+}
