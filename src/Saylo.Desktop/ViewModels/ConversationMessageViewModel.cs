@@ -11,7 +11,7 @@ using Saylo.Modules.Translation.Contracts;
 
 namespace Saylo.Desktop.ViewModels;
 
-public enum ChatPlaybackState { Ready, Playing, Stopped, Failed }
+public enum ChatPlaybackState { Ready, Playing, Stopped, Failed, StopFailed }
 
 public partial class ConversationMessageViewModel : ViewModelBase
 {
@@ -58,12 +58,16 @@ public partial class ConversationMessageViewModel : ViewModelBase
         ResultState.Ready when Entry.Pronunciation?.Notation == PronunciationNotation.Ipa => "Pronunciación · IPA",
         ResultState.Ready => IsDemonstration ? "Pronunciación · guía aproximada de ejemplo" : "Pronunciación · guía aproximada",
         ResultState.Pending => "Preparando pronunciación…",
+        ResultState.Failed => "No se pudo preparar la pronunciación. La traducción se conserva.",
         _ => "Pronunciación no disponible"
     };
     public string Status => Entry.State switch
     {
         MessageState.Translating => "Traduciendo…",
         MessageState.Enriching => "Texto disponible",
+        MessageState.Ready when IsDemonstration => "Traducción de ejemplo disponible",
+        MessageState.Ready when Entry.AudioState == ResultState.Failed => "Traducción disponible · voz no disponible",
+        MessageState.Ready when Entry.PronunciationState == ResultState.Failed => "Traducción disponible · pronunciación no disponible",
         MessageState.Ready => "Traducción disponible",
         MessageState.Canceled => "Operación cancelada",
         _ when HasTranslation => "La operación falló. El contenido disponible se conserva.",
@@ -73,18 +77,19 @@ public partial class ConversationMessageViewModel : ViewModelBase
     {
         _ when IsDemonstration => "La demostración no genera audio.",
         ResultState.Pending => "Generando voz…",
-        ResultState.Failed => "No se pudo generar la voz",
+        ResultState.Failed => TranslationFailureMessages.ForSpeech(Entry.AudioFailureCode),
         ResultState.Ready when !_playback.IsAvailable => "Reproducción local no disponible. El texto se conserva.",
         ResultState.Ready when _playbackState == ChatPlaybackState.Playing => "Reproduciendo voz local…",
         ResultState.Ready when _playbackState == ChatPlaybackState.Failed => "No se pudo reproducir. Pulsa Repetir audio para reintentar.",
+        ResultState.Ready when _playbackState == ChatPlaybackState.StopFailed => "No se pudo confirmar la detención de la voz. Revisa la salida de audio y reintenta.",
         ResultState.Ready when _playbackState == ChatPlaybackState.Stopped => "Audio detenido · disponible para repetir",
         ResultState.Ready => "Voz lista · disponible para repetir",
         _ => "Voz no disponible"
     };
     public bool IsPlaying => _playbackState == ChatPlaybackState.Playing && !Entry.IsErased;
     public bool CanPlay => Audio is not null && !Entry.IsErased && _canInteract() && _playback.IsAvailable;
-    private bool CanRepeat => CanPlay && !IsPlaying;
-    private bool CanStop => IsPlaying;
+    private bool CanRepeat => CanPlay && !IsPlaying && !_playback.IsStopping;
+    private bool CanStop => IsPlaying && !_playback.IsStopping;
     private bool CanCopy => HasTranslation && !Entry.IsErased && _canInteract() && _clipboard.IsAvailable;
     public bool ShowRetry => !Entry.IsErased && Entry.State == MessageState.Failed && !HasTranslation && _retry is not null &&
         !(IsDemonstration && Entry.FailureCode == TranslationErrorCode.EngineFailure);

@@ -17,7 +17,7 @@
     </Window.KeyBindings>
     <Window.Styles>
         <Style Selector="Grid.workspace">
-            <Setter Property="MinHeight" Value="720" />
+            <Setter Property="MinHeight" Value="680" />
         </Style>
         <Style Selector="Grid.workspace.audioOpen">
             <Setter Property="MinHeight" Value="1040" />
@@ -72,9 +72,12 @@
                         <views:TextInputView DataContext="{Binding TextInput}" />
                         <ProgressBar Height="3" IsIndeterminate="True" IsVisible="{Binding IsTranslating}" AutomationProperties.Name="Traduciendo el mensaje" />
                         <Grid ColumnDefinitions="*,Auto,Auto,Auto" ColumnSpacing="10">
-                            <TextBlock Text="{Binding StatusMessage}" Classes="muted" FontSize="12"
-                                       VerticalAlignment="Center" TextWrapping="Wrap"
-                                       AutomationProperties.LiveSetting="Polite" />
+                            <StackPanel Spacing="4" VerticalAlignment="Center">
+                                <TextBlock Text="{Binding StateLabel}" FontSize="12" FontWeight="SemiBold" TextWrapping="Wrap"
+                                           AutomationProperties.LiveSetting="Polite" />
+                                <TextBlock Text="{Binding StatusMessage}" Classes="muted" FontSize="12" TextWrapping="Wrap"
+                                           AutomationProperties.LiveSetting="Polite" />
+                            </StackPanel>
                             <ToggleButton Grid.Column="1" IsChecked="{Binding IsAudioPanelOpen, Mode=TwoWay}"
                                           Content="Voz" Padding="16,8" MinHeight="40" CornerRadius="8"
                                           AutomationProperties.Name="Mostrar controles de entrada por voz" />

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Saylo.Desktop.Services.Audio;
+using Saylo.Desktop.Services.Translation;
 using Saylo.Modules.Translation.Contracts;
 
 namespace Saylo.Desktop.ViewModels;
@@ -108,7 +109,7 @@ public partial class AudioInputViewModel : ViewModelBase, IAsyncDisposable
             SelectedDevice ??= Devices.Count > 0 ? Devices[0] : null;
             StatusMessage = Devices.Count == 0 ? "No se encontró un micrófono. Conecta uno y actualiza la lista." :
                 "Micrófono listo. La grabación comienza solo cuando pulses Grabar.";
-            ChangeState(AudioInputState.Idle);
+            ChangeState(Devices.Count == 0 ? AudioInputState.Error : AudioInputState.Idle);
         }
         catch (Exception error)
         {
@@ -292,6 +293,19 @@ public partial class AudioInputViewModel : ViewModelBase, IAsyncDisposable
 
     private void ShowError(Exception error)
     {
+        Transcript = string.Empty;
+        if (State == AudioInputState.Transcribing || error is TranslationEngineException { Stage: TranslationStage.SpeechRecognition })
+        {
+            StatusMessage = TranslationFailureMessages.ForRecognition(TranslationFailureMessages.CodeFor(error));
+            ChangeState(AudioInputState.Error);
+            return;
+        }
+        if (error is UnauthorizedAccessException)
+        {
+            StatusMessage = "Permiso de micrófono denegado. Revisa los permisos del sistema y reintenta.";
+            ChangeState(AudioInputState.Error);
+            return;
+        }
         StatusMessage = (error as AudioInputException)?.Code switch
         {
             AudioInputError.NotConfigured => $"Captura de audio pendiente de configurar en {PlatformName}.",

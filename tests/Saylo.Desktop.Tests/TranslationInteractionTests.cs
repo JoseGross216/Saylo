@@ -18,6 +18,7 @@ public sealed class TranslationInteractionTests
         var result = Assert.Single(model.Messages);
         Assert.Equal("Good morning", result.TranslatedText);
         Assert.Equal("  Buenos días  ", service.Request!.Text);
+        Assert.Equal(ApplicationState.PreparingResults, model.State);
         Assert.False(model.Languages.IsEnabled);
         Assert.False(model.AudioInput.StartCommand.CanExecute(null));
         model.TextInput.Text = "A new draft";
@@ -25,10 +26,11 @@ public sealed class TranslationInteractionTests
         await run;
 
         Assert.Equal("Good morning", result.TranslatedText);
-        Assert.Equal("Pronunciación no disponible", result.PronunciationLabel);
-        Assert.Equal("No se pudo generar la voz", result.AudioStatus);
+        Assert.Contains("No se pudo preparar la pronunciación", result.PronunciationLabel);
+        Assert.Contains("Falta el modelo local de voz", result.AudioStatus);
         Assert.True(model.Languages.IsEnabled);
         Assert.Equal("A new draft", model.TextInput.Text);
+        Assert.Equal(ApplicationState.RecoverableError, model.State);
     }
 
     [Fact]

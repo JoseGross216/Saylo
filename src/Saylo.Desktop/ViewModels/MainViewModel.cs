@@ -28,6 +28,8 @@ public partial class MainViewModel : ViewModelBase, IAsyncDisposable
     private readonly DesktopTranslationConnection? _connection;
     private CancellationTokenSource? _requestCancellation;
     private Task _activeTranslation = Task.CompletedTask;
+    private bool _recoverableError;
+    private bool _hasCurrentTranslation;
 
     public MainViewModel() : this(AudioInputAdapterFactory.CreateDefault()) { }
 
@@ -76,9 +78,54 @@ public partial class MainViewModel : ViewModelBase, IAsyncDisposable
     [ObservableProperty] private bool _isTranslating;
     [ObservableProperty] private bool _isClearConfirmationOpen;
     [ObservableProperty] private bool _isClearing;
+    [ObservableProperty] private bool _isAutoplayEnabled = true;
+
+    partial void OnIsAutoplayEnabledChanged(bool value) => _playback.IsAutoplayEnabled = value;
+
+    public bool IsPlaying => _playback.IsPlaying;
+    public bool ShowStopPlayback => IsPlaying || _playback.RequiresStopRecovery;
+    public string StopPlaybackLabel => _playback.RequiresStopRecovery ? "Reintentar detención" : "Detener voz";
+    public bool HasRecoverableError => _recoverableError || _playback.HasError;
+    public ApplicationState State => _disposed ? ApplicationState.Closing : IsClearing ? ApplicationState.Clearing :
+        _playback.IsStopping ? ApplicationState.StoppingPlayback :
+        AudioInput.State switch
+        {
+            AudioInputState.LoadingDevices => ApplicationState.LoadingDevices,
+            AudioInputState.Starting => ApplicationState.PreparingMicrophone,
+            AudioInputState.Recording => ApplicationState.Recording,
+            AudioInputState.Stopping or AudioInputState.Canceling => ApplicationState.StoppingMicrophone,
+            AudioInputState.Transcribing => ApplicationState.Transcribing,
+            AudioInputState.Reviewing => ApplicationState.ReviewingTranscript,
+            _ when IsPlaying => ApplicationState.Playing,
+            _ when IsTranslating => _hasCurrentTranslation ?
+                ApplicationState.PreparingResults : ApplicationState.Translating,
+            _ when HasRecoverableError => ApplicationState.RecoverableError,
+            _ => ApplicationState.Ready
+        };
+    public string StateLabel => State switch
+    {
+        ApplicationState.LoadingDevices => "Consultando micrófonos…",
+        ApplicationState.PreparingMicrophone => "Preparando el micrófono…",
+        ApplicationState.Recording => "Grabando · máximo 30 segundos",
+        ApplicationState.StoppingMicrophone => "Liberando el micrófono…",
+        ApplicationState.Transcribing => "Transcribiendo…",
+        ApplicationState.ReviewingTranscript => "Revisa la transcripción",
+        ApplicationState.Translating => "Traduciendo…",
+        ApplicationState.PreparingResults => "Texto listo · preparando pronunciación y voz…",
+        ApplicationState.Playing => "Reproduciendo voz…",
+        ApplicationState.StoppingPlayback => "Deteniendo voz…",
+        ApplicationState.Clearing => "Eliminando conversación…",
+        ApplicationState.RecoverableError => "Revisa el aviso · puedes seguir usando Saylo",
+        ApplicationState.Closing => "Cerrando la sesión…",
+        _ => "Listo"
+    };
+    private bool CanStopPlayback => !_disposed && ShowStopPlayback && !_playback.IsStopping;
+
+    [RelayCommand(CanExecute = nameof(CanStopPlayback))]
+    private Task StopPlaybackAsync() => _playback.StopAsync();
 
     private bool CanStartRequest => !_disposed && !IsClearing && _translation is not null &&
-        !IsTranslating && !AudioInput.IsSessionActive && !AudioInput.IsBusy;
+        !IsTranslating && !AudioInput.IsSessionActive && !AudioInput.IsBusy && !_playback.IsStopping;
     private bool CanTranslate => CanStartRequest && TextInput.IsValid;
     private bool CanClear => !_disposed && !IsClearing && HasMessages;
     private bool CanConfirmClear => CanClear && IsClearConfirmationOpen;
@@ -98,6 +145,8 @@ public partial class MainViewModel : ViewModelBase, IAsyncDisposable
         if (!CanStartRequest) return Task.CompletedTask;
         var source = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
         _requestCancellation = source;
+        _recoverableError = false;
+        _hasCurrentTranslation = false;
         IsTranslating = true;
         UpdateInteraction();
         return _activeTranslation = RunTranslationAsync(request, origin, source);
@@ -125,13 +174,17 @@ public partial class MainViewModel : ViewModelBase, IAsyncDisposable
                 cancellationToken.ThrowIfCancellationRequested();
                 if (!_session.Contains(entry)) break;
                 if (!_session.Apply(entry, update)) continue;
+                _hasCurrentTranslation = entry.HasTranslation;
                 message.Refresh();
+                NotifyStateChanged();
                 if (update is SpeechSynthesisCompleted) _playback.Autoplay(message, cancellationToken);
             }
             if (_session.Contains(entry))
             {
                 entry.Complete();
                 message.Refresh();
+                _recoverableError = entry.State == MessageState.Failed || (!IsDemonstration && entry.AudioState == ResultState.Failed) ||
+                    entry.PronunciationState == ResultState.Failed;
                 StatusMessage = message.Status;
             }
         }
@@ -149,11 +202,15 @@ public partial class MainViewModel : ViewModelBase, IAsyncDisposable
             if (entry is not null && _session.Contains(entry))
             {
                 entry.Fail(TranslationFailureMessages.CodeFor(error));
+                _recoverableError = true;
                 message?.Refresh();
                 StatusMessage = message?.Status ?? TranslationFailureMessages.For(entry.FailureCode, IsDemonstration);
             }
             else if (!_disposed && !IsClearing)
+            {
+                _recoverableError = true;
                 StatusMessage = TranslationFailureMessages.For(TranslationFailureMessages.CodeFor(error), IsDemonstration);
+            }
         }
         finally
         {
@@ -219,6 +276,7 @@ public partial class MainViewModel : ViewModelBase, IAsyncDisposable
             await _activeTranslation;
             _activeTranslation = Task.CompletedTask;
             StatusMessage = "Conversación eliminada. El borrador se conserva.";
+            _recoverableError = false;
         }
         finally
         {
@@ -268,15 +326,44 @@ public partial class MainViewModel : ViewModelBase, IAsyncDisposable
 
     private void OnAudioChanged(object? sender, PropertyChangedEventArgs args)
     {
-        if (args.PropertyName == nameof(AudioInput.State)) UpdateInteraction();
+        if (args.PropertyName == nameof(AudioInput.StatusMessage) && !_disposed && !IsClearing)
+            StatusMessage = AudioInput.StatusMessage;
+        if (args.PropertyName != nameof(AudioInput.State)) return;
+        if (AudioInput.State == AudioInputState.Error)
+        {
+            _recoverableError = true;
+            StatusMessage = AudioInput.StatusMessage;
+        }
+        else if (AudioInput.State is AudioInputState.LoadingDevices or AudioInputState.Starting or AudioInputState.Idle)
+            _recoverableError = false;
+        UpdateInteraction();
     }
 
-    private void OnPlaybackChanged(object? sender, EventArgs args) => UpdateInteraction();
+    private void OnPlaybackChanged(object? sender, EventArgs args)
+    {
+        if (_playback.IsPlaying && !_playback.HasError) _recoverableError = false;
+        if (_playback.HasError && !_disposed && !IsClearing)
+            StatusMessage = "Hubo un problema con la reproducción. Revisa el aviso del mensaje y la salida de audio.";
+        UpdateInteraction();
+    }
+
+    private void NotifyStateChanged()
+    {
+        OnPropertyChanged(nameof(State));
+        OnPropertyChanged(nameof(StateLabel));
+        OnPropertyChanged(nameof(HasRecoverableError));
+        OnPropertyChanged(nameof(IsPlaying));
+        OnPropertyChanged(nameof(ShowStopPlayback));
+        OnPropertyChanged(nameof(StopPlaybackLabel));
+        StopPlaybackCommand.NotifyCanExecuteChanged();
+    }
 
     private void UpdateInteraction()
     {
+        NotifyStateChanged();
         Languages.IsEnabled = !_disposed && !IsClearing && !IsTranslating && !AudioInput.IsSessionActive && !AudioInput.IsBusy;
-        AudioInput.IsEnabled = !_disposed && !IsClearing && !IsTranslating && !_playback.IsPlaying;
+        AudioInput.IsEnabled = !_disposed && !IsClearing && !IsTranslating && !_playback.IsPlaying &&
+            !_playback.IsStopping && !_playback.RequiresStopRecovery;
         TranslateCommand.NotifyCanExecuteChanged();
         CancelActiveTranslationCommand.NotifyCanExecuteChanged();
         LoadExampleCommand.NotifyCanExecuteChanged();
@@ -289,6 +376,7 @@ public partial class MainViewModel : ViewModelBase, IAsyncDisposable
     {
         if (_disposed) return;
         _disposed = true;
+        UpdateInteraction();
         IsClearConfirmationOpen = false;
         TranslateCommand.Cancel();
         _requestCancellation?.Cancel();
