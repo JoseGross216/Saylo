@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "reviewDate": "2026-10-29",
+  "selectedImplementation": "Saylo managed lexical and rule-based broad IPA",
+  "additionalNuGetOrPythonPackages": [],
+  "additionalNativeLibraries": [],
+  "neuralModelsDownloaded": [],
+  "runtimeNetworkServices": [],
+  "selectedData": {
+    "name": "CMU Pronouncing Dictionary",
+    "repository": "https://github.com/cmusphinx/cmudict",
+    "revision": "74790861f652b15e4ac49015a90074ad62a27690",
+    "dataUrl": "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict",
+    "dataBytes": 3618488,
+    "dataSha256": "81917843c7f44ce2b094ac63873c2c7a4cf802040792c455ba3ca406891c3d22",
+    "licenseUrl": "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/LICENSE",
+    "licenseBytes": 1754,
+    "licenseSha256": "bd4ce8e44170a5f9f481310ca85c51de3c4f851a65e679b40e603b143bd3542a",
+    "licenseDescription": "LicenseRef-CMUdict: permissive two-condition BSD-style notice; preserve the complete upstream text, including acknowledgments and disclaimer.",
+    "commercialUseEvidence": "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/README",
+    "commercialRedistribution": "Permitted by the reviewed source/binary redistribution terms. Retain copyright, conditions and disclaimer in source; reproduce notices in binary documentation/materials.",
+    "noticeCopy": "docs/licenses/cmudict-LICENSE.txt",
+    "distribution": "External plain-text dictionary and its exact LICENSE, explicitly installed. Neither file is downloaded during generation. Both are checked through ModelManagement; the opened dictionary is checked again before parsing."
+  },
+  "spanishData": {
+    "path": "src/modules/Saylo.Modules.Translation/Pronunciation/spanish-vocabulary.txt",
+    "origin": "Domain vocabulary authored for Saylo; not copied from an external dictionary, RAE page, TTS database or model.",
+    "phonemes": "Computed by original managed G2P rules; vocabulary membership limits coverage rather than supplying canned sentences.",
+    "normativeReferences": ["https://www.rae.es/dpd/tilde", "https://www.rae.es/dpd/diptongo", "https://www.rae.es/dpd/hiato"]
+  },
+  "alternativesReviewed": [
+    {
+      "name": "eSpeak NG",
+      "sources": ["https://github.com/espeak-ng/espeak-ng/blob/master/README.md", "https://github.com/espeak-ng/espeak-ng/blob/master/COPYING"],
+      "license": "GPL-3.0-or-later, with component-specific notices upstream",
+      "capabilities": "Local text-to-phoneme with broad language/variant coverage; native CLI/library, Windows/Linux/macOS support.",
+      "decision": "Not introduced. GPL permits commerce, but integration/distribution obligations require a separate product decision; process separation alone is not treated as a license exemption. No native TTS engine added."
+    },
+    {
+      "name": "Epitran",
+      "sources": ["https://github.com/dmort27/epitran/blob/master/LICENSE.txt", "https://github.com/dmort27/epitran/blob/master/README.md"],
+      "license": "MIT for the reviewed core; full optional dependency/data chain not approved in this task",
+      "capabilities": "Rule/table-based IPA transliteration; English requires Flite lex_lookup in the documented setup.",
+      "decision": "Not introduced. Extra Python/native packaging and dialect/stress validation would be required for Windows; selected implementation needs no such runtime."
+    },
+    {
+      "name": "Gruut lexical/POS/CRF phonemization",
+      "sources": ["https://github.com/rhasspy/gruut/blob/master/LICENSE", "https://github.com/rhasspy/gruut/blob/master/README.md", "https://github.com/rhasspy/gruut/blob/master/requirements.txt"],
+      "license": "MIT core; language packages, CRF/POS models, dictionary provenance and all dependencies not approved as one redistribution bundle",
+      "capabilities": "Contextual phonemization with lexicons and local CRF/POS models; documented en-US and es-ES; several normalization dependencies.",
+      "decision": "Not introduced. Promising context coverage, but more runtime/data dependencies, a separate Windows packaging assessment, and Latin American validation are needed. No model was downloaded."
+    }
+  ],
+  "benchmarkScope": "Only the selected implementation was installed and measured. No invented latency, RAM or installation-size measurements for rejected alternatives.",
+  "productDistributionApproval": "This records the selected pronunciation component and data; it does not supersede previous resource-license/distribution work for the entire Saylo product."
+}

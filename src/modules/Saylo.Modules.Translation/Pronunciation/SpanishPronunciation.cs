@@ -26,6 +26,9 @@ internal sealed class SpanishPronunciation
         word = word.ToLowerInvariant().Normalize(NormalizationForm.FormC);
         if (!_vocabulary.Contains(word))
             throw PronunciationFailure.Create("OutOfVocabulary");
+        // This loanword needs an approved lexical reading, not native Spanish spelling rules.
+        if (word == "email")
+            throw PronunciationFailure.Create("AmbiguousPronunciation");
         if (word == "méxico")
             return "ˈmexiko";
         if (word.EndsWith("mente", StringComparison.Ordinal) && word.Length > 7)

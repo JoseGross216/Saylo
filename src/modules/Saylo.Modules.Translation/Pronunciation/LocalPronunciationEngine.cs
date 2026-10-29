@@ -26,7 +26,8 @@ public sealed class LocalPronunciationEngine : IPronunciationEngine, IAsyncDispo
     internal int EnglishWordCount => _english?.WordCount ?? 0;
     internal int SpanishWordCount => _spanish?.WordCount ?? 0;
 
-    public LocalPronunciationEngine(IModelCatalog catalog) : this(catalog, EnglishPronunciation.Load) { }
+    public LocalPronunciationEngine(IModelCatalog catalog) : this(catalog,
+        (path, token) => EnglishPronunciation.Load(path, token, PronunciationResources.DictionarySha256)) { }
 
     internal LocalPronunciationEngine(IModelCatalog catalog, Func<string, CancellationToken, EnglishPronunciation> load)
     {
@@ -72,7 +73,7 @@ public sealed class LocalPronunciationEngine : IPronunciationEngine, IAsyncDispo
                         var word = tokens[index];
                         if (char.IsLetter(word[0]))
                         {
-                            if (text.Length > 0 && text[^1] != ' ')
+                            if (text.Length > 0 && text[^1] != ' ' && !"¿¡([«“".Contains(text[^1]))
                                 text.Append(' ');
                             text.Append(targetLanguage == Language.English ? _english!.Generate(tokens, index) : _spanish!.Generate(word));
                         }
@@ -109,7 +110,8 @@ public sealed class LocalPronunciationEngine : IPronunciationEngine, IAsyncDispo
             var model = await _catalog.LocateAsync(PronunciationResources.DictionaryId, PronunciationResources.DictionaryVersion, token).ConfigureAwait(false);
             if (model is null)
                 throw PronunciationFailure.Create("DictionaryMissing", TranslationErrorCode.ModelUnavailable);
-            if (model.Purpose != ModelPurpose.Pronunciation || !model.Languages.Contains("en") ||
+            if (PronunciationResources.IsNetworkPath(model.DirectoryPath) ||
+                model.Purpose != ModelPurpose.Pronunciation || !model.Languages.Contains("en") ||
                 !model.Files.Any(file => file.RelativePath == "cmudict.dict" && file.Sha256 == PronunciationResources.DictionarySha256) ||
                 !model.Files.Any(file => file.RelativePath == "LICENSE" && file.Sha256 == PronunciationResources.LicenseSha256))
                 throw PronunciationFailure.Create("DictionaryMetadata", TranslationErrorCode.ModelInvalid);

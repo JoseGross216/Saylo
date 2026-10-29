@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "initialHead": "c19a4fc85a2a76ebcbf88223339dd52a35a5882c",
+  "observedCurrentHead": "2031ccc113ee7f3a2abb6d51daa1874af2d04d56",
+  "branch": "users/stanley-translation",
+  "initialStatus": "",
+  "headChangedExternallyDuringTask": true,
+  "agentRanCommit": false,
+  "agentRanPush": false,
+  "preservedAllInitialFilesExceptDeclaredProjectResourceRegistration": true,
+  "historicalEvidenceUnchanged": true,
+  "publicContractsAndPreviousTestsUnchanged": true,
+  "protectedModulesUnchanged": true,
+  "deletedFiles": [],
+  "modifiedInitialFiles": [
+    {
+      "path": "src/modules/Saylo.Modules.Translation/Saylo.Modules.Translation.csproj",
+      "beforeSha256": "7cb233e7c71f5102cc98405e1cb1308babb4a478eb0af0964e9408f0c8a6616e",
+      "afterSha256": "efe50595b95c60ff021387483b1ba7b20bead655c0f283bca00417c3f2ece102"
+    }
+  ],
+  "addedSinceInitialBaseline": [
+    {
+      "path": "docs/licenses/cmudict-LICENSE.txt",
+      "sha256": "bd4ce8e44170a5f9f481310ca85c51de3c4f851a65e679b40e603b143bd3542a"
+    },
+    {
+      "path": "docs/local-pronunciation-engine.md",
+      "sha256": "e7da903bf53501c393f402103b16da12ca322b2596f8a5bc079af559ca40d1e3"
+    },
+    {
+      "path": "docs/validation/pronunciation-cases.json",
+      "sha256": "beae5a128dd322e9fd8d9b5dff9f4d3e0d240b373b42c735e97586127e786c4f"
+    },
+    {
+      "path": "docs/validation/pronunciation-license-evidence.json",
+      "sha256": "47a95360570f6c2550c17e44784796b586bfe050f77adacee76ad53f514a6492"
+    },
+    {
+      "path": "docs/validation/pronunciation-results/2026-10-29/cancellation.json",
+      "sha256": "13899b4bbcd3b9c1604b2c40aaa23f9d6a3d1ad5a2fb955755b70c9193300918"
+    },
+    {
+      "path": "docs/validation/pronunciation-results/2026-10-29/quality-and-performance.json",
+      "sha256": "c05d4d55dd7d93ce30f58f503c851daef5c88b418e50e0692745958d762d3e8b"
+    },
+    {
+      "path": "docs/validation/pronunciation-results/2026-10-29/real-pipeline.json",
+      "sha256": "e477492802d3600992b46bbce1ff98c562a72d6a5b9fcb2671b014a275676f1f"
+    },
+    {
+      "path": "docs/validation/pronunciation-results/2026-10-29/test-summary.json",
+      "sha256": "0f06cdfdadf438ccf9fa0d93576b88dfc737db5093d6f4b5327fb859f38834f0"
+    },
+    {
+      "path": "src/modules/Saylo.Modules.Translation/Pronunciation/EnglishPronunciation.cs",
+      "sha256": "f5dfcb101e2e5403e228e1e459a53faaa2f7a929d350117bf3342c89c2e95ec9"
+    },
+    {
+      "path": "src/modules/Saylo.Modules.Translation/Pronunciation/LocalPronunciationEngine.cs",
+      "sha256": "52b28f76bfb28e27a9a76e82c9b67973cc954d49afd432c0fc560009a976e278"
+    },
+    {
+      "path": "src/modules/Saylo.Modules.Translation/Pronunciation/PronunciationFailure.cs",
+      "sha256": "7293387cb347b3ad21954c8345a7dfaa81c6f066a0d0db608c3cb0081ba7ba9f"
+    },
+    {
+      "path": "src/modules/Saylo.Modules.Translation/Pronunciation/PronunciationResources.cs",
+      "sha256": "a3bb07aaab10036dc38260d29004b591e1755354eaa558c8465eab4b900d58bc"
+    },
+    {
+      "path": "src/modules/Saylo.Modules.Translation/Pronunciation/PronunciationText.cs",
+      "sha256": "7923454f7088e0e83f7938692b4a0105ef85739f360283f8d615020d49bb9240"
+    },
+    {
+      "path": "src/modules/Saylo.Modules.Translation/Pronunciation/SpanishPronunciation.cs",
+      "sha256": "a2d96c284398418a5332135f924b816e0f74be1f0d629b63c0f06a038a8e8648"
+    },
+    {
+      "path": "src/modules/Saylo.Modules.Translation/Pronunciation/spanish-vocabulary.txt",
+      "sha256": "5f2d30706a9ec18264e1130eeafe0976342a7ae6b3fa21e027c7c7a91d6ca4e1"
+    },
+    {
+      "path": "tests/Saylo.Modules.Translation.Tests/LocalPronunciationTests.cs",
+      "sha256": "19a75875ebc1aaa2d793f9da550b78748c7efb8c30d830e22f384af1f9d2a4d7"
+    },
+    {
+      "path": "tests/Saylo.Modules.Translation.Tests/PronunciationIntegrationTests.cs",
+      "sha256": "1ba2ed74b63e554eee06fa19db79e662d2d3de20d2d0dd1de7516af0df32dc4e"
+    },
+    {
+      "path": "tests/Saylo.Modules.Translation.Tests/PronunciationServiceTests.cs",
+      "sha256": "fa4ad7fd66d725f5da910da56eceda6a780484cbf5bb2e631fc99ef03c486038"
+    },
+    {
+      "path": "tools/Install-PronunciationResources.ps1",
+      "sha256": "7b5ea1bd58ad11a08758e93227e56a53bedb1631f9fea77524b3317c133d142b"
+    },
+    {
+      "path": "tools/Test-Pronunciation.ps1",
+      "sha256": "0878245250b47080cbe19df2579d5104c2f3489c09308afda0b00c7bacc310cf"
+    }
+  ],
+  "note": "Includes files added by this task and committed externally while work was ongoing. This manifest omits its own hash; current Git status alone does not show the full task scope.",
+  "untrackedTextWhitespaceCheck": "passed"
+}

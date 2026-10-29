@@ -10,6 +10,17 @@ public sealed class LocalPronunciationTests
     private static readonly TimeSpan Limit = TimeSpan.FromSeconds(10);
 
     [Theory]
+    [InlineData(@"\\server\share")]
+    [InlineData("//server/share")]
+    public void ResourceFactoryRejectsNetworkLocations(string path) =>
+        Assert.Throws<ArgumentException>(() => PronunciationResources.CreateCatalog(path));
+
+    [Fact]
+    public void SpanishLoanwordsWithoutAnApprovedReadingAreNotGuessed() =>
+        Assert.Equal("AmbiguousPronunciation", Assert.Throws<TranslationEngineException>(() =>
+            new SpanishPronunciation().Generate("email")).Data["PronunciationReason"]);
+
+    [Theory]
     [InlineData("hola", "ˈola")]
     [InlineData("gracias", "ˈɡɾasjas")]
     [InlineData("pedido", "peˈdido")]
@@ -191,6 +202,7 @@ public sealed class LocalPronunciationTests
         Assert.Equal("ˈɹɛd", engine.Generate(["have", "read"], 1));
         Assert.Throws<TranslationEngineException>(() => engine.Generate(["I", "read"], 1));
         Assert.Throws<TranslationEngineException>(() => engine.Generate(["will", ".", "read"], 2));
+        Assert.Throws<TranslationEngineException>(() => engine.Generate(["have", "read", "access"], 1));
         Assert.Throws<TranslationEngineException>(() => engine.Generate(["record"], 0));
         Assert.Throws<TranslationEngineException>(() => engine.Generate(["unknownname"], 0));
     }
@@ -199,7 +211,7 @@ public sealed class LocalPronunciationTests
     public async Task ConcurrentRequestsReuseOneDictionaryAndKeepIndependentResults()
     {
         using var dictionary = new DictionaryFile();
-        await using var engine = new LocalPronunciationEngine(new Catalog(dictionary.Model));
+        await using var engine = new LocalPronunciationEngine(new Catalog(dictionary.Model), (path, token) => EnglishPronunciation.Load(path, token));
         var tasks = Enumerable.Range(0, 24).Select(index => engine.GenerateAsync(index % 2 == 0 ? "hello" : "hola",
             index % 2 == 0 ? Language.English : Language.Spanish)).ToArray();
         var results = await Task.WhenAll(tasks).WaitAsync(Limit);
@@ -210,6 +222,17 @@ public sealed class LocalPronunciationTests
         Assert.True(engine.SpanishWordCount > 0);
         File.Move(dictionary.Path, dictionary.Path + ".moved");
         File.Move(dictionary.Path + ".moved", dictionary.Path);
+    }
+
+    [Fact]
+    public async Task ProductionLoaderChecksTheOpenedFileEvenIfACustomCatalogClaimsValidity()
+    {
+        using var dictionary = new DictionaryFile();
+        await using var engine = new LocalPronunciationEngine(new Catalog(dictionary.Model));
+        var failure = await Assert.ThrowsAsync<TranslationEngineException>(() => engine.GenerateAsync("hello", Language.English));
+        Assert.Equal(TranslationErrorCode.ModelInvalid, failure.Code);
+        Assert.Equal("DictionaryChecksum", failure.Data["PronunciationReason"]);
+        Assert.Equal(0, engine.DictionaryLoadCount);
     }
 
     [Fact]

@@ -1,4 +1,5 @@
 using System.Text;
+using System.Security.Cryptography;
 
 namespace Saylo.Modules.Translation.Pronunciation;
 
@@ -11,6 +12,7 @@ internal sealed class EnglishPronunciation
         "a", "an", "and", "are", "as", "at", "be", "been", "but", "can", "could", "do", "does", "for", "from",
         "had", "has", "have", "he", "her", "him", "his", "i", "is", "it", "of", "or", "our", "she", "should",
         "some", "than", "that", "the", "their", "them", "there", "these", "they", "this", "those", "to", "us",
+        "what", "when", "where", "why", "how", "who", "which",
         "was", "we", "were", "will", "with", "would", "you", "your",
         "good", "hello", "information", "message", "received", "request", "today", "tomorrow", "schedule",
         "don't", "can't", "we're", "i'm", "we'll", "i'll", "isn't", "it's", "that's", "there's", "you're",
@@ -48,11 +50,18 @@ internal sealed class EnglishPronunciation
     private EnglishPronunciation(Dictionary<string, List<string>> entries) => _entries = entries;
     internal int WordCount => _entries.Count;
 
-    internal static EnglishPronunciation Load(string path, CancellationToken token)
+    internal static EnglishPronunciation Load(string path, CancellationToken token, string? expectedSha256 = null)
     {
         using var stream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read);
         if (stream.Length is < 1 or > 8_000_000)
             throw PronunciationFailure.Create("DictionaryFormat", Contracts.TranslationErrorCode.ModelInvalid);
+        if (expectedSha256 is not null)
+        {
+            token.ThrowIfCancellationRequested();
+            if (!Convert.ToHexString(SHA256.HashData(stream)).Equals(expectedSha256, StringComparison.OrdinalIgnoreCase))
+                throw PronunciationFailure.Create("DictionaryChecksum", Contracts.TranslationErrorCode.ModelInvalid);
+            stream.Position = 0;
+        }
         using var reader = new StreamReader(stream, new UTF8Encoding(false, true));
         var entries = new Dictionary<string, List<string>>(StringComparer.Ordinal);
         var lines = 0;
@@ -104,8 +113,11 @@ internal sealed class EnglishPronunciation
         {
             // Only explicit adjacent auxiliaries are supported; bare read remains ambiguous.
             var previous = index == 0 ? "" : words[index - 1].ToLowerInvariant();
+            var next = index + 1 < words.Count ? words[index + 1].ToLowerInvariant() : "";
+            var explicitObjectOrEnd = next.Length == 0 || ".,;!?".Contains(next, StringComparison.Ordinal) ||
+                next is "the" or "your" or "this" or "that" or "a" or "an" or "our" or "my";
             var vowel = previous is "to" or "will" or "can" or "please" or "must" or "should" ? "IY1"
-                : previous is "have" or "has" or "had" ? "EH1" : null;
+                : previous is "have" or "has" or "had" && explicitObjectOrEnd ? "EH1" : null;
             selected = vowel is null ? throw PronunciationFailure.Create("AmbiguousPronunciation")
                 : variants.FirstOrDefault(value => value.Split(' ').Contains(vowel, StringComparer.Ordinal))
                     ?? throw PronunciationFailure.Create("AmbiguousPronunciation");

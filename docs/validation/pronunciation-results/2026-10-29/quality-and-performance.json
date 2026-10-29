@@ -1,0 +1,2230 @@
+{
+  "SchemaVersion": 1,
+  "Engine": "Saylo managed broad IPA \u002B CMUdict",
+  "DictionaryVersion": "74790861f652b15e4ac49015a90074ad62a27690",
+  "DatasetSha256": "beae5a128dd322e9fd8d9b5dff9f4d3e0d240b373b42c735e97586127e786c4f",
+  "Notation": "Ipa",
+  "EnglishVariant": "en-US citation",
+  "SpanishVariant": "seseante yeista broad Spanish",
+  "ConstructorMs": 0.1162,
+  "FirstEnglishGenerationMs": 270.2544,
+  "BeforeMemory": {
+    "ManagedBytes": 5949840,
+    "WorkingSetBytes": 92946432
+  },
+  "AfterMemory": {
+    "ManagedBytes": 38295624,
+    "WorkingSetBytes": 130166784
+  },
+  "EnglishWords": 126052,
+  "SpanishWords": 540,
+  "DictionaryLoads": 1,
+  "Results": [
+    {
+      "Id": "en-01",
+      "Language": "en",
+      "Category": "greeting",
+      "Input": "Thank you.",
+      "Ipa": "\u02C8\u03B8\u00E6\u014Bk \u02C8ju.",
+      "Notation": "Ipa",
+      "Status": "generated_not_human_validated",
+      "Reason": null,
+      "ErrorCode": null,
+      "TotalMs": 0.3018
+    },
+    {
+      "Id": "en-02",
+      "Language": "en",
+      "Category": "sentence",
+      "Input": "Good morning. How can I help you today?",
+      "Ipa": "\u02C8\u0261\u028Ad \u02C8m\u0254\u0279n\u026A\u014B. \u02C8ha\u028A \u02C8k\u00E6n \u02C8a\u026A \u02C8h\u025Blp \u02C8ju t\u0259\u02C8de\u026A?",
+      "Notation": "Ipa",
+      "Status": "generated_not_human_validated",
+      "Reason": null,
+      "ErrorCode": null,
+      "TotalMs": 0.1293
+    },
+    {
+      "Id": "en-03",
+      "Language": "en",
+      "Category": "address",
+      "Input": "Please confirm your delivery address.",
+      "Ipa": "\u02C8pliz k\u0259n\u02C8f\u025Dm \u02C8j\u0254\u0279 d\u026A\u02C8l\u026Av\u025Ai \u0259\u02C8d\u0279\u025Bs.",
+      "Notation": "Ipa",
+      "Status": "generated_not_human_validated",
+      "Reason": null,
+      "ErrorCode": null,
+      "TotalMs": 0.2526
+    },
+    {
+      "Id": "en-04",
+      "Language": "en",
+      "Category": "payment",
+      "Input": "We have received your payment.",
+      "Ipa": "\u02C8wi \u02C8h\u00E6v \u0279\u0259\u02C8sivd \u02C8j\u0254\u0279 \u02C8pe\u026Am\u0259nt.",
+      "Notation": "Ipa",
+      "Status": "generated_not_human_validated",
+      "Reason": null,
+      "ErrorCode": null,
+      "TotalMs": 0.2202
+    },
+    {
+      "Id": "en-05",
+      "Language": "en",
+      "Category": "sentence",
+      "Input": "Your request has been processed successfully.",
+      "Ipa": "\u02C8j\u0254\u0279 \u0279\u026A\u02C8kw\u025Bst \u02C8h\u00E6z \u02C8b\u026An \u02C8p\u0279\u0251s\u025Bst s\u0259k\u02C8s\u025Bsf\u0259li.",
+      "Notation": "Ipa",
+      "Status": "generated_not_human_validated",
+      "Reason": null,
+      "ErrorCode": null,
+      "TotalMs": 0.1187
+    },
+    {
+      "Id": "en-06",
+      "Language": "en",
+      "Category": "invoice",
+      "Input": "Please check the invoice.",
+      "Ipa": "\u02C8pliz \u02C8t\u0283\u025Bk \u00F0\u0259 \u02C8\u026Anv\u0254\u026As.",
+      "Notation": "Ipa",
+      "Status": "generated_not_human_validated",
+      "Reason": null,
+      "ErrorCode": null,
+      "TotalMs": 0.2032
+    },
+    {
+      "Id": "en-07",
+      "Language": "en",
+      "Category": "contractions",
+      "Input": "I\u0027m sorry. We don\u0027t have your message.",
+      "Ipa": "\u02C8a\u026Am \u02C8s\u0251\u0279i. \u02C8wi \u02C8do\u028Ant \u02C8h\u00E6v \u02C8j\u0254\u0279 \u02C8m\u025Bs\u0259d\u0292.",
+      "Notation": "Ipa",
+      "Status": "generated_not_human_validated",
+      "Reason": null,
+      "ErrorCode": null,
+      "TotalMs": 0.0823
+    },
+    {
+      "Id": "en-08",
+      "Language": "en",
+      "Category": "heteronym-past",
+      "Input": "I have read your message.",
+      "Ipa": "\u02C8a\u026A \u02C8h\u00E6v \u02C8\u0279\u025Bd \u02C8j\u0254\u0279 \u02C8m\u025Bs\u0259d\u0292.",
+      "Notation": "Ipa",
+      "Status": "generated_not_human_validated",
+      "Reason": null,
+      "ErrorCode": null,
+      "TotalMs": 0.1384
+    },
+    {
+      "Id": "en-09",
+      "Language": "en",
+      "Category": "heteronym-infinitive",
+      "Input": "Please read the message.",
+      "Ipa": "\u02C8pliz \u02C8\u0279id \u00F0\u0259 \u02C8m\u025Bs\u0259d\u0292.",
+      "Notation": "Ipa",
+      "Status": "generated_not_human_validated",
+      "Reason": null,
+      "ErrorCode": null,
+      "TotalMs": 0.178
+    },
+    {
+      "Id": "en-10",
+      "Language": "en",
+      "Category": "cardinal",
+      "Input": "32",
+      "Ipa": "\u02C8\u03B8\u025D\u02CCdi \u02C8tu",
+      "Notation": "Ipa",
+      "Status": "generated_not_human_validated",
+      "Reason": null,
+      "ErrorCode": null,
+      "TotalMs": 0.0974
+    },
+    {
+      "Id": "en-11",
+      "Language": "en",
+      "Category": "ambiguous-tense",
+      "Input": "I read your message.",
+      "Ipa": null,
+      "Notation": null,
+      "Status": "controlled_pronunciation_rejection",
+      "Reason": "AmbiguousPronunciation",
+      "ErrorCode": "InvalidEngineOutput",
+      "TotalMs": 0.206
+    },
+    {
+      "Id": "en-12",
+      "Language": "en",
+      "Category": "ambiguous-stress",
+      "Input": "Please record your message.",
+      "Ipa": null,
+      "Notation": null,
+      "Status": "controlled_pronunciation_rejection",
+      "Reason": "AmbiguousPronunciation",
+      "ErrorCode": "InvalidEngineOutput",
+      "TotalMs": 0.1406
+    },
+    {
+      "Id": "en-13",
+      "Language": "en",
+      "Category": "ambiguous-stress",
+      "Input": "Your refund is ready.",
+      "Ipa": null,
+      "Notation": null,
+      "Status": "controlled_pronunciation_rejection",
+      "Reason": "AmbiguousPronunciation",
+      "ErrorCode": "InvalidEngineOutput",
+      "TotalMs": 0.128
+    },
+    {
+      "Id": "en-14",
+      "Language": "en",
+      "Category": "unknown-name",
+      "Input": "Jencer will contact you.",
+      "Ipa": null,
+      "Notation": null,
+      "Status": "controlled_pronunciation_rejection",
+      "Reason": "OutOfVocabulary",
+      "ErrorCode": "InvalidEngineOutput",
+      "TotalMs": 0.1388
+    },
+    {
+      "Id": "en-15",
+      "Language": "en",
+      "Category": "acronym",
+      "Input": "NASA will contact you.",
+      "Ipa": null,
+      "Notation": null,
+      "Status": "controlled_pronunciation_rejection",
+      "Reason": "UnverifiedAbbreviation",
+      "ErrorCode": "InvalidEngineOutput",
+      "TotalMs": 0.1087
+    },
+    {
+      "Id": "en-16",
+      "Language": "en",
+      "Category": "abbreviation",
+      "Input": "Please contact Dr. Smith.",
+      "Ipa": null,
+      "Notation": null,
+      "Status": "controlled_pronunciation_rejection",
+      "Reason": "UnverifiedAbbreviation",
+      "ErrorCode": "InvalidEngineOutput",
+      "TotalMs": 0.1235
+    },
+    {
+      "Id": "en-17",
+      "Language": "en",
+      "Category": "email",
+      "Input": "Send the message to support@example.com.",
+      "Ipa": null,
+      "Notation": null,
+      "Status": "controlled_pronunciation_rejection",
+      "Reason": "UnverifiedIdentifier",
+      "ErrorCode": "InvalidEngineOutput",
+      "TotalMs": 0.0974
+    },
+    {
+      "Id": "en-18",
+      "Language": "en",
+      "Category": "order-code",
+      "Input": "Your order AB-009871 is ready.",
+      "Ipa": null,
+      "Notation": null,
+      "Status": "controlled_pronunciation_rejection",
+      "Reason": "UnverifiedIdentifier",
+      "ErrorCode": "InvalidEngineOutput",
+      "TotalMs": 0.2272
+    },
+    {
+      "Id": "en-19",
+      "Language": "en",
+      "Category": "currency",
+      "Input": "The amount is 49.95 USD.",
+      "Ipa": null,
+      "Notation": null,
+      "Status": "controlled_pronunciation_rejection",
+      "Reason": "NumericReadingUnavailable",
+      "ErrorCode": "InvalidEngineOutput",
+      "TotalMs": 0.1366
+    },
+    {
+      "Id": "en-20",
+      "Language": "en",
+      "Category": "ambiguous-date",
+      "Input": "Your appointment is on 03/04/2026.",
+      "Ipa": null,
+      "Notation": null,
+      "Status": "controlled_pronunciation_rejection",
+      "Reason": "NumericReadingUnavailable",
+      "ErrorCode": "InvalidEngineOutput",
+      "TotalMs": 0.2233
+    },
+    {
+      "Id": "en-21",
+      "Language": "en",
+      "Category": "oov",
+      "Input": "qwertyzz",
+      "Ipa": null,
+      "Notation": null,
+      "Status": "controlled_pronunciation_rejection",
+      "Reason": "OutOfVocabulary",
+      "ErrorCode": "InvalidEngineOutput",
+      "TotalMs": 0.114
+    },
+    {
+      "Id": "en-22",
+      "Language": "en",
+      "Category": "known-name",
+      "Input": "John will help you.",
+      "Ipa": "\u02C8d\u0292\u0251n \u02C8w\u026Al \u02C8h\u025Blp \u02C8ju.",
+      "Notation": "Ipa",
+      "Status": "generated_not_human_validated",
+      "Reason": null,
+      "ErrorCode": null,
+      "TotalMs": 0.0694
+    },
+    {
+      "Id": "es-01",
+      "Language": "es",
+      "Category": "sentence",
+      "Input": "Hola. \u00BFC\u00F3mo puedo ayudarle hoy?",
+      "Ipa": "\u02C8ola. \u00BF\u02C8komo \u02C8pwedo a\u029Du\u02C8da\u027Ele oi\u032F?",
+      "Notation": "Ipa",
+      "Status": "generated_not_human_validated",
+      "Reason": null,
+      "ErrorCode": null,
+      "TotalMs": 0.2172
+    },
+    {
+      "Id": "es-02",
+      "Language": "es",
+      "Category": "greeting",
+      "Input": "Gracias por contactar con nosotros.",
+      "Ipa": "\u02C8\u0261\u027Easjas po\u027E kontak\u02C8ta\u027E kon no\u02C8sot\u027Eos.",
+      "Notation": "Ipa",
+      "Status": "generated_not_human_validated",
+      "Reason": null,
+      "ErrorCode": null,
+      "TotalMs": 0.1299
+    },
+    {
+      "Id": "es-03",
+      "Language": "es",
+      "Category": "information",
+      "Input": "Necesito verificar la informaci\u00F3n.",
+      "Ipa": "nese\u02C8sito be\u027Eifi\u02C8ka\u027E la info\u027Ema\u02C8sjon.",
+      "Notation": "Ipa",
+      "Status": "generated_not_human_validated",
+      "Reason": null,
+      "ErrorCode": null,
+      "TotalMs": 0.2125
+    },
+    {
+      "Id": "es-04",
+      "Language": "es",
+      "Category": "sentence",
+      "Input": "Su solicitud ha sido procesada correctamente.",
+      "Ipa": "su solisi\u02C8tud a \u02C8sido p\u027Eose\u02C8sada ko\u02CCrekta\u02C8mente.",
+      "Notation": "Ipa",
+      "Status": "generated_not_human_validated",
+      "Reason": null,
+      "ErrorCode": null,
+      "TotalMs": 0.1155
+    },
+    {
+      "Id": "es-05",
+      "Language": "es",
+      "Category": "address",
+      "Input": "Por favor confirme su direcci\u00F3n de entrega.",
+      "Ipa": "po\u027E fa\u02C8bo\u027E kon\u02C8fi\u027Eme su di\u027Eek\u02C8sjon de en\u02C8t\u027Ee\u0261a.",
+      "Notation": "Ipa",
+      "Status": "generated_not_human_validated",
+      "Reason": null,
+      "ErrorCode": null,
+      "TotalMs": 0.1595
+    },
+    {
+      "Id": "es-06",
+      "Language": "es",
+      "Category": "negation",
+      "Input": "No cancele el pedido.",
+      "Ipa": "no kan\u02C8sele el pe\u02C8dido.",
+      "Notation": "Ipa",
+      "Status": "generated_not_human_validated",
+      "Reason": null,
+      "ErrorCode": null,
+      "TotalMs": 0.0755
+    },
+    {
+      "Id": "es-07",
+      "Language": "es",
+      "Category": "payment",
+      "Input": "El pago est\u00E1 pendiente.",
+      "Ipa": "el \u02C8pa\u0261o es\u02C8ta pen\u02C8djente.",
+      "Notation": "Ipa",
+      "Status": "generated_not_human_validated",
+      "Reason": null,
+      "ErrorCode": null,
+      "TotalMs": 0.0826
+    },
+    {
+      "Id": "es-08",
+      "Language": "es",
+      "Category": "invoice",
+      "Input": "Su factura est\u00E1 disponible.",
+      "Ipa": "su fak\u02C8tu\u027Ea es\u02C8ta dispo\u02C8nible.",
+      "Notation": "Ipa",
+      "Status": "generated_not_human_validated",
+      "Reason": null,
+      "ErrorCode": null,
+      "TotalMs": 0.1271
+    },
+    {
+      "Id": "es-09",
+      "Language": "es",
+      "Category": "stress-noun",
+      "Input": "t\u00E9rmino",
+      "Ipa": "\u02C8te\u027Emino",
+      "Notation": "Ipa",
+      "Status": "generated_not_human_validated",
+      "Reason": null,
+      "ErrorCode": null,
+      "TotalMs": 0.0822
+    },
+    {
+      "Id": "es-10",
+      "Language": "es",
+      "Category": "stress-present",
+      "Input": "termino",
+      "Ipa": "te\u027E\u02C8mino",
+      "Notation": "Ipa",
+      "Status": "generated_not_human_validated",
+      "Reason": null,
+      "ErrorCode": null,
+      "TotalMs": 0.1001
+    },
+    {
+      "Id": "es-11",
+      "Language": "es",
+      "Category": "stress-past",
+      "Input": "termin\u00F3",
+      "Ipa": "te\u027Emi\u02C8no",
+      "Notation": "Ipa",
+      "Status": "generated_not_human_validated",
+      "Reason": null,
+      "ErrorCode": null,
+      "TotalMs": 0.0629
+    },
+    {
+      "Id": "es-12",
+      "Language": "es",
+      "Category": "cardinal",
+      "Input": "22",
+      "Ipa": "bei\u032Fnti\u02C8dos",
+      "Notation": "Ipa",
+      "Status": "generated_not_human_validated",
+      "Reason": null,
+      "ErrorCode": null,
+      "TotalMs": 0.0457
+    },
+    {
+      "Id": "es-13",
+      "Language": "es",
+      "Category": "unknown-name",
+      "Input": "Jencer revisar\u00E1 su caso.",
+      "Ipa": null,
+      "Notation": null,
+      "Status": "controlled_pronunciation_rejection",
+      "Reason": "OutOfVocabulary",
+      "ErrorCode": "InvalidEngineOutput",
+      "TotalMs": 0.1041
+    },
+    {
+      "Id": "es-14",
+      "Language": "es",
+      "Category": "known-toponym",
+      "Input": "m\u00E9xico",
+      "Ipa": "\u02C8mexiko",
+      "Notation": "Ipa",
+      "Status": "generated_not_human_validated",
+      "Reason": null,
+      "ErrorCode": null,
+      "TotalMs": 0.0454
+    },
+    {
+      "Id": "es-15",
+      "Language": "es",
+      "Category": "acronym",
+      "Input": "NASA",
+      "Ipa": null,
+      "Notation": null,
+      "Status": "controlled_pronunciation_rejection",
+      "Reason": "UnverifiedAbbreviation",
+      "ErrorCode": "InvalidEngineOutput",
+      "TotalMs": 0.0808
+    },
+    {
+      "Id": "es-16",
+      "Language": "es",
+      "Category": "abbreviation",
+      "Input": "Sr. Camacho",
+      "Ipa": null,
+      "Notation": null,
+      "Status": "controlled_pronunciation_rejection",
+      "Reason": "UnverifiedAbbreviation",
+      "ErrorCode": "InvalidEngineOutput",
+      "TotalMs": 0.0977
+    },
+    {
+      "Id": "es-17",
+      "Language": "es",
+      "Category": "url",
+      "Input": "Visite https://example.com/help.",
+      "Ipa": null,
+      "Notation": null,
+      "Status": "controlled_pronunciation_rejection",
+      "Reason": "UnverifiedIdentifier",
+      "ErrorCode": "InvalidEngineOutput",
+      "TotalMs": 0.1149
+    },
+    {
+      "Id": "es-18",
+      "Language": "es",
+      "Category": "tracking",
+      "Input": "El seguimiento es ZX987654321ES.",
+      "Ipa": null,
+      "Notation": null,
+      "Status": "controlled_pronunciation_rejection",
+      "Reason": "UnverifiedIdentifier",
+      "ErrorCode": "InvalidEngineOutput",
+      "TotalMs": 0.0967
+    },
+    {
+      "Id": "es-19",
+      "Language": "es",
+      "Category": "phone",
+      "Input": "Llame al \u002B1 (212) 555-0199.",
+      "Ipa": null,
+      "Notation": null,
+      "Status": "controlled_pronunciation_rejection",
+      "Reason": "UnverifiedIdentifier",
+      "ErrorCode": "InvalidEngineOutput",
+      "TotalMs": 0.1038
+    },
+    {
+      "Id": "es-20",
+      "Language": "es",
+      "Category": "currency",
+      "Input": "El importe es 49,95 USD.",
+      "Ipa": null,
+      "Notation": null,
+      "Status": "controlled_pronunciation_rejection",
+      "Reason": "NumericReadingUnavailable",
+      "ErrorCode": "InvalidEngineOutput",
+      "TotalMs": 0.1267
+    },
+    {
+      "Id": "es-21",
+      "Language": "es",
+      "Category": "ambiguous-date",
+      "Input": "La cita es el 03/04/2026.",
+      "Ipa": null,
+      "Notation": null,
+      "Status": "controlled_pronunciation_rejection",
+      "Reason": "NumericReadingUnavailable",
+      "ErrorCode": "InvalidEngineOutput",
+      "TotalMs": 0.0984
+    },
+    {
+      "Id": "es-22",
+      "Language": "es",
+      "Category": "oov",
+      "Input": "qwertyzz",
+      "Ipa": null,
+      "Notation": null,
+      "Status": "controlled_pronunciation_rejection",
+      "Reason": "OutOfVocabulary",
+      "ErrorCode": "InvalidEngineOutput",
+      "TotalMs": 0.1379
+    },
+    {
+      "Id": "es-23",
+      "Language": "es",
+      "Category": "diphthong",
+      "Input": "guitarra ciudad aire",
+      "Ipa": "\u0261i\u02C8tara sju\u02C8dad \u02C8ai\u032F\u027Ee",
+      "Notation": "Ipa",
+      "Status": "generated_not_human_validated",
+      "Reason": null,
+      "ErrorCode": null,
+      "TotalMs": 0.067
+    },
+    {
+      "Id": "es-24",
+      "Language": "es",
+      "Category": "hiatus",
+      "Input": "d\u00EDa pa\u00EDs fr\u00EDo",
+      "Ipa": "\u02C8dia pa\u02C8is \u02C8f\u027Eio",
+      "Notation": "Ipa",
+      "Status": "generated_not_human_validated",
+      "Reason": null,
+      "ErrorCode": null,
+      "TotalMs": 0.0688
+    }
+  ],
+  "Generated": 26,
+  "ControlledRejections": 20,
+  "PerformanceSamples": [
+    {
+      "Language": "en",
+      "Kind": "short",
+      "Attempt": 1,
+      "InputLength": 42,
+      "OutputLength": 44,
+      "TotalMs": 0.1931
+    },
+    {
+      "Language": "en",
+      "Kind": "short",
+      "Attempt": 2,
+      "InputLength": 42,
+      "OutputLength": 44,
+      "TotalMs": 0.1194
+    },
+    {
+      "Language": "en",
+      "Kind": "short",
+      "Attempt": 3,
+      "InputLength": 42,
+      "OutputLength": 44,
+      "TotalMs": 0.073
+    },
+    {
+      "Language": "en",
+      "Kind": "short",
+      "Attempt": 4,
+      "InputLength": 42,
+      "OutputLength": 44,
+      "TotalMs": 0.1417
+    },
+    {
+      "Language": "en",
+      "Kind": "short",
+      "Attempt": 5,
+      "InputLength": 42,
+      "OutputLength": 44,
+      "TotalMs": 0.1051
+    },
+    {
+      "Language": "en",
+      "Kind": "short",
+      "Attempt": 6,
+      "InputLength": 42,
+      "OutputLength": 44,
+      "TotalMs": 0.0736
+    },
+    {
+      "Language": "en",
+      "Kind": "short",
+      "Attempt": 7,
+      "InputLength": 42,
+      "OutputLength": 44,
+      "TotalMs": 0.0782
+    },
+    {
+      "Language": "en",
+      "Kind": "short",
+      "Attempt": 8,
+      "InputLength": 42,
+      "OutputLength": 44,
+      "TotalMs": 0.0747
+    },
+    {
+      "Language": "en",
+      "Kind": "short",
+      "Attempt": 9,
+      "InputLength": 42,
+      "OutputLength": 44,
+      "TotalMs": 0.1137
+    },
+    {
+      "Language": "en",
+      "Kind": "short",
+      "Attempt": 10,
+      "InputLength": 42,
+      "OutputLength": 44,
+      "TotalMs": 0.0923
+    },
+    {
+      "Language": "en",
+      "Kind": "short",
+      "Attempt": 11,
+      "InputLength": 42,
+      "OutputLength": 44,
+      "TotalMs": 0.0689
+    },
+    {
+      "Language": "en",
+      "Kind": "short",
+      "Attempt": 12,
+      "InputLength": 42,
+      "OutputLength": 44,
+      "TotalMs": 0.0735
+    },
+    {
+      "Language": "en",
+      "Kind": "short",
+      "Attempt": 13,
+      "InputLength": 42,
+      "OutputLength": 44,
+      "TotalMs": 0.0889
+    },
+    {
+      "Language": "en",
+      "Kind": "short",
+      "Attempt": 14,
+      "InputLength": 42,
+      "OutputLength": 44,
+      "TotalMs": 0.1085
+    },
+    {
+      "Language": "en",
+      "Kind": "short",
+      "Attempt": 15,
+      "InputLength": 42,
+      "OutputLength": 44,
+      "TotalMs": 0.1488
+    },
+    {
+      "Language": "en",
+      "Kind": "short",
+      "Attempt": 16,
+      "InputLength": 42,
+      "OutputLength": 44,
+      "TotalMs": 0.1035
+    },
+    {
+      "Language": "en",
+      "Kind": "short",
+      "Attempt": 17,
+      "InputLength": 42,
+      "OutputLength": 44,
+      "TotalMs": 0.0789
+    },
+    {
+      "Language": "en",
+      "Kind": "short",
+      "Attempt": 18,
+      "InputLength": 42,
+      "OutputLength": 44,
+      "TotalMs": 0.0661
+    },
+    {
+      "Language": "en",
+      "Kind": "short",
+      "Attempt": 19,
+      "InputLength": 42,
+      "OutputLength": 44,
+      "TotalMs": 0.0719
+    },
+    {
+      "Language": "en",
+      "Kind": "short",
+      "Attempt": 20,
+      "InputLength": 42,
+      "OutputLength": 44,
+      "TotalMs": 0.0817
+    },
+    {
+      "Language": "en",
+      "Kind": "short",
+      "Attempt": 21,
+      "InputLength": 42,
+      "OutputLength": 44,
+      "TotalMs": 0.1303
+    },
+    {
+      "Language": "en",
+      "Kind": "short",
+      "Attempt": 22,
+      "InputLength": 42,
+      "OutputLength": 44,
+      "TotalMs": 0.0836
+    },
+    {
+      "Language": "en",
+      "Kind": "short",
+      "Attempt": 23,
+      "InputLength": 42,
+      "OutputLength": 44,
+      "TotalMs": 0.157
+    },
+    {
+      "Language": "en",
+      "Kind": "short",
+      "Attempt": 24,
+      "InputLength": 42,
+      "OutputLength": 44,
+      "TotalMs": 0.0801
+    },
+    {
+      "Language": "en",
+      "Kind": "short",
+      "Attempt": 25,
+      "InputLength": 42,
+      "OutputLength": 44,
+      "TotalMs": 0.1036
+    },
+    {
+      "Language": "en",
+      "Kind": "short",
+      "Attempt": 26,
+      "InputLength": 42,
+      "OutputLength": 44,
+      "TotalMs": 0.1028
+    },
+    {
+      "Language": "en",
+      "Kind": "short",
+      "Attempt": 27,
+      "InputLength": 42,
+      "OutputLength": 44,
+      "TotalMs": 0.1041
+    },
+    {
+      "Language": "en",
+      "Kind": "short",
+      "Attempt": 28,
+      "InputLength": 42,
+      "OutputLength": 44,
+      "TotalMs": 0.1113
+    },
+    {
+      "Language": "en",
+      "Kind": "short",
+      "Attempt": 29,
+      "InputLength": 42,
+      "OutputLength": 44,
+      "TotalMs": 0.0711
+    },
+    {
+      "Language": "en",
+      "Kind": "short",
+      "Attempt": 30,
+      "InputLength": 42,
+      "OutputLength": 44,
+      "TotalMs": 0.0708
+    },
+    {
+      "Language": "en",
+      "Kind": "short",
+      "Attempt": 31,
+      "InputLength": 42,
+      "OutputLength": 44,
+      "TotalMs": 0.071
+    },
+    {
+      "Language": "en",
+      "Kind": "short",
+      "Attempt": 32,
+      "InputLength": 42,
+      "OutputLength": 44,
+      "TotalMs": 0.0765
+    },
+    {
+      "Language": "en",
+      "Kind": "short",
+      "Attempt": 33,
+      "InputLength": 42,
+      "OutputLength": 44,
+      "TotalMs": 0.0935
+    },
+    {
+      "Language": "en",
+      "Kind": "short",
+      "Attempt": 34,
+      "InputLength": 42,
+      "OutputLength": 44,
+      "TotalMs": 0.1165
+    },
+    {
+      "Language": "en",
+      "Kind": "short",
+      "Attempt": 35,
+      "InputLength": 42,
+      "OutputLength": 44,
+      "TotalMs": 0.0859
+    },
+    {
+      "Language": "en",
+      "Kind": "short",
+      "Attempt": 36,
+      "InputLength": 42,
+      "OutputLength": 44,
+      "TotalMs": 0.0823
+    },
+    {
+      "Language": "en",
+      "Kind": "short",
+      "Attempt": 37,
+      "InputLength": 42,
+      "OutputLength": 44,
+      "TotalMs": 0.0739
+    },
+    {
+      "Language": "en",
+      "Kind": "short",
+      "Attempt": 38,
+      "InputLength": 42,
+      "OutputLength": 44,
+      "TotalMs": 0.0775
+    },
+    {
+      "Language": "en",
+      "Kind": "short",
+      "Attempt": 39,
+      "InputLength": 42,
+      "OutputLength": 44,
+      "TotalMs": 0.0532
+    },
+    {
+      "Language": "en",
+      "Kind": "short",
+      "Attempt": 40,
+      "InputLength": 42,
+      "OutputLength": 44,
+      "TotalMs": 0.1043
+    },
+    {
+      "Language": "en",
+      "Kind": "long",
+      "Attempt": 1,
+      "InputLength": 1452,
+      "OutputLength": 1487,
+      "TotalMs": 4.3793
+    },
+    {
+      "Language": "en",
+      "Kind": "long",
+      "Attempt": 2,
+      "InputLength": 1452,
+      "OutputLength": 1487,
+      "TotalMs": 0.8191
+    },
+    {
+      "Language": "en",
+      "Kind": "long",
+      "Attempt": 3,
+      "InputLength": 1452,
+      "OutputLength": 1487,
+      "TotalMs": 0.8025
+    },
+    {
+      "Language": "en",
+      "Kind": "long",
+      "Attempt": 4,
+      "InputLength": 1452,
+      "OutputLength": 1487,
+      "TotalMs": 0.8668
+    },
+    {
+      "Language": "en",
+      "Kind": "long",
+      "Attempt": 5,
+      "InputLength": 1452,
+      "OutputLength": 1487,
+      "TotalMs": 0.8343
+    },
+    {
+      "Language": "en",
+      "Kind": "long",
+      "Attempt": 6,
+      "InputLength": 1452,
+      "OutputLength": 1487,
+      "TotalMs": 0.9832
+    },
+    {
+      "Language": "en",
+      "Kind": "long",
+      "Attempt": 7,
+      "InputLength": 1452,
+      "OutputLength": 1487,
+      "TotalMs": 0.9192
+    },
+    {
+      "Language": "en",
+      "Kind": "long",
+      "Attempt": 8,
+      "InputLength": 1452,
+      "OutputLength": 1487,
+      "TotalMs": 0.8985
+    },
+    {
+      "Language": "en",
+      "Kind": "long",
+      "Attempt": 9,
+      "InputLength": 1452,
+      "OutputLength": 1487,
+      "TotalMs": 0.9192
+    },
+    {
+      "Language": "en",
+      "Kind": "long",
+      "Attempt": 10,
+      "InputLength": 1452,
+      "OutputLength": 1487,
+      "TotalMs": 0.958
+    },
+    {
+      "Language": "en",
+      "Kind": "long",
+      "Attempt": 11,
+      "InputLength": 1452,
+      "OutputLength": 1487,
+      "TotalMs": 0.9925
+    },
+    {
+      "Language": "en",
+      "Kind": "long",
+      "Attempt": 12,
+      "InputLength": 1452,
+      "OutputLength": 1487,
+      "TotalMs": 0.9424
+    },
+    {
+      "Language": "en",
+      "Kind": "long",
+      "Attempt": 13,
+      "InputLength": 1452,
+      "OutputLength": 1487,
+      "TotalMs": 0.9184
+    },
+    {
+      "Language": "en",
+      "Kind": "long",
+      "Attempt": 14,
+      "InputLength": 1452,
+      "OutputLength": 1487,
+      "TotalMs": 0.9599
+    },
+    {
+      "Language": "en",
+      "Kind": "long",
+      "Attempt": 15,
+      "InputLength": 1452,
+      "OutputLength": 1487,
+      "TotalMs": 1.049
+    },
+    {
+      "Language": "es",
+      "Kind": "short",
+      "Attempt": 1,
+      "InputLength": 35,
+      "OutputLength": 38,
+      "TotalMs": 0.1501
+    },
+    {
+      "Language": "es",
+      "Kind": "short",
+      "Attempt": 2,
+      "InputLength": 35,
+      "OutputLength": 38,
+      "TotalMs": 0.068
+    },
+    {
+      "Language": "es",
+      "Kind": "short",
+      "Attempt": 3,
+      "InputLength": 35,
+      "OutputLength": 38,
+      "TotalMs": 0.0917
+    },
+    {
+      "Language": "es",
+      "Kind": "short",
+      "Attempt": 4,
+      "InputLength": 35,
+      "OutputLength": 38,
+      "TotalMs": 0.0845
+    },
+    {
+      "Language": "es",
+      "Kind": "short",
+      "Attempt": 5,
+      "InputLength": 35,
+      "OutputLength": 38,
+      "TotalMs": 0.083
+    },
+    {
+      "Language": "es",
+      "Kind": "short",
+      "Attempt": 6,
+      "InputLength": 35,
+      "OutputLength": 38,
+      "TotalMs": 0.1031
+    },
+    {
+      "Language": "es",
+      "Kind": "short",
+      "Attempt": 7,
+      "InputLength": 35,
+      "OutputLength": 38,
+      "TotalMs": 5.197
+    },
+    {
+      "Language": "es",
+      "Kind": "short",
+      "Attempt": 8,
+      "InputLength": 35,
+      "OutputLength": 38,
+      "TotalMs": 0.2161
+    },
+    {
+      "Language": "es",
+      "Kind": "short",
+      "Attempt": 9,
+      "InputLength": 35,
+      "OutputLength": 38,
+      "TotalMs": 0.0759
+    },
+    {
+      "Language": "es",
+      "Kind": "short",
+      "Attempt": 10,
+      "InputLength": 35,
+      "OutputLength": 38,
+      "TotalMs": 0.1119
+    },
+    {
+      "Language": "es",
+      "Kind": "short",
+      "Attempt": 11,
+      "InputLength": 35,
+      "OutputLength": 38,
+      "TotalMs": 0.112
+    },
+    {
+      "Language": "es",
+      "Kind": "short",
+      "Attempt": 12,
+      "InputLength": 35,
+      "OutputLength": 38,
+      "TotalMs": 0.1071
+    },
+    {
+      "Language": "es",
+      "Kind": "short",
+      "Attempt": 13,
+      "InputLength": 35,
+      "OutputLength": 38,
+      "TotalMs": 0.1149
+    },
+    {
+      "Language": "es",
+      "Kind": "short",
+      "Attempt": 14,
+      "InputLength": 35,
+      "OutputLength": 38,
+      "TotalMs": 0.0839
+    },
+    {
+      "Language": "es",
+      "Kind": "short",
+      "Attempt": 15,
+      "InputLength": 35,
+      "OutputLength": 38,
+      "TotalMs": 0.1106
+    },
+    {
+      "Language": "es",
+      "Kind": "short",
+      "Attempt": 16,
+      "InputLength": 35,
+      "OutputLength": 38,
+      "TotalMs": 0.1152
+    },
+    {
+      "Language": "es",
+      "Kind": "short",
+      "Attempt": 17,
+      "InputLength": 35,
+      "OutputLength": 38,
+      "TotalMs": 0.0975
+    },
+    {
+      "Language": "es",
+      "Kind": "short",
+      "Attempt": 18,
+      "InputLength": 35,
+      "OutputLength": 38,
+      "TotalMs": 0.091
+    },
+    {
+      "Language": "es",
+      "Kind": "short",
+      "Attempt": 19,
+      "InputLength": 35,
+      "OutputLength": 38,
+      "TotalMs": 0.0778
+    },
+    {
+      "Language": "es",
+      "Kind": "short",
+      "Attempt": 20,
+      "InputLength": 35,
+      "OutputLength": 38,
+      "TotalMs": 0.0779
+    },
+    {
+      "Language": "es",
+      "Kind": "short",
+      "Attempt": 21,
+      "InputLength": 35,
+      "OutputLength": 38,
+      "TotalMs": 0.1039
+    },
+    {
+      "Language": "es",
+      "Kind": "short",
+      "Attempt": 22,
+      "InputLength": 35,
+      "OutputLength": 38,
+      "TotalMs": 0.0739
+    },
+    {
+      "Language": "es",
+      "Kind": "short",
+      "Attempt": 23,
+      "InputLength": 35,
+      "OutputLength": 38,
+      "TotalMs": 0.0829
+    },
+    {
+      "Language": "es",
+      "Kind": "short",
+      "Attempt": 24,
+      "InputLength": 35,
+      "OutputLength": 38,
+      "TotalMs": 0.0643
+    },
+    {
+      "Language": "es",
+      "Kind": "short",
+      "Attempt": 25,
+      "InputLength": 35,
+      "OutputLength": 38,
+      "TotalMs": 0.1029
+    },
+    {
+      "Language": "es",
+      "Kind": "short",
+      "Attempt": 26,
+      "InputLength": 35,
+      "OutputLength": 38,
+      "TotalMs": 0.0917
+    },
+    {
+      "Language": "es",
+      "Kind": "short",
+      "Attempt": 27,
+      "InputLength": 35,
+      "OutputLength": 38,
+      "TotalMs": 0.1212
+    },
+    {
+      "Language": "es",
+      "Kind": "short",
+      "Attempt": 28,
+      "InputLength": 35,
+      "OutputLength": 38,
+      "TotalMs": 0.0817
+    },
+    {
+      "Language": "es",
+      "Kind": "short",
+      "Attempt": 29,
+      "InputLength": 35,
+      "OutputLength": 38,
+      "TotalMs": 0.0698
+    },
+    {
+      "Language": "es",
+      "Kind": "short",
+      "Attempt": 30,
+      "InputLength": 35,
+      "OutputLength": 38,
+      "TotalMs": 0.086
+    },
+    {
+      "Language": "es",
+      "Kind": "short",
+      "Attempt": 31,
+      "InputLength": 35,
+      "OutputLength": 38,
+      "TotalMs": 0.0731
+    },
+    {
+      "Language": "es",
+      "Kind": "short",
+      "Attempt": 32,
+      "InputLength": 35,
+      "OutputLength": 38,
+      "TotalMs": 0.0671
+    },
+    {
+      "Language": "es",
+      "Kind": "short",
+      "Attempt": 33,
+      "InputLength": 35,
+      "OutputLength": 38,
+      "TotalMs": 0.0633
+    },
+    {
+      "Language": "es",
+      "Kind": "short",
+      "Attempt": 34,
+      "InputLength": 35,
+      "OutputLength": 38,
+      "TotalMs": 0.0655
+    },
+    {
+      "Language": "es",
+      "Kind": "short",
+      "Attempt": 35,
+      "InputLength": 35,
+      "OutputLength": 38,
+      "TotalMs": 0.0696
+    },
+    {
+      "Language": "es",
+      "Kind": "short",
+      "Attempt": 36,
+      "InputLength": 35,
+      "OutputLength": 38,
+      "TotalMs": 0.0584
+    },
+    {
+      "Language": "es",
+      "Kind": "short",
+      "Attempt": 37,
+      "InputLength": 35,
+      "OutputLength": 38,
+      "TotalMs": 0.0488
+    },
+    {
+      "Language": "es",
+      "Kind": "short",
+      "Attempt": 38,
+      "InputLength": 35,
+      "OutputLength": 38,
+      "TotalMs": 0.0662
+    },
+    {
+      "Language": "es",
+      "Kind": "short",
+      "Attempt": 39,
+      "InputLength": 35,
+      "OutputLength": 38,
+      "TotalMs": 0.0606
+    },
+    {
+      "Language": "es",
+      "Kind": "short",
+      "Attempt": 40,
+      "InputLength": 35,
+      "OutputLength": 38,
+      "TotalMs": 0.0424
+    },
+    {
+      "Language": "es",
+      "Kind": "long",
+      "Attempt": 1,
+      "InputLength": 1068,
+      "OutputLength": 1163,
+      "TotalMs": 0.6507
+    },
+    {
+      "Language": "es",
+      "Kind": "long",
+      "Attempt": 2,
+      "InputLength": 1068,
+      "OutputLength": 1163,
+      "TotalMs": 0.6095
+    },
+    {
+      "Language": "es",
+      "Kind": "long",
+      "Attempt": 3,
+      "InputLength": 1068,
+      "OutputLength": 1163,
+      "TotalMs": 0.655
+    },
+    {
+      "Language": "es",
+      "Kind": "long",
+      "Attempt": 4,
+      "InputLength": 1068,
+      "OutputLength": 1163,
+      "TotalMs": 0.6371
+    },
+    {
+      "Language": "es",
+      "Kind": "long",
+      "Attempt": 5,
+      "InputLength": 1068,
+      "OutputLength": 1163,
+      "TotalMs": 0.6475
+    },
+    {
+      "Language": "es",
+      "Kind": "long",
+      "Attempt": 6,
+      "InputLength": 1068,
+      "OutputLength": 1163,
+      "TotalMs": 0.6315
+    },
+    {
+      "Language": "es",
+      "Kind": "long",
+      "Attempt": 7,
+      "InputLength": 1068,
+      "OutputLength": 1163,
+      "TotalMs": 0.662
+    },
+    {
+      "Language": "es",
+      "Kind": "long",
+      "Attempt": 8,
+      "InputLength": 1068,
+      "OutputLength": 1163,
+      "TotalMs": 0.6233
+    },
+    {
+      "Language": "es",
+      "Kind": "long",
+      "Attempt": 9,
+      "InputLength": 1068,
+      "OutputLength": 1163,
+      "TotalMs": 0.6672
+    },
+    {
+      "Language": "es",
+      "Kind": "long",
+      "Attempt": 10,
+      "InputLength": 1068,
+      "OutputLength": 1163,
+      "TotalMs": 0.6391
+    },
+    {
+      "Language": "es",
+      "Kind": "long",
+      "Attempt": 11,
+      "InputLength": 1068,
+      "OutputLength": 1163,
+      "TotalMs": 0.8915
+    },
+    {
+      "Language": "es",
+      "Kind": "long",
+      "Attempt": 12,
+      "InputLength": 1068,
+      "OutputLength": 1163,
+      "TotalMs": 0.6823
+    },
+    {
+      "Language": "es",
+      "Kind": "long",
+      "Attempt": 13,
+      "InputLength": 1068,
+      "OutputLength": 1163,
+      "TotalMs": 0.6691
+    },
+    {
+      "Language": "es",
+      "Kind": "long",
+      "Attempt": 14,
+      "InputLength": 1068,
+      "OutputLength": 1163,
+      "TotalMs": 0.6679
+    },
+    {
+      "Language": "es",
+      "Kind": "long",
+      "Attempt": 15,
+      "InputLength": 1068,
+      "OutputLength": 1163,
+      "TotalMs": 0.6654
+    }
+  ],
+  "Warm": {
+    "en/short": {
+      "Count": 40,
+      "MedianMs": 0.08474999999999999,
+      "P95Ms": 0.1488,
+      "MinMs": 0.0532,
+      "MaxMs": 0.1931
+    },
+    "en/long": {
+      "Count": 15,
+      "MedianMs": 0.9192,
+      "P95Ms": 4.3793,
+      "MinMs": 0.8025,
+      "MaxMs": 4.3793
+    },
+    "es/short": {
+      "Count": 40,
+      "MedianMs": 0.08345,
+      "P95Ms": 0.1501,
+      "MinMs": 0.0424,
+      "MaxMs": 5.197
+    },
+    "es/long": {
+      "Count": 15,
+      "MedianMs": 0.655,
+      "P95Ms": 0.8915,
+      "MinMs": 0.6095,
+      "MaxMs": 0.8915
+    }
+  },
+  "ConcurrentRequests": 24,
+  "ConcurrentBatchMs": 0.8256,
+  "Metrics": [
+    {
+      "Name": "saylo.pronunciation.resource_load",
+      "Value": 269.5562
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 269.93
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0895
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0749
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.1414
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0947
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0699
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.1397
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0417
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0453
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0512
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0421
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0692
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0543
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0368
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0471
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0279
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0408
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0317
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0596
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0375
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0352
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0308
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0321
+    },
+    {
+      "Name": "saylo.pronunciation.resource_load",
+      "Value": 0.0983
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.1715
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0387
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.1075
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0495
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0966
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0394
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.048
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0645
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0219
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0383
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0184
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.018
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0368
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0185
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0234
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0259
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.045
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0287
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0249
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0401
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.028
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0525
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0354
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0351
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0939
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0523
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0346
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0867
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0557
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0352
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0346
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0312
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0572
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0519
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0391
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0414
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0287
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0613
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0649
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0579
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0412
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.033
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0315
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0391
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0625
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0364
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.1008
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0553
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0492
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0433
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0608
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0572
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0402
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0319
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0304
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.042
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0433
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0665
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0549
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0547
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0493
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0502
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0277
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0569
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 4.2991
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.7458
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.7341
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.7873
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.7627
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.8793
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.8571
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.8484
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.8548
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.8857
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.9321
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.8687
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.8846
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.9078
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.9995
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.1011
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0319
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0336
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0536
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0311
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0523
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 5.0987
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0892
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0403
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0574
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0281
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0524
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0564
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0404
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0505
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0707
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0423
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.037
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0369
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.038
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0504
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0299
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0406
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0286
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0402
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0341
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0741
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0507
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0431
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0414
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0443
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0411
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0413
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0408
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0411
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0283
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0222
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0344
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0312
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.022
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.5985
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.5614
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.5971
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.5834
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.5888
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.5869
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.6286
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.5728
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.6005
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.5924
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.8421
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.628
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.6105
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.6015
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.609
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0446
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0276
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0343
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0159
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0187
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0106
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0109
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0094
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0196
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0109
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0122
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0087
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0177
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0095
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0111
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0085
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.011
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0136
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.013
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0144
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0126
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.0143
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.013
+    },
+    {
+      "Name": "saylo.pronunciation.generation",
+      "Value": 0.008
+    }
+  ],
+  "ResourcesReleased": true,
+  "HumanLinguisticAcceptance": "pending",
+  "EnterpriseAcceptance": false,
+  "MemoryScope": "Host .NET test process snapshots, includes runtime and prior tests; not isolated engine peak memory. Dictionary references released, GC timing not forced."
+}
