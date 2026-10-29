@@ -1,0 +1,30 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:Saylo.Desktop.ViewModels"
+             x:Class="Saylo.Desktop.Views.TextInputView"
+             x:DataType="vm:TextInputViewModel">
+    <UserControl.KeyBindings>
+        <KeyBinding Gesture="Ctrl+L" Command="{Binding ClearCommand}" />
+    </UserControl.KeyBindings>
+    <Grid RowDefinitions="Auto,Auto,Auto" RowSpacing="10">
+        <Grid ColumnDefinitions="*,Auto">
+            <Label Content="Tu mensaje" Target="{Binding #MessageInput}" Padding="0"
+                   FontWeight="SemiBold" />
+            <Button Grid.Column="1" Content="Borrar texto" Command="{Binding ClearCommand}"
+                    Classes="secondary" MinHeight="24" Padding="8,2" FontSize="12"
+                    AutomationProperties.Name="Borrar texto escrito"
+                    ToolTip.Tip="Borrar texto (Ctrl+L)" />
+        </Grid>
+        <TextBox x:Name="MessageInput" Grid.Row="1" Classes="composer"
+                 Text="{Binding Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                 PlaceholderText="Escribe el mensaje que quieres traducir…"
+                 AcceptsReturn="True" TextWrapping="Wrap" Height="88"
+                 ScrollViewer.VerticalScrollBarVisibility="Auto"
+                 AutomationProperties.Name="Mensaje para traducir"
+                 AutomationProperties.HelpText="Escribe o pega una frase. Enter añade una nueva línea." />
+        <Grid Grid.Row="2" ColumnDefinitions="*,Auto">
+            <TextBlock Text="Enter para una nueva línea" Classes="muted" FontSize="11" />
+            <TextBlock Grid.Column="1" Text="{Binding CharacterCountLabel}" Classes="muted" FontSize="11" />
+        </Grid>
+    </Grid>
+</UserControl>

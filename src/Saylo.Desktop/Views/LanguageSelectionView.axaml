@@ -1,0 +1,45 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:Saylo.Desktop.ViewModels"
+             xmlns:models="using:Saylo.Desktop.Models"
+             x:Class="Saylo.Desktop.Views.LanguageSelectionView"
+             x:DataType="vm:LanguageSelectionViewModel">
+    <UserControl.Resources>
+        <DataTemplate x:Key="LanguageTemplate" x:DataType="models:LanguageOption">
+            <Grid ColumnDefinitions="*,Auto" ColumnSpacing="16">
+                <TextBlock Text="{Binding Name}" FontWeight="SemiBold" VerticalAlignment="Center" />
+                <TextBlock Grid.Column="1" Text="{Binding Tag}" Classes="muted" FontSize="11"
+                           VerticalAlignment="Center" />
+            </Grid>
+        </DataTemplate>
+    </UserControl.Resources>
+    <Border Classes="card" Padding="20,16">
+        <Grid ColumnDefinitions="*,64,*" ColumnSpacing="16">
+            <StackPanel Spacing="8">
+                <Label Content="IDIOMA DE ORIGEN" Target="{Binding #SourceLanguageSelector}"
+                       FontSize="11" FontWeight="SemiBold" Foreground="{StaticResource SayloMuted}" Padding="0" />
+                <ComboBox x:Name="SourceLanguageSelector" Classes="language"
+                          ItemsSource="{Binding AvailableLanguages}"
+                          SelectedItem="{Binding SourceLanguage, Mode=TwoWay}"
+                          ItemTemplate="{StaticResource LanguageTemplate}"
+                          AutomationProperties.Name="Idioma de origen" />
+            </StackPanel>
+            <Button Grid.Column="1" Classes="secondary" Width="44" Height="44"
+                    HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,2"
+                    Command="{Binding SwapCommand}" HotKey="Ctrl+Shift+S"
+                    AutomationProperties.Name="Intercambiar idiomas"
+                    ToolTip.Tip="Intercambiar idiomas (Ctrl+Mayús+S)">
+                <Path Classes="lineIcon" Data="{StaticResource SwapIcon}" Width="20" Height="20" />
+            </Button>
+            <StackPanel Grid.Column="2" Spacing="8">
+                <Label Content="IDIOMA DE DESTINO" Target="{Binding #TargetLanguageSelector}"
+                       FontSize="11" FontWeight="SemiBold" Foreground="{StaticResource SayloMuted}" Padding="0" />
+                <ComboBox x:Name="TargetLanguageSelector" Classes="language"
+                          ItemsSource="{Binding AvailableLanguages}"
+                          SelectedItem="{Binding TargetLanguage, Mode=TwoWay}"
+                          ItemTemplate="{StaticResource LanguageTemplate}"
+                          AutomationProperties.Name="Idioma de destino" />
+            </StackPanel>
+        </Grid>
+    </Border>
+</UserControl>
