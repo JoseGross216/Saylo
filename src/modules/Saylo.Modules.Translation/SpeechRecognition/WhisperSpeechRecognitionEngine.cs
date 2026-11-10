@@ -22,6 +22,7 @@ public sealed class WhisperSpeechRecognitionEngine : ISpeechRecognitionEngine, I
     private IWhisperBackend? _backend;
     private Task? _disposeTask;
     private int _disposing;
+    private bool IsShuttingDown => Volatile.Read(ref _disposing) != 0;
 
     public WhisperSpeechRecognitionEngine(IModelCatalog catalog, int threads = 4)
         : this(catalog, threads, (path, count) => new WhisperBackend(path, count)) { }
@@ -40,7 +41,7 @@ public sealed class WhisperSpeechRecognitionEngine : ISpeechRecognitionEngine, I
     public async Task<string> TranscribeAsync(AudioData audio, Language sourceLanguage,
         CancellationToken cancellationToken = default)
     {
-        ObjectDisposedException.ThrowIf(Volatile.Read(ref _disposing) != 0, this);
+        ObjectDisposedException.ThrowIf(IsShuttingDown, this);
         ArgumentNullException.ThrowIfNull(sourceLanguage);
         if (sourceLanguage.Code is not ("es" or "en"))
             throw Error(TranslationErrorCode.UnsupportedLanguage, "Supported transcription languages are es and en.");
@@ -50,25 +51,26 @@ public sealed class WhisperSpeechRecognitionEngine : ISpeechRecognitionEngine, I
         await _gate.WaitAsync(token).ConfigureAwait(false);
         try
         {
-            ObjectDisposedException.ThrowIf(Volatile.Read(ref _disposing) != 0, this);
+            ThrowIfOperationCanceled(token);
             // Model loading and sample conversion must never execute on the UI thread.
             return await Task.Run(async () =>
             {
-                token.ThrowIfCancellationRequested();
+                ThrowIfOperationCanceled(token);
                 if (_backend is null)
                     await LoadModelAsync(token).ConfigureAwait(false);
                 var samples = Pcm16Audio.Convert(audio, token);
+                ThrowIfOperationCanceled(token);
                 AudioDuration.Record(samples.Length / 16000d);
                 var started = Stopwatch.GetTimestamp();
                 try
                 {
                     var result = await _backend!.TranscribeAsync(samples, sourceLanguage.Code, token).ConfigureAwait(false);
-                    token.ThrowIfCancellationRequested();
+                    ThrowIfOperationCanceled(token);
                     if (string.IsNullOrWhiteSpace(result))
                         throw Error(TranslationErrorCode.InvalidEngineOutput, "Whisper did not recognize any speech.");
                     return result;
                 }
-                catch (OperationCanceledException) when (token.IsCancellationRequested) { throw; }
+                catch (OperationCanceledException) when (token.IsCancellationRequested || IsShuttingDown) { throw; }
                 catch (TranslationEngineException) { throw; }
                 catch (Exception exception)
                 {
@@ -83,9 +85,11 @@ public sealed class WhisperSpeechRecognitionEngine : ISpeechRecognitionEngine, I
     private async Task LoadModelAsync(CancellationToken token)
     {
         var model = await _catalog.LocateAsync(WhisperModels.BaseId, WhisperModels.BaseVersion, token).ConfigureAwait(false);
+        ThrowIfOperationCanceled(token);
         if (model is null)
             throw Error(TranslationErrorCode.ModelUnavailable, "The multilingual ggml-base.bin model is not installed in the configured directory.");
         var validation = await _catalog.ValidateAsync(model, token).ConfigureAwait(false);
+        ThrowIfOperationCanceled(token);
         if (validation.Availability != ModelAvailability.Available)
             throw Error(TranslationErrorCode.ModelUnavailable, "The configured model is missing or inaccessible.");
         if (validation.Integrity != ModelIntegrity.Valid || validation.Compatibility == ModelCompatibility.Incompatible
@@ -98,18 +102,27 @@ public sealed class WhisperSpeechRecognitionEngine : ISpeechRecognitionEngine, I
         try
         {
             _backend = _createBackend(Path.Combine(model.DirectoryPath, file.RelativePath), _threads);
-            token.ThrowIfCancellationRequested();
+            ThrowIfOperationCanceled(token);
         }
         catch (WhisperModelLoadException exception)
         {
             throw Error(TranslationErrorCode.ModelInvalid, "Whisper could not load the model format.", exception);
         }
-        catch (OperationCanceledException) when (token.IsCancellationRequested) { throw; }
+        catch (OperationCanceledException) when (token.IsCancellationRequested || IsShuttingDown) { throw; }
         catch (Exception exception)
         {
             throw Error(TranslationErrorCode.RuntimeUnavailable, "The local Whisper CPU runtime could not initialize. Check native dependencies and CPU support.", exception);
         }
         finally { LoadTime.Record(Stopwatch.GetElapsedTime(started).TotalMilliseconds); }
+    }
+
+    private void ThrowIfOperationCanceled(CancellationToken token)
+    {
+        token.ThrowIfCancellationRequested();
+        // CancelAsync schedules linked-token callbacks. The shutdown flag is already visible
+        // even when those callbacks have not reached this operation yet.
+        if (IsShuttingDown)
+            throw new OperationCanceledException("Speech recognition was canceled during engine shutdown.", token);
     }
 
     public ValueTask DisposeAsync()

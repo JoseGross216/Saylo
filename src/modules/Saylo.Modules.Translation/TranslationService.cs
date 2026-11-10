@@ -9,18 +9,24 @@ public sealed class TranslationService : ITranslationService
     private readonly ISpeechRecognitionEngine _recognition;
     private readonly ITextTranslationEngine _translation;
     private readonly IPronunciationEngine _pronunciation;
-    private readonly ISpeechSynthesisEngine _synthesis;
+    private readonly ISpeechSynthesisEngine? _synthesis;
 
     public TranslationService(ISpeechRecognitionEngine recognition, ITextTranslationEngine translation,
-        IPronunciationEngine pronunciation, ISpeechSynthesisEngine synthesis)
+        IPronunciationEngine pronunciation)
     {
         ArgumentNullException.ThrowIfNull(recognition);
         ArgumentNullException.ThrowIfNull(translation);
         ArgumentNullException.ThrowIfNull(pronunciation);
-        ArgumentNullException.ThrowIfNull(synthesis);
         _recognition = recognition;
         _translation = translation;
         _pronunciation = pronunciation;
+    }
+
+    public TranslationService(ISpeechRecognitionEngine recognition, ITextTranslationEngine translation,
+        IPronunciationEngine pronunciation, ISpeechSynthesisEngine synthesis)
+        : this(recognition, translation, pronunciation)
+    {
+        ArgumentNullException.ThrowIfNull(synthesis);
         _synthesis = synthesis;
     }
 
@@ -76,8 +82,9 @@ public sealed class TranslationService : ITranslationService
         // Start optional stages only after text has been delivered to the consumer.
         token.ThrowIfCancellationRequested();
         var pronunciationTask = GeneratePronunciationAsync(operationId, translatedText, target, token);
-        var synthesisTask = GenerateSpeechAsync(operationId, translatedText, target, token);
-        var pending = new List<Task<TranslationUpdate>> { pronunciationTask, synthesisTask };
+        var pending = new List<Task<TranslationUpdate>> { pronunciationTask };
+        if (_synthesis is { } synthesis)
+            pending.Add(GenerateSpeechAsync(synthesis, operationId, translatedText, target, token));
         try
         {
             while (pending.Count > 0)
@@ -95,7 +102,7 @@ public sealed class TranslationService : ITranslationService
             operation.Cancel();
             try
             {
-                await Task.WhenAll(pronunciationTask, synthesisTask).ConfigureAwait(false);
+                await Task.WhenAll(pending).ConfigureAwait(false);
             }
             catch (OperationCanceledException) when (token.IsCancellationRequested)
             {
@@ -114,10 +121,10 @@ public sealed class TranslationService : ITranslationService
             : new PronunciationCompleted(id, outcome.Value!);
     }
 
-    private async Task<TranslationUpdate> GenerateSpeechAsync(Guid id, string text, Language language,
+    private static async Task<TranslationUpdate> GenerateSpeechAsync(ISpeechSynthesisEngine synthesis, Guid id, string text, Language language,
         CancellationToken token)
     {
-        var outcome = await InvokeAsync(() => _synthesis.SynthesizeAsync(text, language, token),
+        var outcome = await InvokeAsync(() => synthesis.SynthesizeAsync(text, language, token),
             _ => true, token).ConfigureAwait(false);
         return outcome.Error is { } error
             ? new TranslationStageFailed(id, TranslationStage.SpeechSynthesis, error)
@@ -144,6 +151,16 @@ public sealed class TranslationService : ITranslationService
         {
             token.ThrowIfCancellationRequested();
             return new(null, exception.Code);
+        }
+        catch (OutOfMemoryException)
+        {
+            token.ThrowIfCancellationRequested();
+            return new(null, TranslationErrorCode.InsufficientMemory);
+        }
+        catch (Exception exception) when (exception is IOException or UnauthorizedAccessException)
+        {
+            token.ThrowIfCancellationRequested();
+            return new(null, TranslationErrorCode.ResourceUnavailable);
         }
         catch (Exception)
         {
