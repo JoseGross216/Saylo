@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <Using Include="Xunit" />
+    <ProjectReference Include="..\..\src\modules\Saylo.Modules.Conversations\Saylo.Modules.Conversations.csproj" />
   </ItemGroup>
 
 </Project>

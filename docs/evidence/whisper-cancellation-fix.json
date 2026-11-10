@@ -1,0 +1,24 @@
+{
+  "afterFix": {
+    "failed": 0,
+    "total": 27,
+    "resultFile": "whisper-after-fix.trx",
+    "passed": 27,
+    "failedTests": []
+  },
+  "shutdownModelLoadCycles": 100,
+  "beforeFix": {
+    "failed": 1,
+    "total": 2,
+    "resultFile": "whisper-before-fix.trx",
+    "passed": 1,
+    "failedTests": [
+      "Saylo.Modules.Translation.Tests.WhisperSpeechRecognitionTests.DisposalDuringModelLoadNeverStartsInferenceOrPublishesLateResults"
+    ]
+  },
+  "originalTest": "DisposalDuringModelLoadWaitsAndReleasesTheCreatedModel",
+  "regressionTests": [
+    "DisposalDuringModelLoadNeverStartsInferenceOrPublishesLateResults",
+    "ShutdownRequestedBeforeInferenceReturnsDiscardsTheLateText"
+  ]
+}

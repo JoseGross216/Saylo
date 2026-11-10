@@ -80,4 +80,7 @@
         <Setter Property="Padding" Value="14,12" />
         <Setter Property="FontSize" Value="15" />
     </Style>
+    <Style Selector="TextBox.composer.invalid">
+        <Setter Property="BorderBrush" Value="#B6683B" />
+    </Style>
 </Styles>

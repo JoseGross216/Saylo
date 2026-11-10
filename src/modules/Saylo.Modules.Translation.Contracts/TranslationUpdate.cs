@@ -17,7 +17,9 @@ public enum TranslationErrorCode
     RuntimeUnavailable,
     UnsupportedAudioFormat,
     UnsupportedLanguage,
-    IntegrityValidationFailed
+    IntegrityValidationFailed,
+    InsufficientMemory,
+    ResourceUnavailable
 }
 
 /// <summary>OperationId correlates updates without retaining conversation history.</summary>
