@@ -12,6 +12,7 @@ public static class TranslationFailureMessages
         TranslationErrorCode.ModelInvalid => "El diccionario local no es válido. Solicita su revisión. La traducción se conserva.",
         TranslationErrorCode.InsufficientMemory => "No hay memoria suficiente para preparar la guía IPA. La traducción se conserva.",
         TranslationErrorCode.ResourceUnavailable => "No se pudo acceder al diccionario local. La traducción se conserva.",
+        TranslationErrorCode.InvalidEngineOutput => "No se pudo verificar la pronunciación de todo el texto. La traducción se conserva.",
         _ => "No se pudo preparar la pronunciación. La traducción se conserva."
     };
 
@@ -32,6 +33,7 @@ public static class TranslationFailureMessages
         TranslationErrorCode.RuntimeUnavailable => "El motor de transcripción no pudo iniciarse. Solicita su revisión o escribe el mensaje.",
         TranslationErrorCode.InsufficientMemory => "No hay memoria suficiente para transcribir. Libera recursos y graba de nuevo o escribe el mensaje.",
         TranslationErrorCode.ResourceUnavailable => "No se pudo acceder a los recursos de transcripción. Revisa los permisos o escribe el mensaje.",
+        TranslationErrorCode.InvalidEngineOutput => "No se reconoció voz en la grabación. Graba de nuevo o escribe el mensaje.",
         _ => "No se pudo transcribir la grabación. Graba de nuevo o escribe el mensaje."
     };
 

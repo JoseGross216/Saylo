@@ -9,7 +9,11 @@ namespace Saylo.Desktop.Services.Audio;
 /// <summary>Composition seam for native adapters; no fictitious devices or silent recordings.</summary>
 public static class AudioInputAdapterFactory
 {
-    public static IAudioInputAdapter CreateDefault() => new UnconfiguredAudioInputAdapter(
+    public static IAudioInputAdapter CreateDefault() => OperatingSystem.IsWindows()
+        ? new WindowsAudioInputAdapter()
+        : CreateUnconfigured();
+
+    internal static IAudioInputAdapter CreateUnconfigured() => new UnconfiguredAudioInputAdapter(
         OperatingSystem.IsWindows() ? "Windows" : OperatingSystem.IsMacOS() ? "macOS" :
         OperatingSystem.IsLinux() ? "Linux" : "este sistema");
 }

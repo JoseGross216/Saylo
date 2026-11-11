@@ -20,12 +20,14 @@ public sealed class WrittenTranslationFlowTests
     {
         await using var model = Create(DesktopTranslationFactory.Create(new[] { "--demo" }, _ => null));
         model.Languages.SourceLanguage = model.Languages.AvailableLanguages.Single(option => option.Language == example.SourceLanguage);
-        model.TextInput.Text = "  " + example.SourceText + "  ";
+        var submitted = "  " + example.SourceText + "  ";
+        model.TextInput.Text = submitted;
 
         await model.TranslateCommand.ExecuteAsync(null);
 
         var message = Assert.Single(model.Messages);
-        Assert.Equal(model.TextInput.Text, message.SourceText);
+        Assert.Equal(submitted, message.SourceText);
+        Assert.Empty(model.TextInput.Text!);
         Assert.Equal(example.TranslatedText, message.TranslatedText);
         Assert.Equal(example.Pronunciation, message.PronunciationText);
         Assert.Equal(example.TargetLanguage, message.Entry.TargetLanguage);
@@ -239,7 +241,7 @@ public sealed class WrittenTranslationFlowTests
     [Fact]
     public async Task MissingOrInvalidConfigurationNeverSilentlyStartsDemonstration()
     {
-        await using var absent = DesktopTranslationFactory.Create(Array.Empty<string>(), _ => null);
+        await using var absent = DesktopTranslationFactory.Create(Array.Empty<string>(), _ => null, Path.GetTempPath());
         await using var relative = DesktopTranslationFactory.Create(Array.Empty<string>(), key => key == "SAYLO_ARGOS_PYTHON" ? "python.exe" : "models");
         await using var explicitDemo = DesktopTranslationFactory.Create(new[] { "--demo" }, _ => "invalid");
 
@@ -265,7 +267,7 @@ public sealed class WrittenTranslationFlowTests
         string original, string expectedTranslation)
     {
         var connection = DesktopTranslationFactory.Create(Array.Empty<string>(), key =>
-            key == "SAYLO_CMUDICT_DIR" && !useDictionary ? null : Environment.GetEnvironmentVariable(key));
+            key == "SAYLO_CMUDICT_DIR" && !useDictionary ? null : Environment.GetEnvironmentVariable(key), Path.GetTempPath());
         await using var model = Create(connection);
         if (source == "en")
             model.Languages.SwapCommand.Execute(null);

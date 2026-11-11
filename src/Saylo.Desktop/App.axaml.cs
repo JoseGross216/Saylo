@@ -22,10 +22,14 @@ public partial class App : Application
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
             var window = new MainWindow();
-            window.DataContext = new MainViewModel(AudioInputAdapterFactory.CreateDefault(),
+            var connection = DesktopTranslationFactory.Create(desktop.Args ?? Array.Empty<string>());
+            var audioInput = connection.Mode == DesktopTranslationMode.Demonstration
+                ? AudioInputAdapterFactory.CreateUnconfigured()
+                : AudioInputAdapterFactory.CreateDefault();
+            window.DataContext = new MainViewModel(audioInput,
                 playback: AudioPlaybackAdapterFactory.CreateDefault(),
                 clipboard: new AvaloniaClipboardService(() => window.Clipboard),
-                connection: DesktopTranslationFactory.Create(desktop.Args ?? Array.Empty<string>()));
+                connection: connection);
             desktop.MainWindow = window;
         }
 

@@ -18,6 +18,7 @@ public sealed class DesktopTranslationConnection : IAsyncDisposable
     private readonly IAsyncDisposable? _ownedResource;
     private Task? _disposal;
     public ITranslationService? Service { get; }
+    internal ISpeechRecognitionEngine? Recognition { get; init; }
     public DesktopTranslationMode Mode { get; }
     public string Title { get; }
     public string Description { get; }

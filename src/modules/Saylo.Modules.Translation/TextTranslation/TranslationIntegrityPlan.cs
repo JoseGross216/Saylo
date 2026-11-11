@@ -36,7 +36,7 @@ internal sealed class TranslationIntegrityPlan
             throw ProtectedText.Failure();
         }
         var segments = SafeTextSegmenter.Split(text, options).Select(segment =>
-            new Segment(ProtectedText.Create(segment.Text, options, NextMarker), segment.Separator)).ToArray();
+            new Segment(ProtectedText.Create(segment.Text, options, NextMarker, source), segment.Separator)).ToArray();
         return new(segments, options, source, target);
     }
 

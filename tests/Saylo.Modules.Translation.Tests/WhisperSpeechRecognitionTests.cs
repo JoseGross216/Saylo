@@ -9,7 +9,7 @@ namespace Saylo.Modules.Translation.Tests;
 public sealed class WhisperSpeechRecognitionTests
 {
     private static readonly TimeSpan Timeout = TimeSpan.FromSeconds(5);
-    private static AudioData Audio() => ContractValidationTests.CreateAudio();
+    private static AudioData Audio() => new(new byte[] { 1, 0, 0, 0 }, AudioFormat.Pcm16, 16000, 1);
 
     [Theory]
     [InlineData(8000, 1)]
@@ -198,6 +198,53 @@ public sealed class WhisperSpeechRecognitionTests
         await using var engine = new WhisperSpeechRecognitionEngine(catalog, 2, (_, _) => throw new InvalidOperationException());
         await Assert.ThrowsAnyAsync<OperationCanceledException>(() => engine.TranscribeAsync(Audio(), Language.English, cancellation.Token));
         Assert.Equal(0, catalog.ValidationCalls);
+    }
+
+    [Fact]
+    public async Task DigitalSilenceDoesNotLoadWhisperOrProduceText()
+    {
+        var catalog = new CatalogStub();
+        await using var engine = new WhisperSpeechRecognitionEngine(catalog, 2, (_, _) => new BackendStub());
+        var silence = new AudioData(new byte[96000], AudioFormat.Pcm16, 16000, 1);
+
+        var error = await Assert.ThrowsAsync<TranslationEngineException>(() => engine.TranscribeAsync(silence, Language.Spanish));
+
+        Assert.Equal(TranslationStage.SpeechRecognition, error.Stage);
+        Assert.Equal(TranslationErrorCode.InvalidEngineOutput, error.Code);
+        Assert.Equal(0, catalog.ValidationCalls);
+        Assert.Equal("recognized fixture", await engine.TranscribeAsync(Audio(), Language.Spanish));
+    }
+
+    [Fact]
+    public async Task CancelingDuringModelLoadSkipsInferenceAndTheModelCanBeReused()
+    {
+        var entered = new TaskCompletionSource(TaskCreationOptions.RunContinuationsAsynchronously);
+        using var release = new ManualResetEventSlim(false);
+        using var cancellation = new CancellationTokenSource();
+        var inferenceCalls = 0;
+        var backend = new BackendStub { Recognize = (_, _, _) =>
+        {
+            Interlocked.Increment(ref inferenceCalls);
+            return Task.FromResult("next fixture");
+        } };
+        await using var engine = new WhisperSpeechRecognitionEngine(new CatalogStub(), 2, (_, _) =>
+        {
+            entered.SetResult();
+            if (!release.Wait(Timeout)) throw new TimeoutException("Model-load fixture was not released.");
+            return backend;
+        });
+        var run = engine.TranscribeAsync(Audio(), Language.Spanish, cancellation.Token);
+        try
+        {
+            await entered.Task.WaitAsync(Timeout);
+            cancellation.Cancel();
+        }
+        finally { release.Set(); }
+
+        await Assert.ThrowsAnyAsync<OperationCanceledException>(() => run.WaitAsync(Timeout));
+        Assert.Equal(0, inferenceCalls);
+        Assert.Equal("next fixture", await engine.TranscribeAsync(Audio(), Language.English).WaitAsync(Timeout));
+        Assert.Equal(1, inferenceCalls);
     }
 
     [Fact]

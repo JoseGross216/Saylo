@@ -52,6 +52,9 @@ public sealed class WhisperSpeechRecognitionEngine : ISpeechRecognitionEngine, I
         try
         {
             ThrowIfOperationCanceled(token);
+            // WASAPI silent packets can produce valid PCM containing only zero samples.
+            if (!audio.Data.Span.ContainsAnyExcept((byte)0))
+                throw Error(TranslationErrorCode.InvalidEngineOutput, "The recording contains only digital silence.");
             // Model loading and sample conversion must never execute on the UI thread.
             return await Task.Run(async () =>
             {

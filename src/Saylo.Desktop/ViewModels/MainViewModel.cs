@@ -24,6 +24,7 @@ public partial class MainViewModel : ViewModelBase, IAsyncDisposable
     private readonly ChatPlaybackController _playback;
     private bool _disposed;
     private bool _applyingTranscript;
+    private long _draftRevision;
     private MessageOrigin _draftOrigin;
     private readonly DesktopTranslationConnection? _connection;
     private CancellationTokenSource? _requestCancellation;
@@ -31,7 +32,7 @@ public partial class MainViewModel : ViewModelBase, IAsyncDisposable
     private bool _recoverableError;
     private bool _hasCurrentTranslation;
 
-    public MainViewModel() : this(AudioInputAdapterFactory.CreateDefault()) { }
+    public MainViewModel() : this(AudioInputAdapterFactory.CreateUnconfigured()) { }
 
     public MainViewModel(IAudioInputAdapter audioInput, ISpeechRecognitionEngine? recognizer = null,
         ITranslationService? translation = null, TimeProvider? timeProvider = null,
@@ -45,7 +46,7 @@ public partial class MainViewModel : ViewModelBase, IAsyncDisposable
         TextInput.MaximumLength = connection?.MaximumTextLength;
         _clipboard = clipboard ?? new UnavailableClipboardService();
         Messages = new(_messages);
-        AudioInput = new(audioInput, () => Languages.SourceLanguage.Language, recognizer, timeProvider);
+        AudioInput = new(audioInput, () => Languages.SourceLanguage.Language, recognizer ?? connection?.Recognition, timeProvider);
         _playback = new(playback ?? new UnavailableAudioPlaybackAdapter());
         _playback.StateChanged += OnPlaybackChanged;
         AudioInput.PropertyChanged += OnAudioChanged;
@@ -63,7 +64,7 @@ public partial class MainViewModel : ViewModelBase, IAsyncDisposable
     public bool IsConversationEmpty => Messages.Count == 0;
     public bool HasMessages => !IsConversationEmpty;
     public bool IsDemonstration => _connection?.Mode == DesktopTranslationMode.Demonstration;
-    public string BackendBadge => IsDemonstration ? "Demostración" : _translation is null ? "Sin configurar" : "Procesamiento local";
+    public string BackendBadge => IsDemonstration ? "Demostración" : _translation is null ? "No disponible" : "Procesamiento local";
     public string BackendTitle => _connection?.Title ?? "Tu asistente de idiomas";
     public string BackendDescription => _connection?.Description ?? "Traducción mediante servicios locales.";
     public IReadOnlyList<TranslationExample> AvailableExamples => _connection?.Examples
@@ -83,6 +84,7 @@ public partial class MainViewModel : ViewModelBase, IAsyncDisposable
     partial void OnIsAutoplayEnabledChanged(bool value) => _playback.IsAutoplayEnabled = value;
 
     public bool IsPlaying => _playback.IsPlaying;
+    public bool HasAudioPlayback => _messages.Any(message => message.HasAudio);
     public bool ShowStopPlayback => IsPlaying || _playback.RequiresStopRecovery;
     public string StopPlaybackLabel => _playback.RequiresStopRecovery ? "Reintentar detención" : "Detener voz";
     public bool HasRecoverableError => _recoverableError || _playback.HasError;
@@ -111,7 +113,7 @@ public partial class MainViewModel : ViewModelBase, IAsyncDisposable
         ApplicationState.Transcribing => "Transcribiendo…",
         ApplicationState.ReviewingTranscript => "Revisa la transcripción",
         ApplicationState.Translating => "Traduciendo…",
-        ApplicationState.PreparingResults => "Texto listo · preparando pronunciación y voz…",
+        ApplicationState.PreparingResults => "Texto listo · preparando pronunciación…",
         ApplicationState.Playing => "Reproduciendo voz…",
         ApplicationState.StoppingPlayback => "Deteniendo voz…",
         ApplicationState.Clearing => "Eliminando conversación…",
@@ -137,10 +139,11 @@ public partial class MainViewModel : ViewModelBase, IAsyncDisposable
     {
         if (!CanTranslate) return Task.CompletedTask;
         var request = TextInput.CreateRequest(Languages.SourceLanguage.Language, Languages.TargetLanguage.Language);
-        return BeginTranslation(request, _draftOrigin, cancellationToken);
+        return BeginTranslation(request, _draftOrigin, cancellationToken, _draftRevision);
     }
 
-    private Task BeginTranslation(TextTranslationRequest request, MessageOrigin origin, CancellationToken cancellationToken)
+    private Task BeginTranslation(TextTranslationRequest request, MessageOrigin origin, CancellationToken cancellationToken,
+        long? submittedDraftRevision = null)
     {
         if (!CanStartRequest) return Task.CompletedTask;
         var source = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
@@ -149,10 +152,11 @@ public partial class MainViewModel : ViewModelBase, IAsyncDisposable
         _hasCurrentTranslation = false;
         IsTranslating = true;
         UpdateInteraction();
-        return _activeTranslation = RunTranslationAsync(request, origin, source);
+        return _activeTranslation = RunTranslationAsync(request, origin, source, submittedDraftRevision);
     }
 
-    private async Task RunTranslationAsync(TextTranslationRequest request, MessageOrigin origin, CancellationTokenSource source)
+    private async Task RunTranslationAsync(TextTranslationRequest request, MessageOrigin origin, CancellationTokenSource source,
+        long? submittedDraftRevision)
     {
         var cancellationToken = source.Token;
         ConversationMessage? entry = null;
@@ -185,6 +189,8 @@ public partial class MainViewModel : ViewModelBase, IAsyncDisposable
                 message.Refresh();
                 _recoverableError = entry.State == MessageState.Failed || (!IsDemonstration && entry.AudioState == ResultState.Failed) ||
                     entry.PronunciationState == ResultState.Failed;
+                if (entry.State == MessageState.Ready && submittedDraftRevision == _draftRevision)
+                    TextInput.Text = string.Empty;
                 StatusMessage = message.Status;
             }
         }
@@ -289,6 +295,7 @@ public partial class MainViewModel : ViewModelBase, IAsyncDisposable
     {
         OnPropertyChanged(nameof(IsConversationEmpty));
         OnPropertyChanged(nameof(HasMessages));
+        OnPropertyChanged(nameof(HasAudioPlayback));
         RequestClearCommand.NotifyCanExecuteChanged();
         ConfirmClearCommand.NotifyCanExecuteChanged();
     }
@@ -300,14 +307,19 @@ public partial class MainViewModel : ViewModelBase, IAsyncDisposable
         TextInput.Text = hadText ? $"{TextInput.Text}{Environment.NewLine}{text}" : text;
         _applyingTranscript = false;
         _draftOrigin = hadText ? MessageOrigin.Mixed : MessageOrigin.ReviewedVoice;
+        IsAudioPanelOpen = false;
         StatusMessage = "Transcripción añadida. Revisa el mensaje antes de traducir.";
     }
 
     private void OnTextChanged(object? sender, PropertyChangedEventArgs args)
     {
-        if (args.PropertyName == nameof(TextInput.Text) && !_applyingTranscript)
-            _draftOrigin = !TextInput.HasText ? MessageOrigin.Text :
-                _draftOrigin == MessageOrigin.Text ? MessageOrigin.Text : MessageOrigin.Mixed;
+        if (args.PropertyName == nameof(TextInput.Text))
+        {
+            _draftRevision++;
+            if (!_applyingTranscript)
+                _draftOrigin = !TextInput.HasText ? MessageOrigin.Text :
+                    _draftOrigin == MessageOrigin.Text ? MessageOrigin.Text : MessageOrigin.Mixed;
+        }
         if (args.PropertyName is nameof(TextInput.HasText) or nameof(TextInput.IsValid)) TranslateCommand.NotifyCanExecuteChanged();
     }
 
@@ -353,6 +365,7 @@ public partial class MainViewModel : ViewModelBase, IAsyncDisposable
         OnPropertyChanged(nameof(StateLabel));
         OnPropertyChanged(nameof(HasRecoverableError));
         OnPropertyChanged(nameof(IsPlaying));
+        OnPropertyChanged(nameof(HasAudioPlayback));
         OnPropertyChanged(nameof(ShowStopPlayback));
         OnPropertyChanged(nameof(StopPlaybackLabel));
         StopPlaybackCommand.NotifyCanExecuteChanged();
