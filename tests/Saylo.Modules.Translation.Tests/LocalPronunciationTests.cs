@@ -194,6 +194,17 @@ public sealed class LocalPronunciationTests
     }
 
     [Fact]
+    public void WeakVowelVariantsUseDictionaryReadingButDistinctReadingsRemainAmbiguous()
+    {
+        using var dictionary = new DictionaryFile("francis F R AE1 N S AH0 S\nfrancis(2) F R AE1 N S IH0 S\nfine F AY1 N\nfine(2) F IH1 N AH0");
+        var engine = EnglishPronunciation.Load(dictionary.Path, CancellationToken.None);
+
+        Assert.Equal("ˈfɹænsəs", engine.Generate(["Francis"], 0));
+        Assert.Equal("AmbiguousPronunciation", Assert.Throws<TranslationEngineException>(() =>
+            engine.Generate(["fine"], 0)).Data["PronunciationReason"]);
+    }
+
+    [Fact]
     public void ReadRequiresSupportedContextAndNeverUsesTheFirstVariantBlindly()
     {
         using var dictionary = new DictionaryFile();

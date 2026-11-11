@@ -15,6 +15,7 @@ public enum AudioInputState { Idle, LoadingDevices, Starting, Recording, Stoppin
 public partial class AudioInputViewModel : ViewModelBase, IAsyncDisposable
 {
     public static readonly TimeSpan MaximumDuration = TimeSpan.FromSeconds(30);
+    private const string RecognitionSetupMessage = "Faltan los recursos de transcripción. Reinstala Saylo con el paquete completo o escribe el mensaje.";
     private readonly IAudioInputAdapter _adapter;
     private readonly ISpeechRecognitionEngine? _recognizer;
     private readonly Func<Language> _sourceLanguage;
@@ -108,6 +109,7 @@ public partial class AudioInputViewModel : ViewModelBase, IAsyncDisposable
                 if (device.Id == previousId) SelectedDevice = device;
             SelectedDevice ??= Devices.Count > 0 ? Devices[0] : null;
             StatusMessage = Devices.Count == 0 ? "No se encontró un micrófono. Conecta uno y actualiza la lista." :
+                _recognizer is null ? $"Micrófono listo. {RecognitionSetupMessage}" :
                 "Micrófono listo. La grabación comienza solo cuando pulses Grabar.";
             ChangeState(Devices.Count == 0 ? AudioInputState.Error : AudioInputState.Idle);
         }
@@ -166,7 +168,7 @@ public partial class AudioInputViewModel : ViewModelBase, IAsyncDisposable
                 if (!IsRecording) return;
                 var elapsed = _time.GetElapsedTime(_startedAt);
                 Elapsed = elapsed < MaximumDuration ? elapsed : MaximumDuration;
-                if (elapsed >= MaximumDuration)
+                if (elapsed >= MaximumDuration || _adapter.HasCaptureEnded)
                 {
                     await StopCommand.ExecuteAsync(null);
                     return;
@@ -203,7 +205,7 @@ public partial class AudioInputViewModel : ViewModelBase, IAsyncDisposable
                 throw new AudioInputException(AudioInputError.CaptureFailed);
             if (_recognizer is null)
             {
-                StatusMessage = "La transcripción aún no está configurada. Puedes escribir el mensaje.";
+                StatusMessage = RecognitionSetupMessage;
                 ChangeState(AudioInputState.Error);
                 return;
             }

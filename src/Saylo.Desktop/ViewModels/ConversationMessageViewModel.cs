@@ -84,8 +84,10 @@ public partial class ConversationMessageViewModel : ViewModelBase
         ResultState.Ready when _playbackState == ChatPlaybackState.StopFailed => "No se pudo confirmar la detención de la voz. Revisa la salida de audio y reintenta.",
         ResultState.Ready when _playbackState == ChatPlaybackState.Stopped => "Audio detenido · disponible para repetir",
         ResultState.Ready => "Voz lista · disponible para repetir",
-        _ => "Voz no disponible"
+        _ => string.Empty
     };
+    public bool ShowAudioStatus => !IsDemonstration && Entry.AudioState is ResultState.Ready or ResultState.Failed;
+    public bool HasAudio => Audio is not null;
     public bool IsPlaying => _playbackState == ChatPlaybackState.Playing && !Entry.IsErased;
     public bool CanPlay => Audio is not null && !Entry.IsErased && _canInteract() && _playback.IsAvailable;
     private bool CanRepeat => CanPlay && !IsPlaying && !_playback.IsStopping;
@@ -132,7 +134,7 @@ public partial class ConversationMessageViewModel : ViewModelBase
         if (Entry.IsErased) CopyStatus = string.Empty;
         foreach (var name in new[] { nameof(SourceText), nameof(TranslatedText), nameof(HasTranslation),
             nameof(PronunciationText), nameof(PronunciationLabel), nameof(AudioStatus), nameof(Status),
-            nameof(Audio), nameof(OperationId), nameof(IsPlaying), nameof(ShowRetry) }) OnPropertyChanged(name);
+            nameof(Audio), nameof(HasAudio), nameof(ShowAudioStatus), nameof(OperationId), nameof(IsPlaying), nameof(ShowRetry) }) OnPropertyChanged(name);
         CopyCommand.NotifyCanExecuteChanged();
         RepeatCommand.NotifyCanExecuteChanged();
         StopAudioCommand.NotifyCanExecuteChanged();

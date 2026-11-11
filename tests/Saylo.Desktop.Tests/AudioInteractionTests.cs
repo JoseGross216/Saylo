@@ -1,5 +1,7 @@
 using Saylo.Desktop.Services.Audio;
+using Saylo.Desktop.Services.Translation;
 using Saylo.Desktop.ViewModels;
+using Saylo.Modules.Conversations;
 using Saylo.Modules.Translation.Contracts;
 
 namespace Saylo.Desktop.Tests;
@@ -19,6 +21,62 @@ public sealed class AudioInteractionTests
         model.TextInput.Text = "Buenos días";
         Assert.True(model.TextInput.HasText);
         Assert.False(model.TranslateCommand.CanExecute(null));
+    }
+
+    [Theory]
+    [InlineData(false, "Faltan los recursos de transcripción")]
+    [InlineData(true, "Falta el modelo de transcripción")]
+    public async Task MissingArgosDoesNotBlockCaptureOrOverrideWhisperConfiguration(bool configureWhisper, string expectedStatus)
+    {
+        var missingModel = Path.Combine(Path.GetTempPath(), "Saylo-absent-" + Guid.NewGuid().ToString("N"));
+        var connection = DesktopTranslationFactory.Create([], key =>
+            configureWhisper && key == "SAYLO_WHISPER_MODEL_DIR" ? missingModel : null, missingModel);
+        var adapter = new TestAudioAdapter();
+        await using var model = new MainViewModel(adapter, connection: connection);
+
+        await model.InitializeAsync();
+
+        Assert.Null(connection.Service);
+        Assert.True(model.AudioInput.CanChooseDevice);
+        Assert.True(model.AudioInput.StartCommand.CanExecute(null));
+        Assert.False(model.AudioInput.StopCommand.CanExecute(null));
+        model.AudioInput.SelectedDevice = model.AudioInput.Devices[1];
+        await model.AudioInput.StartCommand.ExecuteAsync(null);
+        Assert.Equal(model.AudioInput.SelectedDevice, adapter.StartedDevice);
+        Assert.True(model.AudioInput.StopCommand.CanExecute(null));
+        await model.AudioInput.StopCommand.ExecuteAsync(null);
+
+        Assert.Equal(AudioInputState.Error, model.AudioInput.State);
+        Assert.Contains(expectedStatus, model.AudioInput.StatusMessage);
+        Assert.True(model.AudioInput.StartCommand.CanExecute(null));
+        Assert.False(model.AudioInput.StopCommand.CanExecute(null));
+    }
+
+    [Fact]
+    public async Task BundledResourcesAreFoundWithoutEnvironmentVariablesAndValidatedBeforeUse()
+    {
+        var installation = Directory.CreateTempSubdirectory("Saylo-install-");
+        try
+        {
+            var argos = installation.CreateSubdirectory(Path.Combine("resources", "argos", "models"));
+            var whisper = installation.CreateSubdirectory(Path.Combine("resources", "whisper", "models"));
+            await File.WriteAllTextAsync(Path.Combine(argos.FullName, "argos-models.json"), "{invalid");
+            await File.WriteAllBytesAsync(Path.Combine(whisper.FullName, "ggml-base.bin"), [0]);
+            var connection = DesktopTranslationFactory.Create([], _ => null, installation.FullName);
+            await using var model = new MainViewModel(new TestAudioAdapter(), connection: connection);
+            await model.InitializeAsync();
+
+            Assert.Equal(DesktopTranslationMode.Local, connection.Mode);
+            model.TextInput.Text = "Buenos días.";
+            await model.TranslateCommand.ExecuteAsync(null);
+            Assert.Equal(TranslationErrorCode.ModelInvalid, Assert.Single(model.Messages).Entry.FailureCode);
+
+            await model.AudioInput.StartCommand.ExecuteAsync(null);
+            await model.AudioInput.StopCommand.ExecuteAsync(null);
+            Assert.Equal(AudioInputState.Error, model.AudioInput.State);
+            Assert.Contains("modelo de transcripción no es válido", model.AudioInput.StatusMessage);
+        }
+        finally { installation.Delete(recursive: true); }
     }
 
     [Fact]
@@ -145,6 +203,87 @@ public sealed class AudioInteractionTests
     }
 
     [Fact]
+    public async Task DisconnectionDuringRecordingIsReportedWithoutWaitingForStop()
+    {
+        var clock = new ManualRecordingClock();
+        var adapter = new TestAudioAdapter { StopError = AudioInputError.DeviceDisconnected };
+        var recognizer = new TestRecognizer();
+        await using var model = new MainViewModel(adapter, recognizer, timeProvider: clock);
+        await model.InitializeAsync();
+        await model.AudioInput.StartCommand.ExecuteAsync(null);
+        var failed = WaitForState(model.AudioInput, AudioInputState.Error);
+
+        adapter.HasCaptureEnded = true;
+        clock.Advance(TimeSpan.FromMilliseconds(100));
+        await failed;
+        await model.AudioInput.StopCommand.ExecutionTask!;
+
+        Assert.Contains("desconectó", model.AudioInput.StatusMessage);
+        Assert.Equal(1, adapter.Stops);
+        Assert.True(adapter.Cancels > 0);
+        Assert.False(recognizer.Entered.Task.IsCompleted);
+        Assert.True(model.Languages.IsEnabled);
+    }
+
+    [DesktopLocalVoiceFact]
+    public Task WrittenAndReviewedEnglishUseSeparateDraftsAndReachConversation() =>
+        VerifyWrittenAndReviewedVoiceAsync(Language.English, "EN", "I need to verify your delivery address.",
+            "dirección de entrega", "need help", "ayuda");
+
+    [DesktopLocalVoiceFact("ES")]
+    public Task WrittenAndReviewedSpanishUseSeparateDraftsAndReachConversation() =>
+        VerifyWrittenAndReviewedVoiceAsync(Language.Spanish, "ES", "Hola, ¿cómo estás Francisco?",
+            "Francisco", "necesito ayuda", "need help");
+
+    private static async Task VerifyWrittenAndReviewedVoiceAsync(Language source, string fixture, string writtenText,
+        string expectedWrittenTranslation, string expectedTranscript, string expectedVoiceTranslation)
+    {
+        var pcm = await File.ReadAllBytesAsync(Environment.GetEnvironmentVariable($"SAYLO_WHISPER_{fixture}_PCM")!);
+        var adapter = new TestAudioAdapter { Recording = new AudioData(pcm, AudioFormat.Pcm16, 16000, 1) };
+        var connection = DesktopTranslationFactory.Create([]);
+        await using var model = new MainViewModel(adapter, connection: connection);
+        await model.InitializeAsync();
+        if (source == Language.English) model.Languages.SwapCommand.Execute(null);
+
+        model.TextInput.Text = writtenText;
+        Assert.True(model.TranslateCommand.CanExecute(null));
+        await model.TranslateCommand.ExecuteAsync(null).WaitAsync(TimeSpan.FromSeconds(90));
+        var written = Assert.Single(model.Messages);
+        Assert.Equal(MessageOrigin.Text, written.Entry.Origin);
+        Assert.Equal(writtenText, written.SourceText);
+        Assert.Contains(expectedWrittenTranslation, written.TranslatedText, StringComparison.OrdinalIgnoreCase);
+        Assert.Equal(PronunciationNotation.Ipa, written.Entry.Pronunciation?.Notation);
+        Assert.False(written.ShowAudioStatus);
+        Assert.False(model.TranslateCommand.CanExecute(null));
+
+        await model.AudioInput.StartCommand.ExecuteAsync(null);
+        await model.AudioInput.StopCommand.ExecuteAsync(null).WaitAsync(TimeSpan.FromSeconds(90));
+        Assert.Equal(AudioInputState.Reviewing, model.AudioInput.State);
+        var transcript = Assert.IsType<string>(model.AudioInput.Transcript);
+        Assert.Contains(expectedTranscript, transcript, StringComparison.OrdinalIgnoreCase);
+        Assert.False(model.TextInput.HasText);
+        Assert.False(model.TranslateCommand.CanExecute(null));
+
+        var reviewed = transcript.TrimEnd('.') + "!";
+        model.AudioInput.Transcript = reviewed;
+        model.AudioInput.AcceptTranscriptCommand.Execute(null);
+        Assert.True(model.TranslateCommand.CanExecute(null));
+        await model.TranslateCommand.ExecuteAsync(null).WaitAsync(TimeSpan.FromSeconds(90));
+
+        Assert.Equal(2, model.Messages.Count);
+        var message = model.Messages[1];
+        Assert.NotEqual(written.OperationId, message.OperationId);
+        Assert.Equal(MessageOrigin.ReviewedVoice, message.Entry.Origin);
+        Assert.Equal(source, message.Entry.SourceLanguage);
+        Assert.Equal(source == Language.English ? Language.Spanish : Language.English, message.Entry.TargetLanguage);
+        Assert.Equal(MessageState.Ready, message.Entry.State);
+        Assert.Equal(reviewed, message.SourceText);
+        Assert.Contains(expectedVoiceTranslation, message.TranslatedText, StringComparison.OrdinalIgnoreCase);
+        Assert.Equal(PronunciationNotation.Ipa, message.Entry.Pronunciation?.Notation);
+        Assert.NotEmpty(message.PronunciationText);
+    }
+
+    [Fact]
     public async Task ClosingDuringStartCancelsAndDisposesTheAdapter()
     {
         var adapter = new TestAudioAdapter { HoldStart = true };
@@ -249,6 +388,7 @@ public sealed class AudioInteractionTests
 internal sealed class TestAudioAdapter : IAudioInputAdapter
 {
     public string PlatformName => "Test platform";
+    public bool HasCaptureEnded { get; set; }
     internal IReadOnlyList<AudioInputDevice> Devices { get; set; } = [new("usb", "USB"), new("internal", "Interno")];
     internal int Starts, Stops, Cancels;
     internal bool Disposed, HoldStart;
@@ -257,6 +397,8 @@ internal sealed class TestAudioAdapter : IAudioInputAdapter
     internal TaskCompletionSource CleanupEntered { get; } = new(TaskCreationOptions.RunContinuationsAsynchronously);
     internal TaskCompletionSource ReleaseCleanup { get; } = new(TaskCreationOptions.RunContinuationsAsynchronously);
     internal AudioInputError? StartError;
+    internal AudioInputError? StopError;
+    internal AudioData Recording = new(new byte[] { 1, 0 }, AudioFormat.Pcm16, 16000, 1);
     internal AudioInputDevice? StartedDevice;
     internal TimeSpan Limit;
     internal TaskCompletionSource StartEntered { get; } = new(TaskCreationOptions.RunContinuationsAsynchronously);
@@ -273,7 +415,8 @@ internal sealed class TestAudioAdapter : IAudioInputAdapter
     public Task<AudioData> StopAsync(CancellationToken cancellationToken)
     {
         Stops++;
-        return Task.FromResult(new AudioData(new byte[3200], AudioFormat.Pcm16, 16000, 1));
+        if (StopError is { } error) throw new AudioInputException(error);
+        return Task.FromResult(Recording);
     }
     public async Task CancelAsync(CancellationToken cancellationToken)
     {
@@ -283,6 +426,18 @@ internal sealed class TestAudioAdapter : IAudioInputAdapter
         if (HoldCleanup) await ReleaseCleanup.Task.WaitAsync(cancellationToken);
     }
     public ValueTask DisposeAsync() { Disposed = true; return ValueTask.CompletedTask; }
+}
+
+public sealed class DesktopLocalVoiceFactAttribute : FactAttribute
+{
+    public DesktopLocalVoiceFactAttribute(string fixture = "EN")
+    {
+        var required = new List<string> { "SAYLO_WHISPER_MODEL_DIR", $"SAYLO_WHISPER_{fixture}_PCM", "SAYLO_ARGOS_PYTHON", "SAYLO_ARGOS_MODELS" };
+        if (fixture == "ES") required.Add("SAYLO_CMUDICT_DIR");
+        if (required
+            .Any(name => string.IsNullOrWhiteSpace(Environment.GetEnvironmentVariable(name))))
+            Skip = "Configure the local Whisper and Argos resources and the PCM fixture for this desktop integration.";
+    }
 }
 
 internal sealed class TestRecognizer : ISpeechRecognitionEngine

@@ -25,6 +25,8 @@ public sealed class AudioInputException(AudioInputError code) : Exception
 public interface IAudioInputAdapter : IAsyncDisposable
 {
     string PlatformName { get; }
+    // A native limit or device failure may finish the capture before the user presses Stop.
+    bool HasCaptureEnded => false;
     Task<IReadOnlyList<AudioInputDevice>> GetDevicesAsync(CancellationToken cancellationToken);
     Task StartAsync(AudioInputDevice device, TimeSpan maximumDuration, CancellationToken cancellationToken);
     Task<AudioData> StopAsync(CancellationToken cancellationToken);

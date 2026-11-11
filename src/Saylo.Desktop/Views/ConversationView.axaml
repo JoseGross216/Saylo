@@ -65,6 +65,7 @@
                                         <TextBlock Text="{Binding Status}" Classes="muted" FontSize="12" TextWrapping="Wrap"
                                                    AutomationProperties.LiveSetting="Polite" />
                                         <TextBlock Text="{Binding AudioStatus}" Classes="muted" FontSize="12" TextWrapping="Wrap"
+                                                   IsVisible="{Binding ShowAudioStatus}"
                                                    AutomationProperties.LiveSetting="Polite" />
                                         <WrapPanel>
                                             <Button Content="Reintentar traducción" Command="{Binding RetryTranslationCommand}"
@@ -73,6 +74,7 @@
                                             <Button Content="Copiar traducción" Command="{Binding CopyCommand}" Classes="secondary"
                                                     Margin="0,0,8,6" FontSize="12" MinHeight="34" />
                                             <Button Content="Repetir audio" Command="{Binding RepeatCommand}" Classes="secondary"
+                                                    IsVisible="{Binding HasAudio}"
                                                     Margin="0,0,8,6" FontSize="12" MinHeight="34" />
                                             <Button Content="Detener audio" Command="{Binding StopAudioCommand}" Classes="secondary"
                                                     IsVisible="{Binding IsPlaying}" Margin="0,0,0,6" FontSize="12" MinHeight="34" />
@@ -92,7 +94,7 @@
                     <TextBlock Text="Solo durante esta sesión · audio en este equipo"
                                Classes="muted" FontSize="11" VerticalAlignment="Center" TextWrapping="Wrap" />
                     <CheckBox Grid.Column="1" Content="Reproducir voz automáticamente" FontSize="12" MinHeight="24"
-                              IsChecked="{Binding IsAutoplayEnabled, Mode=TwoWay}"
+                              IsVisible="{Binding HasAudioPlayback}" IsChecked="{Binding IsAutoplayEnabled, Mode=TwoWay}"
                               ToolTip.Tip="La voz se reproduce una vez al estar lista. Puedes repetirla desde el mensaje." />
                 </Grid>
             </StackPanel>

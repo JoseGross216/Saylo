@@ -205,6 +205,8 @@ public sealed class PlaybackStateAndErrorTests
         Assert.True(message.CopyCommand.CanExecute(null));
         await message.CopyCommand.ExecuteAsync(null);
         Assert.Equal("Good morning", clipboard.Text);
+        Assert.Empty(model.TextInput.Text!);
+        model.TextInput.Text = "Otro mensaje";
         Assert.True(model.TranslateCommand.CanExecute(null));
 
         model.RequestClearCommand.Execute(null);

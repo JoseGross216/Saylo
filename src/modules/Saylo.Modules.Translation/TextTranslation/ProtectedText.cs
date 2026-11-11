@@ -11,6 +11,13 @@ internal enum IntegrityConstraint { UnverifiedInput, MarkerCorrespondence, Liter
 internal sealed class ProtectedText
 {
     private const string TechnicalTerms = @"(?i)\b(?:SQL|VPN|HTTP|HTTPS|API|DNS|CPU|GPU|USB|JSON|XML|ASCII|UUID|GUID|IP|TCP|UDP|FTP|SSH)\b";
+    private const string AddressedName = @"(?<name>\p{Lu}[\p{Ll}\p{M}]{1,39}(?:[- ]\p{Lu}[\p{Ll}\p{M}]{1,39})?)(?=\s*(?:[,.!?]|$))";
+    private static readonly Regex SpanishAddress = new(@"(?i:\bc[oó]mo\s+est[aá]s\s*,?\s+)" + AddressedName,
+        RegexOptions.CultureInvariant, TimeSpan.FromMilliseconds(100));
+    private static readonly Regex EnglishAddress = new(@"(?i:\bhow\s+are\s+you\s*,\s+)" + AddressedName,
+        RegexOptions.CultureInvariant, TimeSpan.FromMilliseconds(100));
+    private static readonly HashSet<string> CommonContinuations = new(StringComparer.OrdinalIgnoreCase)
+        { "hoy", "ahora", "bien", "mal", "mejor", "peor", "today", "now", "tonight" };
     internal string Source { get; }
     internal string Masked { get; }
     internal IReadOnlyList<(string Marker, string Original)> Entries { get; }
@@ -22,11 +29,12 @@ internal sealed class ProtectedText
         Entries = entries.AsReadOnly();
     }
 
-    internal static ProtectedText Create(string text, TranslationIntegrityOptions options, Func<string>? nextMarker = null)
+    internal static ProtectedText Create(string text, TranslationIntegrityOptions options, Func<string>? nextMarker = null,
+        string? sourceLanguage = null)
     {
         nextMarker ??= () => RandomNumberGenerator.GetInt32(100_000_000, 1_000_000_000)
             .ToString(System.Globalization.CultureInfo.InvariantCulture);
-        var spans = FindLiterals(text, options);
+        var spans = FindLiterals(text, options, sourceLanguage);
         if (spans.Count > 64)
             throw Failure();
         var result = new StringBuilder();
@@ -89,7 +97,8 @@ internal sealed class ProtectedText
         return result.ToString();
     }
 
-    internal static IReadOnlyList<LiteralSpan> FindLiterals(string text, TranslationIntegrityOptions options)
+    internal static IReadOnlyList<LiteralSpan> FindLiterals(string text, TranslationIntegrityOptions options,
+        string? sourceLanguage = null)
     {
         var candidates = new List<LiteralSpan>();
         void Add(string pattern, bool trimPunctuation = false)
@@ -121,6 +130,16 @@ internal sealed class ProtectedText
         Add(TechnicalTerms);
         foreach (var term in options.ProtectedTerms)
             Add(@"(?<![\p{L}\p{N}])" + Regex.Escape(term) + @"(?![\p{L}\p{N}])");
+
+        // Title case alone is insufficient. Only protect names in a direct address.
+        var address = sourceLanguage switch { "es" => SpanishAddress, "en" => EnglishAddress, _ => null };
+        if (address is not null)
+            foreach (Match match in address.Matches(text))
+            {
+                var name = match.Groups["name"];
+                if (!CommonContinuations.Contains(name.Value))
+                    candidates.Add(new(name.Index, name.Length, name.Value));
+            }
 
         var spans = new List<LiteralSpan>();
         foreach (var item in candidates.OrderBy(item => item.Start).ThenByDescending(item => item.Length))

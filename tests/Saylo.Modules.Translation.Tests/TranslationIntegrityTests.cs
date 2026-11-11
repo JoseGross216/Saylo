@@ -26,6 +26,23 @@ public sealed class TranslationIntegrityTests
         Assert.Equal(source, plan.Restore(plan.Masked));
     }
 
+    [Theory]
+    [InlineData("es", "Hola, ¿cómo estás Francisco?", "Francisco")]
+    [InlineData("es", "¿Cómo estás, Ana María?", "Ana María")]
+    [InlineData("en", "Hello, how are you, Lucía?", "Lucía")]
+    [InlineData("es", "¿Cómo estás Hoy?", null)]
+    [InlineData("en", "Is Monday a good time?", null)]
+    public void DirectAddressProtectsNamesWithoutMaskingOrdinaryWords(string language, string text, string? name)
+    {
+        var plan = ProtectedText.Create(text, Defaults, sourceLanguage: language);
+        if (name is null)
+            Assert.Empty(plan.Entries);
+        else
+            Assert.Equal(name, Assert.Single(plan.Entries).Original);
+        Assert.Equal(text, plan.Restore(plan.Masked));
+        Assert.Empty(ProtectedText.FindLiterals(text, Defaults));
+    }
+
     [Fact]
     public void RepeatedLiteralsHaveDifferentMarkersAndKeepTheirOccurrenceCount()
     {

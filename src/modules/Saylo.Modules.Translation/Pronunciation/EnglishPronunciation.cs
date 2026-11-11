@@ -124,11 +124,19 @@ internal sealed class EnglishPronunciation
         }
         else
         {
-            if (Ambiguous.Contains(word) || variants.Count > 1 && !CitationVariants.Contains(word))
+            if (Ambiguous.Contains(word) || variants.Count > 1 && !CitationVariants.Contains(word) &&
+                !VaryOnlyInWeakVowels(variants))
                 throw PronunciationFailure.Create("AmbiguousPronunciation");
             selected = variants[0];
         }
         return ToIpa(selected);
+    }
+
+    private static bool VaryOnlyInWeakVowels(IReadOnlyList<string> variants)
+    {
+        // Use the first dictionary entry when the variants only alternate between unstressed /ɪ/ and /ə/.
+        var pattern = variants[0].Replace("IH0", "AH0", StringComparison.Ordinal);
+        return variants.All(value => value.Replace("IH0", "AH0", StringComparison.Ordinal) == pattern);
     }
 
     internal static string ToIpa(string pronunciation)
